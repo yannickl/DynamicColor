@@ -1,0 +1,11 @@
+language: objective-c
+osx_image: beta-xcode6.3
+branches:
+  only:
+    - master
+before_install:
+  - gem install xcpretty
+script:
+- set -o pipefail
+- xcodebuild -project Example/DynamicColorExample.xcodeproj -scheme Tests -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" ONLY_ACTIVE_ARCH=NO test | xcpretty -c
+- pod lib lint --quick

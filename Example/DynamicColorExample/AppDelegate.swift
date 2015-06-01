@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  DynamicColor
+//  DynamicColorExample
 //
 //  Created by Yannick LORIOT on 01/06/15.
 //  Copyright (c) 2015 Yannick LORIOT. All rights reserved.
