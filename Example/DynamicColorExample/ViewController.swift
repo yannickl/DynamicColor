@@ -15,8 +15,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    normalColorView.backgroundColor      = UIColor.redColor()
-    transformedColorView.backgroundColor = UIColor.redColor().darkenColor(0.2)
+    transformedColorView.backgroundColor = transformedColorView.backgroundColor?.darkerColor()
   }
 }
 
