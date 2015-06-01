@@ -1,4 +1,4 @@
-![DynamicColor](http://yannickloriot.com/resources/dynamicheader-header.png)
+![DynamicColor](http://yannickloriot.com/resources/dynamiccolor-header.png)
 
 [![Supported Plateforms](https://cocoapod-badges.herokuapp.com/p/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Version](https://cocoapod-badges.herokuapp.com/v/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Build Status](https://travis-ci.org/yannickl/DynamicColor.png?branch=master)](https://travis-ci.org/yannickl/DynamicColor)
 
