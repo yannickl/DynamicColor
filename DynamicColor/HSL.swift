@@ -183,7 +183,25 @@ internal struct HSL {
     return HSL(hue: h, saturation: s, lightness: min(1 - amount, l - amount), alpha: a)
   }
 
+  /**
+  Returns a color with the with the saturation increased by the given amount.
+
+  :params: amount Float between 0 and 1.
+
+  :returns: A HSL color more saturated.
+  */
   func saturate(amount: CGFloat) -> HSL {
     return HSL(hue: h, saturation: min(1, max(0, s + amount)), lightness: l, alpha: a)
+  }
+
+  /**
+  Returns a color with the with the saturation decreased by the given amount.
+
+  :params: amount Float between 0 and 1.
+
+  :returns: A HSL color less saturated.
+  */
+  func desaturate(amount: CGFloat) -> HSL {
+    return HSL(hue: h, saturation: min(1, max(0, s - amount)), lightness: l, alpha: a)
   }
 }

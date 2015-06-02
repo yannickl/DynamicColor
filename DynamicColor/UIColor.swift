@@ -165,9 +165,22 @@ public extension UIColor {
   
   :returns: A UIColor more saturated.
   */
-  public func saturatedColor(amount: CGFloat = 0.2) -> UIColor {
+  public func saturateColor(amount: CGFloat = 0.2) -> UIColor {
     var amount = min(1, max(0, amount))
 
     return HSL(color: self).saturate(amount).toUIColor()
+  }
+
+  /**
+  Creates and return a color with the saturation decreased by the given amount.
+
+  :params: amount Float between 0 and 1. The default amount is equal to 0,2.
+
+  :returns: A UIColor less saturated.
+  */
+  public func desaturateColor(amount: CGFloat = 0.2) -> UIColor {
+    var amount = min(1, max(0, amount))
+
+    return HSL(color: self).desaturate(amount).toUIColor()
   }
 }
