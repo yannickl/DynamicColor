@@ -62,8 +62,12 @@ class DynamicColorTests: XCTestCase {
 
   func testLightenColor() {
     let whiteFromBlack = UIColor.blackColor().lightenColor(1)
+    let same           = UIColor(hex: 0xc0392b).lightenColor(0)
+    let maxi           = UIColor(hex: 0xc0392b).lightenColor(1)
 
     XCTAssert(whiteFromBlack.isEqualToHexString("#ffffff"), "Color should be equals")
+    XCTAssert(same.isEqualToHexString("#c0392b"), "Color string should equal to #c0392b")
+    XCTAssert(maxi.isEqualToHexString("#ffffff"), "Color string should equal to #ffffff")
   }
 
   func testDarkerColor() {
@@ -80,7 +84,27 @@ class DynamicColorTests: XCTestCase {
 
   func testDarkenColor() {
     let blackFromWhite = UIColor.whiteColor().darkenColor(1)
+    let same           = UIColor(hex: 0xc0392b).darkenColor(0)
+    let maxi           = UIColor(hex: 0xc0392b).darkenColor(1)
 
     XCTAssert(blackFromWhite.isEqualToHexString("#000000"), "Color should be equals")
+    XCTAssert(same.isEqualToHexString("#c0392b"), "Color string should equal to #c0392b")
+    XCTAssert(maxi.isEqualToHexString("#000000"), "Color string should equal to #000000")
+  }
+
+  func testSaturatedColor() {
+    let primary = UIColor.redColor().saturatedColor()
+    let white   = UIColor.whiteColor().saturatedColor()
+    let black   = UIColor.blackColor().saturatedColor()
+    let custom  = UIColor(hex: 0xc0392b).saturatedColor()
+    let same    = UIColor(hex: 0xc0392b).saturatedColor(amount: 0)
+    let maxi    = UIColor(hex: 0xc0392b).saturatedColor(amount: 1)
+
+    XCTAssert(primary.isEqualToHexString("#ff0000"), "Color string should equal to #ff0000")
+    XCTAssert(white.isEqualToHexString("#ffffff"), "Color string should equal to #ffffff")
+    XCTAssert(black.isEqualToHexString("#000000"), "Color string should equal to #000000")
+    XCTAssert(custom.isEqualToHexString("#d72513"), "Color string should equal to #d72513")
+    XCTAssert(same.isEqualToHexString("#c0392b"), "Color string should equal to #c0392b")
+    XCTAssert(maxi.isEqualToHexString("#eb1600"), "Color string should equal to #eb1600")
   }
 }

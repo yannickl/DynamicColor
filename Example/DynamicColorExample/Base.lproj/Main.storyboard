@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZnU-ha-wtg">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZnU-ha-wtg">
+                                <rect key="frame" x="0.0" y="64" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nPS-bG-bQS">
                                     <size key="itemSize" width="110" height="110"/>
@@ -74,11 +74,20 @@
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="gz3-w5-0nS"/>
                                 </connections>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM4-Qp-1H6">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="DynamicColor" id="Cle-YJ-AkA"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZnU-ha-wtg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="63n-Bb-dv9"/>
+                            <constraint firstItem="dM4-Qp-1H6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0MX-fn-5YD"/>
+                            <constraint firstAttribute="trailing" secondItem="dM4-Qp-1H6" secondAttribute="trailing" id="4zu-8v-aMc"/>
+                            <constraint firstItem="ZnU-ha-wtg" firstAttribute="top" secondItem="dM4-Qp-1H6" secondAttribute="bottom" id="Asy-35-5BR"/>
                             <constraint firstAttribute="trailing" secondItem="ZnU-ha-wtg" secondAttribute="trailing" id="GU0-cf-fn8"/>
+                            <constraint firstItem="dM4-Qp-1H6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aSm-Xx-4Zy"/>
                             <constraint firstItem="ZnU-ha-wtg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fij-S4-juK"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZnU-ha-wtg" secondAttribute="bottom" id="jIH-I1-Ygc"/>
                         </constraints>

@@ -162,7 +162,7 @@ internal struct HSL {
   // MARK: - Deriving the Color
 
   /**
-  Returns a color with the lightness increased by the amount value.
+  Returns a color with the lightness increased by the given amount.
 
   :params: amount Float between 0 and 1.
   
@@ -173,7 +173,7 @@ internal struct HSL {
   }
 
   /**
-  Returns a color with the lightness decreased by the amount value.
+  Returns a color with the lightness decreased by the given amount.
 
   :params: amount Float between 0 and 1.
   
@@ -181,5 +181,9 @@ internal struct HSL {
   */
   func darken(amount: CGFloat) -> HSL {
     return HSL(hue: h, saturation: s, lightness: min(1 - amount, l - amount), alpha: a)
+  }
+
+  func saturate(amount: CGFloat) -> HSL {
+    return HSL(hue: h, saturation: min(1, max(0, s + amount)), lightness: l, alpha: a)
   }
 }

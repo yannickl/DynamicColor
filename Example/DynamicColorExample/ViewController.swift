@@ -35,6 +35,9 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     let darker = ("Darker", mainColor.darkerColor())
     _colors.append(darker)
 
+    let saturated = ("Saturated", mainColor.saturatedColor())
+    _colors.append(saturated)
+
     colors = _colors
   }
 

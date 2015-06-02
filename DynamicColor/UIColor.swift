@@ -122,7 +122,7 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color with the lightness increased by the amount value.
+  Creates and return a color with the lightness increased by the given amount.
 
   :params: amount Float between 0 and 1.
   
@@ -146,15 +146,28 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color with the lightness decreased by the amount value.
-
-  :returns: A darker UIColor.
+  Creates and return a color with the lightness decreased by the given amount.
 
   :params: amount Float between 0 and 1.
+  
+  :returns: A darker UIColor.
   */
   public func darkenColor(amount: CGFloat) -> UIColor {
     var amount = min(1, max(0, amount))
     
     return HSL(color: self).darken(amount).toUIColor()
+  }
+
+  /**
+  Creates and return a color with the saturation increased by the given amount.
+
+  :params: amount Float between 0 and 1. The default amount is equal to 0,2.
+  
+  :returns: A UIColor more saturated.
+  */
+  public func saturatedColor(amount: CGFloat = 0.2) -> UIColor {
+    var amount = min(1, max(0, amount))
+
+    return HSL(color: self).saturate(amount).toUIColor()
   }
 }
