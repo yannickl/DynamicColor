@@ -17,6 +17,7 @@
 		CEFBDB151B1CF4B6000E6F30 /* DynamicColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB141B1CF4B6000E6F30 /* DynamicColorTests.swift */; };
 		CEFBDB161B1D9F18000E6F30 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* UIColor.swift */; };
 		CEFBDB171B1D9F18000E6F30 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
+		CEFBDB191B1DE220000E6F30 /* ColorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		CEFBDB091B1CF49D000E6F30 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFBDB0C1B1CF49D000E6F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEFBDB141B1CF4B6000E6F30 /* DynamicColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicColorTests.swift; path = ../../Tests/DynamicColorTests.swift; sourceTree = "<group>"; };
+		CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				CEFBDAE01B1CE38D000E6F30 /* AppDelegate.swift */,
 				CEFBDAE21B1CE38D000E6F30 /* ViewController.swift */,
+				CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */,
 				CEFBDAE41B1CE38D000E6F30 /* Main.storyboard */,
 				CEFBDAE71B1CE38D000E6F30 /* Images.xcassets */,
 				CEFBDAE91B1CE38D000E6F30 /* LaunchScreen.xib */,
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFBDB191B1DE220000E6F30 /* ColorCellView.swift in Sources */,
 				CEFBDAE31B1CE38D000E6F30 /* ViewController.swift in Sources */,
 				CEFBDB021B1CE413000E6F30 /* UIColor.swift in Sources */,
 				CEFBDAE11B1CE38D000E6F30 /* AppDelegate.swift in Sources */,
