@@ -41,6 +41,9 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     let desaturated = ("Desaturated", mainColor.desaturatedColor())
     _colors.append(desaturated)
 
+    let grayscaled = ("Grayscaled", mainColor.grayscaledColor())
+    _colors.append(grayscaled)
+
     colors = _colors
   }
 

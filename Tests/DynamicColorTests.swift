@@ -132,4 +132,11 @@ class DynamicColorTests: XCTestCase {
     XCTAssert(same.isEqualToHexString("#c0392b"), "Color string should equal to #c0392b")
     XCTAssert(maxi.isEqualToHexString("#757575"), "Color string should equal to #757575")
   }
+
+  func testGrayscaleColor() {
+    let grayscale   = UIColor(hex: 0xc0392b).grayscaledColor()
+    let desaturated = UIColor(hex: 0xc0392b).desaturateColor(1)
+
+    XCTAssert(grayscale.isEqual(desaturated), "Colors should be the same")
+  }
 }

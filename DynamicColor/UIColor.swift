@@ -111,7 +111,7 @@ public extension UIColor {
   // MARK: - Deriving Colors
 
   /**
-  Creates and returns a lighter color from the current one.
+  Creates and returns a lighter color object.
 
   :returns: An UIColor lightened with an amount of 0,2.
 
@@ -122,7 +122,7 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color with the lightness increased by the given amount.
+  Creates and return a color object with the lightness increased by the given amount.
 
   :params: amount Float between 0 and 1.
 
@@ -135,7 +135,7 @@ public extension UIColor {
   }
 
   /**
-  Creates and returns a darker color from the current one.
+  Creates and returns a darker color object.
 
   :returns: An UIColor darkened with an amount of 0,2.
 
@@ -146,7 +146,7 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color with the lightness decreased by the given amount.
+  Creates and return a color object with the lightness decreased by the given amount.
 
   :params: amount Float between 0 and 1.
 
@@ -159,7 +159,7 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color with the saturation increased by the given amount.
+  Creates and return a color object with the saturation increased by the given amount.
 
   :returns: A UIColor more saturated with an amount of 0,2.
 
@@ -170,7 +170,7 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color with the saturation increased by the given amount.
+  Creates and return a color object with the saturation increased by the given amount.
 
   :params: amount Float between 0 and 1.
 
@@ -183,7 +183,7 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color with the saturation decreased by the given amount.
+  Creates and return a color object with the saturation decreased by the given amount.
 
   :returns: A UIColor less saturated with an amount of 0,2.
 
@@ -194,7 +194,7 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color with the saturation decreased by the given amount.
+  Creates and return a color object with the saturation decreased by the given amount.
 
   :params: amount Float between 0 and 1. The default amount is equal to 0,2.
 
@@ -204,5 +204,18 @@ public extension UIColor {
     var amount = min(1, max(0, amount))
     
     return HSL(color: self).desaturate(amount).toUIColor()
+  }
+
+  /**
+  Creates and returns a color object converted as grayscale.
+  
+  This is identical to desaturate(1).
+  
+  :returns: A grayscale UIColor.
+
+  :see: desaturateColor:
+  */
+  public func grayscaledColor() -> UIColor {
+    return desaturateColor(1)
   }
 }
