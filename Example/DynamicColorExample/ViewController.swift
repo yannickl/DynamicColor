@@ -47,6 +47,9 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     let adjustHue = ("Adjusted", mainColor.adjustedHueColor(45 / 360))
     _colors.append(adjustHue)
 
+    let complement = ("Complement", mainColor.complementColor())
+    _colors.append(complement)
+
     colors = _colors
   }
 

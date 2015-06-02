@@ -122,6 +122,19 @@ public extension UIColor {
   }
 
   /**
+  Creates and return the complement of the color object.
+
+  This is identical to adjustedHueColor(0.5).
+
+  :returns: The complement UIColor.
+  
+  :see: adjustedHueColor:
+  */
+  public func complementColor() -> UIColor {
+    return adjustedHueColor(0.5)
+  }
+
+  /**
   Creates and returns a lighter color object.
 
   :returns: An UIColor lightened with an amount of 0,2.
@@ -220,7 +233,7 @@ public extension UIColor {
   /**
   Creates and returns a color object converted as grayscale.
   
-  This is identical to desaturate(1).
+  This is identical to desaturateColor(1).
   
   :returns: A grayscale UIColor.
 

@@ -11,5 +11,4 @@ import UIKit
 final class ColorCellView: UICollectionViewCell {
   @IBOutlet weak var colorView: UIView!
   @IBOutlet weak var titleLabel: UILabel!
-
 }
