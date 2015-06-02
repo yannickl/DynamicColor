@@ -56,19 +56,41 @@ internal struct HSL {
   :param: color An UIColor object
   */
   init(color: UIColor) {
-    var hue: CGFloat        = 0
-    var saturation: CGFloat = 0
-    var brightness: CGFloat = 0
-    var alpha: CGFloat      = 0
+    var red: CGFloat   = 0
+    var blue: CGFloat  = 0
+    var green: CGFloat = 0
+    var alpha: CGFloat = 0
 
-    if color.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
-      h = hue
-      s = saturation * brightness
-      l = (2 - saturation) * brightness
-      a = alpha
+    if color.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+      let maximum   = max(red, max(green, blue))
+      let mininimum = min(red, min(green, blue))
 
-      s /= (l <= 1) ? l : 2 - l
-      l /= 2
+      let delta = maximum - mininimum
+
+      h = 0
+      s = 0
+      l = (maximum + mininimum) / 2
+
+      if delta != 0 {
+        if l < 0.5 {
+          s = delta / (maximum + mininimum)
+        }
+        else {
+          s = delta / (2.0 - maximum - mininimum)
+        }
+
+        if red == maximum {
+          h = (green - blue) / delta + (green < blue ? 6 : 0)
+        }
+        else if green == maximum {
+          h = (blue - red) / delta + 2
+        }
+        else if blue == maximum {
+          h = (red - green) / delta + 4
+        }
+      }
+
+      h /= 6
     }
   }
 
@@ -80,13 +102,61 @@ internal struct HSL {
     :returns: An UIColor object
   */
   func toUIColor() -> UIColor {
-    var lightness  = l * 2
-    var saturation = (lightness <= 1) ? lightness : 2 - lightness
-    var brightness = (lightness + saturation) / 2
+    let lightness  = min(1, max(0, l))
+    let saturation = min(1, max(0, s))
+    var hue        = h
 
-    saturation = (2 * saturation) / (lightness + saturation)
+    while hue < 0 {
+      hue += 1
+    }
 
-    return UIColor(hue: h, saturation: saturation, brightness: brightness, alpha: a)
+    while hue > 1 {
+      hue -= 1
+    }
+
+    var m2: CGFloat = 0
+
+    if lightness <= 0.5 {
+      m2 = lightness * (saturation + 1)
+    }
+    else {
+      m2 = (lightness + saturation) - (lightness *  saturation)
+    }
+
+    var m1: CGFloat = (lightness * 2) - m2
+
+    let r = hueToRgb(m1, m2: m2, h: hue + 1 / 3)
+    let g = hueToRgb(m1, m2: m2, h: hue)
+    let b = hueToRgb(m1, m2: m2, h: hue - 1 / 3)
+
+    return UIColor(red: r, green: g, blue: b, alpha: a)
+  }
+
+  /// Hue to RGB helper function
+  private func hueToRgb(m1: CGFloat, m2: CGFloat, h: CGFloat) -> CGFloat {
+    var hue = h
+
+    if hue < 0 {
+      hue += 1
+    }
+
+    if hue > 1 {
+      hue -= 1
+    }
+
+    if hue * 6 < 1 {
+      return m1 + (m2 - m1) * hue * 6
+    }
+
+    if hue * 2 < 1 {
+      return m2
+    }
+
+    if hue * 3 < 2 {
+      return m1 + (m2 - m1) * (2 / 3 - hue) * 6
+    }
+
+    return m1
   }
 
   // MARK: - Deriving the Color

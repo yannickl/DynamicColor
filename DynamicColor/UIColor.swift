@@ -70,7 +70,7 @@ public extension UIColor {
     let red   = CGFloat(r) / 255.0
     let green = CGFloat(g) / 255.0
     let blue  = CGFloat(b) / 255.0
-println("red: \(red) green: \(green) blue \(blue)")
+
     self.init(red:red, green:green, blue:blue, alpha:1)
   }
 
@@ -78,16 +78,19 @@ println("red: \(red) green: \(green) blue \(blue)")
   Returns the color representation as hexadecimal string.
   */
   public func toHexString() -> String {
-    var r:CGFloat = 0
-    var g:CGFloat = 0
-    var b:CGFloat = 0
-    var a:CGFloat = 0
+    var r: CGFloat = 0
+    var g: CGFloat = 0
+    var b: CGFloat = 0
+    var a: CGFloat = 0
 
-    getRed(&r, green: &g, blue: &b, alpha: &a)
+    if getRed(&r, green: &g, blue: &b, alpha: &a) {
+      let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
 
-    let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
-
-    return String(format:"#%06x", rgb)
+      return String(format:"#%06x", rgb)
+    }
+    else {
+      return "#000000"
+    }
   }
 
   // MARK: - Deriving Colors
@@ -107,7 +110,7 @@ println("red: \(red) green: \(green) blue \(blue)")
   :params: amount Float between 0 and 1.
   */
   public func lightenColor(amount: CGFloat) -> UIColor {
-    var amount = min(1,max(0, amount))
+    var amount = min(1, max(0, amount))
 
     return HSL(color: self).lighten(amount).toUIColor()
   }
@@ -127,7 +130,7 @@ println("red: \(red) green: \(green) blue \(blue)")
   :params: amount Float between 0 and 1.
   */
   public func darkenColor(amount: CGFloat) -> UIColor {
-    var amount = min(1,max(0, amount))
+    var amount = min(1, max(0, amount))
     
     return HSL(color: self).darken(amount).toUIColor()
   }

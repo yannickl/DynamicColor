@@ -47,4 +47,28 @@ class DynamicColorTests: XCTestCase {
     XCTAssert(black.toHexString() == "#000000", "Color string should equal to #000000")
     XCTAssert(custom.toHexString() == "#769a2b", "Color string should equal to #769a2b")
   }
+
+  func testLighterColor() {
+    let red   = UIColor.redColor().lighterColor()
+    let white = UIColor.whiteColor().lighterColor()
+    let black = UIColor.blackColor().lighterColor()
+    let gray  = black.lighterColor()
+
+    XCTAssert(red.toHexString() == "#ff6565", "Color string should equal to #ff6565")
+    XCTAssert(white.toHexString() == "#ffffff", "Color string should equal to #ffffff")
+    XCTAssert(black.toHexString() == "#333333", "Color string should equal to #333333")
+    XCTAssert(gray.toHexString() == "#666666", "Color string should equal to #666666")
+  }
+
+  func testDarkerColor() {
+    let red   = UIColor.redColor().darkerColor()
+    let white = UIColor.whiteColor().darkerColor()
+    let gray  = white.darkerColor()
+    let black = UIColor.blackColor().darkerColor()
+
+    XCTAssert(red.toHexString() == "#990000", "Color string should equal to #990000")
+    XCTAssert(white.toHexString() == "#cccccc", "Color string should equal to #cccccc")
+    XCTAssert(gray.toHexString() == "#999999", "Color string should equal to #999999")
+    XCTAssert(black.toHexString() == "#000000", "Color string should equal to #000000")
+  }
 }
