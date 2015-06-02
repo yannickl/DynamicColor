@@ -92,34 +92,43 @@ class DynamicColorTests: XCTestCase {
     XCTAssert(maxi.isEqualToHexString("#000000"), "Color string should equal to #000000")
   }
 
-  func testSaturateColor() {
-    let primary = UIColor.redColor().saturateColor()
-    let white   = UIColor.whiteColor().saturateColor()
-    let black   = UIColor.blackColor().saturateColor()
-    let custom  = UIColor(hex: 0xc0392b).saturateColor()
-    let same    = UIColor(hex: 0xc0392b).saturateColor(amount: 0)
-    let maxi    = UIColor(hex: 0xc0392b).saturateColor(amount: 1)
+  func testSaturatedColor() {
+    let primary = UIColor.redColor().saturatedColor()
+    let white   = UIColor.whiteColor().saturatedColor()
+    let black   = UIColor.blackColor().saturatedColor()
+    let custom  = UIColor(hex: 0xc0392b).saturatedColor()
+
 
     XCTAssert(primary.isEqualToHexString("#ff0000"), "Color string should equal to #ff0000")
     XCTAssert(white.isEqualToHexString("#ffffff"), "Color string should equal to #ffffff")
     XCTAssert(black.isEqualToHexString("#000000"), "Color string should equal to #000000")
     XCTAssert(custom.isEqualToHexString("#d72513"), "Color string should equal to #d72513")
+  }
+
+  func testSaturateColor() {
+    let same = UIColor(hex: 0xc0392b).saturateColor(0)
+    let maxi = UIColor(hex: 0xc0392b).saturateColor(1)
+
     XCTAssert(same.isEqualToHexString("#c0392b"), "Color string should equal to #c0392b")
     XCTAssert(maxi.isEqualToHexString("#eb1600"), "Color string should equal to #eb1600")
   }
 
-  func testDesaturateColor() {
-    let primary = UIColor.redColor().desaturateColor()
-    let white   = UIColor.whiteColor().desaturateColor()
-    let black   = UIColor.blackColor().desaturateColor()
-    let custom  = UIColor(hex: 0xc0392b).desaturateColor()
-    let same    = UIColor(hex: 0xc0392b).desaturateColor(amount: 0)
-    let maxi    = UIColor(hex: 0xc0392b).desaturateColor(amount: 1)
+  func testDesaturatedColor() {
+    let primary = UIColor.redColor().desaturatedColor()
+    let white   = UIColor.whiteColor().desaturatedColor()
+    let black   = UIColor.blackColor().desaturatedColor()
+    let custom  = UIColor(hex: 0xc0392b).desaturatedColor()
 
     XCTAssert(primary.isEqualToHexString("#e51919"), "Color string should equal to #e51919")
     XCTAssert(white.isEqualToHexString("#ffffff"), "Color string should equal to #ffffff")
     XCTAssert(black.isEqualToHexString("#000000"), "Color string should equal to #000000")
     XCTAssert(custom.isEqualToHexString("#a84c42"), "Color string should equal to #a84c42")
+  }
+
+  func testDesaturateColor() {
+    let same = UIColor(hex: 0xc0392b).desaturateColor(0)
+    let maxi = UIColor(hex: 0xc0392b).desaturateColor(1)
+
     XCTAssert(same.isEqualToHexString("#c0392b"), "Color string should equal to #c0392b")
     XCTAssert(maxi.isEqualToHexString("#757575"), "Color string should equal to #757575")
   }

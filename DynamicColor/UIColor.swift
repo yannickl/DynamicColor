@@ -27,7 +27,7 @@
 import UIKit
 
 /**
-Extension to manipulate the color easily.
+Extension to manipulate colors easily.
 */
 public extension UIColor {
   // MARK: - Manipulating HEX Strings
@@ -76,7 +76,7 @@ public extension UIColor {
 
   /**
   Returns the color representation as hexadecimal string.
-  
+
   :returns: A string similar to this pattern "#f4003b"
   */
   public func toHexString() -> String {
@@ -99,9 +99,9 @@ public extension UIColor {
 
   /**
   Returns a boolean value that indicates whether the receiver is equal to the given hexa-decimal string.
-  
+
   :params: hexString A hexa-decimal color number representation to be compared to the receiver.
-  
+
   :returns: true if the receiver and the string are equal, otherwise false.
   */
   public func isEqualToHexString(hexString: String) -> Bool {
@@ -125,7 +125,7 @@ public extension UIColor {
   Creates and return a color with the lightness increased by the given amount.
 
   :params: amount Float between 0 and 1.
-  
+
   :returns: A lighter UIColor.
   */
   public func lightenColor(amount: CGFloat) -> UIColor {
@@ -149,26 +149,48 @@ public extension UIColor {
   Creates and return a color with the lightness decreased by the given amount.
 
   :params: amount Float between 0 and 1.
-  
+
   :returns: A darker UIColor.
   */
   public func darkenColor(amount: CGFloat) -> UIColor {
     var amount = min(1, max(0, amount))
-    
+
     return HSL(color: self).darken(amount).toUIColor()
   }
 
   /**
   Creates and return a color with the saturation increased by the given amount.
 
-  :params: amount Float between 0 and 1. The default amount is equal to 0,2.
-  
+  :returns: A UIColor more saturated with an amount of 0,2.
+
+  :see: saturateColor:
+  */
+  public func saturatedColor() -> UIColor {
+    return saturateColor(0.2)
+  }
+
+  /**
+  Creates and return a color with the saturation increased by the given amount.
+
+  :params: amount Float between 0 and 1.
+
   :returns: A UIColor more saturated.
   */
-  public func saturateColor(amount: CGFloat = 0.2) -> UIColor {
+  public func saturateColor(amount: CGFloat) -> UIColor {
     var amount = min(1, max(0, amount))
 
     return HSL(color: self).saturate(amount).toUIColor()
+  }
+
+  /**
+  Creates and return a color with the saturation decreased by the given amount.
+
+  :returns: A UIColor less saturated with an amount of 0,2.
+
+  :see: desaturateColor:
+  */
+  public func desaturatedColor() -> UIColor {
+    return desaturateColor(0.2)
   }
 
   /**
@@ -178,9 +200,9 @@ public extension UIColor {
 
   :returns: A UIColor less saturated.
   */
-  public func desaturateColor(amount: CGFloat = 0.2) -> UIColor {
+  public func desaturateColor(amount: CGFloat) -> UIColor {
     var amount = min(1, max(0, amount))
-
+    
     return HSL(color: self).desaturate(amount).toUIColor()
   }
 }
