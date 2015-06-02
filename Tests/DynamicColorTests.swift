@@ -48,6 +48,19 @@ class DynamicColorTests: XCTestCase {
     XCTAssert(custom.isEqualToHexString("#769a2b"), "Color string should equal to #769a2b")
   }
 
+  func testAdjustHueColor() {
+    let custom1  = UIColor(hex: 0x881111).adjustedHueColor(45 / 360)
+    let custom2 = UIColor(hex: 0xc0392b).adjustedHueColor(90 / 360)
+    let custom3 = UIColor(hex: 0xc0392b).adjustedHueColor(-60 / 360)
+    let same    = UIColor(hex: 0xc0392b).adjustedHueColor(360 / 360)
+
+    println(custom3.toHexString())
+    XCTAssert(custom1.isEqualToHexString("#886a10"), "Color string should equal to #886a10")
+    XCTAssert(custom2.isEqualToHexString("#67c02b"), "Color string should equal to #67c02b")
+    XCTAssert(custom3.isEqualToHexString("#c02bb1"), "Color string should equal to #c02bb1")
+    XCTAssert(same.isEqualToHexString("#c0392b"), "Color string should equal to #c0392b")
+  }
+
   func testLighterColor() {
     let red   = UIColor.redColor().lighterColor()
     let white = UIColor.whiteColor().lighterColor()

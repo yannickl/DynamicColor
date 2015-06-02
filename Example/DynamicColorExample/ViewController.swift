@@ -44,6 +44,9 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     let grayscaled = ("Grayscaled", mainColor.grayscaledColor())
     _colors.append(grayscaled)
 
+    let adjustHue = ("Adjusted", mainColor.adjustedHueColor(45 / 360))
+    _colors.append(adjustHue)
+
     colors = _colors
   }
 

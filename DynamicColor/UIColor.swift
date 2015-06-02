@@ -111,6 +111,17 @@ public extension UIColor {
   // MARK: - Deriving Colors
 
   /**
+  Creates and return a color object with the hue rotated along the color wheel by the given amount.
+
+  :params: amount A float representing the number of degrees as ratio (usually -1 for -360deg and 1 for 360deg).
+
+  :returns: A UIColor object with the hue changed.
+  */
+  public func adjustedHueColor(amount: CGFloat) -> UIColor {
+    return HSL(color: self).adjustHue(amount).toUIColor()
+  }
+
+  /**
   Creates and returns a lighter color object.
 
   :returns: An UIColor lightened with an amount of 0,2.

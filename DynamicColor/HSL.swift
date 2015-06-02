@@ -162,10 +162,21 @@ internal struct HSL {
   // MARK: - Deriving the Color
 
   /**
+  Return a color with the hue rotated along the color wheel by the given amount.
+
+  :params: amount A float representing the number of degrees as ratio (usually -1 for -360deg and 1 for 360deg).
+
+  :returns: A HSL color with the hue changed.
+  */
+  func adjustHue(amount: CGFloat) -> HSL {
+    return HSL(hue: h + amount, saturation: s, lightness: l, alpha: a)
+  }
+
+  /**
   Returns a color with the lightness increased by the given amount.
 
   :params: amount Float between 0 and 1.
-  
+
   :returns: A lighter HSL color.
   */
   func lighten(amount: CGFloat) -> HSL {
