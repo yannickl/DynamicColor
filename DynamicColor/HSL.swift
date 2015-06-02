@@ -99,7 +99,7 @@ internal struct HSL {
   /**
     Returns the UIColor representation from the current HSV color.
   
-    :returns: An UIColor object
+    :returns: An UIColor object corresponding to the current HSV color.
   */
   func toUIColor() -> UIColor {
     let lightness  = min(1, max(0, l))
@@ -165,6 +165,8 @@ internal struct HSL {
   Returns a color with the lightness increased by the amount value.
 
   :params: amount Float between 0 and 1.
+  
+  :returns: A lighter HSL color.
   */
   func lighten(amount: CGFloat) -> HSL {
     return HSL(hue: h, saturation: s, lightness: max(amount, l + amount), alpha: a)
@@ -174,6 +176,8 @@ internal struct HSL {
   Returns a color with the lightness decreased by the amount value.
 
   :params: amount Float between 0 and 1.
+  
+  :returns: A darker HSL color.
   */
   func darken(amount: CGFloat) -> HSL {
     return HSL(hue: h, saturation: s, lightness: min(1 - amount, l - amount), alpha: a)

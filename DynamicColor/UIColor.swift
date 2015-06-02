@@ -76,6 +76,8 @@ public extension UIColor {
 
   /**
   Returns the color representation as hexadecimal string.
+  
+  :returns: A string similar to this pattern "#f4003b"
   */
   public func toHexString() -> String {
     var r: CGFloat = 0
@@ -93,10 +95,25 @@ public extension UIColor {
     }
   }
 
+  // MARK: - Identifying and Comparing Colors
+
+  /**
+  Returns a boolean value that indicates whether the receiver is equal to the given hexa-decimal string.
+  
+  :params: hexString A hexa-decimal color number representation to be compared to the receiver.
+  
+  :returns: true if the receiver and the string are equal, otherwise false.
+  */
+  public func isEqualToHexString(hexString: String) -> Bool {
+    return self.toHexString() == hexString
+  }
+
   // MARK: - Deriving Colors
 
   /**
   Creates and returns a lighter color from the current one.
+
+  :returns: An UIColor lightened with an amount of 0,2.
 
   :see: lightenColor:
   */
@@ -108,6 +125,8 @@ public extension UIColor {
   Creates and return a color with the lightness increased by the amount value.
 
   :params: amount Float between 0 and 1.
+  
+  :returns: A lighter UIColor.
   */
   public func lightenColor(amount: CGFloat) -> UIColor {
     var amount = min(1, max(0, amount))
@@ -118,6 +137,8 @@ public extension UIColor {
   /**
   Creates and returns a darker color from the current one.
 
+  :returns: An UIColor darkened with an amount of 0,2.
+
   :see: darkenColor:
   */
   public func darkerColor() -> UIColor {
@@ -126,6 +147,8 @@ public extension UIColor {
 
   /**
   Creates and return a color with the lightness decreased by the amount value.
+
+  :returns: A darker UIColor.
 
   :params: amount Float between 0 and 1.
   */
