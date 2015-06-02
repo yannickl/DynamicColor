@@ -15,6 +15,8 @@
 		CEFBDB021B1CE413000E6F30 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* UIColor.swift */; };
 		CEFBDB041B1CF188000E6F30 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CEFBDB151B1CF4B6000E6F30 /* DynamicColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB141B1CF4B6000E6F30 /* DynamicColorTests.swift */; };
+		CEFBDB161B1D9F18000E6F30 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* UIColor.swift */; };
+		CEFBDB171B1D9F18000E6F30 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +240,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFBDB161B1D9F18000E6F30 /* UIColor.swift in Sources */,
+				CEFBDB171B1D9F18000E6F30 /* HSL.swift in Sources */,
 				CEFBDB151B1CF4B6000E6F30 /* DynamicColorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +441,7 @@
 				CEFBDB131B1CF49D000E6F30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

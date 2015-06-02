@@ -39,16 +39,20 @@ public extension UIColor {
   */
   public convenience init(hexString: String) {
     let hexString = hexString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-    let scanner            = NSScanner(string: hexString)
+    let scanner   = NSScanner(string: hexString)
 
     if (hexString.hasPrefix("#")) {
       scanner.scanLocation = 1
     }
 
-    var color:UInt32 = 0
-    scanner.scanHexInt(&color)
+    var color: UInt32 = 0
 
-    self.init(hex: color)
+    if scanner.scanHexInt(&color) {
+      self.init(hex: color)
+    }
+    else {
+      self.init(hex: 0x000000)
+    }
   }
 
   /**
@@ -66,7 +70,7 @@ public extension UIColor {
     let red   = CGFloat(r) / 255.0
     let green = CGFloat(g) / 255.0
     let blue  = CGFloat(b) / 255.0
-
+println("red: \(red) green: \(green) blue \(blue)")
     self.init(red:red, green:green, blue:blue, alpha:1)
   }
 
@@ -124,7 +128,7 @@ public extension UIColor {
   */
   public func darkenColor(amount: CGFloat) -> UIColor {
     var amount = min(1,max(0, amount))
-
+    
     return HSL(color: self).darken(amount).toUIColor()
   }
 }
