@@ -6,15 +6,43 @@ DynamicColor provides powerfull methods to manipulate colors in an easy way.
 
 ## Usage
 
-### Darken & Lighten
+#### Darken & Lighten
 
-### Saturate, & Desaturate
+These two create a new color by adjusting the lightness of the receiver. You have to use a value between 0 and 1.
 
-### Adjust-hue
+```swift
+   let color = UIColor(hex: 0xc0392b)
+   
+   let lighter = color.lighterColor()
+   // equivalent to
+   // lighter = color.lightenColor(0.2)
 
-### Grayscale
+   let darker = color.darkerColor()
+   // equivalent to
+   // darker = color.darkenColor(0.2)
+```
 
-### Invert
+#### Saturate, & Desaturate
+
+These will adjust the saturation of the color object, much like `darkenColor` and `lightenColor` adjusted the lightness. Again, you need to use a value between 0 and 1.
+
+```swift
+   let color = UIColor(hex: 0xc0392b)
+   
+   let saturated = color.saturatedColor()
+   // equivalent to
+   // darker = color.saturateColor(0.2)
+
+   let desaturated = color.desaturatedColor()
+   // equivalent to
+   // darker = color.desaturateColor(0.2)
+```
+
+#### Adjust-hue
+
+#### Grayscale
+
+#### Invert
 
 ```swift
 ```
