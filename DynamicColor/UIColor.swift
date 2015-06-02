@@ -242,4 +242,22 @@ public extension UIColor {
   public func grayscaledColor() -> UIColor {
     return desaturateColor(1)
   }
+
+  /**
+  Creates and return a color object where the red, green, and blue values are inverted, while the opacity is left alone.
+
+  :returns: An inverse (negative) of the original color.
+  */
+  public func invertColor() -> UIColor {
+    var red: CGFloat   = 0
+    var blue: CGFloat  = 0
+    var green: CGFloat = 0
+    var alpha: CGFloat = 0
+
+    if getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+      return UIColor(red: 1 - red, green: 1 - green, blue: 1 - blue, alpha: alpha)
+    }
+
+    return self
+  }
 }

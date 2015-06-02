@@ -50,6 +50,9 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     let complement = ("Complement", mainColor.complementColor())
     _colors.append(complement)
 
+    let invert = ("Invert", mainColor.invertColor())
+    _colors.append(invert)
+
     colors = _colors
   }
 

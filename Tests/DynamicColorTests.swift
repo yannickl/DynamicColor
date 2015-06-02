@@ -158,4 +158,12 @@ class DynamicColorTests: XCTestCase {
 
     XCTAssert(grayscale.isEqual(desaturated), "Colors should be the same")
   }
+
+  func testInvertColor() {
+    let invert   = UIColor(hex: 0xff0000).invertColor()
+    let original = invert.invertColor()
+
+    XCTAssert(invert.isEqualToHexString("#00ffff"), "Color string should equal to #00ffff")
+    XCTAssert(original.isEqualToHexString("#ff0000"), "Color string should equal to #ff0000")
+  }
 }
