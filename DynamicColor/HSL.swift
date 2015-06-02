@@ -26,12 +26,23 @@
 
 import UIKit
 
+/// Hue-saturation-lightness structure to make the color manipulation easier.
 internal struct HSL {
   var h: CGFloat = 0.0
   var s: CGFloat = 0.0
   var l: CGFloat = 0.0
   var a: CGFloat = 1.0
 
+  // MARK: - Initializing HSL Colors
+
+  /**
+  Initializes and creates a HSL color from the hue, saturation, lightness and alpha components.
+
+  :param: h The hue component of the color object, specified as a value between 0.0 and 1.0.
+  :param: s The saturation component of the color object, specified as a value between 0.0 and 1.0.
+  :param: l The lightness component of the color object, specified as a value between 0.0 and 1.0.
+  :param: a The opacity component of the color object, specified as a value between 0.0 and 1.0.
+  */
   init(hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat) {
     h = hue
     s = saturation
@@ -39,6 +50,11 @@ internal struct HSL {
     a = alpha
   }
 
+  /**
+  Initializes and creates a HSL color from an UIColor.
+  
+  :param: color An UIColor object
+  */
   init(color: UIColor) {
     var hue: CGFloat        = 0
     var saturation: CGFloat = 0
@@ -49,12 +65,20 @@ internal struct HSL {
       h = hue
       s = saturation * brightness
       l = (2 - saturation) * brightness
+      a = alpha
 
       s /= (l <= 1) ? l : 2 - l
       l /= 2
     }
   }
 
+  // MARK: - Transforming HSL Color
+
+  /**
+    Returns the UIColor representation from the current HSV color.
+  
+    :returns: An UIColor object
+  */
   func toUIColor() -> UIColor {
     var lightness  = l * 2
     var saturation = (lightness <= 1) ? lightness : 2 - lightness
@@ -65,11 +89,23 @@ internal struct HSL {
     return UIColor(hue: h, saturation: saturation, brightness: brightness, alpha: a)
   }
 
+  // MARK: - Deriving the Color
+
+  /**
+  Returns a color with the lightness increased by the amount value.
+
+  :params: amount Float between 0 and 1.
+  */
   func lighten(amount: CGFloat) -> HSL {
     return HSL(hue: h, saturation: s, lightness: max(amount, l + amount), alpha: a)
   }
 
+  /**
+  Returns a color with the lightness decreased by the amount value.
+
+  :params: amount Float between 0 and 1.
+  */
   func darken(amount: CGFloat) -> HSL {
-    return HSL(hue: h, saturation: s, lightness: min(100 - amount, l - amount), alpha: a)
+    return HSL(hue: h, saturation: s, lightness: min(1 - amount, l - amount), alpha: a)
   }
 }
