@@ -2,6 +2,27 @@
 
 [![Supported Plateforms](https://cocoapod-badges.herokuapp.com/p/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Version](https://cocoapod-badges.herokuapp.com/v/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Build Status](https://travis-ci.org/yannickl/DynamicColor.png?branch=master)](https://travis-ci.org/yannickl/DynamicColor)
 
+DynamicColor provides powerfull methods to manipulate colors in an easy way.
+
+## Usage
+
+### Darken & Lighten
+
+### Saturate, & Desaturate
+
+### Adjust-hue
+
+### Grayscale
+
+### Invert
+
+```swift
+```
+
+To go further, take a look at the example project. 
+
+## Installation
+
 #### CocoaPods
 
 Install CocoaPods if not already available:
@@ -40,13 +61,6 @@ You can now `import DynamicColor` framework into your files.
 #### Manually
 
 [Download](https://github.com/YannickL/DynamicColor/archive/master.zip) the project and copy the `DynamicColor` folder into your project to use it in.
-
-## Usage
-
-```swift
-```
-
-To go further, take a look at the example project. 
     
 ## Contact
 
