@@ -53,6 +53,15 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     let invert = ("Invert", mainColor.invertColor())
     _colors.append(invert)
 
+    let mixBlue = ("Mix Blue", mainColor.mixWithColor(UIColor.blueColor()))
+    _colors.append(mixBlue)
+
+    let mixGreen = ("Mix Green", mainColor.mixWithColor(UIColor.greenColor()))
+    _colors.append(mixGreen)
+
+    let mixYellow = ("Mix Yellow", mainColor.mixWithColor(UIColor.yellowColor()))
+    _colors.append(mixYellow)
+
     colors = _colors
   }
 

@@ -39,17 +39,17 @@ These will adjust the saturation of the color object, much like `darkenColor` an
 </p>
 
 ```swift
-   let color = UIColor(hex: 0xc0392b)
+   let originalColor = UIColor(hex: 0xc0392b)
    
-   let saturated = color.saturatedColor()
+   let saturatedColor = originalColor.saturatedColor()
    // equivalent to
-   // darker = color.saturateColor(0.2)
+   // saturatedColor = originalColor.saturateColor(0.2)
 
-   let desaturated = color.desaturatedColor()
+   let desaturatedColor = originalColor.desaturatedColor()
    // equivalent to
-   // darker = color.desaturateColor(0.2)
+   // desaturatedColor = originalColor.desaturateColor(0.2)
    
-   let grayscale = color.grayscaledColor()
+   let grayscaleColor = originalColor.grayscaledColor()
 ```
 
 #### Adjust-hue & Complement
@@ -61,11 +61,11 @@ These adjust the hue value of the color in the same way like the others do. Agai
 </p>
 
 ```swift
-   let color = UIColor(hex: 0xc0392b)
+   let originalColor = UIColor(hex: 0xc0392b)
    
-   let adjustHue = color.adjustedHueColor(45 / 360)
+   let adjustHueColor = originalColor.adjustedHueColor(45 / 360)
 
-   let complement = color.complementColor()
+   let complementColor = originalColor.complementColor()
 ````
 
 #### Invert
@@ -77,9 +77,9 @@ This can invert the color object. The red, green, and blue values are inverted, 
 </p>
 
 ```swift
-   let color = UIColor(hex: 0xc0392b)
+   let originalColor = UIColor(hex: 0xc0392b)
    
-   color.invertColor()
+   let invertColor = originalColor.invertColor()
 ```
 
 To go further, take a look at the example project. 

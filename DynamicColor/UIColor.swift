@@ -137,7 +137,7 @@ public extension UIColor {
   /**
   Creates and returns a lighter color object.
 
-  :returns: An UIColor lightened with an amount of 0,2.
+  :returns: An UIColor lightened with an amount of 0.2.
 
   :see: lightenColor:
   */
@@ -161,7 +161,7 @@ public extension UIColor {
   /**
   Creates and returns a darker color object.
 
-  :returns: An UIColor darkened with an amount of 0,2.
+  :returns: An UIColor darkened with an amount of 0.2.
 
   :see: darkenColor:
   */
@@ -185,7 +185,7 @@ public extension UIColor {
   /**
   Creates and return a color object with the saturation increased by the given amount.
 
-  :returns: A UIColor more saturated with an amount of 0,2.
+  :returns: A UIColor more saturated with an amount of 0.2.
 
   :see: saturateColor:
   */
@@ -209,7 +209,7 @@ public extension UIColor {
   /**
   Creates and return a color object with the saturation decreased by the given amount.
 
-  :returns: A UIColor less saturated with an amount of 0,2.
+  :returns: A UIColor less saturated with an amount of 0.2.
 
   :see: desaturateColor:
   */
@@ -220,7 +220,7 @@ public extension UIColor {
   /**
   Creates and return a color object with the saturation decreased by the given amount.
 
-  :params: amount Float between 0 and 1. The default amount is equal to 0,2.
+  :params: amount Float between 0 and 1. The default amount is equal to 0.2.
 
   :returns: A UIColor less saturated.
   */
@@ -250,14 +250,52 @@ public extension UIColor {
   */
   public func invertColor() -> UIColor {
     var red: CGFloat   = 0
-    var blue: CGFloat  = 0
     var green: CGFloat = 0
+    var blue: CGFloat  = 0
     var alpha: CGFloat = 0
 
     if getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
       return UIColor(red: 1 - red, green: 1 - green, blue: 1 - blue, alpha: alpha)
     }
 
+    return self
+  }
+
+  // MARK: - Mixing Colors
+
+  /**
+  Mixes the given color object with the receiver.
+  
+  Specifically, takes the average of each of the RGB components, optionally weighted by the given percentage. The opacity of the colors object is also considered when weighting the components.
+
+  :params: color A color object to mix with the receiver.
+  :params: weight The weight specifies the amount of the given color object. The default value is 0.5, means that half the given color and half the receiver color object should be used. 0.25 means that a quarter of the given color object and three quarters of the receiver color object should be used.
+  
+  :returns: A color object corresponding to the two colors object mixed together.
+  */
+  public func mixWithColor(color: UIColor, weight: CGFloat = 0.5) -> UIColor {
+    var red1: CGFloat   = 0
+    var green1: CGFloat = 0
+    var blue1: CGFloat  = 0
+    var alpha1: CGFloat = 0
+
+    var red2: CGFloat   = 0
+    var green2: CGFloat = 0
+    var blue2: CGFloat  = 0
+    var alpha2: CGFloat = 0
+
+    if getRed(&red1, green: &green1, blue: &blue1, alpha: &alpha1)
+      && color.getRed(&red2, green: &green2, blue: &blue2, alpha: &alpha2) {
+        let w = 2 * weight - 1
+
+        let a = alpha1 - alpha2
+
+        let w2 = (((w * a == -1) ? w : (w + a) / (1 + w * a)) + 1) / 2
+        let w1 = 1 - w2
+
+        return UIColor(red: (w1 * red1 + w2 * red2), green: (w1 * green1 + w2 * green2), blue: (w1 * blue1 + w2 * blue2), alpha: (alpha1 * weight + alpha2 * (1 - weight)))
+    }
+    
     return self
   }
 }

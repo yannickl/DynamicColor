@@ -166,4 +166,25 @@ class DynamicColorTests: XCTestCase {
     XCTAssert(invert.isEqualToHexString("#00ffff"), "Color string should equal to #00ffff")
     XCTAssert(original.isEqualToHexString("#ff0000"), "Color string should equal to #ff0000")
   }
+
+  func testMixColors() {
+    let red  = UIColor.redColor()
+    let blue = UIColor.blueColor()
+
+    var midMix = red.mixWithColor(blue)
+
+    XCTAssert(midMix.isEqualToHexString("#7f007f"), "Color string should equal to #7f007f")
+
+    midMix = blue.mixWithColor(red)
+
+    XCTAssert(midMix.isEqualToHexString("#7f007f"), "Color string should equal to #7f007f")
+
+    let noMix = red.mixWithColor(blue, weight: 0)
+
+    XCTAssert(noMix.isEqualToHexString("#ff0000"), "Color string should equal to #ff0000")
+
+    let fullMix = red.mixWithColor(blue, weight: 1)
+
+    XCTAssert(fullMix.isEqualToHexString("#0000ff"), "Color string should equal to #0000ff")
+  }
 }
