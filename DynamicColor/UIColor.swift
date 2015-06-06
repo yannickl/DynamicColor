@@ -298,4 +298,15 @@ public extension UIColor {
     
     return self
   }
+
+  /**
+  Creates and return a color object corresponding to the mix of the receiver and an amount of white color, which increases lightness.
+
+  :params: amount Float between 0 and 1. The default amount is equal to 0.2.
+
+  :returns: A lighter UIColor.
+  */
+  public func tintColor(amount: CGFloat = 0.2) -> UIColor {
+    return mixWithColor(UIColor.whiteColor(), weight: amount)
+  }
 }

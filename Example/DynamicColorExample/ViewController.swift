@@ -62,6 +62,9 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     let mixYellow = ("Mix Yellow", mainColor.mixWithColor(UIColor.yellowColor()))
     _colors.append(mixYellow)
 
+    let tintColor = ("Tint", mainColor.tintColor())
+    _colors.append(tintColor)
+
     colors = _colors
   }
 

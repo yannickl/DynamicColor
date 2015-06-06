@@ -187,4 +187,18 @@ class DynamicColorTests: XCTestCase {
 
     XCTAssert(fullMix.isEqualToHexString("#0000ff"), "Color string should equal to #0000ff")
   }
+
+  func testTintColor() {
+    let tint  = UIColor(hex: 0xc0392b).tintColor()
+
+    XCTAssert(tint.isEqualToHexString("#cc6055"), "Color string should equal to #cc6055")
+
+    let white = UIColor(hex: 0xc0392b).tintColor(amount: 1)
+
+    XCTAssert(white.isEqualToHexString("#ffffff"), "Color string should equal to #ffffff")
+
+    let alwaysWhite = UIColor.whiteColor().tintColor()
+
+    XCTAssert(alwaysWhite.isEqualToHexString("#ffffff"), "Color string should equal to #ffffff")
+  }
 }
