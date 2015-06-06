@@ -5,7 +5,7 @@
 DynamicColor provides powerfull methods to manipulate colors in an easy way.
 
 <p align="center">
-  <img src="http://yannickloriot.com/resources/dynamiccolor-example-screenshot.png" alt=screenshot" />
+  <img src="http://yannickloriot.com/resources/dynamiccolor-screenshot.png" alt="example screenshot" width="300" />
 </p>
 
 ## Usage
@@ -14,21 +14,29 @@ DynamicColor provides powerfull methods to manipulate colors in an easy way.
 
 These two create a new color by adjusting the lightness of the receiver. You have to use a value between 0 and 1.
 
-```swift
-   let color = UIColor(hex: 0xc0392b)
-   
-   let lighter = color.lighterColor()
-   // equivalent to
-   // lighter = color.lightenColor(0.2)
+<p align="center">
+  <img src="http://yannickloriot.com/resources/dynamiccolor-darkenlighten.png" alt="lighten and darken color" width="280"/>
+</p>
 
-   let darker = color.darkerColor()
+```swift
+   let originalColor = UIColor(hex: 0xc0392b)
+   
+   let lighterColor = originalColor.lighterColor()
    // equivalent to
-   // darker = color.darkenColor(0.2)
+   // lighterColor = originalColor.lightenColor(0.2)
+
+   let darkerColor = originalColor.darkerColor()
+   // equivalent to
+   // darkerColor = originalColor.darkenColor(0.2)
 ```
 
 #### Saturate, Desaturate & Grayscale
 
 These will adjust the saturation of the color object, much like `darkenColor` and `lightenColor` adjusted the lightness. Again, you need to use a value between 0 and 1.
+
+<p align="center">
+  <img src="http://yannickloriot.com/resources/dynamiccolor-saturateddesaturatedgrayscale.png" alt="saturate, desaturate and grayscale color" width="373"/>
+</p>
 
 ```swift
    let color = UIColor(hex: 0xc0392b)
@@ -48,6 +56,10 @@ These will adjust the saturation of the color object, much like `darkenColor` an
 
 These adjust the hue value of the color in the same way like the others do. Again, it takes a value between 0 and 1 to update the value.
 
+<p align="center">
+  <img src="http://yannickloriot.com/resources/dynamiccolor-adjustedhuecomplement.png" alt="ajusted-hue and complement color" width="280"/>
+</p>
+
 ```swift
    let color = UIColor(hex: 0xc0392b)
    
@@ -59,6 +71,10 @@ These adjust the hue value of the color in the same way like the others do. Agai
 #### Invert
 
 This can invert the color object. The red, green, and blue values are inverted, while the opacity is left alone.
+
+<p align="center">
+  <img src="http://yannickloriot.com/resources/dynamiccolor-invert.png" alt="invert color" width="187"/>
+</p>
 
 ```swift
    let color = UIColor(hex: 0xc0392b)
