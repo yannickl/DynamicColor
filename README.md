@@ -73,7 +73,7 @@ let complementColor = originalColor.complementColor()
 A tint is the mixture of a color with white and a shade is the mixture of a color with black. Again, it takes a value between 0 and 1 to update the value.
 
 <p align="center">
-<img src="http://yannickloriot.com/resources/dynamiccolor-tintshade.png" alt="tint and shade color" width="280"/>
+<img src="http://yannickloriot.com/resources/dynamiccolor-tintshadecolor.png" alt="tint and shade color" width="280"/>
 </p>
 
 ```swift
@@ -107,7 +107,7 @@ let invertColor = originalColor.invertColor()
 This can mix a given color with the receiver. It takes the average of each of the RGB components, optionally weighted by the given percentage (value between 0 and 1).
 
 <p align="center">
-<img src="http://yannickloriot.com/resources/dynamiccolor-mix.png" alt="mix color" width="187"/>
+<img src="http://yannickloriot.com/resources/dynamiccolor-mixcolor.png" alt="mix color" width="373"/>
 </p>
 
 ```swift
@@ -140,7 +140,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
-pod 'DynamicColor', '~> 1.0.0'
+pod 'DynamicColor', '~> 1.1.0'
 ```
 
 Install into your project:
