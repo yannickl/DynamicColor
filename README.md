@@ -5,7 +5,7 @@
 DynamicColor provides powerfull methods to manipulate colors in an easy way.
 
 <p align="center">
-  <img src="http://yannickloriot.com/resources/dynamiccolor-screenshot.png" alt="example screenshot" width="300" />
+  <img src="http://yannickloriot.com/resources/dynamiccolor-sample-screenshot.png" alt="example screenshot" width="300" />
 </p>
 
 ## Usage

@@ -65,6 +65,9 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     let tintColor = ("Tint", mainColor.tintColor())
     _colors.append(tintColor)
 
+    let shadeColor = ("Shade", mainColor.shadeColor())
+    _colors.append(shadeColor)
+
     colors = _colors
   }
 
