@@ -39,17 +39,17 @@ These will adjust the saturation of the color object, much like `darkenColor` an
 </p>
 
 ```swift
-   let originalColor = UIColor(hex: 0xc0392b)
+let originalColor = UIColor(hex: 0xc0392b)
    
-   let saturatedColor = originalColor.saturatedColor()
-   // equivalent to
-   // saturatedColor = originalColor.saturateColor(0.2)
+let saturatedColor = originalColor.saturatedColor()
+// equivalent to
+// saturatedColor = originalColor.saturateColor(0.2)
 
-   let desaturatedColor = originalColor.desaturatedColor()
-   // equivalent to
-   // desaturatedColor = originalColor.desaturateColor(0.2)
+let desaturatedColor = originalColor.desaturatedColor()
+// equivalent to
+// desaturatedColor = originalColor.desaturateColor(0.2)
    
-   let grayscaleColor = originalColor.grayscaledColor()
+let grayscaleColor = originalColor.grayscaledColor()
 ```
 
 #### Adjust-hue & Complement
@@ -61,12 +61,32 @@ These adjust the hue value of the color in the same way like the others do. Agai
 </p>
 
 ```swift
-   let originalColor = UIColor(hex: 0xc0392b)
+let originalColor = UIColor(hex: 0xc0392b)
    
-   let adjustHueColor = originalColor.adjustedHueColor(45 / 360)
+let adjustHueColor = originalColor.adjustedHueColor(45 / 360)
 
-   let complementColor = originalColor.complementColor()
+let complementColor = originalColor.complementColor()
 ````
+
+#### Tint & Shade
+
+A tint is the mixture of a color with white and a shade is the mixture of a color with black. Again, it takes a value between 0 and 1 to update the value.
+
+<p align="center">
+<img src="http://yannickloriot.com/resources/dynamiccolor-tintshade.png" alt="tint and shade color" width="280"/>
+</p>
+
+```swift
+let originalColor = UIColor(hex: 0xc0392b)
+
+let tintColor = originalColor.tintColor()
+// equivalent to
+// tintColor = originalColor.tintColor(amount: 0.2)
+
+let shadeColor = originalColor.shadeColor()
+// equivalent to
+// shadeColor = originalColor.shadeColor(amount: 0.2)
+```
 
 #### Invert
 
@@ -77,9 +97,25 @@ This can invert the color object. The red, green, and blue values are inverted, 
 </p>
 
 ```swift
-   let originalColor = UIColor(hex: 0xc0392b)
+let originalColor = UIColor(hex: 0xc0392b)
    
-   let invertColor = originalColor.invertColor()
+let invertColor = originalColor.invertColor()
+```
+
+#### Mix
+
+This can mix a given color with the receiver. It takes the average of each of the RGB components, optionally weighted by the given percentage (value between 0 and 1).
+
+<p align="center">
+<img src="http://yannickloriot.com/resources/dynamiccolor-mix.png" alt="mix color" width="187"/>
+</p>
+
+```swift
+let originalColor = UIColor(hex: 0xc0392b)
+
+let mixColor = originalColor.mixColor(UIColor.blueColor())
+// equivalent to
+// mixColor = originalColor.mixColor(UIColor.blueColor(), weight: 0.5)
 ```
 
 To go further, take a look at the example project. 
