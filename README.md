@@ -19,15 +19,15 @@ These two create a new color by adjusting the lightness of the receiver. You hav
 </p>
 
 ```swift
-   let originalColor = UIColor(hex: 0xc0392b)
-   
-   let lighterColor = originalColor.lighterColor()
-   // equivalent to
-   // lighterColor = originalColor.lightenColor(0.2)
+let originalColor = UIColor(hex: 0xc0392b)
 
-   let darkerColor = originalColor.darkerColor()
-   // equivalent to
-   // darkerColor = originalColor.darkenColor(0.2)
+let lighterColor = originalColor.lighterColor()
+// equivalent to
+// lighterColor = originalColor.lightenColor(0.2)
+
+let darkerColor = originalColor.darkerColor()
+// equivalent to
+// darkerColor = originalColor.darkenColor(0.2)
 ```
 
 #### Saturate, Desaturate & Grayscale
@@ -40,7 +40,7 @@ These will adjust the saturation of the color object, much like `darkenColor` an
 
 ```swift
 let originalColor = UIColor(hex: 0xc0392b)
-   
+
 let saturatedColor = originalColor.saturatedColor()
 // equivalent to
 // saturatedColor = originalColor.saturateColor(0.2)
@@ -48,7 +48,7 @@ let saturatedColor = originalColor.saturatedColor()
 let desaturatedColor = originalColor.desaturatedColor()
 // equivalent to
 // desaturatedColor = originalColor.desaturateColor(0.2)
-   
+
 let grayscaleColor = originalColor.grayscaledColor()
 ```
 
@@ -62,7 +62,7 @@ These adjust the hue value of the color in the same way like the others do. Agai
 
 ```swift
 let originalColor = UIColor(hex: 0xc0392b)
-   
+
 let adjustHueColor = originalColor.adjustedHueColor(45 / 360)
 
 let complementColor = originalColor.complementColor()
@@ -98,7 +98,7 @@ This can invert the color object. The red, green, and blue values are inverted, 
 
 ```swift
 let originalColor = UIColor(hex: 0xc0392b)
-   
+
 let invertColor = originalColor.invertColor()
 ```
 
