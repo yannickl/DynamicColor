@@ -100,7 +100,7 @@ public extension UIColor {
   /**
   Returns a boolean value that indicates whether the receiver is equal to the given hexa-decimal string.
 
-  :params: hexString A hexa-decimal color number representation to be compared to the receiver.
+  :param: hexString A hexa-decimal color number representation to be compared to the receiver.
 
   :returns: true if the receiver and the string are equal, otherwise false.
   */
@@ -111,9 +111,9 @@ public extension UIColor {
   // MARK: - Deriving Colors
 
   /**
-  Creates and return a color object with the hue rotated along the color wheel by the given amount.
+  Creates and returns a color object with the hue rotated along the color wheel by the given amount.
 
-  :params: amount A float representing the number of degrees as ratio (usually -1 for -360deg and 1 for 360deg).
+  :param: amount A float representing the number of degrees as ratio (usually -1 for -360deg and 1 for 360deg).
 
   :returns: A UIColor object with the hue changed.
   */
@@ -122,7 +122,7 @@ public extension UIColor {
   }
 
   /**
-  Creates and return the complement of the color object.
+  Creates and returns the complement of the color object.
 
   This is identical to adjustedHueColor(0.5).
 
@@ -146,9 +146,9 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color object with the lightness increased by the given amount.
+  Creates and returns a color object with the lightness increased by the given amount.
 
-  :params: amount Float between 0 and 1.
+  :param: amount Float between 0 and 1.
 
   :returns: A lighter UIColor.
   */
@@ -161,7 +161,7 @@ public extension UIColor {
   /**
   Creates and returns a darker color object.
 
-  :returns: An UIColor darkened with an amount of 0.2.
+  :returns: A UIColor darkened with an amount of 0.2.
 
   :see: darkenColor:
   */
@@ -170,9 +170,9 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color object with the lightness decreased by the given amount.
+  Creates and returns a color object with the lightness decreased by the given amount.
 
-  :params: amount Float between 0 and 1.
+  :param: amount Float between 0 and 1.
 
   :returns: A darker UIColor.
   */
@@ -183,7 +183,7 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color object with the saturation increased by the given amount.
+  Creates and returns a color object with the saturation increased by the given amount.
 
   :returns: A UIColor more saturated with an amount of 0.2.
 
@@ -194,9 +194,9 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color object with the saturation increased by the given amount.
+  Creates and returns a color object with the saturation increased by the given amount.
 
-  :params: amount Float between 0 and 1.
+  :param: amount Float between 0 and 1.
 
   :returns: A UIColor more saturated.
   */
@@ -207,7 +207,7 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color object with the saturation decreased by the given amount.
+  Creates and returns a color object with the saturation decreased by the given amount.
 
   :returns: A UIColor less saturated with an amount of 0.2.
 
@@ -218,9 +218,9 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color object with the saturation decreased by the given amount.
+  Creates and returns a color object with the saturation decreased by the given amount.
 
-  :params: amount Float between 0 and 1. The default amount is equal to 0.2.
+  :param: amount Float between 0 and 1. The default amount is equal to 0.2.
 
   :returns: A UIColor less saturated.
   */
@@ -231,7 +231,7 @@ public extension UIColor {
   }
 
   /**
-  Creates and returns a color object converted as grayscale.
+  Creates and returns a color object converted to grayscale.
   
   This is identical to desaturateColor(1).
   
@@ -268,8 +268,8 @@ public extension UIColor {
   
   Specifically, takes the average of each of the RGB components, optionally weighted by the given percentage. The opacity of the colors object is also considered when weighting the components.
 
-  :params: color A color object to mix with the receiver.
-  :params: weight The weight specifies the amount of the given color object. The default value is 0.5, means that half the given color and half the receiver color object should be used. 0.25 means that a quarter of the given color object and three quarters of the receiver color object should be used.
+  :param: color A color object to mix with the receiver.
+  :param: weight The weight specifies the amount of the given color object. The default value is 0.5, which means that half the given color and half the receiver color object should be used. 0.25 means that a quarter of the given color object and three quarters of the receiver color object should be used.
   
   :returns: A color object corresponding to the two colors object mixed together.
   */
@@ -300,9 +300,9 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color object corresponding to the mix of the receiver and an amount of white color, which increases lightness.
+  Creates and returns a color object corresponding to the mix of the receiver and an amount of white color, which increases lightness.
 
-  :params: amount Float between 0 and 1. The default amount is equal to 0.2.
+  :param: amount Float between 0 and 1. The default amount is equal to 0.2.
 
   :returns: A lighter UIColor.
   */
@@ -311,9 +311,9 @@ public extension UIColor {
   }
 
   /**
-  Creates and return a color object corresponding to the mix of the receiver and an amount of black color, which reduces lightness.
+  Creates and returns a color object corresponding to the mix of the receiver and an amount of black color, which reduces lightness.
 
-  :params: amount Float between 0 and 1. The default amount is equal to 0.2.
+  :param: amount Float between 0 and 1. The default amount is equal to 0.2.
 
   :returns: A darker UIColor.
   */
