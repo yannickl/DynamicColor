@@ -51,9 +51,9 @@ internal struct HSL {
   }
 
   /**
-  Initializes and creates a HSL color from an UIColor.
+  Initializes and creates a HSL color from a UIColor.
   
-  :param: color An UIColor object
+  :param: color A UIColor object
   */
   init(color: UIColor) {
     var red: CGFloat   = 0
@@ -97,9 +97,9 @@ internal struct HSL {
   // MARK: - Transforming HSL Color
 
   /**
-    Returns the UIColor representation from the current HSV color.
+  Returns the UIColor representation from the current HSV color.
   
-    :returns: An UIColor object corresponding to the current HSV color.
+  :returns: A UIColor object corresponding to the current HSV color.
   */
   func toUIColor() -> UIColor {
     let lightness  = min(1, max(0, l))
@@ -162,9 +162,9 @@ internal struct HSL {
   // MARK: - Deriving the Color
 
   /**
-  Return a color with the hue rotated along the color wheel by the given amount.
+  Returns a color with the hue rotated along the color wheel by the given amount.
 
-  :params: amount A float representing the number of degrees as ratio (usually -1 for -360deg and 1 for 360deg).
+  :param: amount A float representing the number of degrees as ratio (usually -1 for -360deg and 1 for 360deg).
 
   :returns: A HSL color with the hue changed.
   */
@@ -175,7 +175,7 @@ internal struct HSL {
   /**
   Returns a color with the lightness increased by the given amount.
 
-  :params: amount Float between 0 and 1.
+  :param: amount Float between 0 and 1.
 
   :returns: A lighter HSL color.
   */
@@ -186,7 +186,7 @@ internal struct HSL {
   /**
   Returns a color with the lightness decreased by the given amount.
 
-  :params: amount Float between 0 and 1.
+  :param: amount Float between 0 and 1.
   
   :returns: A darker HSL color.
   */
@@ -195,9 +195,9 @@ internal struct HSL {
   }
 
   /**
-  Returns a color with the with the saturation increased by the given amount.
+  Returns a color with the saturation increased by the given amount.
 
-  :params: amount Float between 0 and 1.
+  :param: amount Float between 0 and 1.
 
   :returns: A HSL color more saturated.
   */
@@ -206,9 +206,9 @@ internal struct HSL {
   }
 
   /**
-  Returns a color with the with the saturation decreased by the given amount.
+  Returns a color with the saturation decreased by the given amount.
 
-  :params: amount Float between 0 and 1.
+  :param: amount Float between 0 and 1.
 
   :returns: A HSL color less saturated.
   */
