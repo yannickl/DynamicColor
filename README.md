@@ -140,7 +140,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
-pod 'DynamicColor', '~> 1.1.0'
+pod 'DynamicColor', '~> 1.1.1'
 ```
 
 Install into your project:
