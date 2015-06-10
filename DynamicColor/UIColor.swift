@@ -269,11 +269,13 @@ public extension UIColor {
   Specifically, takes the average of each of the RGB components, optionally weighted by the given percentage. The opacity of the colors object is also considered when weighting the components.
 
   :param: color A color object to mix with the receiver.
-  :param: weight The weight specifies the amount of the given color object. The default value is 0.5, which means that half the given color and half the receiver color object should be used. 0.25 means that a quarter of the given color object and three quarters of the receiver color object should be used.
+  :param: weight The weight specifies the amount of the given color object (between 0 and 1). The default value is 0.5, which means that half the given color and half the receiver color object should be used. 0.25 means that a quarter of the given color object and three quarters of the receiver color object should be used.
   
   :returns: A color object corresponding to the two colors object mixed together.
   */
   public func mixWithColor(color: UIColor, weight: CGFloat = 0.5) -> UIColor {
+    var weight = min(1, max(0, weight))
+
     var red1: CGFloat   = 0
     var green1: CGFloat = 0
     var blue1: CGFloat  = 0
