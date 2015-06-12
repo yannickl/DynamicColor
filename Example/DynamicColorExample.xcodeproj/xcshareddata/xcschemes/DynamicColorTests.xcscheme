@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEFBDB081B1CF49D000E6F30"
-               BuildableName = "Tests.xctest"
-               BlueprintName = "Tests"
+               BlueprintIdentifier = "CECBCD8A1B2B6C5E0047E731"
+               BuildableName = "DynamicColorTests.xctest"
+               BlueprintName = "DynamicColorTests"
                ReferencedContainer = "container:DynamicColorExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEFBDB081B1CF49D000E6F30"
-               BuildableName = "Tests.xctest"
-               BlueprintName = "Tests"
+               BlueprintIdentifier = "CECBCD8A1B2B6C5E0047E731"
+               BuildableName = "DynamicColorTests.xctest"
+               BlueprintName = "DynamicColorTests"
                ReferencedContainer = "container:DynamicColorExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CEFBDB081B1CF49D000E6F30"
-            BuildableName = "Tests.xctest"
-            BlueprintName = "Tests"
+            BlueprintIdentifier = "CECBCD8A1B2B6C5E0047E731"
+            BuildableName = "DynamicColorTests.xctest"
+            BlueprintName = "DynamicColorTests"
             ReferencedContainer = "container:DynamicColorExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,9 +61,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CEFBDB081B1CF49D000E6F30"
-            BuildableName = "Tests.xctest"
-            BlueprintName = "Tests"
+            BlueprintIdentifier = "CECBCD8A1B2B6C5E0047E731"
+            BuildableName = "DynamicColorTests.xctest"
+            BlueprintName = "DynamicColorTests"
             ReferencedContainer = "container:DynamicColorExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -79,9 +79,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CEFBDB081B1CF49D000E6F30"
-            BuildableName = "Tests.xctest"
-            BlueprintName = "Tests"
+            BlueprintIdentifier = "CECBCD8A1B2B6C5E0047E731"
+            BuildableName = "DynamicColorTests.xctest"
+            BlueprintName = "DynamicColorTests"
             ReferencedContainer = "container:DynamicColorExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

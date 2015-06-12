@@ -1,6 +1,6 @@
 ![DynamicColor](http://yannickloriot.com/resources/dynamiccolor-header.png)
 
-[![Supported Plateforms](https://cocoapod-badges.herokuapp.com/p/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Version](https://cocoapod-badges.herokuapp.com/v/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Build Status](https://travis-ci.org/yannickl/DynamicColor.png?branch=master)](https://travis-ci.org/yannickl/DynamicColor)
+[![Supported Plateforms](https://cocoapod-badges.herokuapp.com/p/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Version](https://cocoapod-badges.herokuapp.com/v/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/yannickl/DynamicColor.png?branch=master)](https://travis-ci.org/yannickl/DynamicColor)
 
 DynamicColor provides powerfull methods to manipulate colors in an easy way.
 
@@ -118,7 +118,7 @@ let mixColor = originalColor.mixColor(UIColor.blueColor())
 // mixColor = originalColor.mixColor(UIColor.blueColor(), weight: 0.5)
 ```
 
-To go further, take a look at the example project. 
+To go further, take a look at the example project.
 
 ## Installation
 
@@ -157,10 +157,27 @@ $ open MyProject.xcworkspace
 
 You can now `import DynamicColor` framework into your files.
 
+#### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate `DynamicColor` into your Xcode project using Carthage, specify it in your `Cartfile` file:
+
+```ogdl
+github "yannickl/DynamicColor" >= 1.2
+```
+
 #### Manually
 
 [Download](https://github.com/YannickL/DynamicColor/archive/master.zip) the project and copy the `DynamicColor` folder into your project to use it in.
-    
+
 ## Contact
 
 Yannick Loriot

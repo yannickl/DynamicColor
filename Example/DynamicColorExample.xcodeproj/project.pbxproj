@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CECBCD861B2B6C5E0047E731 /* DynamicColor.h in Headers */ = {isa = PBXBuildFile; fileRef = CECBCD851B2B6C5E0047E731 /* DynamicColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CECBCD8C1B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; };
+		CECBCD981B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; };
+		CECBCD991B2B6C5E0047E731 /* DynamicColor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CECBCDA11B2B6CCC0047E731 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* UIColor.swift */; };
+		CECBCDA21B2B6CCC0047E731 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
+		CECBCDA81B2B6EEB0047E731 /* DynamicColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBCDA71B2B6EEB0047E731 /* DynamicColorTests.swift */; };
 		CEFBDAE11B1CE38D000E6F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDAE01B1CE38D000E6F30 /* AppDelegate.swift */; };
 		CEFBDAE31B1CE38D000E6F30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDAE21B1CE38D000E6F30 /* ViewController.swift */; };
 		CEFBDAE61B1CE38D000E6F30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFBDAE41B1CE38D000E6F30 /* Main.storyboard */; };
@@ -14,23 +21,54 @@
 		CEFBDAEB1B1CE38D000E6F30 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFBDAE91B1CE38D000E6F30 /* LaunchScreen.xib */; };
 		CEFBDB021B1CE413000E6F30 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* UIColor.swift */; };
 		CEFBDB041B1CF188000E6F30 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
-		CEFBDB151B1CF4B6000E6F30 /* DynamicColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB141B1CF4B6000E6F30 /* DynamicColorTests.swift */; };
-		CEFBDB161B1D9F18000E6F30 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* UIColor.swift */; };
-		CEFBDB171B1D9F18000E6F30 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CEFBDB191B1DE220000E6F30 /* ColorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CEFBDB0F1B1CF49D000E6F30 /* PBXContainerItemProxy */ = {
+		CECBCD8D1B2B6C5E0047E731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEFBDAD31B1CE38D000E6F30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CECBCD801B2B6C5E0047E731;
+			remoteInfo = DynamicColor;
+		};
+		CECBCD8F1B2B6C5E0047E731 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CEFBDAD31B1CE38D000E6F30 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CEFBDADA1B1CE38D000E6F30;
 			remoteInfo = DynamicColorExample;
 		};
+		CECBCD961B2B6C5E0047E731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEFBDAD31B1CE38D000E6F30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CECBCD801B2B6C5E0047E731;
+			remoteInfo = DynamicColor;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CECBCD9F1B2B6C5E0047E731 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CECBCD991B2B6C5E0047E731 /* DynamicColor.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DynamicColor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CECBCD841B2B6C5E0047E731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECBCD851B2B6C5E0047E731 /* DynamicColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicColor.h; sourceTree = "<group>"; };
+		CECBCD8B1B2B6C5E0047E731 /* DynamicColorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicColorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CECBCD931B2B6C5E0047E731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECBCDA71B2B6EEB0047E731 /* DynamicColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicColorTests.swift; path = ../../Tests/DynamicColorTests.swift; sourceTree = "<group>"; };
 		CEFBDADB1B1CE38D000E6F30 /* DynamicColorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicColorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFBDADF1B1CE38D000E6F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEFBDAE01B1CE38D000E6F30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,36 +78,77 @@
 		CEFBDAEA1B1CE38D000E6F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CEFBDB011B1CE413000E6F30 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CEFBDB031B1CF188000E6F30 /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
-		CEFBDB091B1CF49D000E6F30 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEFBDB0C1B1CF49D000E6F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEFBDB141B1CF4B6000E6F30 /* DynamicColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicColorTests.swift; path = ../../Tests/DynamicColorTests.swift; sourceTree = "<group>"; };
 		CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CEFBDAD81B1CE38D000E6F30 /* Frameworks */ = {
+		CECBCD7D1B2B6C5E0047E731 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFBDB061B1CF49D000E6F30 /* Frameworks */ = {
+		CECBCD881B2B6C5E0047E731 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECBCD8C1B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFBDAD81B1CE38D000E6F30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECBCD981B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CECBCD821B2B6C5E0047E731 /* DynamicColor */ = {
+			isa = PBXGroup;
+			children = (
+				CECBCD851B2B6C5E0047E731 /* DynamicColor.h */,
+				CECBCD831B2B6C5E0047E731 /* Supporting Files */,
+			);
+			path = DynamicColor;
+			sourceTree = "<group>";
+		};
+		CECBCD831B2B6C5E0047E731 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CECBCD841B2B6C5E0047E731 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CECBCD911B2B6C5E0047E731 /* DynamicColorTests */ = {
+			isa = PBXGroup;
+			children = (
+				CECBCD921B2B6C5E0047E731 /* Supporting Files */,
+				CECBCDA71B2B6EEB0047E731 /* DynamicColorTests.swift */,
+			);
+			path = DynamicColorTests;
+			sourceTree = "<group>";
+		};
+		CECBCD921B2B6C5E0047E731 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CECBCD931B2B6C5E0047E731 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		CEFBDAD21B1CE38D000E6F30 = {
 			isa = PBXGroup;
 			children = (
 				CEFBDB001B1CE3F2000E6F30 /* DynamicColor */,
 				CEFBDADD1B1CE38D000E6F30 /* DynamicColorExample */,
-				CEFBDB0A1B1CF49D000E6F30 /* Tests */,
+				CECBCD821B2B6C5E0047E731 /* DynamicColor */,
+				CECBCD911B2B6C5E0047E731 /* DynamicColorTests */,
 				CEFBDADC1B1CE38D000E6F30 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,7 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				CEFBDADB1B1CE38D000E6F30 /* DynamicColorExample.app */,
-				CEFBDB091B1CF49D000E6F30 /* Tests.xctest */,
+				CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */,
+				CECBCD8B1B2B6C5E0047E731 /* DynamicColorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,26 +195,57 @@
 			path = ../DynamicColor;
 			sourceTree = "<group>";
 		};
-		CEFBDB0A1B1CF49D000E6F30 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				CEFBDB141B1CF4B6000E6F30 /* DynamicColorTests.swift */,
-				CEFBDB0B1B1CF49D000E6F30 /* Supporting Files */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		CEFBDB0B1B1CF49D000E6F30 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CEFBDB0C1B1CF49D000E6F30 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		CECBCD7E1B2B6C5E0047E731 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECBCD861B2B6C5E0047E731 /* DynamicColor.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		CECBCD801B2B6C5E0047E731 /* DynamicColor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CECBCD9E1B2B6C5E0047E731 /* Build configuration list for PBXNativeTarget "DynamicColor" */;
+			buildPhases = (
+				CECBCD7C1B2B6C5E0047E731 /* Sources */,
+				CECBCD7D1B2B6C5E0047E731 /* Frameworks */,
+				CECBCD7E1B2B6C5E0047E731 /* Headers */,
+				CECBCD7F1B2B6C5E0047E731 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicColor;
+			productName = DynamicColor;
+			productReference = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CECBCD8A1B2B6C5E0047E731 /* DynamicColorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CECBCDA01B2B6C5E0047E731 /* Build configuration list for PBXNativeTarget "DynamicColorTests" */;
+			buildPhases = (
+				CECBCD871B2B6C5E0047E731 /* Sources */,
+				CECBCD881B2B6C5E0047E731 /* Frameworks */,
+				CECBCD891B2B6C5E0047E731 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CECBCD8E1B2B6C5E0047E731 /* PBXTargetDependency */,
+				CECBCD901B2B6C5E0047E731 /* PBXTargetDependency */,
+			);
+			name = DynamicColorTests;
+			productName = DynamicColorTests;
+			productReference = CECBCD8B1B2B6C5E0047E731 /* DynamicColorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CEFBDADA1B1CE38D000E6F30 /* DynamicColorExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEFBDAFA1B1CE38D000E6F30 /* Build configuration list for PBXNativeTarget "DynamicColorExample" */;
@@ -142,33 +253,17 @@
 				CEFBDAD71B1CE38D000E6F30 /* Sources */,
 				CEFBDAD81B1CE38D000E6F30 /* Frameworks */,
 				CEFBDAD91B1CE38D000E6F30 /* Resources */,
+				CECBCD9F1B2B6C5E0047E731 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CECBCD971B2B6C5E0047E731 /* PBXTargetDependency */,
 			);
 			name = DynamicColorExample;
 			productName = DynamicColorExample;
 			productReference = CEFBDADB1B1CE38D000E6F30 /* DynamicColorExample.app */;
 			productType = "com.apple.product-type.application";
-		};
-		CEFBDB081B1CF49D000E6F30 /* Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CEFBDB111B1CF49D000E6F30 /* Build configuration list for PBXNativeTarget "Tests" */;
-			buildPhases = (
-				CEFBDB051B1CF49D000E6F30 /* Sources */,
-				CEFBDB061B1CF49D000E6F30 /* Frameworks */,
-				CEFBDB071B1CF49D000E6F30 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CEFBDB101B1CF49D000E6F30 /* PBXTargetDependency */,
-			);
-			name = Tests;
-			productName = Tests;
-			productReference = CEFBDB091B1CF49D000E6F30 /* Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -179,12 +274,15 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Yannick LORIOT";
 				TargetAttributes = {
-					CEFBDADA1B1CE38D000E6F30 = {
+					CECBCD801B2B6C5E0047E731 = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
-					CEFBDB081B1CF49D000E6F30 = {
+					CECBCD8A1B2B6C5E0047E731 = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = CEFBDADA1B1CE38D000E6F30;
+					};
+					CEFBDADA1B1CE38D000E6F30 = {
+						CreatedOnToolsVersion = 6.3.2;
 					};
 				};
 			};
@@ -202,12 +300,27 @@
 			projectRoot = "";
 			targets = (
 				CEFBDADA1B1CE38D000E6F30 /* DynamicColorExample */,
-				CEFBDB081B1CF49D000E6F30 /* Tests */,
+				CECBCD801B2B6C5E0047E731 /* DynamicColor */,
+				CECBCD8A1B2B6C5E0047E731 /* DynamicColorTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CECBCD7F1B2B6C5E0047E731 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECBCD891B2B6C5E0047E731 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEFBDAD91B1CE38D000E6F30 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,16 +331,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFBDB071B1CF49D000E6F30 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CECBCD7C1B2B6C5E0047E731 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
+		CECBCD871B2B6C5E0047E731 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECBCDA11B2B6CCC0047E731 /* UIColor.swift in Sources */,
+				CECBCDA21B2B6CCC0047E731 /* HSL.swift in Sources */,
+				CECBCDA81B2B6EEB0047E731 /* DynamicColorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEFBDAD71B1CE38D000E6F30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,23 +363,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEFBDB051B1CF49D000E6F30 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEFBDB161B1D9F18000E6F30 /* UIColor.swift in Sources */,
-				CEFBDB171B1D9F18000E6F30 /* HSL.swift in Sources */,
-				CEFBDB151B1CF4B6000E6F30 /* DynamicColorTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CEFBDB101B1CF49D000E6F30 /* PBXTargetDependency */ = {
+		CECBCD8E1B2B6C5E0047E731 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CECBCD801B2B6C5E0047E731 /* DynamicColor */;
+			targetProxy = CECBCD8D1B2B6C5E0047E731 /* PBXContainerItemProxy */;
+		};
+		CECBCD901B2B6C5E0047E731 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CEFBDADA1B1CE38D000E6F30 /* DynamicColorExample */;
-			targetProxy = CEFBDB0F1B1CF49D000E6F30 /* PBXContainerItemProxy */;
+			targetProxy = CECBCD8F1B2B6C5E0047E731 /* PBXContainerItemProxy */;
+		};
+		CECBCD971B2B6C5E0047E731 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CECBCD801B2B6C5E0047E731 /* DynamicColor */;
+			targetProxy = CECBCD961B2B6C5E0047E731 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -280,6 +403,80 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CECBCD9A1B2B6C5E0047E731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DynamicColor/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CECBCD9B1B2B6C5E0047E731 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DynamicColor/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CECBCD9C1B2B6C5E0047E731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DynamicColorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicColorExample.app/DynamicColorExample";
+			};
+			name = Debug;
+		};
+		CECBCD9D1B2B6C5E0047E731 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DynamicColorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicColorExample.app/DynamicColorExample";
+			};
+			name = Release;
+		};
 		CEFBDAF81B1CE38D000E6F30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -383,43 +580,25 @@
 			};
 			name = Release;
 		};
-		CEFBDB121B1CF49D000E6F30 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicColorExample.app/DynamicColorExample";
-			};
-			name = Debug;
-		};
-		CEFBDB131B1CF49D000E6F30 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicColorExample.app/DynamicColorExample";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CECBCD9E1B2B6C5E0047E731 /* Build configuration list for PBXNativeTarget "DynamicColor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECBCD9A1B2B6C5E0047E731 /* Debug */,
+				CECBCD9B1B2B6C5E0047E731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CECBCDA01B2B6C5E0047E731 /* Build configuration list for PBXNativeTarget "DynamicColorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECBCD9C1B2B6C5E0047E731 /* Debug */,
+				CECBCD9D1B2B6C5E0047E731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CEFBDAD61B1CE38D000E6F30 /* Build configuration list for PBXProject "DynamicColorExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -434,15 +613,6 @@
 			buildConfigurations = (
 				CEFBDAFB1B1CE38D000E6F30 /* Debug */,
 				CEFBDAFC1B1CE38D000E6F30 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CEFBDB111B1CF49D000E6F30 /* Build configuration list for PBXNativeTarget "Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CEFBDB121B1CF49D000E6F30 /* Debug */,
-				CEFBDB131B1CF49D000E6F30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
