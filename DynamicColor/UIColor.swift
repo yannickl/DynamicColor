@@ -58,7 +58,7 @@ public extension UIColor {
   /**
   Creates a color from an hex int.
 
-  :param: hexString A hexa-decimal color number representation.
+  :param: hex A hexa-decimal integer (`UInt32`) that represents a color.
   */
   public convenience init(hex: UInt32) {
     let mask = 0x000000FF
