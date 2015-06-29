@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEA829931B41D5E40050DEEB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* UIColor.swift */; };
+		CEA829941B41D5E40050DEEB /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CECBCD861B2B6C5E0047E731 /* DynamicColor.h in Headers */ = {isa = PBXBuildFile; fileRef = CECBCD851B2B6C5E0047E731 /* DynamicColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CECBCD8C1B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; };
 		CECBCD981B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; };
@@ -338,6 +340,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA829931B41D5E40050DEEB /* UIColor.swift in Sources */,
+				CEA829941B41D5E40050DEEB /* HSL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +594,7 @@
 				CECBCD9B1B2B6C5E0047E731 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CECBCDA01B2B6C5E0047E731 /* Build configuration list for PBXNativeTarget "DynamicColorTests" */ = {
 			isa = XCConfigurationList;
@@ -598,6 +603,7 @@
 				CECBCD9D1B2B6C5E0047E731 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEFBDAD61B1CE38D000E6F30 /* Build configuration list for PBXProject "DynamicColorExample" */ = {
 			isa = XCConfigurationList;
