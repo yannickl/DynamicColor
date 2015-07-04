@@ -113,9 +113,9 @@ This can mix a given color with the receiver. It takes the average of each of th
 ```swift
 let originalColor = UIColor(hex: 0xc0392b)
 
-let mixColor = originalColor.mixColor(UIColor.blueColor())
+let mixColor = originalColor.mixWithColor(UIColor.blueColor())
 // equivalent to
-// mixColor = originalColor.mixColor(UIColor.blueColor(), weight: 0.5)
+// mixColor = originalColor.mixWithColor(UIColor.blueColor(), weight: 0.5)
 ```
 
 To go further, take a look at the example project.
