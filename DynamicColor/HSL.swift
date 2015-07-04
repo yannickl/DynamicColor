@@ -28,9 +28,13 @@ import UIKit
 
 /// Hue-saturation-lightness structure to make the color manipulation easier.
 internal struct HSL {
+  /// Hue value between 0 and 1
   var h: CGFloat = 0.0
+  /// Saturation value between 0 and 1
   var s: CGFloat = 0.0
+  /// Lightness value between 0 and 1
   var l: CGFloat = 0.0
+  /// Alpha value between 0 and 1
   var a: CGFloat = 1.0
 
   // MARK: - Initializing HSL Colors
@@ -45,13 +49,13 @@ internal struct HSL {
   */
   init(hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat) {
     h = hue
-    s = saturation
-    l = lightness
-    a = alpha
+    s = max(min(saturation, 1), 0)
+    l = max(min(lightness, 1), 0)
+    a = max(min(alpha, 1), 0)
   }
 
   /**
-  Initializes and creates a HSL color from a UIColor.
+  Initializes and creates a HSL color from a UIColor object.
   
   :param: color A UIColor object
   */
@@ -91,6 +95,7 @@ internal struct HSL {
       }
 
       h /= 6
+      a = alpha
     }
   }
 
@@ -180,7 +185,7 @@ internal struct HSL {
   :returns: A lighter HSL color.
   */
   func lighten(amount: CGFloat) -> HSL {
-    return HSL(hue: h, saturation: s, lightness: max(amount, l + amount), alpha: a)
+    return HSL(hue: h, saturation: s, lightness: l + amount, alpha: a)
   }
 
   /**
@@ -191,7 +196,7 @@ internal struct HSL {
   :returns: A darker HSL color.
   */
   func darken(amount: CGFloat) -> HSL {
-    return HSL(hue: h, saturation: s, lightness: min(1 - amount, l - amount), alpha: a)
+    return HSL(hue: h, saturation: s, lightness: l - amount, alpha: a)
   }
 
   /**
@@ -202,7 +207,7 @@ internal struct HSL {
   :returns: A HSL color more saturated.
   */
   func saturate(amount: CGFloat) -> HSL {
-    return HSL(hue: h, saturation: min(1, max(0, s + amount)), lightness: l, alpha: a)
+    return HSL(hue: h, saturation: s + amount, lightness: l, alpha: a)
   }
 
   /**
@@ -213,6 +218,6 @@ internal struct HSL {
   :returns: A HSL color less saturated.
   */
   func desaturate(amount: CGFloat) -> HSL {
-    return HSL(hue: h, saturation: min(1, max(0, s - amount)), lightness: l, alpha: a)
+    return HSL(hue: h, saturation: s - amount, lightness: l, alpha: a)
   }
 }
