@@ -47,7 +47,7 @@ internal struct HSL {
   :param: l The lightness component of the color object, specified as a value between 0.0 and 1.0.
   :param: a The opacity component of the color object, specified as a value between 0.0 and 1.0.
   */
-  init(hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat) {
+  init(hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat = 1) {
     h = hue
     s = max(min(saturation, 1), 0)
     l = max(min(lightness, 1), 0)
