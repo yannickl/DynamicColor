@@ -153,9 +153,9 @@ public extension UIColor {
   :returns: A lighter UIColor.
   */
   public func lightenColor(amount: CGFloat) -> UIColor {
-    var amount = min(1, max(0, amount))
+    let normalizedAmount = min(1, max(0, amount))
 
-    return HSL(color: self).lighten(amount).toUIColor()
+    return HSL(color: self).lighten(normalizedAmount).toUIColor()
   }
 
   /**
@@ -177,9 +177,9 @@ public extension UIColor {
   :returns: A darker UIColor.
   */
   public func darkenColor(amount: CGFloat) -> UIColor {
-    var amount = min(1, max(0, amount))
+    let normalizedAmount = min(1, max(0, amount))
 
-    return HSL(color: self).darken(amount).toUIColor()
+    return HSL(color: self).darken(normalizedAmount).toUIColor()
   }
 
   /**
@@ -201,9 +201,9 @@ public extension UIColor {
   :returns: A UIColor more saturated.
   */
   public func saturateColor(amount: CGFloat) -> UIColor {
-    var amount = min(1, max(0, amount))
+    let normalizedAmount = min(1, max(0, amount))
 
-    return HSL(color: self).saturate(amount).toUIColor()
+    return HSL(color: self).saturate(normalizedAmount).toUIColor()
   }
 
   /**
@@ -225,9 +225,9 @@ public extension UIColor {
   :returns: A UIColor less saturated.
   */
   public func desaturateColor(amount: CGFloat) -> UIColor {
-    var amount = min(1, max(0, amount))
+    let normalizedAmount = min(1, max(0, amount))
     
-    return HSL(color: self).desaturate(amount).toUIColor()
+    return HSL(color: self).desaturate(normalizedAmount).toUIColor()
   }
 
   /**
@@ -274,7 +274,7 @@ public extension UIColor {
   :returns: A color object corresponding to the two colors object mixed together.
   */
   public func mixWithColor(color: UIColor, weight: CGFloat = 0.5) -> UIColor {
-    var weight = min(1, max(0, weight))
+    let normalizedWeight = min(1, max(0, weight))
 
     var red1: CGFloat   = 0
     var green1: CGFloat = 0
@@ -288,14 +288,14 @@ public extension UIColor {
 
     if getRed(&red1, green: &green1, blue: &blue1, alpha: &alpha1)
       && color.getRed(&red2, green: &green2, blue: &blue2, alpha: &alpha2) {
-        let w = 2 * weight - 1
+        let w = 2 * normalizedWeight - 1
 
         let a = alpha1 - alpha2
 
         let w2 = (((w * a == -1) ? w : (w + a) / (1 + w * a)) + 1) / 2
         let w1 = 1 - w2
 
-        return UIColor(red: (w1 * red1 + w2 * red2), green: (w1 * green1 + w2 * green2), blue: (w1 * blue1 + w2 * blue2), alpha: (alpha1 * weight + alpha2 * (1 - weight)))
+        return UIColor(red: (w1 * red1 + w2 * red2), green: (w1 * green1 + w2 * green2), blue: (w1 * blue1 + w2 * blue2), alpha: (alpha1 * normalizedWeight + alpha2 * (1 - normalizedWeight)))
     }
     
     return self

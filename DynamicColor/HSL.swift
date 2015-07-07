@@ -125,10 +125,10 @@ internal struct HSL {
       m2 = lightness * (saturation + 1)
     }
     else {
-      m2 = (lightness + saturation) - (lightness *  saturation)
+      m2 = (lightness + saturation) - (lightness * saturation)
     }
 
-    var m1: CGFloat = (lightness * 2) - m2
+    let m1: CGFloat = (lightness * 2) - m2
 
     let r = hueToRgb(m1, m2: m2, h: hue + 1 / 3)
     let g = hueToRgb(m1, m2: m2, h: hue)
