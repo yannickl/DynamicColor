@@ -153,7 +153,7 @@ public extension UIColor {
   :returns: A lighter UIColor.
   */
   public func lightenColor(amount: CGFloat) -> UIColor {
-    var amount = min(1, max(0, amount))
+    let amount = min(1, max(0, amount))
 
     return HSL(color: self).lighten(amount).toUIColor()
   }
@@ -177,7 +177,7 @@ public extension UIColor {
   :returns: A darker UIColor.
   */
   public func darkenColor(amount: CGFloat) -> UIColor {
-    var amount = min(1, max(0, amount))
+    let amount = min(1, max(0, amount))
 
     return HSL(color: self).darken(amount).toUIColor()
   }
@@ -201,7 +201,7 @@ public extension UIColor {
   :returns: A UIColor more saturated.
   */
   public func saturateColor(amount: CGFloat) -> UIColor {
-    var amount = min(1, max(0, amount))
+    let amount = min(1, max(0, amount))
 
     return HSL(color: self).saturate(amount).toUIColor()
   }
@@ -225,7 +225,7 @@ public extension UIColor {
   :returns: A UIColor less saturated.
   */
   public func desaturateColor(amount: CGFloat) -> UIColor {
-    var amount = min(1, max(0, amount))
+    let amount = min(1, max(0, amount))
     
     return HSL(color: self).desaturate(amount).toUIColor()
   }
@@ -274,7 +274,7 @@ public extension UIColor {
   :returns: A color object corresponding to the two colors object mixed together.
   */
   public func mixWithColor(color: UIColor, weight: CGFloat = 0.5) -> UIColor {
-    var weight = min(1, max(0, weight))
+    let weight = min(1, max(0, weight))
 
     var red1: CGFloat   = 0
     var green1: CGFloat = 0
