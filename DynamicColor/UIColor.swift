@@ -220,7 +220,7 @@ public extension UIColor {
   /**
   Creates and returns a color object with the saturation decreased by the given amount.
 
-  :param: amount Float between 0 and 1. The default amount is equal to 0.2.
+  :param: amount Float between 0 and 1.
 
   :returns: A UIColor less saturated.
   */
@@ -290,12 +290,16 @@ public extension UIColor {
       && color.getRed(&red2, green: &green2, blue: &blue2, alpha: &alpha2) {
         let w = 2 * normalizedWeight - 1
 
-        let a = alpha1 - alpha2
-
+        let a  = alpha1 - alpha2
         let w2 = (((w * a == -1) ? w : (w + a) / (1 + w * a)) + 1) / 2
         let w1 = 1 - w2
 
-        return UIColor(red: (w1 * red1 + w2 * red2), green: (w1 * green1 + w2 * green2), blue: (w1 * blue1 + w2 * blue2), alpha: (alpha1 * normalizedWeight + alpha2 * (1 - normalizedWeight)))
+        let red   = (w1 * red1 + w2 * red2)
+        let green = (w1 * green1 + w2 * green2)
+        let blue  = (w1 * blue1 + w2 * blue2)
+        let alpha = (alpha1 * normalizedWeight + alpha2 * (1 - normalizedWeight))
+
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
     return self

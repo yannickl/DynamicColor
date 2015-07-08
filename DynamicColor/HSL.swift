@@ -28,7 +28,7 @@ import UIKit
 
 /// Hue-saturation-lightness structure to make the color manipulation easier.
 internal struct HSL {
-  /// Hue value between 0 and 1
+  /// Hue value between 0 and 1 (0 = 0 degree, 1 = 360 degree)
   var h: CGFloat = 0.0
   /// Saturation value between 0 and 1
   var s: CGFloat = 0.0
@@ -42,7 +42,7 @@ internal struct HSL {
   /**
   Initializes and creates a HSL color from the hue, saturation, lightness and alpha components.
 
-  :param: h The hue component of the color object, specified as a value between 0.0 and 1.0.
+  :param: h The hue component of the color object, specified as a value between 0.0 and 1.0 (0 for 0 degree, 1 for 360 degree).
   :param: s The saturation component of the color object, specified as a value between 0.0 and 1.0.
   :param: l The lightness component of the color object, specified as a value between 0.0 and 1.0.
   :param: a The opacity component of the color object, specified as a value between 0.0 and 1.0.
@@ -109,15 +109,7 @@ internal struct HSL {
   func toUIColor() -> UIColor {
     let lightness  = min(1, max(0, l))
     let saturation = min(1, max(0, s))
-    var hue        = h
-
-    while hue < 0 {
-      hue += 1
-    }
-
-    while hue > 1 {
-      hue -= 1
-    }
+    var hue        = h % 1
 
     var m2: CGFloat = 0
 

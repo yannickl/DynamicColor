@@ -118,7 +118,9 @@ let mixColor = originalColor.mixWithColor(UIColor.blueColor())
 // mixColor = originalColor.mixWithColor(UIColor.blueColor(), weight: 0.5)
 ```
 
-To go further, take a look at the example project.
+#### And many more...
+
+`DynamicColor` also provides many another useful methods to manipulate the colors like hex strings, color components, etc. To go further, take a look at the example project.
 
 ## Installation
 
