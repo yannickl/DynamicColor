@@ -95,6 +95,62 @@ public extension UIColor {
     }
   }
 
+  // MARK: - Getting the RGBA components
+
+  /**
+  Returns the RGA components.
+
+  :returns: The RGBA component as a tuple.
+  */
+  public final func toComponents() -> (CGFloat, CGFloat, CGFloat, CGFloat) {
+    var r: CGFloat = 0
+    var g: CGFloat = 0
+    var b: CGFloat = 0
+    var a: CGFloat = 0
+
+    if getRed(&r, green: &g, blue: &b, alpha: &a) {
+      return (r, g, b, a)
+    }
+
+    return (0, 0, 0, 0)
+  }
+
+  /**
+  Returns the red component.
+  
+  :returns: The red component as CGFloat.
+  */
+  public final func red() -> CGFloat {
+    return toComponents().0
+  }
+
+  /**
+  Returns the green component.
+
+  :returns: The green component as CGFloat.
+  */
+  public final func green() -> CGFloat {
+    return toComponents().1
+  }
+
+  /**
+  Returns the blue component.
+
+  :returns: The blue component as CGFloat.
+  */
+  public final func blue() -> CGFloat {
+    return toComponents().2
+  }
+
+  /**
+  Returns the alpha component.
+
+  :returns: The alpha component as CGFloat.
+  */
+  public final func alpha() -> CGFloat {
+    return toComponents().3
+  }
+
   // MARK: - Identifying and Comparing Colors
 
   /**
