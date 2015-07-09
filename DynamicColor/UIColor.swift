@@ -102,7 +102,7 @@ public extension UIColor {
 
   :returns: The RGBA component as a tuple.
   */
-  public final func toComponents() -> (CGFloat, CGFloat, CGFloat, CGFloat) {
+  public final func toRGBAComponents() -> (CGFloat, CGFloat, CGFloat, CGFloat) {
     var r: CGFloat = 0
     var g: CGFloat = 0
     var b: CGFloat = 0
@@ -120,8 +120,8 @@ public extension UIColor {
   
   :returns: The red component as CGFloat.
   */
-  public final func red() -> CGFloat {
-    return toComponents().0
+  public final func redComponent() -> CGFloat {
+    return toRGBAComponents().0
   }
 
   /**
@@ -129,8 +129,8 @@ public extension UIColor {
 
   :returns: The green component as CGFloat.
   */
-  public final func green() -> CGFloat {
-    return toComponents().1
+  public final func greenComponent() -> CGFloat {
+    return toRGBAComponents().1
   }
 
   /**
@@ -138,8 +138,8 @@ public extension UIColor {
 
   :returns: The blue component as CGFloat.
   */
-  public final func blue() -> CGFloat {
-    return toComponents().2
+  public final func blueComponent() -> CGFloat {
+    return toRGBAComponents().2
   }
 
   /**
@@ -147,8 +147,8 @@ public extension UIColor {
 
   :returns: The alpha component as CGFloat.
   */
-  public final func alpha() -> CGFloat {
-    return toComponents().3
+  public final func alphaComponent() -> CGFloat {
+    return toRGBAComponents().3
   }
 
   // MARK: - Identifying and Comparing Colors

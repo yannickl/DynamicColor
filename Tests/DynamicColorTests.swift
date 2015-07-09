@@ -66,6 +66,48 @@ class DynamicColorTests: XCTestCase {
     XCTAssert(custom.isEqualToHexString("#769a2b"), "Color string should be equal to #769a2b")
   }
 
+  func testToRGBAComponents() {
+    let customColor = UIColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
+
+    let rgba = customColor.toRGBAComponents()
+    XCTAssert(rgba.0 == 0.23, "Color red component should be equal to 0.23")
+    XCTAssert(rgba.1 == 0.46, "Color green component should be equal to 0.46")
+    XCTAssert(rgba.2 == 0.32, "Color blue component should be equal to 0.32")
+    XCTAssert(rgba.3 == 1, "Color alpha component should be equal to 1")
+  }
+
+  func testRedComponent() {
+    let customColor = UIColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
+
+    let redComponent = customColor.redComponent()
+
+    XCTAssert(redComponent == 0.23, "Color red component should be equal to 0.23")
+  }
+
+  func testGreenComponent() {
+    let customColor = UIColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
+
+    let greenComponent = customColor.greenComponent()
+
+    XCTAssert(greenComponent == 0.46, "Color green component should be equal to 0.46")
+  }
+
+  func testBlueComponent() {
+    let customColor = UIColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
+
+    let blueComponent = customColor.blueComponent()
+
+    XCTAssert(blueComponent == 0.32, "Color blue component should be equal to 0.32")
+  }
+
+  func testAlphaComponent() {
+    let customColor = UIColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
+
+    let alphaComponent = customColor.alphaComponent()
+
+    XCTAssert(alphaComponent == 1, "Color alpha component should be equal to 1")
+  }
+
   func testAdjustHueColor() {
     let custom1  = UIColor(hex: 0x881111).adjustedHueColor(45 / 360)
     let custom2 = UIColor(hex: 0xc0392b).adjustedHueColor(90 / 360)
