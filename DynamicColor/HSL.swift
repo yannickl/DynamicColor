@@ -60,43 +60,38 @@ internal struct HSL {
   :param: color A UIColor object
   */
   init(color: UIColor) {
-    var red: CGFloat   = 0
-    var blue: CGFloat  = 0
-    var green: CGFloat = 0
-    var alpha: CGFloat = 0
+    let rgba = color.toRGBAComponents()
 
-    if color.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
-      let maximum   = max(red, max(green, blue))
-      let mininimum = min(red, min(green, blue))
+    let maximum   = max(rgba.r, max(rgba.g, rgba.b))
+    let mininimum = min(rgba.r, min(rgba.g, rgba.b))
 
-      let delta = maximum - mininimum
+    let delta = maximum - mininimum
 
-      h = 0
-      s = 0
-      l = (maximum + mininimum) / 2
+    h = 0
+    s = 0
+    l = (maximum + mininimum) / 2
 
-      if delta != 0 {
-        if l < 0.5 {
-          s = delta / (maximum + mininimum)
-        }
-        else {
-          s = delta / (2.0 - maximum - mininimum)
-        }
-
-        if red == maximum {
-          h = (green - blue) / delta + (green < blue ? 6 : 0)
-        }
-        else if green == maximum {
-          h = (blue - red) / delta + 2
-        }
-        else if blue == maximum {
-          h = (red - green) / delta + 4
-        }
+    if delta != 0 {
+      if l < 0.5 {
+        s = delta / (maximum + mininimum)
+      }
+      else {
+        s = delta / (2.0 - maximum - mininimum)
       }
 
-      h /= 6
-      a = alpha
+      if rgba.r == maximum {
+        h = (rgba.g - rgba.b) / delta + (rgba.g < rgba.b ? 6 : 0)
+      }
+      else if rgba.g == maximum {
+        h = (rgba.b - rgba.r) / delta + 2
+      }
+      else if rgba.b == maximum {
+        h = (rgba.r - rgba.g) / delta + 4
+      }
     }
+
+    h /= 6
+    a = rgba.a
   }
 
   // MARK: - Transforming HSL Color

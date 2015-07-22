@@ -70,10 +70,10 @@ class DynamicColorTests: XCTestCase {
     let customColor = UIColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
 
     let rgba = customColor.toRGBAComponents()
-    XCTAssert(rgba.0 == 0.23, "Color red component should be equal to 0.23")
-    XCTAssert(rgba.1 == 0.46, "Color green component should be equal to 0.46")
-    XCTAssert(rgba.2 == 0.32, "Color blue component should be equal to 0.32")
-    XCTAssert(rgba.3 == 1, "Color alpha component should be equal to 1")
+    XCTAssert(rgba.r == 0.23, "Color red component should be equal to 0.23")
+    XCTAssert(rgba.g == 0.46, "Color green component should be equal to 0.46")
+    XCTAssert(rgba.b == 0.32, "Color blue component should be equal to 0.32")
+    XCTAssert(rgba.a == 1, "Color alpha component should be equal to 1")
   }
 
   func testRedComponent() {

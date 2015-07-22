@@ -67,9 +67,9 @@ public extension UIColor {
     let g = Int(hex >> 8) & mask
     let b = Int(hex) & mask
 
-    let red   = CGFloat(r) / 255.0
-    let green = CGFloat(g) / 255.0
-    let blue  = CGFloat(b) / 255.0
+    let red   = CGFloat(r) / 255
+    let green = CGFloat(g) / 255
+    let blue  = CGFloat(b) / 255
 
     self.init(red:red, green:green, blue:blue, alpha:1)
   }
@@ -80,19 +80,10 @@ public extension UIColor {
   :returns: A string similar to this pattern "#f4003b"
   */
   public func toHexString() -> String {
-    var r: CGFloat = 0
-    var g: CGFloat = 0
-    var b: CGFloat = 0
-    var a: CGFloat = 0
+    let rgba       = toRGBAComponents()
+    let colorToInt = (Int)(rgba.r * 255) << 16 | (Int)(rgba.g * 255) << 8 | (Int)(rgba.b * 255) << 0
 
-    if getRed(&r, green: &g, blue: &b, alpha: &a) {
-      let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
-
-      return String(format:"#%06x", rgb)
-    }
-    else {
-      return "#000000"
-    }
+    return String(format:"#%06x", colorToInt)
   }
 
   // MARK: - Getting the RGBA components
@@ -100,9 +91,9 @@ public extension UIColor {
   /**
   Returns the RGA components.
 
-  :returns: The RGBA component as a tuple.
+  :returns: The RGBA component as a tuple (r, g, b, a).
   */
-  public final func toRGBAComponents() -> (CGFloat, CGFloat, CGFloat, CGFloat) {
+  public final func toRGBAComponents() -> (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
     var r: CGFloat = 0
     var g: CGFloat = 0
     var b: CGFloat = 0
@@ -121,7 +112,7 @@ public extension UIColor {
   :returns: The red component as CGFloat.
   */
   public final func redComponent() -> CGFloat {
-    return toRGBAComponents().0
+    return toRGBAComponents().r
   }
 
   /**
@@ -130,7 +121,7 @@ public extension UIColor {
   :returns: The green component as CGFloat.
   */
   public final func greenComponent() -> CGFloat {
-    return toRGBAComponents().1
+    return toRGBAComponents().g
   }
 
   /**
@@ -139,7 +130,7 @@ public extension UIColor {
   :returns: The blue component as CGFloat.
   */
   public final func blueComponent() -> CGFloat {
-    return toRGBAComponents().2
+    return toRGBAComponents().b
   }
 
   /**
@@ -148,7 +139,7 @@ public extension UIColor {
   :returns: The alpha component as CGFloat.
   */
   public final func alphaComponent() -> CGFloat {
-    return toRGBAComponents().3
+    return toRGBAComponents().a
   }
 
   // MARK: - Identifying and Comparing Colors
@@ -305,16 +296,9 @@ public extension UIColor {
   :returns: An inverse (negative) of the original color.
   */
   public func invertColor() -> UIColor {
-    var red: CGFloat   = 0
-    var green: CGFloat = 0
-    var blue: CGFloat  = 0
-    var alpha: CGFloat = 0
+    let rgba = toRGBAComponents()
 
-    if getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
-      return UIColor(red: 1 - red, green: 1 - green, blue: 1 - blue, alpha: alpha)
-    }
-
-    return self
+    return UIColor(red: 1 - rgba.r, green: 1 - rgba.g, blue: 1 - rgba.b, alpha: rgba.a)
   }
 
   // MARK: - Mixing Colors
@@ -332,33 +316,21 @@ public extension UIColor {
   public func mixWithColor(color: UIColor, weight: CGFloat = 0.5) -> UIColor {
     let normalizedWeight = min(1, max(0, weight))
 
-    var red1: CGFloat   = 0
-    var green1: CGFloat = 0
-    var blue1: CGFloat  = 0
-    var alpha1: CGFloat = 0
+    var c1 = toRGBAComponents()
+    var c2 = color.toRGBAComponents()
 
-    var red2: CGFloat   = 0
-    var green2: CGFloat = 0
-    var blue2: CGFloat  = 0
-    var alpha2: CGFloat = 0
+    let w = 2 * normalizedWeight - 1
 
-    if getRed(&red1, green: &green1, blue: &blue1, alpha: &alpha1)
-      && color.getRed(&red2, green: &green2, blue: &blue2, alpha: &alpha2) {
-        let w = 2 * normalizedWeight - 1
+    let a  = c1.a - c2.a
+    let w2 = (((w * a == -1) ? w : (w + a) / (1 + w * a)) + 1) / 2
+    let w1 = 1 - w2
 
-        let a  = alpha1 - alpha2
-        let w2 = (((w * a == -1) ? w : (w + a) / (1 + w * a)) + 1) / 2
-        let w1 = 1 - w2
+    let red   = (w1 * c1.r + w2 * c2.r)
+    let green = (w1 * c1.g + w2 * c2.g)
+    let blue  = (w1 * c1.b + w2 * c2.b)
+    let alpha = (c1.a * normalizedWeight + c2.a * (1 - normalizedWeight))
 
-        let red   = (w1 * red1 + w2 * red2)
-        let green = (w1 * green1 + w2 * green2)
-        let blue  = (w1 * blue1 + w2 * blue2)
-        let alpha = (alpha1 * normalizedWeight + alpha2 * (1 - normalizedWeight))
-
-        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
-    }
-    
-    return self
+    return UIColor(red: red, green: green, blue: blue, alpha: alpha)
   }
 
   /**
