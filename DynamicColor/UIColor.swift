@@ -56,9 +56,9 @@ public extension UIColor {
   }
 
   /**
-  Creates a color from an hex int.
+  Creates a color from an hex integer.
 
-  :param: hex A hexa-decimal integer (`UInt32`) that represents a color.
+  :param: hex A hexa-decimal UInt32 that represents a color.
   */
   public convenience init(hex: UInt32) {
     let mask = 0x000000FF
@@ -77,13 +77,22 @@ public extension UIColor {
   /**
   Returns the color representation as hexadecimal string.
 
-  :returns: A string similar to this pattern "#f4003b"
+  :returns: A string similar to this pattern "#f4003b".
   */
-  public func toHexString() -> String {
-    let rgba       = toRGBAComponents()
-    let colorToInt = (Int)(rgba.r * 255) << 16 | (Int)(rgba.g * 255) << 8 | (Int)(rgba.b * 255) << 0
+  public final func toHexString() -> String {
+    return String(format:"#%06x", toHex())
+  }
 
-    return String(format:"#%06x", colorToInt)
+  /**
+  Returns the color representation as an integer.
+
+  :returns: A UInt32 object.
+  */
+  public final func toHex() -> UInt32 {
+    let rgba       = toRGBAComponents()
+    let colorToInt = (UInt32)(rgba.r * 255) << 16 | (UInt32)(rgba.g * 255) << 8 | (UInt32)(rgba.b * 255) << 0
+
+    return colorToInt
   }
 
   // MARK: - Getting the RGBA components
