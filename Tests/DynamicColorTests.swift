@@ -74,12 +74,12 @@ class DynamicColorTests: XCTestCase {
     let black  = UIColor.blackColor()
     let custom = UIColor(hex: 0x769a2b)
 
-    XCTAssert(red.toHex() == 0xff0000, "Color string should be equal to #ff0000")
-    XCTAssert(blue.toHex() == 0x0000ff, "Color string should be equal to #0000ff")
-    XCTAssert(green.toHex() == 0x00ff00, "Color string should be equal to #00ff00")
-    XCTAssert(yellow.toHex() == 0xffff00, "Color string should be equal to #ffff00")
-    XCTAssert(black.toHex() == 0x000000, "Color string should be equal to #000000")
-    XCTAssert(custom.toHex() == 0x769a2b, "Color string should be equal to #769a2b")
+    XCTAssert(red.toHex() == 0xff0000, "Color string should be equal to 0xff0000")
+    XCTAssert(blue.toHex() == 0x0000ff, "Color string should be equal to 0x0000ff")
+    XCTAssert(green.toHex() == 0x00ff00, "Color string should be equal to 0x00ff00")
+    XCTAssert(yellow.toHex() == 0xffff00, "Color string should be equal to 0xffff00")
+    XCTAssert(black.toHex() == 0x000000, "Color string should be equal to 0x000000")
+    XCTAssert(custom.toHex() == 0x769a2b, "Color string should be equal to 0x769a2b")
   }
 
   func testIsEqualToHexString() {
@@ -96,6 +96,22 @@ class DynamicColorTests: XCTestCase {
     XCTAssert(yellow.isEqualToHexString("#ffff00"), "Color string should be equal to #ffff00")
     XCTAssert(black.isEqualToHexString("#000000"), "Color string should be equal to #000000")
     XCTAssert(custom.isEqualToHexString("#769a2b"), "Color string should be equal to #769a2b")
+  }
+
+  func testIsEqualToHex() {
+    let red    = UIColor.redColor()
+    let blue   = UIColor.blueColor()
+    let green  = UIColor.greenColor()
+    let yellow = UIColor.yellowColor()
+    let black  = UIColor.blackColor()
+    let custom = UIColor(hex: 0x769a2b)
+
+    XCTAssert(red.isEqualToHex(0xff0000), "Color string should be equal to 0xff0000")
+    XCTAssert(blue.isEqualToHex(0x0000ff), "Color string should be equal to 0x0000ff")
+    XCTAssert(green.isEqualToHex(0x00ff00), "Color string should be equal to 0x00ff00")
+    XCTAssert(yellow.isEqualToHex(0xffff00), "Color string should be equal to 0xffff00")
+    XCTAssert(black.isEqualToHex(0x000000), "Color string should be equal to 0x000000")
+    XCTAssert(custom.isEqualToHex(0x769a2b), "Color string should be equal to 0x769a2b")
   }
 
   func testToRGBAComponents() {

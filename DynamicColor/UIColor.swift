@@ -86,7 +86,7 @@ public extension UIColor {
   /**
   Returns the color representation as an integer.
 
-  :returns: A UInt32 object.
+  :returns: A UInt32 that represents the hexa-decimal color.
   */
   public final func toHex() -> UInt32 {
     let rgba       = toRGBAComponents()
@@ -158,10 +158,21 @@ public extension UIColor {
 
   :param: hexString A hexa-decimal color number representation to be compared to the receiver.
 
-  :returns: true if the receiver and the string are equal, otherwise false.
+  :returns: true if the receiver and the string are equals, otherwise false.
   */
   public func isEqualToHexString(hexString: String) -> Bool {
     return self.toHexString() == hexString
+  }
+
+  /**
+  Returns a boolean value that indicates whether the receiver is equal to the given hexa-decimal integer.
+
+  :param: hex A UInt32 that represents the hexa-decimal color.
+
+  :returns: true if the receiver and the integer are equals, otherwise false.
+  */
+  public func isEqualToHex(hex: UInt32) -> Bool {
+    return self.toHex() == hex
   }
 
   // MARK: - Deriving Colors
