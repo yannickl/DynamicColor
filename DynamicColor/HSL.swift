@@ -28,13 +28,13 @@ import UIKit
 
 /// Hue-saturation-lightness structure to make the color manipulation easier.
 internal struct HSL {
-  /// Hue value between 0 and 1 (0 = 0 degree, 1 = 360 degree)
+  /// Hue value between 0.0 and 1.0 (0.0 = 0 degree, 1.0 = 360 degree).
   var h: CGFloat = 0.0
-  /// Saturation value between 0 and 1
+  /// Saturation value between 0.0 and 1.0.
   var s: CGFloat = 0.0
-  /// Lightness value between 0 and 1
+  /// Lightness value between 0.0 and 1.0.
   var l: CGFloat = 0.0
-  /// Alpha value between 0 and 1
+  /// Alpha value between 0.0 and 1.0.
   var a: CGFloat = 1.0
 
   // MARK: - Initializing HSL Colors
@@ -42,7 +42,7 @@ internal struct HSL {
   /**
   Initializes and creates a HSL color from the hue, saturation, lightness and alpha components.
 
-  :param: h The hue component of the color object, specified as a value between 0.0 and 1.0 (0 for 0 degree, 1 for 360 degree).
+  :param: h The hue component of the color object, specified as a value between 0.0 and 1.0 (0.0 for 0 degree, 1.0 for 360 degree).
   :param: s The saturation component of the color object, specified as a value between 0.0 and 1.0.
   :param: l The lightness component of the color object, specified as a value between 0.0 and 1.0.
   :param: a The opacity component of the color object, specified as a value between 0.0 and 1.0.
@@ -55,9 +55,9 @@ internal struct HSL {
   }
 
   /**
-  Initializes and creates a HSL color from a UIColor object.
+  Initializes and creates a HSL (hue, saturation, lightness) color from a UIColor object.
   
-  :param: color A UIColor object
+  :param: color A UIColor object.
   */
   init(color: UIColor) {
     let rgba = color.toRGBAComponents()
@@ -76,7 +76,7 @@ internal struct HSL {
         s = delta / (maximum + mininimum)
       }
       else {
-        s = delta / (2.0 - maximum - mininimum)
+        s = delta / (2 - maximum - mininimum)
       }
 
       if rgba.r == maximum {
@@ -104,8 +104,8 @@ internal struct HSL {
   func toUIColor() -> UIColor {
     let lightness  = min(1, max(0, l))
     let saturation = min(1, max(0, s))
-    var hue        = h % 1
-
+    let hue        = h % 1
+    
     var m2: CGFloat = 0
 
     if lightness <= 0.5 {
@@ -117,15 +117,15 @@ internal struct HSL {
 
     let m1: CGFloat = (lightness * 2) - m2
 
-    let r = hueToRgb(m1, m2: m2, h: hue + 1 / 3)
-    let g = hueToRgb(m1, m2: m2, h: hue)
-    let b = hueToRgb(m1, m2: m2, h: hue - 1 / 3)
+    let r = hueToRGB(m1, m2: m2, h: hue + 1 / 3)
+    let g = hueToRGB(m1, m2: m2, h: hue)
+    let b = hueToRGB(m1, m2: m2, h: hue - 1 / 3)
 
     return UIColor(red: r, green: g, blue: b, alpha: a)
   }
 
   /// Hue to RGB helper function
-  private func hueToRgb(m1: CGFloat, m2: CGFloat, h: CGFloat) -> CGFloat {
+  private func hueToRGB(m1: CGFloat, m2: CGFloat, h: CGFloat) -> CGFloat {
     var hue = h
 
     if hue < 0 {
@@ -156,7 +156,7 @@ internal struct HSL {
   /**
   Returns a color with the hue rotated along the color wheel by the given amount.
 
-  :param: amount A float representing the number of degrees as ratio (usually -1 for -360deg and 1 for 360deg).
+  :param: amount A float representing the number of degrees as ratio (usually -1.0 for -360deg and 1.0 for 360deg).
 
   :returns: A HSL color with the hue changed.
   */
@@ -167,7 +167,7 @@ internal struct HSL {
   /**
   Returns a color with the lightness increased by the given amount.
 
-  :param: amount Float between 0 and 1.
+  :param: amount Float between 0.0 and 1.0.
 
   :returns: A lighter HSL color.
   */
@@ -178,7 +178,7 @@ internal struct HSL {
   /**
   Returns a color with the lightness decreased by the given amount.
 
-  :param: amount Float between 0 and 1.
+  :param: amount Float between 0.0 and 1.0.
   
   :returns: A darker HSL color.
   */
@@ -189,7 +189,7 @@ internal struct HSL {
   /**
   Returns a color with the saturation increased by the given amount.
 
-  :param: amount Float between 0 and 1.
+  :param: amount Float between 0.0 and 1.0.
 
   :returns: A HSL color more saturated.
   */
@@ -200,7 +200,7 @@ internal struct HSL {
   /**
   Returns a color with the saturation decreased by the given amount.
 
-  :param: amount Float between 0 and 1.
+  :param: amount Float between 0.0 and 1.0.
 
   :returns: A HSL color less saturated.
   */

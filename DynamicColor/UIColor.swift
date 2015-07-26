@@ -27,10 +27,14 @@
 import UIKit
 
 /**
-Extension to manipulate colors easily.
+  Extension to manipulate colours easily.
+
+  It allows you to work hexadecimal strings and value, HSV and RGB components, derivating colours, and many more...
 */
-public extension UIColor {
-  // MARK: - Manipulating HEX Strings
+typealias DynamicColor = UIColor
+
+public extension DynamicColor {
+  // MARK: - Manipulating Hexa-decimal Values and Strings
 
   /**
   Creates a color from an hex string.
@@ -95,12 +99,12 @@ public extension UIColor {
     return colorToInt
   }
 
-  // MARK: - Getting the RGBA components
+  // MARK: - Getting the RGBA Components
 
   /**
-  Returns the RGA components.
+  Returns the RGBA (red, green, blue, alpha) components.
 
-  :returns: The RGBA component as a tuple (r, g, b, a).
+  :returns: The RGBA components as a tuple (r, g, b, a).
   */
   public final func toRGBAComponents() -> (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
     var r: CGFloat = 0
@@ -151,6 +155,36 @@ public extension UIColor {
     return toRGBAComponents().a
   }
 
+  // MARK: - Working with HSL Components
+
+  /**
+  Initializes and returns a color object using the specified opacity and HSL component values.
+
+  :param: hue The hue component of the color object, specified as a value from 0.0 to 1.0 (0.0 for 0 degree and 1.0 for 360 degree).
+  :param: saturation The saturation component of the color object, specified as a value from 0.0 to 1.0.
+  :param: lightness The lightness component of the color object, specified as a value from 0.0 to 1.0.
+  :param: alpha The opacity value of the color object, specified as a value from 0.0 to 1.0.
+  */
+  public convenience init(hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat = 1) {
+    let color      = HSL(hue: hue, saturation: saturation, lightness: lightness, alpha: alpha).toUIColor()
+    let components = color.toRGBAComponents()
+
+    self.init(red: components.r, green: components.g, blue: components.b, alpha: components.a)
+  }
+
+  /**
+  Returns the HSLA (hue, saturation, lightness, alpha) components.
+  
+  Notes that the hue value is between 0.0 and 1.0 (0.0 for 0 degree and 1.0 for 360 degree).
+
+  :returns: The HSLA components as a tuple (h, s, l, a).
+  */
+  public final func toHSLAComponents() -> (h: CGFloat, s: CGFloat, l: CGFloat, a: CGFloat) {
+    let hsl = HSL(color: self)
+
+    return (hsl.h, hsl.s, hsl.l, hsl.a)
+  }
+
   // MARK: - Identifying and Comparing Colors
 
   /**
@@ -180,11 +214,11 @@ public extension UIColor {
   /**
   Creates and returns a color object with the hue rotated along the color wheel by the given amount.
 
-  :param: amount A float representing the number of degrees as ratio (usually -1 for -360deg and 1 for 360deg).
+  :param: amount A float representing the number of degrees as ratio (usually -1.0 for -360 degree and 1.0 for 360 degree).
 
   :returns: A UIColor object with the hue changed.
   */
-  public func adjustedHueColor(amount: CGFloat) -> UIColor {
+  public final func adjustedHueColor(amount: CGFloat) -> UIColor {
     return HSL(color: self).adjustHue(amount).toUIColor()
   }
 
@@ -197,7 +231,7 @@ public extension UIColor {
   
   :see: adjustedHueColor:
   */
-  public func complementColor() -> UIColor {
+  public final func complementColor() -> UIColor {
     return adjustedHueColor(0.5)
   }
 
@@ -208,18 +242,18 @@ public extension UIColor {
 
   :see: lightenColor:
   */
-  public func lighterColor() -> UIColor {
+  public final func lighterColor() -> UIColor {
     return lightenColor(0.2)
   }
 
   /**
   Creates and returns a color object with the lightness increased by the given amount.
 
-  :param: amount Float between 0 and 1.
+  :param: amount Float between 0.0 and 1.0.
 
   :returns: A lighter UIColor.
   */
-  public func lightenColor(amount: CGFloat) -> UIColor {
+  public final func lightenColor(amount: CGFloat) -> UIColor {
     let normalizedAmount = min(1, max(0, amount))
 
     return HSL(color: self).lighten(normalizedAmount).toUIColor()
@@ -232,18 +266,18 @@ public extension UIColor {
 
   :see: darkenColor:
   */
-  public func darkerColor() -> UIColor {
+  public final func darkerColor() -> UIColor {
     return darkenColor(0.2)
   }
 
   /**
   Creates and returns a color object with the lightness decreased by the given amount.
 
-  :param: amount Float between 0 and 1.
+  :param: amount Float between 0.0 and 1.0.
 
   :returns: A darker UIColor.
   */
-  public func darkenColor(amount: CGFloat) -> UIColor {
+  public final func darkenColor(amount: CGFloat) -> UIColor {
     let normalizedAmount = min(1, max(0, amount))
 
     return HSL(color: self).darken(normalizedAmount).toUIColor()
@@ -256,18 +290,18 @@ public extension UIColor {
 
   :see: saturateColor:
   */
-  public func saturatedColor() -> UIColor {
+  public final func saturatedColor() -> UIColor {
     return saturateColor(0.2)
   }
 
   /**
   Creates and returns a color object with the saturation increased by the given amount.
 
-  :param: amount Float between 0 and 1.
+  :param: amount Float between 0.0 and 1.0.
 
   :returns: A UIColor more saturated.
   */
-  public func saturateColor(amount: CGFloat) -> UIColor {
+  public final func saturateColor(amount: CGFloat) -> UIColor {
     let normalizedAmount = min(1, max(0, amount))
 
     return HSL(color: self).saturate(normalizedAmount).toUIColor()
@@ -280,18 +314,18 @@ public extension UIColor {
 
   :see: desaturateColor:
   */
-  public func desaturatedColor() -> UIColor {
+  public final func desaturatedColor() -> UIColor {
     return desaturateColor(0.2)
   }
 
   /**
   Creates and returns a color object with the saturation decreased by the given amount.
 
-  :param: amount Float between 0 and 1.
+  :param: amount Float between 0.0 and 1.0.
 
   :returns: A UIColor less saturated.
   */
-  public func desaturateColor(amount: CGFloat) -> UIColor {
+  public final func desaturateColor(amount: CGFloat) -> UIColor {
     let normalizedAmount = min(1, max(0, amount))
     
     return HSL(color: self).desaturate(normalizedAmount).toUIColor()
@@ -306,7 +340,7 @@ public extension UIColor {
 
   :see: desaturateColor:
   */
-  public func grayscaledColor() -> UIColor {
+  public final func grayscaledColor() -> UIColor {
     return desaturateColor(1)
   }
 
@@ -315,7 +349,7 @@ public extension UIColor {
 
   :returns: An inverse (negative) of the original color.
   */
-  public func invertColor() -> UIColor {
+  public final func invertColor() -> UIColor {
     let rgba = toRGBAComponents()
 
     return UIColor(red: 1 - rgba.r, green: 1 - rgba.g, blue: 1 - rgba.b, alpha: rgba.a)
@@ -333,7 +367,7 @@ public extension UIColor {
   
   :returns: A color object corresponding to the two colors object mixed together.
   */
-  public func mixWithColor(color: UIColor, weight: CGFloat = 0.5) -> UIColor {
+  public final func mixWithColor(color: UIColor, weight: CGFloat = 0.5) -> UIColor {
     let normalizedWeight = min(1, max(0, weight))
 
     var c1 = toRGBAComponents()
@@ -356,22 +390,22 @@ public extension UIColor {
   /**
   Creates and returns a color object corresponding to the mix of the receiver and an amount of white color, which increases lightness.
 
-  :param: amount Float between 0 and 1. The default amount is equal to 0.2.
+  :param: amount Float between 0.0 and 1.0. The default amount is equal to 0.2.
 
   :returns: A lighter UIColor.
   */
-  public func tintColor(amount: CGFloat = 0.2) -> UIColor {
+  public final func tintColor(amount: CGFloat = 0.2) -> UIColor {
     return mixWithColor(UIColor.whiteColor(), weight: amount)
   }
 
   /**
   Creates and returns a color object corresponding to the mix of the receiver and an amount of black color, which reduces lightness.
 
-  :param: amount Float between 0 and 1. The default amount is equal to 0.2.
+  :param: amount Float between 0.0 and 1.0. The default amount is equal to 0.2.
 
   :returns: A darker UIColor.
   */
-  public func shadeColor(amount: CGFloat = 0.2) -> UIColor {
+  public final func shadeColor(amount: CGFloat = 0.2) -> UIColor {
     return mixWithColor(UIColor.blackColor(), weight: amount)
   }
 }

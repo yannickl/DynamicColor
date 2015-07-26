@@ -156,16 +156,56 @@ class DynamicColorTests: XCTestCase {
     XCTAssert(alphaComponent == 1, "Color alpha component should be equal to 1")
   }
 
+  func testInitWithHSLAComponents() {
+    let black1 = UIColor(hue: 0, saturation: 0, lightness: 0)
+    let black2 = UIColor(hue: 1, saturation: 1, lightness: 0)
+    let white1 = UIColor(hue: 0, saturation: 0, lightness: 1)
+    let white2 = UIColor(hue: 1, saturation: 1, lightness: 1)
+
+    let red   = UIColor(hue: 0, saturation: 1, lightness: 0.5)
+    let green = UIColor(hue: 120 / 360, saturation: 1, lightness: 0.5)
+    let blue  = UIColor(hue: 240 / 360, saturation: 1, lightness: 0.5)
+
+    let custom = UIColor(hue: 6 / 360, saturation: 0.781, lightness: 0.571)
+    let alpha  = UIColor(hue: 6 / 360, saturation: 0.781, lightness: 0.571, alpha: 0.5)
+
+    XCTAssert(black1.toHex() == 0, "Color should be black")
+    XCTAssert(black2.toHex() == 0, "Color should be black")
+    XCTAssert(white1.toHex() == 0xffffff, "Color should be white")
+    XCTAssert(white2.toHex() == 0xffffff, "Color should be white")
+
+    XCTAssert(red.isEqual(UIColor.redColor()), "Color should be red")
+    XCTAssert(green.isEqual(UIColor.greenColor()), "Color should be green")
+    XCTAssert(blue.isEqual(UIColor.blueColor()), "Color should be blue")
+
+    XCTAssert(custom.isEqualToHexString("#e74d3c"), "Color should be equal to #e74d3c")
+    XCTAssert(alpha.isEqualToHexString("#e74d3c"), "Color should be equal to #e74d3c")
+    XCTAssert(alpha.alphaComponent() == 0.5, "Color alpha channel should be equal to 0.5")
+  }
+
+  func testToHSLAComponents() {
+    let customColor = UIColor(hue: 6 / 360, saturation: 0.781, lightness: 0.571)
+    let hsl = HSL(hue: 6 / 360, saturation: 0.781, lightness: 0.571, alpha: 1)
+    let hsla = customColor.toHSLAComponents()
+
+    XCTAssert(round(hsla.h * 1000) == round(6.0 / 360 * 1000), "Color hue component should be equal to 6 / 360")
+    XCTAssert(round(hsla.s * 1000) == round(0.781 * 1000), "Color saturation component should be equal to 0.781")
+    XCTAssert(hsla.l == 0.571, "Color lightness component should be equal to 0.571")
+    XCTAssert(hsla.a == 1, "Color alpha component should be equal to 1")
+  }
+
   func testAdjustHueColor() {
     let custom1  = UIColor(hex: 0x881111).adjustedHueColor(45 / 360)
     let custom2 = UIColor(hex: 0xc0392b).adjustedHueColor(90 / 360)
     let custom3 = UIColor(hex: 0xc0392b).adjustedHueColor(-60 / 360)
-    let same    = UIColor(hex: 0xc0392b).adjustedHueColor(360 / 360)
+    let same1   = UIColor(hex: 0xc0392b).adjustedHueColor(0)
+    let same2   = UIColor(hex: 0xc0392b).adjustedHueColor(360 / 360)
 
     XCTAssert(custom1.isEqualToHexString("#886a10"), "Color string should be equal to #886a10 (not \(custom1.toHexString()))")
     XCTAssert(custom2.isEqualToHexString("#67c02b"), "Color string should be equal to #67c02b (not \(custom2.toHexString()))")
     XCTAssert(custom3.isEqualToHexString("#c02bb1"), "Color string should be equal to #c02bb1 (not \(custom3.toHexString()))")
-    XCTAssert(same.isEqualToHexString("#c0392b"), "Color string should be equal to #c0392b (not \(same.toHexString()))")
+    XCTAssert(same1.isEqualToHexString("#c0392b"), "Color string should be equal to #c0392b (not \(same1.toHexString()))")
+    XCTAssert(same2.isEqualToHexString("#c0392b"), "Color string should be equal to #c0392b (not \(same2.toHexString()))")
   }
 
   func testComplementColor() {
