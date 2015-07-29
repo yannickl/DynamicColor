@@ -42,11 +42,6 @@ class DynamicColorTests: XCTestCase {
     let wrongStandard = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
     let wrongHex      = UIColor(hexString: "#T5RD2Z")
 
-    var r: CGFloat = 0
-    var g: CGFloat = 0
-    var b: CGFloat = 0
-    var a: CGFloat = 0
-
     XCTAssert(wrongStandard.isEqual(wrongHex), "Color should be equals")
   }
 

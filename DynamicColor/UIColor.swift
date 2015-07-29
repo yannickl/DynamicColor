@@ -370,8 +370,8 @@ public extension DynamicColor {
   public final func mixWithColor(color: UIColor, weight: CGFloat = 0.5) -> UIColor {
     let normalizedWeight = min(1, max(0, weight))
 
-    var c1 = toRGBAComponents()
-    var c2 = color.toRGBAComponents()
+    let c1 = toRGBAComponents()
+    let c2 = color.toRGBAComponents()
 
     let w = 2 * normalizedWeight - 1
 
