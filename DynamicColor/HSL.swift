@@ -26,16 +26,31 @@
 
 import UIKit
 
+/**
+Clips the values in an interval.
+
+Given an interval, values outside the interval are clipped to the interval
+edges. For example, if an interval of [0, 1] is specified, values smaller than
+0 become 0, and values larger than 1 become 1.
+
+:param: v The value to clipped.
+:param: minimum The minimum edge value.
+:param: maximum The maximum edgevalue.
+*/
+internal func clip<T : Comparable>(v: T, minimum: T, maximum: T) -> T {
+  return max(min(v, maximum), minimum)
+}
+
 /// Hue-saturation-lightness structure to make the color manipulation easier.
 internal struct HSL {
   /// Hue value between 0.0 and 1.0 (0.0 = 0 degree, 1.0 = 360 degree).
-  var h: CGFloat = 0.0
+  var h: CGFloat = 0
   /// Saturation value between 0.0 and 1.0.
-  var s: CGFloat = 0.0
+  var s: CGFloat = 0
   /// Lightness value between 0.0 and 1.0.
-  var l: CGFloat = 0.0
+  var l: CGFloat = 0
   /// Alpha value between 0.0 and 1.0.
-  var a: CGFloat = 1.0
+  var a: CGFloat = 1
 
   // MARK: - Initializing HSL Colors
 
@@ -49,9 +64,9 @@ internal struct HSL {
   */
   init(hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat = 1) {
     h = hue
-    s = max(min(saturation, 1), 0)
-    l = max(min(lightness, 1), 0)
-    a = max(min(alpha, 1), 0)
+    s = clip(saturation, 0, 1)
+    l = clip(lightness, 0, 1)
+    a = clip(alpha, 0, 1)
   }
 
   /**
@@ -102,8 +117,8 @@ internal struct HSL {
   :returns: A UIColor object corresponding to the current HSV color.
   */
   func toUIColor() -> UIColor {
-    let lightness  = min(1, max(0, l))
-    let saturation = min(1, max(0, s))
+    let lightness  = clip(l, 0, 1)
+    let saturation = clip(s, 0, 1)
     let hue        = h % 1
     
     var m2: CGFloat = 0

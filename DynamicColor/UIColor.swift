@@ -254,7 +254,7 @@ public extension DynamicColor {
   :returns: A lighter UIColor.
   */
   public final func lightenColor(amount: CGFloat) -> UIColor {
-    let normalizedAmount = min(1, max(0, amount))
+    let normalizedAmount = clip(amount, 0, 1)
 
     return HSL(color: self).lighten(normalizedAmount).toUIColor()
   }
@@ -278,7 +278,7 @@ public extension DynamicColor {
   :returns: A darker UIColor.
   */
   public final func darkenColor(amount: CGFloat) -> UIColor {
-    let normalizedAmount = min(1, max(0, amount))
+    let normalizedAmount = clip(amount, 0, 1)
 
     return HSL(color: self).darken(normalizedAmount).toUIColor()
   }
@@ -302,7 +302,7 @@ public extension DynamicColor {
   :returns: A UIColor more saturated.
   */
   public final func saturateColor(amount: CGFloat) -> UIColor {
-    let normalizedAmount = min(1, max(0, amount))
+    let normalizedAmount = clip(amount, 0, 1)
 
     return HSL(color: self).saturate(normalizedAmount).toUIColor()
   }
@@ -326,7 +326,7 @@ public extension DynamicColor {
   :returns: A UIColor less saturated.
   */
   public final func desaturateColor(amount: CGFloat) -> UIColor {
-    let normalizedAmount = min(1, max(0, amount))
+    let normalizedAmount = clip(amount, 0, 1)
     
     return HSL(color: self).desaturate(normalizedAmount).toUIColor()
   }
@@ -368,7 +368,7 @@ public extension DynamicColor {
   :returns: A color object corresponding to the two colors object mixed together.
   */
   public final func mixWithColor(color: UIColor, weight: CGFloat = 0.5) -> UIColor {
-    let normalizedWeight = min(1, max(0, weight))
+    let normalizedWeight = clip(weight, 0, 1)
 
     let c1 = toRGBAComponents()
     let c2 = color.toRGBAComponents()
