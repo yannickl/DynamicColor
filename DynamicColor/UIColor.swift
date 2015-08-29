@@ -31,7 +31,7 @@ import UIKit
 
   It allows you to work hexadecimal strings and value, HSV and RGB components, derivating colours, and many more...
 */
-typealias DynamicColor = UIColor
+public typealias DynamicColor = UIColor
 
 public extension DynamicColor {
   // MARK: - Manipulating Hexa-decimal Values and Strings
