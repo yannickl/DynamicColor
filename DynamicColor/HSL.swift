@@ -37,7 +37,7 @@ edges. For example, if an interval of [0, 1] is specified, values smaller than
 :param: minimum The minimum edge value.
 :param: maximum The maximum edgevalue.
 */
-internal func clip<T : Comparable>(v: T, minimum: T, maximum: T) -> T {
+internal func clip<T : Comparable>(v: T, _ minimum: T, _ maximum: T) -> T {
   return max(min(v, maximum), minimum)
 }
 
