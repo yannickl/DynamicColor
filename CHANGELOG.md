@@ -1,5 +1,9 @@
 # Change log
 
+## [Version 1.5.4](https://github.com/yannickl/DynamicColor/releases/tag/1.5.4)
+
+- [FIX] Mandatory clip parameters for Xcode7 beta 6 ([#5](https://github.com/yannickl/DynamicColor/pull/5))
+
 ## [Version 1.5.3](https://github.com/yannickl/DynamicColor/releases/tag/1.5.3)
 Released on 2015-08-29.
 
@@ -64,4 +68,6 @@ Released on 2015-06-02.
 - `adjustHue` method
 - `complementColor` method
 - `invertColor` method
+- `toHexString` method
+- Initialization with hex strings and integers
 - Cocoapods support

@@ -142,7 +142,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
-pod 'DynamicColor', '~> 1.5.3'
+pod 'DynamicColor', '~> 1.5.4'
 ```
 
 Install into your project:
@@ -173,7 +173,7 @@ $ brew install carthage
 To integrate `DynamicColor` into your Xcode project using Carthage, specify it in your `Cartfile` file:
 
 ```ogdl
-github "yannickl/DynamicColor" >= 1.5.3
+github "yannickl/DynamicColor" >= 1.5.4
 ```
 
 #### Manually
