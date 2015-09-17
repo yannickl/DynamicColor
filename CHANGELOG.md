@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 2.0.0](https://github.com/yannickl/DynamicColor/releases/tag/2.0.0)
+
+- [UPDATE] Swift 2 compatibility
+- [FIX] Use Double instead of CGFloat due to float precision
+
 ## [Version 1.5.4](https://github.com/yannickl/DynamicColor/releases/tag/1.5.4)
 
 - [FIX] Mandatory clip parameters for Xcode7 beta 6 ([#5](https://github.com/yannickl/DynamicColor/pull/5))
