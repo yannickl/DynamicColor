@@ -94,7 +94,7 @@ public extension DynamicColor {
   */
   public final func toHex() -> UInt32 {
     let rgba       = toRGBAComponents()
-    let colorToInt = (UInt32)(rgba.r * 255) << 16 | (UInt32)(rgba.g * 255) << 8 | (UInt32)(rgba.b * 255) << 0
+    let colorToInt = (UInt32)(rgba.r * 255) << 16 | (UInt32)(rgba.g * 255) << 8 | (UInt32)(rgba.b * 255)
 
     return colorToInt
   }

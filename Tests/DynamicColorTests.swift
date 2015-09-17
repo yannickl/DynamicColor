@@ -158,10 +158,7 @@ class DynamicColorTests: XCTestCase {
     let white2 = UIColor(hue: 1, saturation: 1, lightness: 1)
 
     let red   = UIColor(hue: 0, saturation: 1, lightness: 0.5)
-    print("here: \((Double(240) / 360) * 3) \((Double(240) / 360) * 3 < 2)")
     let green = UIColor(hue: 120 / 360, saturation: 1, lightness: 0.5)
-    print(green.toHexString())
-    print(green.toRGBAComponents())
     let blue  = UIColor(hue: 240 / 360, saturation: 1, lightness: 0.5)
 
     let custom = UIColor(hue: 6 / 360, saturation: 0.781, lightness: 0.571)
