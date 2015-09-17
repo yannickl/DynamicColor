@@ -160,7 +160,7 @@ internal struct HSL {
     else if hue * 2 < 1 {
       return CGFloat(m2)
     }
-    else if hue * 3 < 1.999999 {
+    else if hue * 3 < 1.9999 {
       return CGFloat(m1 + (m2 - m1) * (2 / 3 - hue) * 6)
     }
     else {

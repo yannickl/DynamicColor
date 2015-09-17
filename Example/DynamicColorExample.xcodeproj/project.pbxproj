@@ -10,7 +10,6 @@
 		CEA829931B41D5E40050DEEB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* UIColor.swift */; };
 		CEA829941B41D5E40050DEEB /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CECBCD861B2B6C5E0047E731 /* DynamicColor.h in Headers */ = {isa = PBXBuildFile; fileRef = CECBCD851B2B6C5E0047E731 /* DynamicColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CECBCD8C1B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; };
 		CECBCD981B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; };
 		CECBCD991B2B6C5E0047E731 /* DynamicColor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CECBCDA11B2B6CCC0047E731 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* UIColor.swift */; };
@@ -27,26 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CECBCD8D1B2B6C5E0047E731 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEFBDAD31B1CE38D000E6F30 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CECBCD801B2B6C5E0047E731;
-			remoteInfo = DynamicColor;
-		};
-		CECBCD8F1B2B6C5E0047E731 /* PBXContainerItemProxy */ = {
+		CEABDF271BAAFE6D003836C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CEFBDAD31B1CE38D000E6F30 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CEFBDADA1B1CE38D000E6F30;
 			remoteInfo = DynamicColorExample;
-		};
-		CECBCD961B2B6C5E0047E731 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEFBDAD31B1CE38D000E6F30 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CECBCD801B2B6C5E0047E731;
-			remoteInfo = DynamicColor;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -95,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECBCD8C1B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,8 +224,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CECBCD8E1B2B6C5E0047E731 /* PBXTargetDependency */,
-				CECBCD901B2B6C5E0047E731 /* PBXTargetDependency */,
+				CEABDF281BAAFE6D003836C4 /* PBXTargetDependency */,
 			);
 			name = DynamicColorTests;
 			productName = DynamicColorTests;
@@ -260,7 +243,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				CECBCD971B2B6C5E0047E731 /* PBXTargetDependency */,
 			);
 			name = DynamicColorExample;
 			productName = DynamicColorExample;
@@ -372,20 +354,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CECBCD8E1B2B6C5E0047E731 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CECBCD801B2B6C5E0047E731 /* DynamicColor */;
-			targetProxy = CECBCD8D1B2B6C5E0047E731 /* PBXContainerItemProxy */;
-		};
-		CECBCD901B2B6C5E0047E731 /* PBXTargetDependency */ = {
+		CEABDF281BAAFE6D003836C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CEFBDADA1B1CE38D000E6F30 /* DynamicColorExample */;
-			targetProxy = CECBCD8F1B2B6C5E0047E731 /* PBXContainerItemProxy */;
-		};
-		CECBCD971B2B6C5E0047E731 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CECBCD801B2B6C5E0047E731 /* DynamicColor */;
-			targetProxy = CECBCD961B2B6C5E0047E731 /* PBXContainerItemProxy */;
+			targetProxy = CEABDF271BAAFE6D003836C4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -192,7 +192,7 @@ class DynamicColorTests: XCTestCase {
   }
 
   func testAdjustHueColor() {
-    let custom1  = UIColor(hex: 0x881111).adjustedHueColor(45 / 360)
+    let custom1 = UIColor(hex: 0x881111).adjustedHueColor(45 / 360)
     let custom2 = UIColor(hex: 0xc0392b).adjustedHueColor(90 / 360)
     let custom3 = UIColor(hex: 0xc0392b).adjustedHueColor(-60 / 360)
     let same1   = UIColor(hex: 0xc0392b).adjustedHueColor(0)
