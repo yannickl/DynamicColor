@@ -8,15 +8,29 @@
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CECBCD8A1B2B6C5E0047E731"
                BuildableName = "DynamicColorTests.xctest"
                BlueprintName = "DynamicColorTests"
+               ReferencedContainer = "container:DynamicColorExample.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CEFBDADA1B1CE38D000E6F30"
+               BuildableName = "DynamicColorExample.app"
+               BlueprintName = "DynamicColorExample"
                ReferencedContainer = "container:DynamicColorExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,7 +40,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -42,9 +57,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CECBCD8A1B2B6C5E0047E731"
-            BuildableName = "DynamicColorTests.xctest"
-            BlueprintName = "DynamicColorTests"
+            BlueprintIdentifier = "CEFBDADA1B1CE38D000E6F30"
+            BuildableName = "DynamicColorExample.app"
+            BlueprintName = "DynamicColorExample"
             ReferencedContainer = "container:DynamicColorExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,15 +76,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CECBCD8A1B2B6C5E0047E731"
-            BuildableName = "DynamicColorTests.xctest"
-            BlueprintName = "DynamicColorTests"
-            ReferencedContainer = "container:DynamicColorExample.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

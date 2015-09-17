@@ -218,10 +218,10 @@ class DynamicColorTests: XCTestCase {
     let black = UIColor.blackColor().lighterColor()
     let gray  = black.lighterColor()
 
-    XCTAssert(red.isEqualToHexString("#ff6666"), "Color string should be equal to #ff6666 (not \(red.toHexString()))")
-    XCTAssert(white.isEqualToHexString("#ffffff"), "Color string should be equal to #ffffff (not \(white.toHexString()))")
-    XCTAssert(black.isEqualToHexString("#333333"), "Color string should be equal to #333333 (not \(black.toHexString()))")
-    XCTAssert(gray.isEqualToHexString("#666666"), "Color string should be equal to #666666 (not \(gray.toHexString()))")
+    XCTAssert(red.isEqual(UIColor(hex: 0xff6666)), "Color string should be equal to #ff6666 (not \(red.toHexString()))")
+    XCTAssert(white.isEqual(UIColor(hex: 0xffffff)), "Color string should be equal to #ffffff (not \(white.toHexString()))")
+    XCTAssert(black.isEqual(UIColor(hex: 0x333333)), "Color string should be equal to #333333 (not \(black.toHexString()))")
+    XCTAssert(gray.isEqual(UIColor(hex: 0x666666)), "Color string should be equal to #666666 (not \(gray.toHexString()))")
   }
 
   func testLightenColor() {
