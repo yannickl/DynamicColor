@@ -80,11 +80,11 @@ internal struct HSL {
   }
 
   /**
-  Initializes and creates a HSL (hue, saturation, lightness) color from a UIColor object.
+  Initializes and creates a HSL (hue, saturation, lightness) color from a DynamicColor object.
   
-  - parameter color: A UIColor object.
+  - parameter color: A DynamicColor object.
   */
-  init(color: UIColor) {
+  init(color: DynamicColor) {
     let rgbaFloat = color.toRGBAComponents()
     let rgba      = (r: Double(rgbaFloat.r), g: Double(rgbaFloat.g), b: Double(rgbaFloat.b), a: Double(rgbaFloat.a))
 
@@ -123,11 +123,11 @@ internal struct HSL {
   // MARK: - Transforming HSL Color
 
   /**
-  Returns the UIColor representation from the current HSV color.
+  Returns the DynamicColor representation from the current HSV color.
   
-  - returns: A UIColor object corresponding to the current HSV color.
+  - returns: A DynamicColor object corresponding to the current HSV color.
   */
-  func toUIColor() -> UIColor {
+  func toDynamicColor() -> DynamicColor {
     let lightness  = clip(l, 0, 1)
     let saturation = clip(s, 0, 1)
     let hue        = moda(h, m: 1)
@@ -147,7 +147,7 @@ internal struct HSL {
     let g = hueToRGB(m1, m2: m2, h: hue)
     let b = hueToRGB(m1, m2: m2, h: hue - 1 / 3)
 
-    return UIColor(red: r, green: g, blue: b, alpha: CGFloat(a))
+    return DynamicColor(red: r, green: g, blue: b, alpha: CGFloat(a))
   }
 
   /// Hue to RGB helper function

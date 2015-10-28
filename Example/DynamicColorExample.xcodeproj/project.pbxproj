@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CEA829931B41D5E40050DEEB /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* UIColor.swift */; };
+		CEA829931B41D5E40050DEEB /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */; };
 		CEA829941B41D5E40050DEEB /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CECBCD861B2B6C5E0047E731 /* DynamicColor.h in Headers */ = {isa = PBXBuildFile; fileRef = CECBCD851B2B6C5E0047E731 /* DynamicColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CECBCD981B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; };
 		CECBCD991B2B6C5E0047E731 /* DynamicColor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CECBCDA11B2B6CCC0047E731 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* UIColor.swift */; };
+		CECBCDA11B2B6CCC0047E731 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */; };
 		CECBCDA21B2B6CCC0047E731 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CECBCDA81B2B6EEB0047E731 /* DynamicColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBCDA71B2B6EEB0047E731 /* DynamicColorTests.swift */; };
 		CEFBDAE11B1CE38D000E6F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDAE01B1CE38D000E6F30 /* AppDelegate.swift */; };
@@ -20,7 +20,7 @@
 		CEFBDAE61B1CE38D000E6F30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFBDAE41B1CE38D000E6F30 /* Main.storyboard */; };
 		CEFBDAE81B1CE38D000E6F30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFBDAE71B1CE38D000E6F30 /* Images.xcassets */; };
 		CEFBDAEB1B1CE38D000E6F30 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFBDAE91B1CE38D000E6F30 /* LaunchScreen.xib */; };
-		CEFBDB021B1CE413000E6F30 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* UIColor.swift */; };
+		CEFBDB021B1CE413000E6F30 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */; };
 		CEFBDB041B1CF188000E6F30 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CEFBDB191B1DE220000E6F30 /* ColorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */; };
 /* End PBXBuildFile section */
@@ -63,7 +63,7 @@
 		CEFBDAE51B1CE38D000E6F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEFBDAE71B1CE38D000E6F30 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CEFBDAEA1B1CE38D000E6F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		CEFBDB011B1CE413000E6F30 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColor.swift; sourceTree = "<group>"; };
 		CEFBDB031B1CF188000E6F30 /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
 		CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,7 +174,7 @@
 		CEFBDB001B1CE3F2000E6F30 /* DynamicColor */ = {
 			isa = PBXGroup;
 			children = (
-				CEFBDB011B1CE413000E6F30 /* UIColor.swift */,
+				CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */,
 				CEFBDB031B1CF188000E6F30 /* HSL.swift */,
 			);
 			name = DynamicColor;
@@ -256,7 +256,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Yannick LORIOT";
 				TargetAttributes = {
@@ -324,7 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA829931B41D5E40050DEEB /* UIColor.swift in Sources */,
+				CEA829931B41D5E40050DEEB /* DynamicColor.swift in Sources */,
 				CEA829941B41D5E40050DEEB /* HSL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,7 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECBCDA11B2B6CCC0047E731 /* UIColor.swift in Sources */,
+				CECBCDA11B2B6CCC0047E731 /* DynamicColor.swift in Sources */,
 				CECBCDA21B2B6CCC0047E731 /* HSL.swift in Sources */,
 				CECBCDA81B2B6EEB0047E731 /* DynamicColorTests.swift in Sources */,
 			);
@@ -345,7 +345,7 @@
 			files = (
 				CEFBDB191B1DE220000E6F30 /* ColorCellView.swift in Sources */,
 				CEFBDAE31B1CE38D000E6F30 /* ViewController.swift in Sources */,
-				CEFBDB021B1CE413000E6F30 /* UIColor.swift in Sources */,
+				CEFBDB021B1CE413000E6F30 /* DynamicColor.swift in Sources */,
 				CEFBDAE11B1CE38D000E6F30 /* AppDelegate.swift in Sources */,
 				CEFBDB041B1CF188000E6F30 /* HSL.swift in Sources */,
 			);
@@ -501,6 +501,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -540,6 +541,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
