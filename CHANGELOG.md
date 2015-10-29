@@ -1,9 +1,14 @@
 # Change log
 
+## [Version 2.1.0](https://github.com/yannickl/DynamicColor/releases/tag/2.1.0)
+*Released on 2015-10-29.*
+
+- [ADD] WatchOS 2 supports
+
 ## [Version 2.0.1](https://github.com/yannickl/DynamicColor/releases/tag/2.0.1)
 *Released on 2015-10-26.*
 
-- [FIX] BITCODE support ([#6](https://github.com/yannickl/DynamicColor/pull/6))
+- [FIX] BITCODE supports ([#6](https://github.com/yannickl/DynamicColor/pull/6))
 
 ## [Version 2.0.0](https://github.com/yannickl/DynamicColor/releases/tag/2.0.0)
 *Released on 2015-09-17.*

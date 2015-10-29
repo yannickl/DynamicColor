@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DynamicColor'
-  s.version          = '2.0.1'
+  s.version          = '2.1.0'
   s.license          = 'MIT'
   s.summary          = 'Yet another extension to manipulate colors easily in Swift'
   s.homepage         = 'https://github.com/yannickl/DynamicColor.git'
@@ -9,7 +9,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/yannickl/DynamicColor.git', :tag => s.version }
   s.screenshot       = 'http://yannickloriot.com/resources/dynamiccolor-sample-screenshot.png'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target     = '8.0'
+  s.watchos.deployment_target = '2.0'
 
   s.framework    = 'UIKit'
   s.source_files = 'DynamicColor/*.swift'

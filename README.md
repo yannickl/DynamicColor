@@ -19,7 +19,7 @@ These two create a new color by adjusting the lightness of the receiver. You hav
 </p>
 
 ```swift
-let originalColor = UIColor(hex: 0xc0392b)
+let originalColor = UIColor(hexString: "#c0392b")
 
 let lighterColor = originalColor.lighterColor()
 // equivalent to
@@ -39,7 +39,7 @@ These will adjust the saturation of the color object, much like `darkenColor` an
 </p>
 
 ```swift
-let originalColor = UIColor(hex: 0xc0392b)
+let originalColor = UIColor(hexString: "#c0392b")
 
 let saturatedColor = originalColor.saturatedColor()
 // equivalent to
@@ -61,7 +61,7 @@ These adjust the hue value of the color in the same way like the others do. Agai
 </p>
 
 ```swift
-let originalColor = UIColor(hex: 0xc0392b)
+let originalColor = UIColor(hexString: "#c0392b")
 
 let adjustHueColor = originalColor.adjustedHueColor(45 / 360)
 
@@ -77,7 +77,7 @@ A tint is the mixture of a color with white and a shade is the mixture of a colo
 </p>
 
 ```swift
-let originalColor = UIColor(hex: 0xc0392b)
+let originalColor = UIColor(hexString: "#c0392b")
 
 let tintColor = originalColor.tintColor()
 // equivalent to
@@ -97,7 +97,7 @@ This can invert the color object. The red, green, and blue values are inverted, 
 </p>
 
 ```swift
-let originalColor = UIColor(hex: 0xc0392b)
+let originalColor = UIColor(hexString: "#c0392b")
 
 let invertColor = originalColor.invertColor()
 ```
@@ -111,7 +111,7 @@ This can mix a given color with the receiver. It takes the average of each of th
 </p>
 
 ```swift
-let originalColor = UIColor(hex: 0xc0392b)
+let originalColor = UIColor(hexString: "#c0392b")
 
 let mixColor = originalColor.mixWithColor(UIColor.blueColor())
 // equivalent to
@@ -142,7 +142,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
-pod 'DynamicColor', '~> 2.0.1'
+pod 'DynamicColor', '~> 2.1.0'
 ```
 
 Install into your project:
@@ -173,7 +173,7 @@ $ brew install carthage
 To integrate `DynamicColor` into your Xcode project using Carthage, specify it in your `Cartfile` file:
 
 ```ogdl
-github "yannickl/DynamicColor" >= 2.0.1
+github "yannickl/DynamicColor" >= 2.1.0
 ```
 
 #### Manually
