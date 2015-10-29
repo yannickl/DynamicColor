@@ -57,13 +57,6 @@
 			remoteGlobalIDString = CEEB28AF1BE268A5001A74E8;
 			remoteInfo = "WatchExample Extension";
 		};
-		CEEB28BC1BE268A5001A74E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEFBDAD31B1CE38D000E6F30 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CEEB28A31BE268A4001A74E8;
-			remoteInfo = WatchExample;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -416,7 +409,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				CEEB28BD1BE268A5001A74E8 /* PBXTargetDependency */,
 			);
 			name = DynamicColorExample;
 			productName = DynamicColorExample;
@@ -599,11 +591,6 @@
 			isa = PBXTargetDependency;
 			target = CEEB28AF1BE268A5001A74E8 /* WatchExample Extension */;
 			targetProxy = CEEB28B21BE268A5001A74E8 /* PBXContainerItemProxy */;
-		};
-		CEEB28BD1BE268A5001A74E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CEEB28A31BE268A4001A74E8 /* WatchExample */;
-			targetProxy = CEEB28BC1BE268A5001A74E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
