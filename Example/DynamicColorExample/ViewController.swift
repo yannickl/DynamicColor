@@ -51,8 +51,8 @@ class ViewController: UIViewController, UICollectionViewDataSource {
 
     let (title, color) = colors[indexPath.row]
 
-    cell.titleLabel.text           = title
-    cell.colorView.backgroundColor = color
+    cell.titleLabel?.text           = title
+    cell.colorView?.backgroundColor = color
 
     return cell
   }

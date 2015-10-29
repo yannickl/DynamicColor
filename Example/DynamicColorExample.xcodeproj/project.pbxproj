@@ -25,6 +25,13 @@
 		CEEB28C71BE26AD9001A74E8 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */; };
 		CEEB28C81BE26AD9001A74E8 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CEEB28CA1BE26B55001A74E8 /* RowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28C91BE26B55001A74E8 /* RowController.swift */; };
+		CEEB28D21BE27340001A74E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28D11BE27340001A74E8 /* AppDelegate.swift */; };
+		CEEB28D71BE27340001A74E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28D51BE27340001A74E8 /* Main.storyboard */; };
+		CEEB28D91BE27340001A74E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28D81BE27340001A74E8 /* Assets.xcassets */; };
+		CEEB28DE1BE27355001A74E8 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */; };
+		CEEB28DF1BE27355001A74E8 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
+		CEEB28E01BE27401001A74E8 /* ColorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */; };
+		CEEB28E11BE27482001A74E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDAE21B1CE38D000E6F30 /* ViewController.swift */; };
 		CEFBDAE11B1CE38D000E6F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDAE01B1CE38D000E6F30 /* AppDelegate.swift */; };
 		CEFBDAE31B1CE38D000E6F30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDAE21B1CE38D000E6F30 /* ViewController.swift */; };
 		CEFBDAE61B1CE38D000E6F30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFBDAE41B1CE38D000E6F30 /* Main.storyboard */; };
@@ -112,6 +119,11 @@
 		CEEB28B91BE268A5001A74E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEEB28BB1BE268A5001A74E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEB28C91BE26B55001A74E8 /* RowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowController.swift; sourceTree = "<group>"; };
+		CEEB28CF1BE27340001A74E8 /* TVExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEEB28D11BE27340001A74E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEEB28D61BE27340001A74E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEEB28D81BE27340001A74E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEEB28DA1BE27340001A74E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEFBDADB1B1CE38D000E6F30 /* DynamicColorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicColorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFBDADF1B1CE38D000E6F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEFBDAE01B1CE38D000E6F30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +152,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CEEB28AD1BE268A5001A74E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEEB28CC1BE27340001A74E8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -213,6 +232,17 @@
 			path = "WatchExample Extension";
 			sourceTree = "<group>";
 		};
+		CEEB28D01BE27340001A74E8 /* TVExample */ = {
+			isa = PBXGroup;
+			children = (
+				CEEB28D11BE27340001A74E8 /* AppDelegate.swift */,
+				CEEB28D51BE27340001A74E8 /* Main.storyboard */,
+				CEEB28D81BE27340001A74E8 /* Assets.xcassets */,
+				CEEB28DA1BE27340001A74E8 /* Info.plist */,
+			);
+			path = TVExample;
+			sourceTree = "<group>";
+		};
 		CEFBDAD21B1CE38D000E6F30 = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +252,7 @@
 				CECBCD911B2B6C5E0047E731 /* DynamicColorTests */,
 				CEEB28A51BE268A4001A74E8 /* WatchExample */,
 				CEEB28B41BE268A5001A74E8 /* WatchExample Extension */,
+				CEEB28D01BE27340001A74E8 /* TVExample */,
 				CEFBDADC1B1CE38D000E6F30 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -234,6 +265,7 @@
 				CECBCD8B1B2B6C5E0047E731 /* DynamicColorTests.xctest */,
 				CEEB28A41BE268A4001A74E8 /* WatchExample.app */,
 				CEEB28B01BE268A5001A74E8 /* WatchExample Extension.appex */,
+				CEEB28CF1BE27340001A74E8 /* TVExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,6 +386,23 @@
 			productReference = CEEB28B01BE268A5001A74E8 /* WatchExample Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		CEEB28CE1BE27340001A74E8 /* TVExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEEB28DB1BE27340001A74E8 /* Build configuration list for PBXNativeTarget "TVExample" */;
+			buildPhases = (
+				CEEB28CB1BE27340001A74E8 /* Sources */,
+				CEEB28CC1BE27340001A74E8 /* Frameworks */,
+				CEEB28CD1BE27340001A74E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TVExample;
+			productName = TVExample;
+			productReference = CEEB28CF1BE27340001A74E8 /* TVExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 		CEFBDADA1B1CE38D000E6F30 /* DynamicColorExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEFBDAFA1B1CE38D000E6F30 /* Build configuration list for PBXNativeTarget "DynamicColorExample" */;
@@ -398,6 +447,9 @@
 					CEEB28AF1BE268A5001A74E8 = {
 						CreatedOnToolsVersion = 7.1;
 					};
+					CEEB28CE1BE27340001A74E8 = {
+						CreatedOnToolsVersion = 7.1;
+					};
 					CEFBDADA1B1CE38D000E6F30 = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
@@ -421,6 +473,7 @@
 				CECBCD8A1B2B6C5E0047E731 /* DynamicColorTests */,
 				CEEB28A31BE268A4001A74E8 /* WatchExample */,
 				CEEB28AF1BE268A5001A74E8 /* WatchExample Extension */,
+				CEEB28CE1BE27340001A74E8 /* TVExample */,
 			);
 		};
 /* End PBXProject section */
@@ -454,6 +507,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEB28BA1BE268A5001A74E8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEEB28CD1BE27340001A74E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEEB28D91BE27340001A74E8 /* Assets.xcassets in Resources */,
+				CEEB28D71BE27340001A74E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +563,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEEB28CB1BE27340001A74E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEEB28E11BE27482001A74E8 /* ViewController.swift in Sources */,
+				CEEB28E01BE27401001A74E8 /* ColorCellView.swift in Sources */,
+				CEEB28DE1BE27355001A74E8 /* DynamicColor.swift in Sources */,
+				CEEB28DF1BE27355001A74E8 /* HSL.swift in Sources */,
+				CEEB28D21BE27340001A74E8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CEFBDAD71B1CE38D000E6F30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -540,6 +614,14 @@
 				CEEB28A71BE268A4001A74E8 /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		CEEB28D51BE27340001A74E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEEB28D61BE27340001A74E8 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		CEFBDAE41B1CE38D000E6F30 /* Main.storyboard */ = {
@@ -705,6 +787,37 @@
 			};
 			name = Release;
 		};
+		CEEB28DC1BE27340001A74E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = TVExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.TVExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		CEEB28DD1BE27340001A74E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = TVExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.TVExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 		CEFBDAF81B1CE38D000E6F30 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -847,6 +960,14 @@
 			buildConfigurations = (
 				CEEB28BF1BE268A5001A74E8 /* Debug */,
 				CEEB28C01BE268A5001A74E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CEEB28DB1BE27340001A74E8 /* Build configuration list for PBXNativeTarget "TVExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEEB28DC1BE27340001A74E8 /* Debug */,
+				CEEB28DD1BE27340001A74E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

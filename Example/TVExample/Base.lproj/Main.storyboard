@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TVExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bj5-xS-EP9">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <animations/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AyA-lk-P3p">
+                                    <size key="itemSize" width="300" height="300"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCell" id="NCK-GK-ePA" customClass="ColorCellView" customModule="TVExample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1e-Fq-yWb">
+                                                    <rect key="frame" x="14" y="223" width="278" height="69"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMk-Xu-8G9" customClass="ColorCellView" customModule="TVExample" customModuleProvider="target">
+                                                    <rect key="frame" x="50" y="8" width="200" height="200"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="tMk-Xu-8G9" secondAttribute="height" multiplier="1:1" id="Ah1-l4-QLK"/>
+                                                        <constraint firstAttribute="width" constant="200" id="xXx-0V-BL5"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="C1e-Fq-yWb" secondAttribute="bottom" constant="8" id="1QJ-RE-Rcs"/>
+                                            <constraint firstItem="tMk-Xu-8G9" firstAttribute="top" secondItem="NCK-GK-ePA" secondAttribute="top" constant="8" id="5Ka-6y-IrA"/>
+                                            <constraint firstItem="tMk-Xu-8G9" firstAttribute="centerX" secondItem="NCK-GK-ePA" secondAttribute="centerX" id="BUh-n8-UAQ"/>
+                                            <constraint firstItem="C1e-Fq-yWb" firstAttribute="top" secondItem="tMk-Xu-8G9" secondAttribute="bottom" constant="15" id="M2D-ny-hFX"/>
+                                            <constraint firstAttribute="trailing" secondItem="C1e-Fq-yWb" secondAttribute="trailing" constant="8" id="OXX-Uh-lh7"/>
+                                            <constraint firstItem="C1e-Fq-yWb" firstAttribute="leading" secondItem="NCK-GK-ePA" secondAttribute="leading" constant="14" id="x2P-2x-AVG"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="colorView" destination="tMk-Xu-8G9" id="vN7-u2-QaD"/>
+                                            <outlet property="titleLabel" destination="C1e-Fq-yWb" id="cT1-Kc-38x"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="iUG-qB-dZ1"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nec-cq-VIs"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bj5-xS-EP9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WJF-pU-NVl"/>
+                            <constraint firstAttribute="trailing" secondItem="Bj5-xS-EP9" secondAttribute="trailing" id="n3Y-m3-I54"/>
+                            <constraint firstItem="Bj5-xS-EP9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="sLb-tC-jZP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Bj5-xS-EP9" secondAttribute="bottom" id="wdo-KS-N5z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colorCollectionView" destination="Bj5-xS-EP9" id="vxQ-Yf-1zI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="263"/>
+        </scene>
+    </scenes>
+</document>
