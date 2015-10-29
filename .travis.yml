@@ -7,4 +7,4 @@ before_install:
   - gem install xcpretty
 script:
 - set -o pipefail
-- xcodebuild -project Example/DynamicColorExample.xcodeproj -scheme DynamicColorTests -sdk iphonesimulator -destination "id=1DC9867E-D711-4D00-B1E8-7CE9A8DDEDE2" ONLY_ACTIVE_ARCH=NO test | xcpretty -c
+- xcodebuild -project Example/DynamicColorExample.xcodeproj -scheme DynamicColorTests -sdk iphonesimulator -destination "id=74B65E5F-38DA-42D9-AD99-1DF06695DC54" ONLY_ACTIVE_ARCH=NO test | xcpretty -c
