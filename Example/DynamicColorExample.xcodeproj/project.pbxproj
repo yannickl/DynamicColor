@@ -15,16 +15,6 @@
 		CECBCDA11B2B6CCC0047E731 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */; };
 		CECBCDA21B2B6CCC0047E731 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CECBCDA81B2B6EEB0047E731 /* DynamicColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBCDA71B2B6EEB0047E731 /* DynamicColorTests.swift */; };
-		CEEB28A81BE268A4001A74E8 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28A61BE268A4001A74E8 /* Interface.storyboard */; };
-		CEEB28AA1BE268A4001A74E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28A91BE268A4001A74E8 /* Assets.xcassets */; };
-		CEEB28B11BE268A5001A74E8 /* WatchExample Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CEEB28B01BE268A5001A74E8 /* WatchExample Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CEEB28B61BE268A5001A74E8 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28B51BE268A5001A74E8 /* InterfaceController.swift */; };
-		CEEB28B81BE268A5001A74E8 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28B71BE268A5001A74E8 /* ExtensionDelegate.swift */; };
-		CEEB28BA1BE268A5001A74E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28B91BE268A5001A74E8 /* Assets.xcassets */; };
-		CEEB28BE1BE268A5001A74E8 /* WatchExample.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CEEB28A41BE268A4001A74E8 /* WatchExample.app */; };
-		CEEB28C71BE26AD9001A74E8 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */; };
-		CEEB28C81BE26AD9001A74E8 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
-		CEEB28CA1BE26B55001A74E8 /* RowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28C91BE26B55001A74E8 /* RowController.swift */; };
 		CEEB28D21BE27340001A74E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28D11BE27340001A74E8 /* AppDelegate.swift */; };
 		CEEB28D71BE27340001A74E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28D51BE27340001A74E8 /* Main.storyboard */; };
 		CEEB28D91BE27340001A74E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28D81BE27340001A74E8 /* Assets.xcassets */; };
@@ -43,13 +33,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CEEB28B21BE268A5001A74E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEFBDAD31B1CE38D000E6F30 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CEEB28AF1BE268A5001A74E8;
-			remoteInfo = "WatchExample Extension";
-		};
 		CEEB28E21BE28CBE001A74E8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CEFBDAD31B1CE38D000E6F30 /* Project object */;
@@ -71,24 +54,12 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEEB28C41BE268A5001A74E8 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				CEEB28B11BE268A5001A74E8 /* WatchExample Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CEEB28C61BE268A5001A74E8 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				CEEB28BE1BE268A5001A74E8 /* WatchExample.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,16 +73,6 @@
 		CECBCD8B1B2B6C5E0047E731 /* DynamicColorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicColorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECBCD931B2B6C5E0047E731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CECBCDA71B2B6EEB0047E731 /* DynamicColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicColorTests.swift; path = ../../Tests/DynamicColorTests.swift; sourceTree = "<group>"; };
-		CEEB28A41BE268A4001A74E8 /* WatchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEEB28A71BE268A4001A74E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		CEEB28A91BE268A4001A74E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CEEB28AB1BE268A4001A74E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEEB28B01BE268A5001A74E8 /* WatchExample Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchExample Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEEB28B51BE268A5001A74E8 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		CEEB28B71BE268A5001A74E8 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		CEEB28B91BE268A5001A74E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CEEB28BB1BE268A5001A74E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEEB28C91BE26B55001A74E8 /* RowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowController.swift; sourceTree = "<group>"; };
 		CEEB28CF1BE27340001A74E8 /* TVExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEB28D11BE27340001A74E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEEB28D61BE27340001A74E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,13 +99,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CECBCD881B2B6C5E0047E731 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEEB28AD1BE268A5001A74E8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -203,28 +157,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CEEB28A51BE268A4001A74E8 /* WatchExample */ = {
-			isa = PBXGroup;
-			children = (
-				CEEB28A61BE268A4001A74E8 /* Interface.storyboard */,
-				CEEB28A91BE268A4001A74E8 /* Assets.xcassets */,
-				CEEB28AB1BE268A4001A74E8 /* Info.plist */,
-			);
-			path = WatchExample;
-			sourceTree = "<group>";
-		};
-		CEEB28B41BE268A5001A74E8 /* WatchExample Extension */ = {
-			isa = PBXGroup;
-			children = (
-				CEEB28B51BE268A5001A74E8 /* InterfaceController.swift */,
-				CEEB28C91BE26B55001A74E8 /* RowController.swift */,
-				CEEB28B71BE268A5001A74E8 /* ExtensionDelegate.swift */,
-				CEEB28B91BE268A5001A74E8 /* Assets.xcassets */,
-				CEEB28BB1BE268A5001A74E8 /* Info.plist */,
-			);
-			path = "WatchExample Extension";
-			sourceTree = "<group>";
-		};
 		CEEB28D01BE27340001A74E8 /* TVExample */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,8 +175,6 @@
 				CEFBDADD1B1CE38D000E6F30 /* DynamicColorExample */,
 				CECBCD821B2B6C5E0047E731 /* DynamicColor */,
 				CECBCD911B2B6C5E0047E731 /* DynamicColorTests */,
-				CEEB28A51BE268A4001A74E8 /* WatchExample */,
-				CEEB28B41BE268A5001A74E8 /* WatchExample Extension */,
 				CEEB28D01BE27340001A74E8 /* TVExample */,
 				CEFBDADC1B1CE38D000E6F30 /* Products */,
 			);
@@ -256,8 +186,6 @@
 				CEFBDADB1B1CE38D000E6F30 /* DynamicColorExample.app */,
 				CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */,
 				CECBCD8B1B2B6C5E0047E731 /* DynamicColorTests.xctest */,
-				CEEB28A41BE268A4001A74E8 /* WatchExample.app */,
-				CEEB28B01BE268A5001A74E8 /* WatchExample Extension.appex */,
 				CEEB28CF1BE27340001A74E8 /* TVExample.app */,
 			);
 			name = Products;
@@ -345,40 +273,6 @@
 			productReference = CECBCD8B1B2B6C5E0047E731 /* DynamicColorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CEEB28A31BE268A4001A74E8 /* WatchExample */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CEEB28C51BE268A5001A74E8 /* Build configuration list for PBXNativeTarget "WatchExample" */;
-			buildPhases = (
-				CEEB28A21BE268A4001A74E8 /* Resources */,
-				CEEB28C41BE268A5001A74E8 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CEEB28B31BE268A5001A74E8 /* PBXTargetDependency */,
-			);
-			name = WatchExample;
-			productName = WatchExample;
-			productReference = CEEB28A41BE268A4001A74E8 /* WatchExample.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		CEEB28AF1BE268A5001A74E8 /* WatchExample Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CEEB28C31BE268A5001A74E8 /* Build configuration list for PBXNativeTarget "WatchExample Extension" */;
-			buildPhases = (
-				CEEB28AC1BE268A5001A74E8 /* Sources */,
-				CEEB28AD1BE268A5001A74E8 /* Frameworks */,
-				CEEB28AE1BE268A5001A74E8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "WatchExample Extension";
-			productName = "WatchExample Extension";
-			productReference = CEEB28B01BE268A5001A74E8 /* WatchExample Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 		CEEB28CE1BE27340001A74E8 /* TVExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEEB28DB1BE27340001A74E8 /* Build configuration list for PBXNativeTarget "TVExample" */;
@@ -433,12 +327,6 @@
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = CEFBDADA1B1CE38D000E6F30;
 					};
-					CEEB28A31BE268A4001A74E8 = {
-						CreatedOnToolsVersion = 7.1;
-					};
-					CEEB28AF1BE268A5001A74E8 = {
-						CreatedOnToolsVersion = 7.1;
-					};
 					CEEB28CE1BE27340001A74E8 = {
 						CreatedOnToolsVersion = 7.1;
 					};
@@ -463,8 +351,6 @@
 				CEFBDADA1B1CE38D000E6F30 /* DynamicColorExample */,
 				CECBCD801B2B6C5E0047E731 /* DynamicColor */,
 				CECBCD8A1B2B6C5E0047E731 /* DynamicColorTests */,
-				CEEB28A31BE268A4001A74E8 /* WatchExample */,
-				CEEB28AF1BE268A5001A74E8 /* WatchExample Extension */,
 				CEEB28CE1BE27340001A74E8 /* TVExample */,
 			);
 		};
@@ -482,23 +368,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEEB28A21BE268A4001A74E8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEEB28AA1BE268A4001A74E8 /* Assets.xcassets in Resources */,
-				CEEB28A81BE268A4001A74E8 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEEB28AE1BE268A5001A74E8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEEB28BA1BE268A5001A74E8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,18 +412,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEEB28AC1BE268A5001A74E8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEEB28C71BE26AD9001A74E8 /* DynamicColor.swift in Sources */,
-				CEEB28C81BE26AD9001A74E8 /* HSL.swift in Sources */,
-				CEEB28B81BE268A5001A74E8 /* ExtensionDelegate.swift in Sources */,
-				CEEB28CA1BE26B55001A74E8 /* RowController.swift in Sources */,
-				CEEB28B61BE268A5001A74E8 /* InterfaceController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CEEB28CB1BE27340001A74E8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,11 +439,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CEEB28B31BE268A5001A74E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CEEB28AF1BE268A5001A74E8 /* WatchExample Extension */;
-			targetProxy = CEEB28B21BE268A5001A74E8 /* PBXContainerItemProxy */;
-		};
 		CEEB28E31BE28CBE001A74E8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CEFBDADA1B1CE38D000E6F30 /* DynamicColorExample */;
@@ -595,14 +447,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CEEB28A61BE268A4001A74E8 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEEB28A71BE268A4001A74E8 /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
 		CEEB28D51BE27340001A74E8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -707,68 +551,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickloriot.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicColorExample.app/DynamicColorExample";
-			};
-			name = Release;
-		};
-		CEEB28BF1BE268A5001A74E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				IBSC_MODULE = WatchExample_Extension;
-				INFOPLIST_FILE = WatchExample/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.DynamicColorExample.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		CEEB28C01BE268A5001A74E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				IBSC_MODULE = WatchExample_Extension;
-				INFOPLIST_FILE = WatchExample/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.DynamicColorExample.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		CEEB28C11BE268A5001A74E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = "WatchExample Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.DynamicColorExample.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		CEEB28C21BE268A5001A74E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "WatchExample Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.DynamicColorExample.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -932,22 +714,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEEB28C31BE268A5001A74E8 /* Build configuration list for PBXNativeTarget "WatchExample Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CEEB28C11BE268A5001A74E8 /* Debug */,
-				CEEB28C21BE268A5001A74E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		CEEB28C51BE268A5001A74E8 /* Build configuration list for PBXNativeTarget "WatchExample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CEEB28BF1BE268A5001A74E8 /* Debug */,
-				CEEB28C01BE268A5001A74E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		CEEB28DB1BE27340001A74E8 /* Build configuration list for PBXNativeTarget "TVExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -955,6 +721,7 @@
 				CEEB28DD1BE27340001A74E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEFBDAD61B1CE38D000E6F30 /* Build configuration list for PBXProject "DynamicColorExample" */ = {
 			isa = XCConfigurationList;
