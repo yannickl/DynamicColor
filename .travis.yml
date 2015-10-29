@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode7
+osx_image: xcode7.1
 branches:
   only:
     - master
@@ -7,4 +7,4 @@ before_install:
   - gem install xcpretty
 script:
 - set -o pipefail
-- xcodebuild -project Example/DynamicColorExample.xcodeproj -scheme DynamicColorTests -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPad 2" test | xcpretty -c
+- xcodebuild -project Example/DynamicColorExample.xcodeproj -scheme DynamicColorTests -sdk iphonesimulator -destination "id=1DC9867E-D711-4D00-B1E8-7CE9A8DDEDE2" ONLY_ACTIVE_ARCH=NO test | xcpretty -c

@@ -43,19 +43,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CEABDF271BAAFE6D003836C4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEFBDAD31B1CE38D000E6F30 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CEFBDADA1B1CE38D000E6F30;
-			remoteInfo = DynamicColorExample;
-		};
 		CEEB28B21BE268A5001A74E8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CEFBDAD31B1CE38D000E6F30 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CEEB28AF1BE268A5001A74E8;
 			remoteInfo = "WatchExample Extension";
+		};
+		CEEB28E21BE28CBE001A74E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEFBDAD31B1CE38D000E6F30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEFBDADA1B1CE38D000E6F30;
+			remoteInfo = DynamicColorExample;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -338,7 +338,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CEABDF281BAAFE6D003836C4 /* PBXTargetDependency */,
+				CEEB28E31BE28CBE001A74E8 /* PBXTargetDependency */,
 			);
 			name = DynamicColorTests;
 			productName = DynamicColorTests;
@@ -582,15 +582,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CEABDF281BAAFE6D003836C4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CEFBDADA1B1CE38D000E6F30 /* DynamicColorExample */;
-			targetProxy = CEABDF271BAAFE6D003836C4 /* PBXContainerItemProxy */;
-		};
 		CEEB28B31BE268A5001A74E8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CEEB28AF1BE268A5001A74E8 /* WatchExample Extension */;
 			targetProxy = CEEB28B21BE268A5001A74E8 /* PBXContainerItemProxy */;
+		};
+		CEEB28E31BE28CBE001A74E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEFBDADA1B1CE38D000E6F30 /* DynamicColorExample */;
+			targetProxy = CEEB28E21BE28CBE001A74E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -679,7 +679,6 @@
 		CECBCD9C1B2B6C5E0047E731 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -699,7 +698,6 @@
 		CECBCD9D1B2B6C5E0047E731 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
