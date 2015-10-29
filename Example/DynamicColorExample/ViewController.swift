@@ -11,64 +11,33 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDataSource {
   private let ColorCellIdentifier = "ColorCell"
 
-  private let mainColor = UIColor(hex: 0xc0392b)
-
   @IBOutlet weak var colorCollectionView: UICollectionView!
 
-  private var colors: [(String, UIColor)] = [] {
-    didSet {
-      colorCollectionView.reloadData()
-    }
-  }
+  private lazy var colors: [(String, UIColor)] = {
+    let mainColor = UIColor(hexString: "#c0392b")
+
+    return [
+      ("Original", mainColor),
+      ("Lighter", mainColor.lighterColor()),
+      ("Darker", mainColor.darkerColor()),
+      ("Saturated", mainColor.saturatedColor()),
+      ("Desaturated", mainColor.desaturatedColor()),
+      ("Grayscaled", mainColor.grayscaledColor()),
+      ("Adjusted", mainColor.adjustedHueColor(45 / 360)),
+      ("Complement", mainColor.complementColor()),
+      ("Invert", mainColor.invertColor()),
+      ("Mix Blue", mainColor.mixWithColor(UIColor.blueColor())),
+      ("Mix Green", mainColor.mixWithColor(UIColor.greenColor())),
+      ("Mix Yellow", mainColor.mixWithColor(UIColor.yellowColor())),
+      ("Tint", mainColor.tintColor()),
+      ("Shade", mainColor.shadeColor())
+    ]
+  }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    var _colors: [(String, UIColor)] = []
-
-    let original = ("Original", mainColor)
-    _colors.append(original)
-
-    let lighter = ("Lighter", mainColor.lighterColor())
-    _colors.append(lighter)
-
-    let darker = ("Darker", mainColor.darkerColor())
-    _colors.append(darker)
-
-    let saturated = ("Saturated", mainColor.saturatedColor())
-    _colors.append(saturated)
-
-    let desaturated = ("Desaturated", mainColor.desaturatedColor())
-    _colors.append(desaturated)
-
-    let grayscaled = ("Grayscaled", mainColor.grayscaledColor())
-    _colors.append(grayscaled)
-
-    let adjustHue = ("Adjusted", mainColor.adjustedHueColor(45 / 360))
-    _colors.append(adjustHue)
-
-    let complement = ("Complement", mainColor.complementColor())
-    _colors.append(complement)
-
-    let invert = ("Invert", mainColor.invertColor())
-    _colors.append(invert)
-
-    let mixBlue = ("Mix Blue", mainColor.mixWithColor(UIColor.blueColor()))
-    _colors.append(mixBlue)
-
-    let mixGreen = ("Mix Green", mainColor.mixWithColor(UIColor.greenColor()))
-    _colors.append(mixGreen)
-
-    let mixYellow = ("Mix Yellow", mainColor.mixWithColor(UIColor.yellowColor()))
-    _colors.append(mixYellow)
-
-    let tintColor = ("Tint", mainColor.tintColor())
-    _colors.append(tintColor)
-
-    let shadeColor = ("Shade", mainColor.shadeColor())
-    _colors.append(shadeColor)
-
-    colors = _colors
+    colorCollectionView.reloadData()
   }
 
   // MARK: - UICollectionView DataSource Methods
