@@ -4,6 +4,7 @@
 *Released on 2015-10-29.*
 
 - [ADD] WatchOS 2 supports
+- [ADD] TVOS 9 supports
 
 ## [Version 2.0.1](https://github.com/yannickl/DynamicColor/releases/tag/2.0.1)
 *Released on 2015-10-26.*

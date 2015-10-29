@@ -11,8 +11,12 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target     = '8.0'
   s.watchos.deployment_target = '2.0'
+  s.tvos.deployment_target    = '9.0'
 
-  s.framework    = 'UIKit'
+  s.ios.framework     = 'UIKit'
+  s.watchos.framework = 'UIKit'
+  s.tvos.framework    = 'UIKit'
+  
   s.source_files = 'DynamicColor/*.swift'
   s.requires_arc = true
 end
