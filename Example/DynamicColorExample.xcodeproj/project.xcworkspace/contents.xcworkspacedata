@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:DynamicColorExample.xcodeproj">
+      location = "self:/Users/yannickloriot/Development/perso/DynamicColor/Example/DynamicColorExample.xcodeproj">
    </FileRef>
 </Workspace>

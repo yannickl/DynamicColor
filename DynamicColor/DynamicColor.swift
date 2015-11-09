@@ -25,10 +25,9 @@
  */
 
 #if os(iOS) || os(tvOS) || os(watchOS)
-    import UIKit
+  import UIKit
 #elseif os(OSX)
-    import AppKit
-    import CoreGraphics
+  import AppKit
 #endif
 
 /**
@@ -37,9 +36,9 @@
   It allows you to work hexadecimal strings and value, HSV and RGB components, derivating colours, and many more...
 */
 #if os(iOS) || os(tvOS) || os(watchOS)
-    public typealias DynamicColor = UIColor
+  public typealias DynamicColor = UIColor
 #elseif os(OSX)
-    public typealias DynamicColor = NSColor
+  public typealias DynamicColor = NSColor
 #endif
 
 public extension DynamicColor {
@@ -121,9 +120,25 @@ public extension DynamicColor {
     var b: CGFloat = 0
     var a: CGFloat = 0
 
-    getRed(&r, green: &g, blue: &b, alpha: &a)
+    #if os(iOS) || os(tvOS) || os(watchOS)
+      if getRed(&r, green: &g, blue: &b, alpha: &a) {
+        return (r, g, b, a)
+      }
 
-    return (r, g, b, a)
+      return (0, 0, 0, 0)
+    #elseif os(OSX)
+      if isEqual(DynamicColor.blackColor()) {
+        return (0, 0, 0, 0)
+      }
+      else if isEqual(DynamicColor.whiteColor()) {
+        return (1, 1, 1, 1)
+      }
+      else {
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+
+        return (r, g, b, a)
+      }
+    #endif
   }
 
 #if os(iOS) || os(tvOS) || os(watchOS)
@@ -381,17 +396,17 @@ public extension DynamicColor {
 
     let c1 = toRGBAComponents()
     let c2 = color.toRGBAComponents()
-
+    print("mixWithColor: \(c1) \(c2)")
     let w = 2 * normalizedWeight - 1
 
     let a  = c1.a - c2.a
     let w2 = (((w * a == -1) ? w : (w + a) / (1 + w * a)) + 1) / 2
     let w1 = 1 - w2
 
-    let red   = (w1 * c1.r + w2 * c2.r)
-    let green = (w1 * c1.g + w2 * c2.g)
-    let blue  = (w1 * c1.b + w2 * c2.b)
-    let alpha = (c1.a * normalizedWeight + c2.a * (1 - normalizedWeight))
+    let red   = w1 * c1.r + w2 * c2.r
+    let green = w1 * c1.g + w2 * c2.g
+    let blue  = w1 * c1.b + w2 * c2.b
+    let alpha = c1.a * normalizedWeight + c2.a * (1 - normalizedWeight)
 
     return DynamicColor(red: red, green: green, blue: blue, alpha: alpha)
   }
@@ -415,6 +430,6 @@ public extension DynamicColor {
   - returns: A darker DynamicColor.
   */
   public final func shadeColor(amount amount: CGFloat = 0.2) -> DynamicColor {
-    return mixWithColor(DynamicColor.blackColor(), weight: amount)
+    return mixWithColor(DynamicColor(red:0, green:0, blue: 0, alpha:1), weight: amount)
   }
 }

@@ -25,9 +25,9 @@
  */
 
 #if os(iOS) || os(tvOS) || os(watchOS)
-    import UIKit
+  import UIKit
 #elseif os(OSX)
-    import AppKit
+  import AppKit
 #endif
 
 /**
