@@ -6,5 +6,8 @@ branches:
 before_install:
   - gem install xcpretty
 script:
-- set -o pipefail
-- xcodebuild -project Example/DynamicColorExample.xcodeproj -scheme DynamicColorTests -sdk iphonesimulator -destination "id=74B65E5F-38DA-42D9-AD99-1DF06695DC54" ONLY_ACTIVE_ARCH=NO test | xcpretty -c
+  - set -o pipefail
+  - xcodebuild -project Example/DynamicColorExample.xcodeproj -scheme iOSTests -sdk iphonesimulator -destination "id=74B65E5F-38DA-42D9-AD99-1DF06695DC54" -configuration Release ONLY_ACTIVE_ARCH=NO test | xcpretty -c
+  - xcodebuild -project Example/DynamicColorExample.xcodeproj -scheme OSXTests -sdk macosx -configuration Release ONLY_ACTIVE_ARCH=NO test | xcpretty -c
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
