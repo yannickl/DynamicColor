@@ -24,14 +24,23 @@
  *
  */
 
-import UIKit
+#if os(iOS) || os(tvOS) || os(watchOS)
+    import UIKit
+#elseif os(OSX)
+    import AppKit
+    import CoreGraphics
+#endif
 
 /**
   Extension to manipulate colours easily.
 
   It allows you to work hexadecimal strings and value, HSV and RGB components, derivating colours, and many more...
 */
-public typealias DynamicColor = UIColor
+#if os(iOS) || os(tvOS) || os(watchOS)
+    public typealias DynamicColor = UIColor
+#elseif os(OSX)
+    public typealias DynamicColor = NSColor
+#endif
 
 public extension DynamicColor {
   // MARK: - Manipulating Hexa-decimal Values and Strings
