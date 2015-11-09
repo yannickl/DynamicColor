@@ -121,13 +121,12 @@ public extension DynamicColor {
     var b: CGFloat = 0
     var a: CGFloat = 0
 
-    if getRed(&r, green: &g, blue: &b, alpha: &a) {
-      return (r, g, b, a)
-    }
+    getRed(&r, green: &g, blue: &b, alpha: &a)
 
-    return (0, 0, 0, 0)
+    return (r, g, b, a)
   }
 
+#if os(iOS) || os(tvOS) || os(watchOS)
   /**
   Returns the red component.
   
@@ -163,6 +162,7 @@ public extension DynamicColor {
   public final func alphaComponent() -> CGFloat {
     return toRGBAComponents().a
   }
+#endif
 
   // MARK: - Working with HSL Components
 
