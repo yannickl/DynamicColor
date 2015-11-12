@@ -121,11 +121,9 @@ public extension DynamicColor {
     var a: CGFloat = 0
 
     #if os(iOS) || os(tvOS) || os(watchOS)
-      if getRed(&r, green: &g, blue: &b, alpha: &a) {
-        return (r, g, b, a)
-      }
+      getRed(&r, green: &g, blue: &b, alpha: &a)
 
-      return (0, 0, 0, 0)
+      return (r, g, b, a)
     #elseif os(OSX)
       if isEqual(DynamicColor.blackColor()) {
         return (0, 0, 0, 0)
