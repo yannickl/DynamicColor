@@ -167,9 +167,8 @@ internal struct HSL {
     else if hue * 3 < 1.9999 {
       return CGFloat(m1 + (m2 - m1) * (2 / 3 - hue) * 6)
     }
-    else {
-      return CGFloat(m1)
-    }
+
+    return CGFloat(m1)
   }
 
   // MARK: - Deriving the Color
