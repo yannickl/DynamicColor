@@ -1,5 +1,11 @@
 # Change log
 
+## [Version 2.2.0](https://github.com/yannickl/DynamicColor/releases/tag/2.2.0)
+*Released on 2015-11-19.*
+
+- [ADD] `isLightColor` method
+- [ADD] OSX supports
+
 ## [Version 2.1.0](https://github.com/yannickl/DynamicColor/releases/tag/2.1.0)
 *Released on 2015-10-29.*
 

@@ -213,7 +213,6 @@ public extension DynamicColor {
   Returns a boolean value that indicates whether the receiver is equal to the given hexa-decimal string.
 
   - parameter hexString: A hexa-decimal color number representation to be compared to the receiver.
-
   - returns: true if the receiver and the string are equals, otherwise false.
   */
   public func isEqualToHexString(hexString: String) -> Bool {
@@ -224,7 +223,6 @@ public extension DynamicColor {
   Returns a boolean value that indicates whether the receiver is equal to the given hexa-decimal integer.
 
   - parameter hex: A UInt32 that represents the hexa-decimal color.
-
   - returns: true if the receiver and the integer are equals, otherwise false.
   */
   public func isEqualToHex(hex: UInt32) -> Bool {
@@ -237,7 +235,6 @@ public extension DynamicColor {
   Creates and returns a color object with the hue rotated along the color wheel by the given amount.
 
   - parameter amount: A double representing the number of degrees as ratio (usually -1.0 for -360 degree and 1.0 for 360 degree).
-
   - returns: A DynamicColor object with the hue changed.
   */
   public final func adjustedHueColor(amount: Double) -> DynamicColor {
@@ -250,8 +247,7 @@ public extension DynamicColor {
   This is identical to adjustedHueColor(0.5).
 
   - returns: The complement DynamicColor.
-  
-  :see: adjustedHueColor:
+  - seealso: adjustedHueColor:
   */
   public final func complementColor() -> DynamicColor {
     return adjustedHueColor(0.5)
@@ -261,8 +257,7 @@ public extension DynamicColor {
   Creates and returns a lighter color object.
 
   - returns: An DynamicColor lightened with an amount of 0.2.
-
-  :see: lightenColor:
+  - seealso: lightenColor:
   */
   public final func lighterColor() -> DynamicColor {
     return lightenColor(0.2)
@@ -272,7 +267,6 @@ public extension DynamicColor {
   Creates and returns a color object with the lightness increased by the given amount.
 
   - parameter amount: Double between 0.0 and 1.0.
-
   - returns: A lighter DynamicColor.
   */
   public final func lightenColor(amount: Double) -> DynamicColor {
@@ -285,8 +279,7 @@ public extension DynamicColor {
   Creates and returns a darker color object.
 
   - returns: A DynamicColor darkened with an amount of 0.2.
-
-  :see: darkenColor:
+  - seealso: darkenColor:
   */
   public final func darkerColor() -> DynamicColor {
     return darkenColor(0.2)
@@ -296,7 +289,6 @@ public extension DynamicColor {
   Creates and returns a color object with the lightness decreased by the given amount.
 
   - parameter amount: Float between 0.0 and 1.0.
-
   - returns: A darker DynamicColor.
   */
   public final func darkenColor(amount: Double) -> DynamicColor {
@@ -309,8 +301,7 @@ public extension DynamicColor {
   Creates and returns a color object with the saturation increased by the given amount.
 
   - returns: A DynamicColor more saturated with an amount of 0.2.
-
-  :see: saturateColor:
+  - seealso: saturateColor:
   */
   public final func saturatedColor() -> DynamicColor {
     return saturateColor(0.2)
@@ -333,8 +324,7 @@ public extension DynamicColor {
   Creates and returns a color object with the saturation decreased by the given amount.
 
   - returns: A DynamicColor less saturated with an amount of 0.2.
-
-  :see: desaturateColor:
+  - seealso: desaturateColor:
   */
   public final func desaturatedColor() -> DynamicColor {
     return desaturateColor(0.2)
@@ -344,7 +334,6 @@ public extension DynamicColor {
   Creates and returns a color object with the saturation decreased by the given amount.
 
   - parameter amount: Double between 0.0 and 1.0.
-
   - returns: A DynamicColor less saturated.
   */
   public final func desaturateColor(amount: Double) -> DynamicColor {
@@ -359,8 +348,7 @@ public extension DynamicColor {
   This is identical to desaturateColor(1).
   
   - returns: A grayscale DynamicColor.
-
-  :see: desaturateColor:
+  - seealso: desaturateColor:
   */
   public final func grayscaledColor() -> DynamicColor {
     return desaturateColor(1)
@@ -377,6 +365,22 @@ public extension DynamicColor {
     return DynamicColor(red: 1 - rgba.r, green: 1 - rgba.g, blue: 1 - rgba.b, alpha: rgba.a)
   }
 
+  // MARK: - Querying Colors 
+
+  /**
+  Determines if the color object is dark or light.
+
+  It is useful when you need to know whether you should display the text in black or white.
+
+  - returns: A boolean value to know whether the color is light. If true the color is light, dark otherwise.
+  */
+  func isLightColor() -> Bool {
+    let components = toRGBAComponents()
+    let brightness = ((components.r * 299) + (components.g * 587) + (components.b * 114)) / 1000
+
+    return brightness >= 0.5
+  }
+
   // MARK: - Mixing Colors
 
   /**
@@ -386,7 +390,6 @@ public extension DynamicColor {
 
   - parameter color: A color object to mix with the receiver.
   - parameter weight: The weight specifies the amount of the given color object (between 0 and 1). The default value is 0.5, which means that half the given color and half the receiver color object should be used. 0.25 means that a quarter of the given color object and three quarters of the receiver color object should be used.
-  
   - returns: A color object corresponding to the two colors object mixed together.
   */
   public final func mixWithColor(color: DynamicColor, weight: CGFloat = 0.5) -> DynamicColor {
@@ -394,7 +397,7 @@ public extension DynamicColor {
 
     let c1 = toRGBAComponents()
     let c2 = color.toRGBAComponents()
-    print("mixWithColor: \(c1) \(c2)")
+
     let w = 2 * normalizedWeight - 1
 
     let a  = c1.a - c2.a
@@ -413,7 +416,6 @@ public extension DynamicColor {
   Creates and returns a color object corresponding to the mix of the receiver and an amount of white color, which increases lightness.
 
   - parameter amount: Float between 0.0 and 1.0. The default amount is equal to 0.2.
-
   - returns: A lighter DynamicColor.
   */
   public final func tintColor(amount amount: CGFloat = 0.2) -> DynamicColor {
@@ -424,7 +426,6 @@ public extension DynamicColor {
   Creates and returns a color object corresponding to the mix of the receiver and an amount of black color, which reduces lightness.
 
   - parameter amount: Float between 0.0 and 1.0. The default amount is equal to 0.2.
-
   - returns: A darker DynamicColor.
   */
   public final func shadeColor(amount amount: CGFloat = 0.2) -> DynamicColor {
