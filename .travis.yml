@@ -1,5 +1,8 @@
 language: objective-c
 osx_image: xcode7.1
+branches:
+  only:
+    - master
 before_install:
   - gem install xcpretty
 script:

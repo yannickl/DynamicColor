@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2E46FF1C065D6500E341B0 /* XCTTestCaseTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E46FD1C065D5800E341B0 /* XCTTestCaseTemplate.swift */; };
+		CE2E47011C065E1F00E341B0 /* XCTTestCaseTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E47001C065E1F00E341B0 /* XCTTestCaseTemplate.swift */; };
 		CEA829931B41D5E40050DEEB /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */; };
 		CEA829941B41D5E40050DEEB /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CECBCD861B2B6C5E0047E731 /* DynamicColor.h in Headers */ = {isa = PBXBuildFile; fileRef = CECBCD851B2B6C5E0047E731 /* DynamicColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -70,6 +72,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE2E46FD1C065D5800E341B0 /* XCTTestCaseTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XCTTestCaseTemplate.swift; path = ../../Tests/XCTTestCaseTemplate.swift; sourceTree = "<group>"; };
+		CE2E47001C065E1F00E341B0 /* XCTTestCaseTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTTestCaseTemplate.swift; sourceTree = "<group>"; };
 		CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DynamicColor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECBCD841B2B6C5E0047E731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CECBCD851B2B6C5E0047E731 /* DynamicColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicColor.h; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				CECBCD921B2B6C5E0047E731 /* Supporting Files */,
+				CE2E46FD1C065D5800E341B0 /* XCTTestCaseTemplate.swift */,
 				CECBCDA71B2B6EEB0047E731 /* DynamicColorTests.swift */,
 			);
 			path = DynamicColorTests;
@@ -174,6 +179,7 @@
 		CEE753CB1BF105E3001FF6ED /* OSXTests */ = {
 			isa = PBXGroup;
 			children = (
+				CE2E47001C065E1F00E341B0 /* XCTTestCaseTemplate.swift */,
 				CEE753CC1BF105E3001FF6ED /* DynamicColorTests.swift */,
 				CEE753CE1BF105E3001FF6ED /* Info.plist */,
 			);
@@ -462,6 +468,7 @@
 				CECBCDA11B2B6CCC0047E731 /* DynamicColor.swift in Sources */,
 				CECBCDA21B2B6CCC0047E731 /* HSL.swift in Sources */,
 				CECBCDA81B2B6EEB0047E731 /* DynamicColorTests.swift in Sources */,
+				CE2E46FF1C065D6500E341B0 /* XCTTestCaseTemplate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +479,7 @@
 				CEE753D31BF10694001FF6ED /* HSL.swift in Sources */,
 				CEE753CD1BF105E3001FF6ED /* DynamicColorTests.swift in Sources */,
 				CEE753D21BF10694001FF6ED /* DynamicColor.swift in Sources */,
+				CE2E47011C065E1F00E341B0 /* XCTTestCaseTemplate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

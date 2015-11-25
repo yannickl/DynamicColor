@@ -27,7 +27,7 @@
 import UIKit
 import XCTest
 
-class DynamicColorTests: XCTestCase {
+class DynamicColorTests: XCTTestCaseTemplate {
   func testColorFromHexString() {
     let redStandard = UIColor.redColor()
     let redHex      = UIColor(hexString: "#ff0000")
