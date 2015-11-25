@@ -24,10 +24,9 @@
  *
  */
 
-import AppKit
 import XCTest
 
-class DynamicColorTests: XCTTestCaseTemplate {
+class DynamicColorTests: XCTestCase {
   func testColorFromHexString() {
     let redStandard = NSColor.redColor()
     let redHex      = NSColor(hexString: "#ff0000")
