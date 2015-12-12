@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 2.3.0](https://github.com/yannickl/DynamicColor/releases/tag/2.3.0)
+*Released on 2015-12-12.*
+
+- [ADD] `adjustedAlphaColor` method
+
 ## [Version 2.2.0](https://github.com/yannickl/DynamicColor/releases/tag/2.2.0)
 *Released on 2015-11-19.*
 

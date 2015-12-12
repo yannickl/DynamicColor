@@ -143,7 +143,7 @@ public extension DynamicColor {
   /**
   Returns the red component.
   
-  - returns: The red component as CGFloat.
+  - returns: The red component as CGFloat between 0.0 to 1.0.
   */
   public final func redComponent() -> CGFloat {
     return toRGBAComponents().r
@@ -152,7 +152,7 @@ public extension DynamicColor {
   /**
   Returns the green component.
 
-  - returns: The green component as CGFloat.
+  - returns: The green component as CGFloat between 0.0 to 1.0.
   */
   public final func greenComponent() -> CGFloat {
     return toRGBAComponents().g
@@ -161,7 +161,7 @@ public extension DynamicColor {
   /**
   Returns the blue component.
 
-  - returns: The blue component as CGFloat.
+  - returns: The blue component as CGFloat between 0.0 to 1.0.
   */
   public final func blueComponent() -> CGFloat {
     return toRGBAComponents().b
@@ -170,12 +170,27 @@ public extension DynamicColor {
   /**
   Returns the alpha component.
 
-  - returns: The alpha component as CGFloat.
+  - returns: The alpha component as CGFloat between 0.0 to 1.0.
   */
   public final func alphaComponent() -> CGFloat {
     return toRGBAComponents().a
   }
 #endif
+
+  // MARK: - Setting the RGBA Components
+
+  /**
+  Creates and returns a color object with the alpha increased by the given amount.
+
+  - parameter amount: CGFloat between 0.0 and 1.0.
+  - returns: A color object with its alpha channel modified.
+  */
+  public final func adjustedAlphaColor(amount: CGFloat) -> DynamicColor {
+    let components      = toRGBAComponents()
+    let normalizedAlpha = clip(components.a + amount, 0, 1)
+
+    return DynamicColor(red: components.r, green: components.g, blue: components.b, alpha: normalizedAlpha)
+  }
 
   // MARK: - Working with HSL Components
 
