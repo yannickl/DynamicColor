@@ -122,7 +122,7 @@ class DynamicColorTests: XCTTestCaseTemplate {
   func testRedComponent() {
     let customColor = UIColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
 
-    let redComponent = customColor.redComponent()
+    let redComponent = customColor.redComponent
 
     XCTAssert(redComponent == 0.23, "Color red component should be equal to 0.23")
   }
@@ -130,7 +130,7 @@ class DynamicColorTests: XCTTestCaseTemplate {
   func testGreenComponent() {
     let customColor = UIColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
 
-    let greenComponent = customColor.greenComponent()
+    let greenComponent = customColor.greenComponent
 
     XCTAssert(greenComponent == 0.46, "Color green component should be equal to 0.46")
   }
@@ -138,7 +138,7 @@ class DynamicColorTests: XCTTestCaseTemplate {
   func testBlueComponent() {
     let customColor = UIColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
 
-    let blueComponent = customColor.blueComponent()
+    let blueComponent = customColor.blueComponent
 
     XCTAssert(blueComponent == 0.32, "Color blue component should be equal to 0.32")
   }
@@ -146,7 +146,7 @@ class DynamicColorTests: XCTTestCaseTemplate {
   func testAlphaComponent() {
     let customColor = UIColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
 
-    let alphaComponent = customColor.alphaComponent()
+    let alphaComponent = customColor.alphaComponent
 
     XCTAssert(alphaComponent == 1, "Color alpha component should be equal to 1")
   }
@@ -154,23 +154,23 @@ class DynamicColorTests: XCTTestCaseTemplate {
   func testAdjustedAlphaColor() {
     let customColor = UIColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
 
-    XCTAssert(customColor.alphaComponent() == 1, "Color alpha component should be equal to 1")
+    XCTAssert(customColor.alphaComponent == 1, "Color alpha component should be equal to 1")
 
     let adjustedAlpha1 = customColor.adjustedAlphaColor(-0.5)
 
-    XCTAssert(adjustedAlpha1.alphaComponent() == 0.5, "Color alpha component should be equal to 0.5")
+    XCTAssert(adjustedAlpha1.alphaComponent == 0.5, "Color alpha component should be equal to 0.5")
 
     let adjustedAlpha2 = adjustedAlpha1.adjustedAlphaColor(0.2)
 
-    XCTAssert(adjustedAlpha2.alphaComponent() == 0.7, "Color alpha component should be equal to 0.7")
+    XCTAssert(adjustedAlpha2.alphaComponent == 0.7, "Color alpha component should be equal to 0.7")
 
     let adjustedAlpha3 = adjustedAlpha2.adjustedAlphaColor(-1)
 
-    XCTAssert(adjustedAlpha3.alphaComponent() == 0, "Color alpha component should be equal to 0")
+    XCTAssert(adjustedAlpha3.alphaComponent == 0, "Color alpha component should be equal to 0")
 
     let adjustedAlpha4 = adjustedAlpha3.adjustedAlphaColor(23)
 
-    XCTAssert(adjustedAlpha4.alphaComponent() == 1, "Color alpha component should be equal to 1")
+    XCTAssert(adjustedAlpha4.alphaComponent == 1, "Color alpha component should be equal to 1")
   }
 
   func testInitWithHSLAComponents() {
@@ -197,7 +197,7 @@ class DynamicColorTests: XCTTestCaseTemplate {
 
     XCTAssert(custom.isEqualToHexString("#e74d3c"), "Color should be equal to #e74d3c")
     XCTAssert(alpha.isEqualToHexString("#e74d3c"), "Color should be equal to #e74d3c")
-    XCTAssert(alpha.alphaComponent() == 0.5, "Color alpha channel should be equal to 0.5")
+    XCTAssert(alpha.alphaComponent == 0.5, "Color alpha channel should be equal to 0.5")
   }
 
   func testToHSLAComponents() {

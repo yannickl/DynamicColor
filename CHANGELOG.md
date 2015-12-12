@@ -4,11 +4,13 @@
 *Released on 2015-12-12.*
 
 - [ADD] `adjustedAlphaColor` method
+- [REFACTORING] Move `redComponent/greenComponent/blueComponent/alphaComponent` methods to properties in order to reflect the OSX API
 
 ## [Version 2.2.0](https://github.com/yannickl/DynamicColor/releases/tag/2.2.0)
 *Released on 2015-11-19.*
 
 - [ADD] `isLightColor` method
+- [REFACTORING] `red/green/blue/alpha` methods to `redComponent/greenComponent/blueComponent/alphaComponent`
 - [ADD] OSX supports
 
 ## [Version 2.1.0](https://github.com/yannickl/DynamicColor/releases/tag/2.1.0)

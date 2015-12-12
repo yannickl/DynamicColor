@@ -141,39 +141,39 @@ public extension DynamicColor {
 
 #if os(iOS) || os(tvOS) || os(watchOS)
   /**
-  Returns the red component.
-  
-  - returns: The red component as CGFloat between 0.0 to 1.0.
+  The red component as CGFloat between 0.0 to 1.0.
   */
-  public final func redComponent() -> CGFloat {
-    return toRGBAComponents().r
+  public final var redComponent: CGFloat {
+    get {
+      return toRGBAComponents().r
+    }
   }
 
   /**
-  Returns the green component.
-
-  - returns: The green component as CGFloat between 0.0 to 1.0.
+  The green component as CGFloat between 0.0 to 1.0.
   */
-  public final func greenComponent() -> CGFloat {
-    return toRGBAComponents().g
+  public final var greenComponent: CGFloat {
+    get {
+      return toRGBAComponents().g
+    }
   }
 
   /**
-  Returns the blue component.
-
-  - returns: The blue component as CGFloat between 0.0 to 1.0.
+  The blue component as CGFloat between 0.0 to 1.0.
   */
-  public final func blueComponent() -> CGFloat {
-    return toRGBAComponents().b
+  public final var blueComponent: CGFloat {
+    get {
+      return toRGBAComponents().b
+    }
   }
 
   /**
-  Returns the alpha component.
-
-  - returns: The alpha component as CGFloat between 0.0 to 1.0.
+  The alpha component as CGFloat between 0.0 to 1.0.
   */
-  public final func alphaComponent() -> CGFloat {
-    return toRGBAComponents().a
+  public final var alphaComponent: CGFloat {
+    get {
+      return toRGBAComponents().a
+    }
   }
 #endif
 
