@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 2.4.0](https://github.com/yannickl/DynamicColor/releases/tag/2.4.0)
+*Released on 2016-02-29.*
+
+- [ADD] Swift Package Manager supports
+
 ## [Version 2.3.0](https://github.com/yannickl/DynamicColor/releases/tag/2.3.0)
 *Released on 2015-12-12.*
 

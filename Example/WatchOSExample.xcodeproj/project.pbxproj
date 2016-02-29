@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CEABC1E41BE29F0F0054AB7C /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABC1E21BE29F0F0054AB7C /* DynamicColor.swift */; };
-		CEABC1E51BE29F0F0054AB7C /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABC1E31BE29F0F0054AB7C /* HSL.swift */; };
-		CEABC1E61BE29F140054AB7C /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABC1E21BE29F0F0054AB7C /* DynamicColor.swift */; };
-		CEABC1E71BE29F140054AB7C /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABC1E31BE29F0F0054AB7C /* HSL.swift */; };
+		CEACBD171C84EAEB00193E0E /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD151C84EAEB00193E0E /* DynamicColor.swift */; };
+		CEACBD181C84EAEB00193E0E /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD161C84EAEB00193E0E /* HSL.swift */; };
+		CEACBD191C84EAF500193E0E /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD151C84EAEB00193E0E /* DynamicColor.swift */; };
+		CEACBD1A1C84EAF500193E0E /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD161C84EAEB00193E0E /* HSL.swift */; };
 		CEEB28F11BE29DCF001A74E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28F01BE29DCF001A74E8 /* AppDelegate.swift */; };
 		CEEB28F31BE29DCF001A74E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28F21BE29DCF001A74E8 /* ViewController.swift */; };
 		CEEB28F61BE29DCF001A74E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28F41BE29DCF001A74E8 /* Main.storyboard */; };
@@ -69,8 +69,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CEABC1E21BE29F0F0054AB7C /* DynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColor.swift; sourceTree = "<group>"; };
-		CEABC1E31BE29F0F0054AB7C /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
+		CEACBD151C84EAEB00193E0E /* DynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColor.swift; sourceTree = "<group>"; };
+		CEACBD161C84EAEB00193E0E /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
 		CEEB28ED1BE29DCF001A74E8 /* WatchOSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchOSExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEB28F01BE29DCF001A74E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEEB28F21BE29DCF001A74E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,20 +108,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CEABC1E11BE29F0F0054AB7C /* DynamicColor */ = {
+		CEACBD141C84EAEB00193E0E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				CEABC1E21BE29F0F0054AB7C /* DynamicColor.swift */,
-				CEABC1E31BE29F0F0054AB7C /* HSL.swift */,
+				CEACBD151C84EAEB00193E0E /* DynamicColor.swift */,
+				CEACBD161C84EAEB00193E0E /* HSL.swift */,
 			);
-			name = DynamicColor;
-			path = ../DynamicColor;
+			name = Sources;
+			path = ../Sources;
 			sourceTree = "<group>";
 		};
 		CEEB28E41BE29DCF001A74E8 = {
 			isa = PBXGroup;
 			children = (
-				CEABC1E11BE29F0F0054AB7C /* DynamicColor */,
+				CEACBD141C84EAEB00193E0E /* Sources */,
 				CEEB28EF1BE29DCF001A74E8 /* WatchOSExample */,
 				CEEB29031BE29DCF001A74E8 /* WatchOSExample WatchKit App */,
 				CEEB29121BE29DD0001A74E8 /* WatchOSExample WatchKit Extension */,
@@ -307,9 +307,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEB28F31BE29DCF001A74E8 /* ViewController.swift in Sources */,
-				CEABC1E41BE29F0F0054AB7C /* DynamicColor.swift in Sources */,
+				CEACBD171C84EAEB00193E0E /* DynamicColor.swift in Sources */,
 				CEEB28F11BE29DCF001A74E8 /* AppDelegate.swift in Sources */,
-				CEABC1E51BE29F0F0054AB7C /* HSL.swift in Sources */,
+				CEACBD181C84EAEB00193E0E /* HSL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,9 +317,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEABC1E61BE29F140054AB7C /* DynamicColor.swift in Sources */,
-				CEABC1E71BE29F140054AB7C /* HSL.swift in Sources */,
 				CEEB292A1BE29E1D001A74E8 /* RowController.swift in Sources */,
+				CEACBD1A1C84EAF500193E0E /* HSL.swift in Sources */,
+				CEACBD191C84EAF500193E0E /* DynamicColor.swift in Sources */,
 				CEEB29161BE29DD0001A74E8 /* ExtensionDelegate.swift in Sources */,
 				CEEB29141BE29DD0001A74E8 /* InterfaceController.swift in Sources */,
 			);
@@ -404,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -443,7 +443,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

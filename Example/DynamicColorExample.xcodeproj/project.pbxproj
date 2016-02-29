@@ -8,31 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		CE2E46FF1C065D6500E341B0 /* XCTTestCaseTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E46FD1C065D5800E341B0 /* XCTTestCaseTemplate.swift */; };
-		CEA829931B41D5E40050DEEB /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */; };
-		CEA829941B41D5E40050DEEB /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CECBCD861B2B6C5E0047E731 /* DynamicColor.h in Headers */ = {isa = PBXBuildFile; fileRef = CECBCD851B2B6C5E0047E731 /* DynamicColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CECBCD981B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; };
 		CECBCD991B2B6C5E0047E731 /* DynamicColor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CECBCDA11B2B6CCC0047E731 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */; };
-		CECBCDA21B2B6CCC0047E731 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CECBCDA81B2B6EEB0047E731 /* DynamicColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBCDA71B2B6EEB0047E731 /* DynamicColorTests.swift */; };
 		CEE753CD1BF105E3001FF6ED /* DynamicColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE753CC1BF105E3001FF6ED /* DynamicColorTests.swift */; };
-		CEE753D21BF10694001FF6ED /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */; };
-		CEE753D31BF10694001FF6ED /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CEEB28D21BE27340001A74E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28D11BE27340001A74E8 /* AppDelegate.swift */; };
 		CEEB28D71BE27340001A74E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28D51BE27340001A74E8 /* Main.storyboard */; };
 		CEEB28D91BE27340001A74E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28D81BE27340001A74E8 /* Assets.xcassets */; };
-		CEEB28DE1BE27355001A74E8 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */; };
-		CEEB28DF1BE27355001A74E8 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CEEB28E01BE27401001A74E8 /* ColorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */; };
 		CEEB28E11BE27482001A74E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDAE21B1CE38D000E6F30 /* ViewController.swift */; };
+		CEF85A251C84EA5B00DD1A49 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF85A231C84EA5B00DD1A49 /* DynamicColor.swift */; };
+		CEF85A261C84EA5B00DD1A49 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF85A241C84EA5B00DD1A49 /* HSL.swift */; };
+		CEF85A271C84EA6600DD1A49 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF85A231C84EA5B00DD1A49 /* DynamicColor.swift */; };
+		CEF85A281C84EA6600DD1A49 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF85A241C84EA5B00DD1A49 /* HSL.swift */; };
+		CEF85A291C84EA6700DD1A49 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF85A231C84EA5B00DD1A49 /* DynamicColor.swift */; };
+		CEF85A2A1C84EA6700DD1A49 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF85A241C84EA5B00DD1A49 /* HSL.swift */; };
+		CEF85A2B1C84EA6800DD1A49 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF85A231C84EA5B00DD1A49 /* DynamicColor.swift */; };
+		CEF85A2C1C84EA6800DD1A49 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF85A241C84EA5B00DD1A49 /* HSL.swift */; };
+		CEF85A2D1C84EA6800DD1A49 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF85A231C84EA5B00DD1A49 /* DynamicColor.swift */; };
+		CEF85A2E1C84EA6800DD1A49 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF85A241C84EA5B00DD1A49 /* HSL.swift */; };
 		CEFBDAE11B1CE38D000E6F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDAE01B1CE38D000E6F30 /* AppDelegate.swift */; };
 		CEFBDAE31B1CE38D000E6F30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDAE21B1CE38D000E6F30 /* ViewController.swift */; };
 		CEFBDAE61B1CE38D000E6F30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFBDAE41B1CE38D000E6F30 /* Main.storyboard */; };
 		CEFBDAE81B1CE38D000E6F30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFBDAE71B1CE38D000E6F30 /* Images.xcassets */; };
 		CEFBDAEB1B1CE38D000E6F30 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFBDAE91B1CE38D000E6F30 /* LaunchScreen.xib */; };
-		CEFBDB021B1CE413000E6F30 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */; };
-		CEFBDB041B1CF188000E6F30 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB031B1CF188000E6F30 /* HSL.swift */; };
 		CEFBDB191B1DE220000E6F30 /* ColorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +86,8 @@
 		CEEB28D61BE27340001A74E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEEB28D81BE27340001A74E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEEB28DA1BE27340001A74E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF85A231C84EA5B00DD1A49 /* DynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColor.swift; sourceTree = "<group>"; };
+		CEF85A241C84EA5B00DD1A49 /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
 		CEFBDADB1B1CE38D000E6F30 /* DynamicColorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicColorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFBDADF1B1CE38D000E6F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEFBDAE01B1CE38D000E6F30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,8 +95,6 @@
 		CEFBDAE51B1CE38D000E6F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEFBDAE71B1CE38D000E6F30 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CEFBDAEA1B1CE38D000E6F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColor.swift; sourceTree = "<group>"; };
-		CEFBDB031B1CF188000E6F30 /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
 		CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,10 +194,20 @@
 			path = tvOSExample;
 			sourceTree = "<group>";
 		};
+		CEF85A221C84EA5B00DD1A49 /* DynamicColor */ = {
+			isa = PBXGroup;
+			children = (
+				CEF85A231C84EA5B00DD1A49 /* DynamicColor.swift */,
+				CEF85A241C84EA5B00DD1A49 /* HSL.swift */,
+			);
+			name = DynamicColor;
+			path = ../Sources;
+			sourceTree = "<group>";
+		};
 		CEFBDAD21B1CE38D000E6F30 = {
 			isa = PBXGroup;
 			children = (
-				CEFBDB001B1CE3F2000E6F30 /* DynamicColor */,
+				CEF85A221C84EA5B00DD1A49 /* DynamicColor */,
 				CEFBDADD1B1CE38D000E6F30 /* iOSExample */,
 				CEEB28D01BE27340001A74E8 /* tvOSExample */,
 				CECBCD821B2B6C5E0047E731 /* DynamicColorFramework */,
@@ -239,16 +249,6 @@
 				CEFBDADF1B1CE38D000E6F30 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CEFBDB001B1CE3F2000E6F30 /* DynamicColor */ = {
-			isa = PBXGroup;
-			children = (
-				CEFBDB011B1CE413000E6F30 /* DynamicColor.swift */,
-				CEFBDB031B1CF188000E6F30 /* HSL.swift */,
-			);
-			name = DynamicColor;
-			path = ../DynamicColor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,8 +453,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA829931B41D5E40050DEEB /* DynamicColor.swift in Sources */,
-				CEA829941B41D5E40050DEEB /* HSL.swift in Sources */,
+				CEF85A251C84EA5B00DD1A49 /* DynamicColor.swift in Sources */,
+				CEF85A261C84EA5B00DD1A49 /* HSL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,10 +462,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECBCDA11B2B6CCC0047E731 /* DynamicColor.swift in Sources */,
-				CECBCDA21B2B6CCC0047E731 /* HSL.swift in Sources */,
 				CECBCDA81B2B6EEB0047E731 /* DynamicColorTests.swift in Sources */,
+				CEF85A2B1C84EA6800DD1A49 /* DynamicColor.swift in Sources */,
 				CE2E46FF1C065D6500E341B0 /* XCTTestCaseTemplate.swift in Sources */,
+				CEF85A2C1C84EA6800DD1A49 /* HSL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,9 +473,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEE753D31BF10694001FF6ED /* HSL.swift in Sources */,
+				CEF85A2E1C84EA6800DD1A49 /* HSL.swift in Sources */,
 				CEE753CD1BF105E3001FF6ED /* DynamicColorTests.swift in Sources */,
-				CEE753D21BF10694001FF6ED /* DynamicColor.swift in Sources */,
+				CEF85A2D1C84EA6800DD1A49 /* DynamicColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,9 +484,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEB28E11BE27482001A74E8 /* ViewController.swift in Sources */,
+				CEF85A2A1C84EA6700DD1A49 /* HSL.swift in Sources */,
+				CEF85A291C84EA6700DD1A49 /* DynamicColor.swift in Sources */,
 				CEEB28E01BE27401001A74E8 /* ColorCellView.swift in Sources */,
-				CEEB28DE1BE27355001A74E8 /* DynamicColor.swift in Sources */,
-				CEEB28DF1BE27355001A74E8 /* HSL.swift in Sources */,
 				CEEB28D21BE27340001A74E8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,10 +496,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEFBDB191B1DE220000E6F30 /* ColorCellView.swift in Sources */,
+				CEF85A281C84EA6600DD1A49 /* HSL.swift in Sources */,
+				CEF85A271C84EA6600DD1A49 /* DynamicColor.swift in Sources */,
 				CEFBDAE31B1CE38D000E6F30 /* ViewController.swift in Sources */,
-				CEFBDB021B1CE413000E6F30 /* DynamicColor.swift in Sources */,
 				CEFBDAE11B1CE38D000E6F30 /* AppDelegate.swift in Sources */,
-				CEFBDB041B1CF188000E6F30 /* HSL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,6 +779,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/iOSExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickloriot.$(PRODUCT_NAME:rfc1034identifier)";
@@ -790,6 +791,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/iOSExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yannickloriot.$(PRODUCT_NAME:rfc1034identifier)";

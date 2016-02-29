@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DynamicColor'
-  s.version          = '2.3.0'
+  s.version          = '2.4.0'
   s.license          = 'MIT'
   s.summary          = 'Yet another extension to manipulate colors easily in Swift'
   s.homepage         = 'https://github.com/yannickl/DynamicColor.git'
@@ -19,6 +19,6 @@ Pod::Spec.new do |s|
   s.tvos.framework    = 'UIKit'
   s.watchos.framework = 'UIKit'
 
-  s.source_files = 'DynamicColor/*.swift'
+  s.source_files = 'Sources/*.swift'
   s.requires_arc = true
 end
