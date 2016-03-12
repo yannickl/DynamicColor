@@ -21,10 +21,13 @@ let color = UIColor(hexString: "#3498db")
 ```
 
 To be platform independent, the typealias `DynamicColor` can also be used:
+
 ```swift
-let color = UIColor(hexString: "#3498db")
-// equivalent to
+let color = DynamicColor(hex: 0x3498db)
+// On iOS, equivalent to
 // color = UIColor(hex: 0x3498db)
+// On OSX, equivalent to
+// color = NSColor(hex: 0x3498db)
 ```
 
 #### Darken & Lighten
