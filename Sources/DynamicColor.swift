@@ -30,14 +30,19 @@
   import AppKit
 #endif
 
-/**
-  Extension to manipulate colours easily.
-
-  It allows you to work hexadecimal strings and value, HSV and RGB components, derivating colours, and many more...
-*/
 #if os(iOS) || os(tvOS) || os(watchOS)
+  /**
+   Extension to manipulate colours easily.
+
+   It allows you to work hexadecimal strings and value, HSV and RGB components, derivating colours, and many more...
+   */
   public typealias DynamicColor = UIColor
 #elseif os(OSX)
+  /**
+   Extension to manipulate colours easily.
+
+   It allows you to work hexadecimal strings and value, HSV and RGB components, derivating colours, and many more...
+   */
   public typealias DynamicColor = NSColor
 #endif
 
@@ -45,7 +50,9 @@ public extension DynamicColor {
   // MARK: - Manipulating Hexa-decimal Values and Strings
 
   /**
-  Creates a color from an hex string.
+  Creates a color from an hex string (e.g. "#3498db").
+  
+  If the given hex string is invalid the initialiser will create a black color.
 
   - parameter hexString: A hexa-decimal color string representation.
   */
@@ -68,7 +75,7 @@ public extension DynamicColor {
   }
 
   /**
-  Creates a color from an hex integer.
+  Creates a color from an hex integer (e.g. 0x3498db).
 
   - parameter hex: A hexa-decimal UInt32 that represents a color.
   */
