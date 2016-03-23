@@ -66,9 +66,7 @@ public extension DynamicColor {
    - returns: A lighter DynamicColor.
    */
   public final func lightenColor(amount: Double) -> DynamicColor {
-    let normalizedAmount = clip(amount, 0, 1)
-
-    return HSL(color: self).lighten(normalizedAmount).toDynamicColor()
+    return HSL(color: self).lighten(amount).toDynamicColor()
   }
 
   /**
@@ -88,9 +86,7 @@ public extension DynamicColor {
    - returns: A darker DynamicColor.
    */
   public final func darkenColor(amount: Double) -> DynamicColor {
-    let normalizedAmount = clip(amount, 0, 1)
-
-    return HSL(color: self).darken(normalizedAmount).toDynamicColor()
+    return HSL(color: self).darken(amount).toDynamicColor()
   }
 
   /**
@@ -111,9 +107,7 @@ public extension DynamicColor {
    - returns: A DynamicColor more saturated.
    */
   public final func saturateColor(amount: Double) -> DynamicColor {
-    let normalizedAmount = clip(amount, 0, 1)
-
-    return HSL(color: self).saturate(normalizedAmount).toDynamicColor()
+    return HSL(color: self).saturate(amount).toDynamicColor()
   }
 
   /**
@@ -133,9 +127,7 @@ public extension DynamicColor {
    - returns: A DynamicColor less saturated.
    */
   public final func desaturateColor(amount: Double) -> DynamicColor {
-    let normalizedAmount = clip(amount, 0, 1)
-
-    return HSL(color: self).desaturate(normalizedAmount).toDynamicColor()
+    return HSL(color: self).desaturate(amount).toDynamicColor()
   }
 
   /**
