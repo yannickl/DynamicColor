@@ -12,7 +12,7 @@ DynamicColor provides powerful methods to manipulate colours in an easy way in S
 
 #### Creation
 
-Firstly, DynamicColor provides useful initializers to create colours using hex values :
+Firstly, DynamicColor provides useful initializers to create colors using hex strings or values:
 
 ```swift
 let color = UIColor(hexString: "#3498db")
@@ -24,7 +24,7 @@ To be platform independent, the typealias `DynamicColor` can also be used:
 
 ```swift
 let color = DynamicColor(hex: 0x3498db)
-// On iOS, equivalent to
+// On iOS, WatchOS or tvOS, equivalent to
 // color = UIColor(hex: 0x3498db)
 // On OSX, equivalent to
 // color = NSColor(hex: 0x3498db)

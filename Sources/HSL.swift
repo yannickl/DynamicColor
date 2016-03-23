@@ -132,24 +132,20 @@ internal struct HSL {
   - returns: A DynamicColor object corresponding to the current HSV color.
   */
   func toDynamicColor() -> DynamicColor {
-    let lightness  = clip(l, 0, 1)
-    let saturation = clip(s, 0, 1)
-    let hue        = moda(h, m: 1)
-    
-    var m2: Double = 0
+    let m2: Double
 
-    if lightness <= 0.5 {
-      m2 = lightness * (saturation + 1)
+    if l <= 0.5 {
+      m2 = l * (s + 1)
     }
     else {
-      m2 = (lightness + saturation) - (lightness * saturation)
+      m2 = (l + s) - (l * s)
     }
 
-    let m1 = (lightness * 2) - m2
+    let m1 = (l * 2) - m2
 
-    let r = hueToRGB(m1, m2: m2, h: hue + 1 / 3)
-    let g = hueToRGB(m1, m2: m2, h: hue)
-    let b = hueToRGB(m1, m2: m2, h: hue - 1 / 3)
+    let r = hueToRGB(m1, m2: m2, h: h + 1 / 3)
+    let g = hueToRGB(m1, m2: m2, h: h)
+    let b = hueToRGB(m1, m2: m2, h: h - 1 / 3)
 
     return DynamicColor(red: r, green: g, blue: b, alpha: CGFloat(a))
   }
@@ -200,7 +196,7 @@ internal struct HSL {
   - returns: A darker HSL color.
   */
   func darken(amount: Double) -> HSL {
-    return HSL(hue: h, saturation: s, lightness: l - amount, alpha: a)
+    return lighten(amount * -1)
   }
 
   /**
@@ -220,6 +216,6 @@ internal struct HSL {
   - returns: A HSL color less saturated.
   */
   func desaturate(amount: Double) -> HSL {
-    return HSL(hue: h, saturation: s - amount, lightness: l, alpha: a)
+    return saturate(amount * -1)
   }
 }
