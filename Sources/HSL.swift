@@ -190,8 +190,6 @@ internal struct HSL {
   - returns: A lighter HSL color.
   */
   func lighten(amount: Double) -> HSL {
-    let amount = clip(amount, 0, 1)
-    
     return HSL(hue: h, saturation: s, lightness: l + amount, alpha: a)
   }
 
@@ -202,8 +200,6 @@ internal struct HSL {
   - returns: A darker HSL color.
   */
   func darken(amount: Double) -> HSL {
-    let amount = clip(amount, 0, 1)
-
     return HSL(hue: h, saturation: s, lightness: l - amount, alpha: a)
   }
 
@@ -214,8 +210,6 @@ internal struct HSL {
   - returns: A HSL color more saturated.
   */
   func saturate(amount: Double) -> HSL {
-    let amount = clip(amount, 0, 1)
-
     return HSL(hue: h, saturation: s + amount, lightness: l, alpha: a)
   }
 
@@ -226,8 +220,6 @@ internal struct HSL {
   - returns: A HSL color less saturated.
   */
   func desaturate(amount: Double) -> HSL {
-    let amount = clip(amount, 0, 1)
-
     return HSL(hue: h, saturation: s - amount, lightness: l, alpha: a)
   }
 }
