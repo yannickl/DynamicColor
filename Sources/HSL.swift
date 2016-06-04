@@ -48,7 +48,7 @@ internal func clip<T: Comparable>(v: T, _ minimum: T, _ maximum: T) -> T {
 /**
 Returns the absolute value of the modulo operation.
 
-- parameter x: The value value to compute.
+- parameter x: The value to compute.
 - parameter m: The modulo.
 */
 internal func moda(x: Double, m: Double) -> Double {
