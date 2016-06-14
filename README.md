@@ -8,7 +8,7 @@ DynamicColor provides powerful methods to manipulate colours in an easy way in S
   <img src="http://yannickloriot.com/resources/dynamiccolor-sample-screenshot.png" alt="example screenshot" width="300" />
 </p>
 
-*This branch is Swift 3 compatible, if you need to work with Swift 2 download the [v2 version](https://github.com/yannickl/DynamicColor/tree/2.4.0)*
+*This branch is Swift 3 compatible, use the [v2 version](https://github.com/yannickl/DynamicColor/tree/2.4.0) for Swift 2.*
 
 ## Usage
 
@@ -164,7 +164,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
-pod 'DynamicColor', '~> 2.4.0'
+pod 'DynamicColor', '~> 3.0.0'
 ```
 
 Install into your project:
@@ -195,7 +195,7 @@ $ brew install carthage
 To integrate `DynamicColor` into your Xcode project using Carthage, specify it in your `Cartfile` file:
 
 ```ogdl
-github "yannickl/DynamicColor" >= 2.4.0
+github "yannickl/DynamicColor" >= 3.0.0
 ```
 
 #### Swift Package Manager
@@ -207,7 +207,7 @@ let package = Package(
     name: "YOUR_PROJECT_NAME",
     targets: [],
     dependencies: [
-        .Package(url: "https://github.com/yannickl/DynamicColor.git", versions: "2.4.0" ..< Version.max)
+        .Package(url: "https://github.com/yannickl/DynamicColor.git", versions: "3.0.0" ..< Version.max)
     ]
 )
 ```

@@ -1,6 +1,7 @@
 # Change log
 
-## Version 3.0.0
+## [Version 3.0.0](https://github.com/yannickl/DynamicColor/releases/tag/3.0.0)
+*Released on 2016-06-14.*
 
 - Swift 3 Supports
 - `isLight` instead of `isLightColor`
