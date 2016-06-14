@@ -2,11 +2,13 @@
 
 [![Supported Plateforms](https://cocoapod-badges.herokuapp.com/p/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Version](https://cocoapod-badges.herokuapp.com/v/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/yannickl/DynamicColor.svg?branch=master)](https://travis-ci.org/yannickl/DynamicColor) [![codecov.io](http://codecov.io/github/yannickl/DynamicColor/coverage.svg?branch=master)](http://codecov.io/github/yannickl/DynamicColor?branch=master)
 
-DynamicColor provides powerful methods to manipulate colours in an easy way in Swift (iOS/OSX/WatchOS/tvOS).
+DynamicColor provides powerful methods to manipulate colours in an easy way in Swift (iOS/macOS/WatchOS/tvOS).
 
 <p align="center">
   <img src="http://yannickloriot.com/resources/dynamiccolor-sample-screenshot.png" alt="example screenshot" width="300" />
 </p>
+
+**This branch is Swift 3 compatible, if you need to work with Swift 2 download the [v2 version](https://github.com/yannickl/DynamicColor/tree/2.4.0)**
 
 ## Usage
 
@@ -52,7 +54,7 @@ let darkerColor = originalColor.darkened()
 
 #### Saturate, Desaturate & Grayscale
 
-These will adjust the saturation of the color object, much like `darkenColor` and `lightenColor` adjusted the lightness. Again, you need to use a value between 0 and 1.
+These will adjust the saturation of the color object, much like `darkened` and `lighter` adjusted the lightness. Again, you need to use a value between 0 and 1.
 
 <p align="center">
   <img src="http://yannickloriot.com/resources/dynamiccolor-saturateddesaturatedgrayscale.png" alt="saturate, desaturate and grayscale color" width="373"/>
