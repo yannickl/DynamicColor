@@ -5,7 +5,6 @@ before_install:
 script:
   - cd Examples
   - xcodebuild -version
-  - xcodebuild -project DynamicColorExample.xcodeproj -scheme iOSTests -sdk iphonesimulator -destination "platform=iOS Simulator" -configuration Release GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES ONLY_ACTIVE_ARCH=YES test | xcpretty -c
-  - xcodebuild -project DynamicColorExample.xcodeproj -scheme OSXTests -sdk macosx -configuration Release GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES ONLY_ACTIVE_ARCH=YES test | xcpretty -c
-after_success:
+  - xcodebuild -project DynamicColorExample.xcodeproj -scheme iOSTests -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPad Air 2" -configuration Release GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES ONLY_ACTIVE_ARCH=YES test | xcpretty -c
+  after_success:
   - bash <(curl -s https://codecov.io/bash)
