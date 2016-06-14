@@ -145,7 +145,7 @@ public extension DynamicColor {
 
    - returns: A boolean value to know whether the color is light. If true the color is light, dark otherwise.
    */
-  func isLightColor() -> Bool {
+  func isLight() -> Bool {
     let components = toRGBAComponents()
     let brightness = ((components.r * 299) + (components.g * 587) + (components.b * 114)) / 1000
 
@@ -163,7 +163,7 @@ public extension DynamicColor {
    - parameter weight: The weight specifies the amount of the given color object (between 0 and 1). The default value is 0.5, which means that half the given color and half the receiver color object should be used. 0.25 means that a quarter of the given color object and three quarters of the receiver color object should be used.
    - returns: A color object corresponding to the two colors object mixed together.
    */
-  public final func mixWithColor(_ color: DynamicColor, weight: CGFloat = 0.5) -> DynamicColor {
+  public final func mixed(color: DynamicColor, weight: CGFloat = 0.5) -> DynamicColor {
     let normalizedWeight = clip(weight, 0, 1)
 
     let c1 = toRGBAComponents()
@@ -190,8 +190,8 @@ public extension DynamicColor {
    - parameter amount: Float between 0.0 and 1.0. The default amount is equal to 0.2.
    - returns: A lighter DynamicColor.
    */
-  public final func tintColor(_ amount: CGFloat = 0.2) -> DynamicColor {
-    return mixWithColor(DynamicColor.white(), weight: amount)
+  public final func tinted(amount: CGFloat = 0.2) -> DynamicColor {
+    return mixed(color: DynamicColor.white(), weight: amount)
   }
 
   /**
@@ -200,7 +200,7 @@ public extension DynamicColor {
    - parameter amount: Float between 0.0 and 1.0. The default amount is equal to 0.2.
    - returns: A darker DynamicColor.
    */
-  public final func shadeColor(_ amount: CGFloat = 0.2) -> DynamicColor {
-    return mixWithColor(DynamicColor(red:0, green:0, blue: 0, alpha:1), weight: amount)
+  public final func shaded(amount: CGFloat = 0.2) -> DynamicColor {
+    return mixed(color: DynamicColor(red:0, green:0, blue: 0, alpha:1), weight: amount)
   }
 }

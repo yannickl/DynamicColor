@@ -1,5 +1,26 @@
 # Change log
 
+## Version 3.0.0
+
+- Swift 3 Supports
+- `isLight` instead of `isLightColor`
+- `adjustedAlpha` instead of `adjustedAlphaColor`
+- `inverted` instead of `invertColor`
+- `grayscaled` instead of `grayscaledColor`
+- `darkened` instead of `darkerColor`
+- `lighter` instead of `lighterColor`
+- `saturated` instead of `saturatedColor`
+- `desaturated` instead of `desaturatedColor`
+- `complemented` instead of `complementColor`
+- `adjustedHue` instead of `adjustedHueColor`
+- `tinted` instead of `tintColor`
+- `shaded` instead of `shadeColor`
+- `mixed` instead of `mixWithColor`
+- Removing the `darkenColor`, use `darkened` instead
+- Removing the `lightenColor`, use `lighter` instead
+- Removing the `saturateColor`, use `saturated` instead
+- Removing the `desaturateColor`, use `desaturated` instead
+
 ## [Version 2.4.0](https://github.com/yannickl/DynamicColor/releases/tag/2.4.0)
 *Released on 2016-02-29.*
 
