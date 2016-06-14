@@ -57,8 +57,8 @@ public extension DynamicColor {
    - parameter hexString: A hexa-decimal color string representation.
    */
   public convenience init(hexString: String) {
-    let hexString = hexString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-    let scanner   = NSScanner(string: hexString)
+    let hexString = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    let scanner   = Scanner(string: hexString)
 
     if (hexString.hasPrefix("#")) {
       scanner.scanLocation = 1
@@ -66,7 +66,7 @@ public extension DynamicColor {
 
     var color: UInt32 = 0
 
-    if scanner.scanHexInt(&color) {
+    if scanner.scanHexInt32(&color) {
       self.init(hex: color)
     }
     else {
@@ -108,8 +108,12 @@ public extension DynamicColor {
    - returns: A UInt32 that represents the hexa-decimal color.
    */
   public final func toHex() -> UInt32 {
+    func roundToInt32(_ x: CGFloat) -> UInt32 {
+      return UInt32(round(100000 * x) / 100000)
+    }
+
     let rgba       = toRGBAComponents()
-    let colorToInt = (UInt32)(rgba.r * 255) << 16 | (UInt32)(rgba.g * 255) << 8 | (UInt32)(rgba.b * 255)
+    let colorToInt = roundToInt32(rgba.r * 255) << 16 | roundToInt32(rgba.g * 255) << 8 | roundToInt32(rgba.b * 255)
 
     return colorToInt
   }
@@ -122,7 +126,7 @@ public extension DynamicColor {
    - parameter hexString: A hexa-decimal color number representation to be compared to the receiver.
    - returns: true if the receiver and the string are equals, otherwise false.
    */
-  public func isEqualToHexString(hexString: String) -> Bool {
+  public func isEqualToHexString(_ hexString: String) -> Bool {
     return self.toHexString() == hexString
   }
 
@@ -132,7 +136,7 @@ public extension DynamicColor {
    - parameter hex: A UInt32 that represents the hexa-decimal color.
    - returns: true if the receiver and the integer are equals, otherwise false.
    */
-  public func isEqualToHex(hex: UInt32) -> Bool {
+  public func isEqualToHex(_ hex: UInt32) -> Bool {
     return self.toHex() == hex
   }
 
@@ -145,7 +149,7 @@ public extension DynamicColor {
 
    - returns: A boolean value to know whether the color is light. If true the color is light, dark otherwise.
    */
-  func isLightColor() -> Bool {
+  func isLight() -> Bool {
     let components = toRGBAComponents()
     let brightness = ((components.r * 299) + (components.g * 587) + (components.b * 114)) / 1000
 
@@ -163,7 +167,7 @@ public extension DynamicColor {
    - parameter weight: The weight specifies the amount of the given color object (between 0 and 1). The default value is 0.5, which means that half the given color and half the receiver color object should be used. 0.25 means that a quarter of the given color object and three quarters of the receiver color object should be used.
    - returns: A color object corresponding to the two colors object mixed together.
    */
-  public final func mixWithColor(color: DynamicColor, weight: CGFloat = 0.5) -> DynamicColor {
+  public final func mixed(color: DynamicColor, weight: CGFloat = 0.5) -> DynamicColor {
     let normalizedWeight = clip(weight, 0, 1)
 
     let c1 = toRGBAComponents()
@@ -172,7 +176,8 @@ public extension DynamicColor {
     let w = 2 * normalizedWeight - 1
 
     let a  = c1.a - c2.a
-    let w2 = (((w * a == -1) ? w : (w + a) / (1 + w * a)) + 1) / 2
+    let wi = (w * a == -1) ? w : (w + a) / (1 + w * a)
+    let w2 = (wi + 1) / 2
     let w1 = 1 - w2
 
     let red   = w1 * c1.r + w2 * c2.r
@@ -189,8 +194,8 @@ public extension DynamicColor {
    - parameter amount: Float between 0.0 and 1.0. The default amount is equal to 0.2.
    - returns: A lighter DynamicColor.
    */
-  public final func tintColor(amount amount: CGFloat = 0.2) -> DynamicColor {
-    return mixWithColor(DynamicColor.whiteColor(), weight: amount)
+  public final func tinted(amount: CGFloat = 0.2) -> DynamicColor {
+    return mixed(color: DynamicColor.white(), weight: amount)
   }
 
   /**
@@ -199,7 +204,7 @@ public extension DynamicColor {
    - parameter amount: Float between 0.0 and 1.0. The default amount is equal to 0.2.
    - returns: A darker DynamicColor.
    */
-  public final func shadeColor(amount amount: CGFloat = 0.2) -> DynamicColor {
-    return mixWithColor(DynamicColor(red:0, green:0, blue: 0, alpha:1), weight: amount)
+  public final func shaded(amount: CGFloat = 0.2) -> DynamicColor {
+    return mixed(color: DynamicColor(red:0, green:0, blue: 0, alpha:1), weight: amount)
   }
 }

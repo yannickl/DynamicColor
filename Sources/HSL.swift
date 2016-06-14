@@ -41,7 +41,7 @@ edges. For example, if an interval of [0, 1] is specified, values smaller than
 - parameter minimum: The minimum edge value.
 - parameter maximum: The maximum edgevalue.
 */
-internal func clip<T: Comparable>(v: T, _ minimum: T, _ maximum: T) -> T {
+internal func clip<T: Comparable>(_ v: T, _ minimum: T, _ maximum: T) -> T {
   return max(min(v, maximum), minimum)
 }
 
@@ -51,8 +51,8 @@ Returns the absolute value of the modulo operation.
 - parameter x: The value to compute.
 - parameter m: The modulo.
 */
-internal func moda(x: Double, m: Double) -> Double {
-  return (x % m + m) % m
+internal func moda(_ x: Double, m: Double) -> Double {
+  return (x.truncatingRemainder(dividingBy: m) + m).truncatingRemainder(dividingBy: m)
 }
 
 /// Hue-saturation-lightness structure to make the color manipulation easier.
@@ -151,7 +151,7 @@ internal struct HSL {
   }
 
   /// Hue to RGB helper function
-  private func hueToRGB(m1: Double, m2: Double, h: Double) -> CGFloat {
+  private func hueToRGB(_ m1: Double, m2: Double, h: Double) -> CGFloat {
     let hue = moda(h, m: 1)
 
     if hue * 6 < 1 {
@@ -175,7 +175,7 @@ internal struct HSL {
   - parameter amount: A double representing the number of degrees as ratio (usually -1.0 for -360deg and 1.0 for 360deg).
   - returns: A HSL color with the hue changed.
   */
-  func adjustHue(amount: Double) -> HSL {
+  func adjustedHue(amount: Double) -> HSL {
     return HSL(hue: h + amount, saturation: s, lightness: l, alpha: a)
   }
 
@@ -185,7 +185,7 @@ internal struct HSL {
   - parameter amount: Double between 0.0 and 1.0.
   - returns: A lighter HSL color.
   */
-  func lighten(amount: Double) -> HSL {
+  func lighter(amount: Double) -> HSL {
     return HSL(hue: h, saturation: s, lightness: l + amount, alpha: a)
   }
 
@@ -195,8 +195,8 @@ internal struct HSL {
   - parameter amount: Double between 0.0 and 1.0.
   - returns: A darker HSL color.
   */
-  func darken(amount: Double) -> HSL {
-    return lighten(amount * -1)
+  func darkened(amount: Double) -> HSL {
+    return lighter(amount: amount * -1)
   }
 
   /**
@@ -205,7 +205,7 @@ internal struct HSL {
   - parameter amount: Double between 0.0 and 1.0.
   - returns: A HSL color more saturated.
   */
-  func saturate(amount: Double) -> HSL {
+  func saturated(amount: Double) -> HSL {
     return HSL(hue: h, saturation: s + amount, lightness: l, alpha: a)
   }
 
@@ -215,7 +215,7 @@ internal struct HSL {
   - parameter amount: Double between 0.0 and 1.0.
   - returns: A HSL color less saturated.
   */
-  func desaturate(amount: Double) -> HSL {
-    return saturate(amount * -1)
+  func desaturated(amount: Double) -> HSL {
+    return saturated(amount: amount * -1)
   }
 }

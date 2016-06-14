@@ -2,11 +2,13 @@
 
 [![Supported Plateforms](https://cocoapod-badges.herokuapp.com/p/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Version](https://cocoapod-badges.herokuapp.com/v/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/yannickl/DynamicColor.svg?branch=master)](https://travis-ci.org/yannickl/DynamicColor) [![codecov.io](http://codecov.io/github/yannickl/DynamicColor/coverage.svg?branch=master)](http://codecov.io/github/yannickl/DynamicColor?branch=master)
 
-DynamicColor provides powerful methods to manipulate colours in an easy way in Swift (iOS/OSX/WatchOS/tvOS).
+DynamicColor provides powerful methods to manipulate colours in an easy way in Swift (iOS/macOS/WatchOS/tvOS).
 
 <p align="center">
   <img src="http://yannickloriot.com/resources/dynamiccolor-sample-screenshot.png" alt="example screenshot" width="300" />
 </p>
+
+*This branch is Swift 3 compatible, use the [v2 version](https://github.com/yannickl/DynamicColor/tree/2.4.0) for Swift 2.*
 
 ## Usage
 
@@ -41,18 +43,18 @@ These two create a new color by adjusting the lightness of the receiver. You hav
 ```swift
 let originalColor = UIColor(hexString: "#c0392b")
 
-let lighterColor = originalColor.lighterColor()
+let lighterColor = originalColor.lighter()
 // equivalent to
-// lighterColor = originalColor.lightenColor(0.2)
+// lighterColor = originalColor.lighter(amount: 0.2)
 
-let darkerColor = originalColor.darkerColor()
+let darkerColor = originalColor.darkened()
 // equivalent to
-// darkerColor = originalColor.darkenColor(0.2)
+// darkerColor = originalColor.darkened(amount: 0.2)
 ```
 
 #### Saturate, Desaturate & Grayscale
 
-These will adjust the saturation of the color object, much like `darkenColor` and `lightenColor` adjusted the lightness. Again, you need to use a value between 0 and 1.
+These will adjust the saturation of the color object, much like `darkened` and `lighter` adjusted the lightness. Again, you need to use a value between 0 and 1.
 
 <p align="center">
   <img src="http://yannickloriot.com/resources/dynamiccolor-saturateddesaturatedgrayscale.png" alt="saturate, desaturate and grayscale color" width="373"/>
@@ -61,15 +63,15 @@ These will adjust the saturation of the color object, much like `darkenColor` an
 ```swift
 let originalColor = UIColor(hexString: "#c0392b")
 
-let saturatedColor = originalColor.saturatedColor()
+let saturatedColor = originalColor.saturated()
 // equivalent to
-// saturatedColor = originalColor.saturateColor(0.2)
+// saturatedColor = originalColor.saturated(amount: 0.2)
 
-let desaturatedColor = originalColor.desaturatedColor()
+let desaturatedColor = originalColor.desaturated()
 // equivalent to
-// desaturatedColor = originalColor.desaturateColor(0.2)
+// desaturatedColor = originalColor.desaturated(amount: 0.2)
 
-let grayscaleColor = originalColor.grayscaledColor()
+let grayscaledColor = originalColor.grayscaled()
 ```
 
 #### Adjust-hue & Complement
@@ -83,9 +85,9 @@ These adjust the hue value of the color in the same way like the others do. Agai
 ```swift
 let originalColor = UIColor(hexString: "#c0392b")
 
-let adjustHueColor = originalColor.adjustedHueColor(45 / 360)
+let adjustHueColor = originalColor.adjustedHue(amount: 45 / 360)
 
-let complementColor = originalColor.complementColor()
+let complementedColor = originalColor.complemented()
 ````
 
 #### Tint & Shade
@@ -99,13 +101,13 @@ A tint is the mixture of a color with white and a shade is the mixture of a colo
 ```swift
 let originalColor = UIColor(hexString: "#c0392b")
 
-let tintColor = originalColor.tintColor()
+let tintedColor = originalColor.tinted()
 // equivalent to
-// tintColor = originalColor.tintColor(amount: 0.2)
+// tintedColor = originalColor.tinted(amount: 0.2)
 
-let shadeColor = originalColor.shadeColor()
+let shadedColor = originalColor.shaded()
 // equivalent to
-// shadeColor = originalColor.shadeColor(amount: 0.2)
+// shadedColor = originalColor.shaded(amount: 0.2)
 ```
 
 #### Invert
@@ -119,7 +121,7 @@ This can invert the color object. The red, green, and blue values are inverted, 
 ```swift
 let originalColor = UIColor(hexString: "#c0392b")
 
-let invertColor = originalColor.invertColor()
+let invertedColor = originalColor.inverted()
 ```
 
 #### Mix
@@ -133,9 +135,9 @@ This can mix a given color with the receiver. It takes the average of each of th
 ```swift
 let originalColor = UIColor(hexString: "#c0392b")
 
-let mixColor = originalColor.mixWithColor(UIColor.blueColor())
+let mixedColor = originalColor.mixed(color: .blueColor())
 // equivalent to
-// mixColor = originalColor.mixWithColor(UIColor.blueColor(), weight: 0.5)
+// mixedColor = originalColor.mixed(color: .blueColor(), weight: 0.5)
 ```
 
 #### And many more...
@@ -162,7 +164,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
-pod 'DynamicColor', '~> 2.4.0'
+pod 'DynamicColor', '~> 3.0.0'
 ```
 
 Install into your project:
@@ -193,7 +195,7 @@ $ brew install carthage
 To integrate `DynamicColor` into your Xcode project using Carthage, specify it in your `Cartfile` file:
 
 ```ogdl
-github "yannickl/DynamicColor" >= 2.4.0
+github "yannickl/DynamicColor" >= 3.0.0
 ```
 
 #### Swift Package Manager
@@ -205,7 +207,7 @@ let package = Package(
     name: "YOUR_PROJECT_NAME",
     targets: [],
     dependencies: [
-        .Package(url: "https://github.com/yannickl/DynamicColor.git", versions: "2.4.0" ..< Version.max)
+        .Package(url: "https://github.com/yannickl/DynamicColor.git", versions: "3.0.0" ..< Version.max)
     ]
 )
 ```
