@@ -34,7 +34,7 @@ public extension DynamicColor {
    - returns: A DynamicColor object with the hue changed.
    */
   public final func adjustedHue(amount: Double) -> DynamicColor {
-    return HSL(color: self).adjustHue(amount).toDynamicColor()
+    return HSL(color: self).adjustedHue(amount: amount).toDynamicColor()
   }
 
   /**
@@ -56,7 +56,7 @@ public extension DynamicColor {
    - returns: A lighter DynamicColor.
    */
   public final func lighter(amount: Double = 0.2) -> DynamicColor {
-    return HSL(color: self).lighten(amount).toDynamicColor()
+    return HSL(color: self).lighter(amount: amount).toDynamicColor()
   }
 
   /**
@@ -66,7 +66,7 @@ public extension DynamicColor {
    - returns: A darker DynamicColor.
    */
   public final func darkened(amount: Double = 0.2) -> DynamicColor {
-    return HSL(color: self).darken(amount).toDynamicColor()
+    return HSL(color: self).darkened(amount: amount).toDynamicColor()
   }
 
   /**
@@ -77,7 +77,7 @@ public extension DynamicColor {
    - returns: A DynamicColor more saturated.
    */
   public final func saturated(amount: Double = 0.2) -> DynamicColor {
-    return HSL(color: self).saturate(amount).toDynamicColor()
+    return HSL(color: self).saturated(amount: amount).toDynamicColor()
   }
 
   /**
@@ -87,7 +87,7 @@ public extension DynamicColor {
    - returns: A DynamicColor less saturated.
    */
   public final func desaturated(amount: Double = 0.2) -> DynamicColor {
-    return HSL(color: self).desaturate(amount).toDynamicColor()
+    return HSL(color: self).desaturated(amount: amount).toDynamicColor()
   }
 
   /**

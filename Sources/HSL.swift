@@ -175,7 +175,7 @@ internal struct HSL {
   - parameter amount: A double representing the number of degrees as ratio (usually -1.0 for -360deg and 1.0 for 360deg).
   - returns: A HSL color with the hue changed.
   */
-  func adjustHue(_ amount: Double) -> HSL {
+  func adjustedHue(amount: Double) -> HSL {
     return HSL(hue: h + amount, saturation: s, lightness: l, alpha: a)
   }
 
@@ -185,7 +185,7 @@ internal struct HSL {
   - parameter amount: Double between 0.0 and 1.0.
   - returns: A lighter HSL color.
   */
-  func lighten(_ amount: Double) -> HSL {
+  func lighter(amount: Double) -> HSL {
     return HSL(hue: h, saturation: s, lightness: l + amount, alpha: a)
   }
 
@@ -195,8 +195,8 @@ internal struct HSL {
   - parameter amount: Double between 0.0 and 1.0.
   - returns: A darker HSL color.
   */
-  func darken(_ amount: Double) -> HSL {
-    return lighten(amount * -1)
+  func darkened(amount: Double) -> HSL {
+    return lighter(amount: amount * -1)
   }
 
   /**
@@ -205,7 +205,7 @@ internal struct HSL {
   - parameter amount: Double between 0.0 and 1.0.
   - returns: A HSL color more saturated.
   */
-  func saturate(_ amount: Double) -> HSL {
+  func saturated(amount: Double) -> HSL {
     return HSL(hue: h, saturation: s + amount, lightness: l, alpha: a)
   }
 
@@ -215,7 +215,7 @@ internal struct HSL {
   - parameter amount: Double between 0.0 and 1.0.
   - returns: A HSL color less saturated.
   */
-  func desaturate(_ amount: Double) -> HSL {
-    return saturate(amount * -1)
+  func desaturated(amount: Double) -> HSL {
+    return saturated(amount: amount * -1)
   }
 }

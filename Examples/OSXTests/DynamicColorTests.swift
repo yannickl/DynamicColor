@@ -186,9 +186,9 @@ class DynamicColorTests: XCTestCase {
     let same1   = NSColor(hex: 0xc0392b).adjustedHue(amount: 0)
     let same2   = NSColor(hex: 0xc0392b).adjustedHue(amount: 360 / 360)
 
-    XCTAssert(custom1.isEqualToHexString("#886a10"), "Color string should be equal to #886a10 (not \(custom1.toHexString()))")
+    XCTAssert(custom1.isEqualToHexString("#886a11"), "Color string should be equal to #886a11 (not \(custom1.toHexString()))")
     XCTAssert(custom2.isEqualToHexString("#67c02b"), "Color string should be equal to #67c02b (not \(custom2.toHexString()))")
-    XCTAssert(custom3.isEqualToHexString("#c02bb1"), "Color string should be equal to #c02bb1 (not \(custom3.toHexString()))")
+    XCTAssert(custom3.isEqualToHexString("#c02bb2"), "Color string should be equal to #c02bb2 (not \(custom3.toHexString()))")
     XCTAssert(same1.isEqualToHexString("#c0392b"), "Color string should be equal to #c0392b (not \(same1.toHexString()))")
     XCTAssert(same2.isEqualToHexString("#c0392b"), "Color string should be equal to #c0392b (not \(same2.toHexString()))")
   }
