@@ -8,7 +8,7 @@ DynamicColor provides powerful methods to manipulate colours in an easy way in S
   <img src="http://yannickloriot.com/resources/dynamiccolor-sample-screenshot.png" alt="example screenshot" width="300" />
 </p>
 
-**This branch is Swift 3 compatible, if you need to work with Swift 2 download the [v2 version](https://github.com/yannickl/DynamicColor/tree/2.4.0)**
+*This branch is Swift 3 compatible, if you need to work with Swift 2 download the [v2 version](https://github.com/yannickl/DynamicColor/tree/2.4.0)*
 
 ## Usage
 
