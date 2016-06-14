@@ -11,6 +11,10 @@
 		CEACBD181C84EAEB00193E0E /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD161C84EAEB00193E0E /* HSL.swift */; };
 		CEACBD191C84EAF500193E0E /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD151C84EAEB00193E0E /* DynamicColor.swift */; };
 		CEACBD1A1C84EAF500193E0E /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD161C84EAEB00193E0E /* HSL.swift */; };
+		CEE4A6F71D1015CA009D73DD /* DynamicColor+Deriving.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4A6F51D1015CA009D73DD /* DynamicColor+Deriving.swift */; };
+		CEE4A6F81D1015CA009D73DD /* DynamicColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4A6F61D1015CA009D73DD /* DynamicColor+RGBA.swift */; };
+		CEE4A6F91D1015D8009D73DD /* DynamicColor+Deriving.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4A6F51D1015CA009D73DD /* DynamicColor+Deriving.swift */; };
+		CEE4A6FA1D1015DA009D73DD /* DynamicColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4A6F61D1015CA009D73DD /* DynamicColor+RGBA.swift */; };
 		CEEB28F11BE29DCF001A74E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28F01BE29DCF001A74E8 /* AppDelegate.swift */; };
 		CEEB28F31BE29DCF001A74E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28F21BE29DCF001A74E8 /* ViewController.swift */; };
 		CEEB28F61BE29DCF001A74E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28F41BE29DCF001A74E8 /* Main.storyboard */; };
@@ -71,6 +75,8 @@
 /* Begin PBXFileReference section */
 		CEACBD151C84EAEB00193E0E /* DynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColor.swift; sourceTree = "<group>"; };
 		CEACBD161C84EAEB00193E0E /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
+		CEE4A6F51D1015CA009D73DD /* DynamicColor+Deriving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Deriving.swift"; sourceTree = "<group>"; };
+		CEE4A6F61D1015CA009D73DD /* DynamicColor+RGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+RGBA.swift"; sourceTree = "<group>"; };
 		CEEB28ED1BE29DCF001A74E8 /* WatchOSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchOSExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEB28F01BE29DCF001A74E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEEB28F21BE29DCF001A74E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				CEACBD151C84EAEB00193E0E /* DynamicColor.swift */,
+				CEE4A6F51D1015CA009D73DD /* DynamicColor+Deriving.swift */,
+				CEE4A6F61D1015CA009D73DD /* DynamicColor+RGBA.swift */,
 				CEACBD161C84EAEB00193E0E /* HSL.swift */,
 			);
 			name = Sources;
@@ -237,17 +245,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Yannick LORIOT";
 				TargetAttributes = {
 					CEEB28EC1BE29DCF001A74E8 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 					};
 					CEEB28FE1BE29DCF001A74E8 = {
 						CreatedOnToolsVersion = 7.1;
 					};
 					CEEB290D1BE29DD0001A74E8 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -306,10 +316,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE4A6F71D1015CA009D73DD /* DynamicColor+Deriving.swift in Sources */,
 				CEEB28F31BE29DCF001A74E8 /* ViewController.swift in Sources */,
 				CEACBD171C84EAEB00193E0E /* DynamicColor.swift in Sources */,
 				CEEB28F11BE29DCF001A74E8 /* AppDelegate.swift in Sources */,
 				CEACBD181C84EAEB00193E0E /* HSL.swift in Sources */,
+				CEE4A6F81D1015CA009D73DD /* DynamicColor+RGBA.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +330,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEB292A1BE29E1D001A74E8 /* RowController.swift in Sources */,
+				CEE4A6F91D1015D8009D73DD /* DynamicColor+Deriving.swift in Sources */,
 				CEACBD1A1C84EAF500193E0E /* HSL.swift in Sources */,
+				CEE4A6FA1D1015DA009D73DD /* DynamicColor+RGBA.swift in Sources */,
 				CEACBD191C84EAF500193E0E /* DynamicColor.swift in Sources */,
 				CEEB29161BE29DD0001A74E8 /* ExtensionDelegate.swift in Sources */,
 				CEEB29141BE29DD0001A74E8 /* InterfaceController.swift in Sources */,
@@ -460,6 +474,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -474,6 +489,8 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -482,8 +499,8 @@
 		CEEB29211BE29DD0001A74E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WatchOSExample_WatchKit_Extension;
 				INFOPLIST_FILE = "WatchOSExample WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.WatchOSExample.watchkitapp;
@@ -498,8 +515,8 @@
 		CEEB29221BE29DD0001A74E8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WatchOSExample_WatchKit_Extension;
 				INFOPLIST_FILE = "WatchOSExample WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.WatchOSExample.watchkitapp;
@@ -519,6 +536,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.WatchOSExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -530,6 +548,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.WatchOSExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

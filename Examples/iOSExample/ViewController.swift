@@ -26,9 +26,9 @@ class ViewController: UIViewController, UICollectionViewDataSource {
       ("Adjusted", mainColor.adjustedHueColor(45 / 360)),
       ("Complement", mainColor.complementColor()),
       ("Invert", mainColor.invertColor()),
-      ("Mix Blue", mainColor.mixWithColor(UIColor.blueColor())),
-      ("Mix Green", mainColor.mixWithColor(UIColor.greenColor())),
-      ("Mix Yellow", mainColor.mixWithColor(UIColor.yellowColor())),
+      ("Mix Blue", mainColor.mixWithColor(UIColor.blue())),
+      ("Mix Green", mainColor.mixWithColor(UIColor.green())),
+      ("Mix Yellow", mainColor.mixWithColor(UIColor.yellow())),
       ("Tint", mainColor.tintColor()),
       ("Shade", mainColor.shadeColor())
     ]
@@ -42,14 +42,14 @@ class ViewController: UIViewController, UICollectionViewDataSource {
 
   // MARK: - UICollectionView DataSource Methods
 
-  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return colors.count
   }
 
-  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(ColorCellIdentifier, forIndexPath: indexPath) as! ColorCellView
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCellIdentifier, for: indexPath) as! ColorCellView
 
-    let (title, color) = colors[indexPath.row]
+    let (title, color) = colors[(indexPath as NSIndexPath).row]
 
     cell.titleLabel?.text           = title
     cell.colorView?.backgroundColor = color

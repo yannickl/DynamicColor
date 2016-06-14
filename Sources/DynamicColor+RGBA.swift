@@ -51,10 +51,10 @@ public extension DynamicColor {
 
       return (r, g, b, a)
     #elseif os(OSX)
-      if isEqual(DynamicColor.blackColor()) {
+      if isEqual(DynamicColor.black()) {
         return (0, 0, 0, 0)
       }
-      else if isEqual(DynamicColor.whiteColor()) {
+      else if isEqual(DynamicColor.white()) {
         return (1, 1, 1, 1)
       }
       else {
@@ -111,7 +111,7 @@ public extension DynamicColor {
    - parameter amount: CGFloat between 0.0 and 1.0.
    - returns: A color object with its alpha channel modified.
    */
-  public final func adjustedAlphaColor(amount: CGFloat) -> DynamicColor {
+  public final func adjustedAlphaColor(_ amount: CGFloat) -> DynamicColor {
     let components      = toRGBAComponents()
     let normalizedAlpha = clip(components.a + amount, 0, 1)
 

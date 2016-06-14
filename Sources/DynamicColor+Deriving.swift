@@ -33,7 +33,7 @@ public extension DynamicColor {
    - parameter amount: A double representing the number of degrees as ratio (usually -1.0 for -360 degree and 1.0 for 360 degree).
    - returns: A DynamicColor object with the hue changed.
    */
-  public final func adjustedHueColor(amount: Double) -> DynamicColor {
+  public final func adjustedHueColor(_ amount: Double) -> DynamicColor {
     return HSL(color: self).adjustHue(amount).toDynamicColor()
   }
 
@@ -65,7 +65,7 @@ public extension DynamicColor {
    - parameter amount: Double between 0.0 and 1.0.
    - returns: A lighter DynamicColor.
    */
-  public final func lightenColor(amount: Double) -> DynamicColor {
+  public final func lightenColor(_ amount: Double) -> DynamicColor {
     return HSL(color: self).lighten(amount).toDynamicColor()
   }
 
@@ -85,7 +85,7 @@ public extension DynamicColor {
    - parameter amount: Float between 0.0 and 1.0.
    - returns: A darker DynamicColor.
    */
-  public final func darkenColor(amount: Double) -> DynamicColor {
+  public final func darkenColor(_ amount: Double) -> DynamicColor {
     return HSL(color: self).darken(amount).toDynamicColor()
   }
 
@@ -106,7 +106,7 @@ public extension DynamicColor {
 
    - returns: A DynamicColor more saturated.
    */
-  public final func saturateColor(amount: Double) -> DynamicColor {
+  public final func saturateColor(_ amount: Double) -> DynamicColor {
     return HSL(color: self).saturate(amount).toDynamicColor()
   }
 
@@ -126,7 +126,7 @@ public extension DynamicColor {
    - parameter amount: Double between 0.0 and 1.0.
    - returns: A DynamicColor less saturated.
    */
-  public final func desaturateColor(amount: Double) -> DynamicColor {
+  public final func desaturateColor(_ amount: Double) -> DynamicColor {
     return HSL(color: self).desaturate(amount).toDynamicColor()
   }
 
