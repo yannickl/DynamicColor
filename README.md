@@ -41,13 +41,13 @@ These two create a new color by adjusting the lightness of the receiver. You hav
 ```swift
 let originalColor = UIColor(hexString: "#c0392b")
 
-let lighterColor = originalColor.lighterColor()
+let lighterColor = originalColor.lighter()
 // equivalent to
-// lighterColor = originalColor.lightenColor(0.2)
+// lighterColor = originalColor.lighter(amount: 0.2)
 
-let darkerColor = originalColor.darkerColor()
+let darkerColor = originalColor.darkened()
 // equivalent to
-// darkerColor = originalColor.darkenColor(0.2)
+// darkerColor = originalColor.darkened(amount: 0.2)
 ```
 
 #### Saturate, Desaturate & Grayscale
@@ -61,15 +61,15 @@ These will adjust the saturation of the color object, much like `darkenColor` an
 ```swift
 let originalColor = UIColor(hexString: "#c0392b")
 
-let saturatedColor = originalColor.saturatedColor()
+let saturatedColor = originalColor.saturated()
 // equivalent to
-// saturatedColor = originalColor.saturateColor(0.2)
+// saturatedColor = originalColor.saturated(amount: 0.2)
 
-let desaturatedColor = originalColor.desaturatedColor()
+let desaturatedColor = originalColor.desaturated()
 // equivalent to
-// desaturatedColor = originalColor.desaturateColor(0.2)
+// desaturatedColor = originalColor.desaturated(amount: 0.2)
 
-let grayscaleColor = originalColor.grayscaledColor()
+let grayscaledColor = originalColor.grayscaled()
 ```
 
 #### Adjust-hue & Complement
@@ -83,9 +83,9 @@ These adjust the hue value of the color in the same way like the others do. Agai
 ```swift
 let originalColor = UIColor(hexString: "#c0392b")
 
-let adjustHueColor = originalColor.adjustedHueColor(45 / 360)
+let adjustHueColor = originalColor.adjustedHue(amount: 45 / 360)
 
-let complementColor = originalColor.complementColor()
+let complementedColor = originalColor.complemented()
 ````
 
 #### Tint & Shade
@@ -99,13 +99,13 @@ A tint is the mixture of a color with white and a shade is the mixture of a colo
 ```swift
 let originalColor = UIColor(hexString: "#c0392b")
 
-let tintColor = originalColor.tintColor()
+let tintedColor = originalColor.tinted()
 // equivalent to
-// tintColor = originalColor.tintColor(amount: 0.2)
+// tintedColor = originalColor.tinted(amount: 0.2)
 
-let shadeColor = originalColor.shadeColor()
+let shadedColor = originalColor.shaded()
 // equivalent to
-// shadeColor = originalColor.shadeColor(amount: 0.2)
+// shadedColor = originalColor.shaded(amount: 0.2)
 ```
 
 #### Invert
@@ -119,7 +119,7 @@ This can invert the color object. The red, green, and blue values are inverted, 
 ```swift
 let originalColor = UIColor(hexString: "#c0392b")
 
-let invertColor = originalColor.invertColor()
+let invertedColor = originalColor.inverted()
 ```
 
 #### Mix
@@ -133,9 +133,9 @@ This can mix a given color with the receiver. It takes the average of each of th
 ```swift
 let originalColor = UIColor(hexString: "#c0392b")
 
-let mixColor = originalColor.mixWithColor(UIColor.blueColor())
+let mixedColor = originalColor.mixed(color: .blueColor())
 // equivalent to
-// mixColor = originalColor.mixWithColor(UIColor.blueColor(), weight: 0.5)
+// mixedColor = originalColor.mixed(color: .blueColor(), weight: 0.5)
 ```
 
 #### And many more...
