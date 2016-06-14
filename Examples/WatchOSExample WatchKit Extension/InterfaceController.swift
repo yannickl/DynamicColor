@@ -17,19 +17,19 @@ class InterfaceController: WKInterfaceController {
 
     return [
       ("Original", mainColor),
-      ("Lighter", mainColor.lighterColor()),
-      ("Darker", mainColor.darkerColor()),
-      ("Saturated", mainColor.saturatedColor()),
-      ("Desaturated", mainColor.desaturatedColor()),
-      ("Grayscaled", mainColor.grayscaledColor()),
-      ("Adjusted", mainColor.adjustedHueColor(45 / 360)),
-      ("Complement", mainColor.complementColor()),
-      ("Invert", mainColor.invertColor()),
-      ("Mix Blue", mainColor.mixWithColor(UIColor.blue())),
-      ("Mix Green", mainColor.mixWithColor(UIColor.green())),
-      ("Mix Yellow", mainColor.mixWithColor(UIColor.yellow())),
-      ("Tint", mainColor.tintColor()),
-      ("Shade", mainColor.shadeColor())
+      ("Lighter", mainColor.lighter()),
+      ("Darkened", mainColor.darkened()),
+      ("Saturated", mainColor.saturated()),
+      ("Desaturated", mainColor.desaturated()),
+      ("Grayscaled", mainColor.grayscaled()),
+      ("Adjusted", mainColor.adjustedHue(amount: 45 / 360)),
+      ("Complemented", mainColor.complemented()),
+      ("Inverted", mainColor.inverted()),
+      ("Mix Blue", mainColor.mixed(color: .blue())),
+      ("Mix Green", mainColor.mixed(color: .green())),
+      ("Mix Yellow", mainColor.mixed(color: .yellow())),
+      ("Tinted", mainColor.tinted()),
+      ("Shaded", mainColor.shaded())
     ]
   }()
   
