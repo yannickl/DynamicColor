@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE8B86531D29897200C5A670 /* DynamicColor+HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B86521D29897200C5A670 /* DynamicColor+HSL.swift */; };
 		CEACBD171C84EAEB00193E0E /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD151C84EAEB00193E0E /* DynamicColor.swift */; };
 		CEACBD181C84EAEB00193E0E /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD161C84EAEB00193E0E /* HSL.swift */; };
 		CEACBD191C84EAF500193E0E /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEACBD151C84EAEB00193E0E /* DynamicColor.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE8B86521D29897200C5A670 /* DynamicColor+HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+HSL.swift"; sourceTree = "<group>"; };
 		CEACBD151C84EAEB00193E0E /* DynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColor.swift; sourceTree = "<group>"; };
 		CEACBD161C84EAEB00193E0E /* HSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSL.swift; sourceTree = "<group>"; };
 		CEE4A6F51D1015CA009D73DD /* DynamicColor+Deriving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Deriving.swift"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				CEACBD151C84EAEB00193E0E /* DynamicColor.swift */,
 				CEE4A6F51D1015CA009D73DD /* DynamicColor+Deriving.swift */,
+				CE8B86521D29897200C5A670 /* DynamicColor+HSL.swift */,
 				CEE4A6F61D1015CA009D73DD /* DynamicColor+RGBA.swift */,
 				CEACBD161C84EAEB00193E0E /* HSL.swift */,
 			);
@@ -317,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE4A6F71D1015CA009D73DD /* DynamicColor+Deriving.swift in Sources */,
+				CE8B86531D29897200C5A670 /* DynamicColor+HSL.swift in Sources */,
 				CEEB28F31BE29DCF001A74E8 /* ViewController.swift in Sources */,
 				CEACBD171C84EAEB00193E0E /* DynamicColor.swift in Sources */,
 				CEEB28F11BE29DCF001A74E8 /* AppDelegate.swift in Sources */,

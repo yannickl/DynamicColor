@@ -24,18 +24,9 @@
  *
  */
 
-import UIKit
+import AppKit
 import XCTest
 
-class MockAppDelegate: NSObject, UIApplicationDelegate {
-
-}
-
-
 class XCTTestCaseTemplate: XCTestCase {
-  override func setUp() {
-    super.setUp()
 
-    UIApplication.sharedApplication().delegate = MockAppDelegate()
-  }
 }
