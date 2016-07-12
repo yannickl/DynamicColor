@@ -28,7 +28,7 @@ import XCTest
 
 class DynamicColorTests: XCTTestCaseTemplate {
   func testColorFromHexString() {
-    let redStandard = DynamicColor.red()
+    let redStandard = DynamicColor(red: 1, green: 0, blue: 0, alpha: 1)
     let redHex      = DynamicColor(hexString: "#ff0000")
 
     XCTAssert(redStandard.isEqual(redHex), "Color should be equals")
@@ -135,7 +135,7 @@ class DynamicColorTests: XCTTestCaseTemplate {
     let blue   = DynamicColor.blue().lighter()
     let violet = DynamicColor(red: 1, green: 0, blue: 1, alpha: 1).lighter()
     let white  = DynamicColor.white().lighter()
-    let black  = DynamicColor.black().lighter()
+    let black  = DynamicColor(red: 0, green: 0, blue: 0, alpha: 1).lighter()
     let gray   = black.lighter()
 
     XCTAssert(red.isEqualToHex(0xff6666), "Color string should be equal to #ff6666 (not \(red.toHexString()))")

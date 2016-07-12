@@ -37,27 +37,37 @@ class DynamicColorXYZTests: XCTTestCaseTemplate {
     XCTAssert(blackColor.r == 0, "Red component should be equal to 0 (not \(blackColor.r))")
     XCTAssert(blackColor.g == 0, "Green component should be equal to 0 (not \(blackColor.g))")
     XCTAssert(blackColor.b == 0, "Blue component should be equal to 0 (not \(blackColor.b))")
+
+    let blueColor = DynamicColor(X: 18.05, Y: 7.22, Z: 95.05).toRGBAComponents()
+    XCTAssert(blueColor.r == 0, "Red component should be equal to 0 (not \(blueColor.r))")
+    XCTAssert(blueColor.g == 0, "Green component should be equal to 0 (not \(blueColor.g))")
+    XCTAssert(blueColor.b == 1, "Blue component should be equal to 1 (not \(blueColor.b))")
+
+    let customColor = DynamicColor(X: 37.177, Y: 46.108, Z: 10.189).toRGBAComponents()
+    XCTAssert(customColor.r == 0.698, "Red component should be equal to 0.69804 (not \(customColor.r))")
+    XCTAssert(customColor.g == 0.741, "Green component should be equal to 0.74118 (not \(customColor.g))")
+    XCTAssert(customColor.b == 0.203, "Blue component should be equal to 0.20392 (not \(customColor.b))")
   }
 
   func testToHSLComponents() {
-    let whiteXYZA = DynamicColor.white().toXYZComponents()
-    XCTAssert(whiteXYZA.X == 95.05, "X component should be equal to 95.05 (not \(whiteXYZA.X))")
-    XCTAssert(whiteXYZA.Y == 100, "Y component should be equal to 100 (not \(whiteXYZA.Y))")
-    XCTAssert(whiteXYZA.Z == 108.9, "Z component should be equal to 108.9 (not \(whiteXYZA.Z))")
+    let whiteXYZ = DynamicColor.white().toXYZComponents()
+    XCTAssert(whiteXYZ.X == 95.05, "X component should be equal to 95.05 (not \(whiteXYZ.X))")
+    XCTAssert(whiteXYZ.Y == 100, "Y component should be equal to 100 (not \(whiteXYZ.Y))")
+    XCTAssert(whiteXYZ.Z == 108.9, "Z component should be equal to 108.9 (not \(whiteXYZ.Z))")
 
-    let blackXYZA = DynamicColor.black().toXYZComponents()
-    XCTAssert(blackXYZA.X == 0, "X component should be equal to 0 (not \(blackXYZA.X))")
-    XCTAssert(blackXYZA.Y == 0, "Y component should be equal to 0 (not \(blackXYZA.Y))")
-    XCTAssert(blackXYZA.Z == 0, "Z component should be equal to 0 (not \(blackXYZA.Z))")
+    let blackXYZ = DynamicColor.black().toXYZComponents()
+    XCTAssert(blackXYZ.X == 0, "X component should be equal to 0 (not \(blackXYZ.X))")
+    XCTAssert(blackXYZ.Y == 0, "Y component should be equal to 0 (not \(blackXYZ.Y))")
+    XCTAssert(blackXYZ.Z == 0, "Z component should be equal to 0 (not \(blackXYZ.Z))")
 
-    let blueXYZA = DynamicColor.blue().toXYZComponents()
-    XCTAssert(blueXYZA.X == 18.05, "X component should be equal to 18.05 (not \(blueXYZA.X))")
-    XCTAssert(blueXYZA.Y == 7.22, "Y component should be equal to 7.22 (not \(blueXYZA.Y))")
-    XCTAssert(blueXYZA.Z == 95.05, "Z component should be equal to 95.05 (not \(blueXYZA.Z))")
+    let blueXYZ = DynamicColor.blue().toXYZComponents()
+    XCTAssert(blueXYZ.X == 18.05, "X component should be equal to 18.05 (not \(blueXYZ.X))")
+    XCTAssert(blueXYZ.Y == 7.22, "Y component should be equal to 7.22 (not \(blueXYZ.Y))")
+    XCTAssert(blueXYZ.Z == 95.05, "Z component should be equal to 95.05 (not \(blueXYZ.Z))")
 
-    let customXYZA = DynamicColor(red: 0.69804, green: 0.74118, blue: 0.20392, alpha: 1).toXYZComponents()
-    XCTAssert(customXYZA.X == 37.177, "X component should be equal to 37.177 (not \(customXYZA.X))")
-    XCTAssert(customXYZA.Y == 46.108, "Y component should be equal to 46.108 (not \(customXYZA.Y))")
-    XCTAssert(customXYZA.Z == 10.189, "Z component should be equal to 10.189 (not \(customXYZA.Z))")
+    let customXYZ = DynamicColor(red: 0.69804, green: 0.74118, blue: 0.20392, alpha: 1).toXYZComponents()
+    XCTAssert(customXYZ.X == 37.177, "X component should be equal to 37.177 (not \(customXYZ.X))")
+    XCTAssert(customXYZ.Y == 46.108, "Y component should be equal to 46.108 (not \(customXYZ.Y))")
+    XCTAssert(customXYZ.Z == 10.189, "Z component should be equal to 10.189 (not \(customXYZ.Z))")
   }
 }

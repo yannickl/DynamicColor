@@ -44,9 +44,9 @@ class DynamicColorHSLTests: XCTTestCaseTemplate {
     XCTAssert(white1.toHex() == 0xffffff, "Color should be white")
     XCTAssert(white2.toHex() == 0xffffff, "Color should be white")
 
-    XCTAssert(red.isEqual(DynamicColor.red()), "Color should be red")
-    XCTAssert(green.isEqual(DynamicColor.green()), "Color should be green")
-    XCTAssert(blue.isEqual(DynamicColor.blue()), "Color should be blue")
+    XCTAssert(red.isEqualToHexString(DynamicColor.red().toHexString()), "Color should be red")
+    XCTAssert(green.isEqualToHexString(DynamicColor.green().toHexString()), "Color should be green")
+    XCTAssert(blue.isEqualToHexString(DynamicColor.blue().toHexString()), "Color should be blue")
 
     XCTAssert(custom.isEqualToHexString("#e74d3c"), "Color should be equal to #e74d3c")
   }

@@ -34,7 +34,7 @@
 
 public extension DynamicColor {
   /**
-   Initializes and returns a color object using CIE XYZ color space component values.
+   Initializes and returns a color object using CIE XYZ color space component values with an observer at 2° and a D65 illuminant.
    
    Notes that values out of range are clipped.
 
@@ -50,7 +50,7 @@ public extension DynamicColor {
     let toRGB = { (c: CGFloat) -> CGFloat in
       let rgb = c > 0.0031308 ? 1.055 * pow(c, 1 / 2.4) - 0.055 : 12.92 * c
 
-      return CGFloat(Int(rgb * 10000) / 10000)
+      return CGFloat(Int(rgb * 1000)) / 1000
     }
 
     let red   = toRGB(clippedX *  3.2406 + clippedY * -1.5372 + clippedZ * -0.4986)
@@ -63,7 +63,7 @@ public extension DynamicColor {
   // MARK: - Getting the XYZ Components
 
   /**
-   Returns the XYZ (mix of cone response curves, luminance, quasi-equal to blue stimulation) components with observer at 2° and the D65 illuminant.
+   Returns the XYZ (mix of cone response curves, luminance, quasi-equal to blue stimulation) components with an observer at 2° and a D65 illuminant.
 
    Notes that X values are between 0 to 95.05, Y values are between 0 to 100.0 and Z values are between 0 to 108.9.
 
