@@ -1,9 +1,11 @@
 # Change log
 
-## Version 3.0.1
+## Version 3.1.0
 
 - [ADD] CIE XYZ Color Space
-- `toXYZAComponents()` method
+- Initialization with XYZ components
+- `toXYZComponents()` method
+- [REFACTORING] `toHSLAComponents` to `toHSLComponents`
 
 ## [Version 3.0.0](https://github.com/yannickl/DynamicColor/releases/tag/3.0.0)
 *Released on 2016-06-14.*

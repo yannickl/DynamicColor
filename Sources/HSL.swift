@@ -30,31 +30,6 @@
   import AppKit
 #endif
 
-/**
-Clips the values in an interval.
-
-Given an interval, values outside the interval are clipped to the interval
-edges. For example, if an interval of [0, 1] is specified, values smaller than
-0 become 0, and values larger than 1 become 1.
-
-- parameter v: The value to clipped.
-- parameter minimum: The minimum edge value.
-- parameter maximum: The maximum edgevalue.
-*/
-internal func clip<T: Comparable>(_ v: T, _ minimum: T, _ maximum: T) -> T {
-  return max(min(v, maximum), minimum)
-}
-
-/**
-Returns the absolute value of the modulo operation.
-
-- parameter x: The value to compute.
-- parameter m: The modulo.
-*/
-internal func moda(_ x: Double, m: Double) -> Double {
-  return (x.truncatingRemainder(dividingBy: m) + m).truncatingRemainder(dividingBy: m)
-}
-
 /// Hue-saturation-lightness structure to make the color manipulation easier.
 internal struct HSL {
   /// Hue value between 0.0 and 1.0 (0.0 = 0 degree, 1.0 = 360 degree).

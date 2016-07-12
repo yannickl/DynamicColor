@@ -39,25 +39,26 @@ extension DynamicColor {
    - parameter hue: The hue component of the color object, specified as a value from 0.0 to 1.0 (0.0 for 0 degree and 1.0 for 360 degree).
    - parameter saturation: The saturation component of the color object, specified as a value from 0.0 to 1.0.
    - parameter lightness: The lightness component of the color object, specified as a value from 0.0 to 1.0.
-   - parameter alpha: The opacity value of the color object, specified as a value from 0.0 to 1.0.
    */
-  public convenience init(hue: Double, saturation: Double, lightness: Double, alpha: Double = 1) {
-    let color      = HSL(hue: hue, saturation: saturation, lightness: lightness, alpha: alpha).toDynamicColor()
+  public convenience init(hue: Double, saturation: Double, lightness: Double) {
+    let color      = HSL(hue: hue, saturation: saturation, lightness: lightness, alpha: 1).toDynamicColor()
     let components = color.toRGBAComponents()
 
     self.init(red: components.r, green: components.g, blue: components.b, alpha: components.a)
   }
 
+  // MARK: - Getting the HSL Components
+
   /**
-   Returns the HSLA (hue, saturation, lightness, alpha) components.
+   Returns the HSLA (hue, saturation, lightness) components.
 
    Notes that the hue value is between 0.0 and 1.0 (0.0 for 0 degree and 1.0 for 360 degree).
 
-   - returns: The HSLA components as a tuple (h, s, l, a).
+   - returns: The HSLA components as a tuple (h, s, l).
    */
-  public final func toHSLAComponents() -> (h: CGFloat, s: CGFloat, l: CGFloat, a: CGFloat) {
+  public final func toHSLComponents() -> (h: CGFloat, s: CGFloat, l: CGFloat) {
     let hsl = HSL(color: self)
 
-    return (CGFloat(hsl.h), CGFloat(hsl.s), CGFloat(hsl.l), CGFloat(hsl.a))
+    return (CGFloat(hsl.h), CGFloat(hsl.s), CGFloat(hsl.l))
   }
 }

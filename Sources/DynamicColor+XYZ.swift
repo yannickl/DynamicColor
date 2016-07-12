@@ -34,36 +34,55 @@
 
 public extension DynamicColor {
   /**
-   Returns the XYZA (mix of cone response curves, luminance, quasi-equal to blue stimulation, alpha) components.
+   Initializes and returns a color object using CIE XYZ color space component values.
+   
+   Notes that values out of range are clipped.
 
-   Notes that values are between 0.0 and 1.0.
-
-   - returns: The XYZA components as a tuple (X, Y, Z, A).
+   - parameter X: The mix of cone response curves, specified as a value from 0 to 95.05.
+   - parameter Y: The luminance, specified as a value from 0 to 100.0.
+   - parameter Z: The quasi-equal to blue stimulation, specified as a value from 0 to 108.9.
    */
-  public final func toXYZAComponents() -> (X: CGFloat, Y: CGFloat, Z: CGFloat, A: CGFloat) {
-    /*
-     Converts RGB to sRGB.
-     We're going to use the Reverse Transformation Equation.
-     http://en.wikipedia.org/wiki/SRGB
-     */
-    let sRGB = { (c: CGFloat) -> CGFloat in
+  public convenience init(X: CGFloat, Y: CGFloat, Z: CGFloat) {
+    let clippedX = clip(X, 0, 95.05) / 100
+    let clippedY = clip(Y, 0, 100) / 100
+    let clippedZ = clip(Z, 0, 108.9) / 100
+
+    let toRGB = { (c: CGFloat) -> CGFloat in
+      let rgb = c > 0.0031308 ? 1.055 * pow(c, 1 / 2.4) - 0.055 : 12.92 * c
+
+      return CGFloat(Int(rgb * 10000) / 10000)
+    }
+
+    let red   = toRGB(clippedX *  3.2406 + clippedY * -1.5372 + clippedZ * -0.4986)
+    let green = toRGB(clippedX * -0.9689 + clippedY *  1.8758 + clippedZ *  0.0415)
+    let blue  = toRGB(clippedX *  0.0557 + clippedY * -0.2040 + clippedZ *  1.0570)
+
+    self.init(red: red, green: green, blue: blue, alpha: 1)
+  }
+
+  // MARK: - Getting the XYZ Components
+
+  /**
+   Returns the XYZ (mix of cone response curves, luminance, quasi-equal to blue stimulation) components with observer at 2° and the D65 illuminant.
+
+   Notes that X values are between 0 to 95.05, Y values are between 0 to 100.0 and Z values are between 0 to 108.9.
+
+   - returns: The XYZA components as a tuple (X, Y, Z).
+   */
+  public final func toXYZComponents() -> (X: CGFloat, Y: CGFloat, Z: CGFloat) {
+    let toSRGB = { (c: CGFloat) -> CGFloat in
       c > 0.04045 ? pow((c + 0.055) / (1 + 0.055), 2.40) : c / 12.92
     }
 
     let rgba  = toRGBAComponents()
-    let red   = sRGB(rgba.r)
-    let green = sRGB(rgba.g)
-    let blue  = sRGB(rgba.b)
+    let red   = toSRGB(rgba.r)
+    let green = toSRGB(rgba.g)
+    let blue  = toSRGB(rgba.b)
 
-    /*
-     Converts to XYZ values
-     Using a matrix multiplication of the linear values
-     http://upload.wikimedia.org/math/4/3/3/433376fc18cccd887758beffb7e7c625.png
-     */
     let X = Int((red * 0.4124 + green * 0.3576 + blue * 0.1805) * 100000)
     let Y = Int((red * 0.2126 + green * 0.7152 + blue * 0.0722) * 100000)
     let Z = Int((red * 0.0193 + green * 0.1192 + blue * 0.9505) * 100000)
 
-    return (X: CGFloat(X) / 1000, Y: CGFloat(Y) / 1000, Z: CGFloat(Z) / 1000, A: rgba.a)
+    return (X: CGFloat(X) / 1000, Y: CGFloat(Y) / 1000, Z: CGFloat(Z) / 1000)
   }
 }

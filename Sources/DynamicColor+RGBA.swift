@@ -70,36 +70,28 @@ public extension DynamicColor {
    The red component as CGFloat between 0.0 to 1.0.
    */
   public final var redComponent: CGFloat {
-    get {
-      return toRGBAComponents().r
-    }
+    return toRGBAComponents().r
   }
 
   /**
    The green component as CGFloat between 0.0 to 1.0.
    */
   public final var greenComponent: CGFloat {
-    get {
-      return toRGBAComponents().g
-    }
+    return toRGBAComponents().g
   }
 
   /**
    The blue component as CGFloat between 0.0 to 1.0.
    */
   public final var blueComponent: CGFloat {
-    get {
-      return toRGBAComponents().b
-    }
+    return toRGBAComponents().b
   }
 
   /**
    The alpha component as CGFloat between 0.0 to 1.0.
    */
   public final var alphaComponent: CGFloat {
-    get {
-      return toRGBAComponents().a
-    }
+    return toRGBAComponents().a
   }
   #endif
 

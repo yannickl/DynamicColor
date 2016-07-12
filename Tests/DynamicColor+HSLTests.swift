@@ -27,7 +27,7 @@
 import XCTest
 
 class DynamicColorHSLTests: XCTTestCaseTemplate {
-  func testInitWithHSLAComponents() {
+  func testInitWithHSLComponents() {
     let black1 = DynamicColor(hue: 0, saturation: 0, lightness: 0)
     let black2 = DynamicColor(hue: 1, saturation: 1, lightness: 0)
     let white1 = DynamicColor(hue: 0, saturation: 0, lightness: 1)
@@ -38,7 +38,6 @@ class DynamicColorHSLTests: XCTTestCaseTemplate {
     let blue  = DynamicColor(hue: 240 / 360, saturation: 1, lightness: 0.5)
 
     let custom = DynamicColor(hue: 6 / 360, saturation: 0.781, lightness: 0.571)
-    let alpha  = DynamicColor(hue: 6 / 360, saturation: 0.781, lightness: 0.571, alpha: 0.5)
 
     XCTAssert(black1.toHex() == 0, "Color should be black")
     XCTAssert(black2.toHex() == 0, "Color should be black")
@@ -50,17 +49,14 @@ class DynamicColorHSLTests: XCTTestCaseTemplate {
     XCTAssert(blue.isEqual(DynamicColor.blue()), "Color should be blue")
 
     XCTAssert(custom.isEqualToHexString("#e74d3c"), "Color should be equal to #e74d3c")
-    XCTAssert(alpha.isEqualToHexString("#e74d3c"), "Color should be equal to #e74d3c")
-    XCTAssert(alpha.alphaComponent == 0.5, "Color alpha channel should be equal to 0.5")
   }
 
-  func testToHSLAComponents() {
+  func testToHSLComponents() {
     let customColor = DynamicColor(hue: 6 / 360, saturation: 0.781, lightness: 0.571)
-    let hsla        = customColor.toHSLAComponents()
+    let hsl         = customColor.toHSLComponents()
 
-    XCTAssert(round(hsla.h * 1000) == round(6.0 / 360 * 1000), "Color hue component should be equal to 6 / 360")
-    XCTAssert(round(hsla.s * 1000) == round(0.781 * 1000), "Color saturation component should be equal to 0.781")
-    XCTAssert(hsla.l == 0.571, "Color lightness component should be equal to 0.571")
-    XCTAssert(hsla.a == 1, "Color alpha component should be equal to 1")
+    XCTAssert(round(hsl.h * 1000) == round(6.0 / 360 * 1000), "Color hue component should be equal to 6 / 360")
+    XCTAssert(round(hsl.s * 1000) == round(0.781 * 1000), "Color saturation component should be equal to 0.781")
+    XCTAssert(hsl.l == 0.571, "Color lightness component should be equal to 0.571")
   }
 }
