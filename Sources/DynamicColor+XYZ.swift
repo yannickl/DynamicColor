@@ -48,7 +48,7 @@ public extension DynamicColor {
     let clippedZ = clip(Z, 0, 108.9) / 100
 
     let toRGB = { (c: CGFloat) -> CGFloat in
-      let rgb = c > 0.0031308 ? 1.055 * pow(c, 1 / 2.4) - 0.055 : 12.92 * c
+      let rgb = c > 0.0031308 ? 1.055 * pow(c, 1 / 2.4) - 0.055 : c * 12.92
 
       return CGFloat(Int(rgb * 1000)) / 1000
     }
@@ -67,11 +67,11 @@ public extension DynamicColor {
 
    Notes that X values are between 0 to 95.05, Y values are between 0 to 100.0 and Z values are between 0 to 108.9.
 
-   - returns: The XYZA components as a tuple (X, Y, Z).
+   - returns: The XYZ components as a tuple (X, Y, Z).
    */
   public final func toXYZComponents() -> (X: CGFloat, Y: CGFloat, Z: CGFloat) {
     let toSRGB = { (c: CGFloat) -> CGFloat in
-      c > 0.04045 ? pow((c + 0.055) / (1 + 0.055), 2.40) : c / 12.92
+      c > 0.04045 ? pow((c + 0.055) / 1.055, 2.4) : c / 12.92
     }
 
     let rgba  = toRGBAComponents()

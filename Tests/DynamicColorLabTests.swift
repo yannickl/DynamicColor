@@ -1,0 +1,61 @@
+/*
+ * DynamicColor
+ *
+ * Copyright 2015-present Yannick Loriot.
+ * http://yannickloriot.com
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ */
+
+import XCTest
+
+class DynamicColorLabTests: XCTTestCaseTemplate {
+  func testToLabComponents() {
+    let whiteLab = DynamicColor.white().toLabComponents()
+    XCTAssert(whiteLab.L == 100, "L component should be equal to 100 (not \(whiteLab.L))")
+    XCTAssert(whiteLab.a == 0, "a component should be equal to 0 (not \(whiteLab.a))")
+    XCTAssert(whiteLab.b == 0, "b component should be equal to 0 (not \(whiteLab.b))")
+
+    let blackLab = DynamicColor.black().toLabComponents()
+    XCTAssert(blackLab.L == 0, "L component should be equal to 0 (not \(blackLab.L))")
+    XCTAssert(blackLab.a == 0, "a component should be equal to 0 (not \(blackLab.a))")
+    XCTAssert(blackLab.b == 0, "b component should be equal to 0 (not \(blackLab.b))")
+
+    let redLab = DynamicColor.red().toLabComponents()
+    XCTAssert(redLab.L == 53.232, "L component should be equal to 53.232 (not \(redLab.L))")
+    XCTAssert(redLab.a == 80.105, "a component should be equal to 80.105 (not \(redLab.a))")
+    XCTAssert(redLab.b == 67.222, "b component should be equal to 67.222 (not \(redLab.b))")
+
+    let yellowLab = DynamicColor.yellow().toLabComponents()
+    XCTAssert(yellowLab.L == 97.138, "L component should be equal to 97.138 (not \(yellowLab.L))")
+    XCTAssert(yellowLab.a == -21.56, "a component should be equal to -21.56 (not \(yellowLab.a))")
+    XCTAssert(yellowLab.b == 94.487, "b component should be equal to 94.487 (not \(yellowLab.b))")
+
+    let maxLab = DynamicColor(hex: 0xFF4500).toLabComponents()
+    XCTAssert(maxLab.L == 57.574, "L component should be equal to 57.574 (not \(maxLab.L))")
+    XCTAssert(maxLab.a == 67.792, "a component should be equal to 67.792 (not \(maxLab.a))")
+    XCTAssert(maxLab.b == 68.976, "b component should be equal to 68.976 (not \(maxLab.b))")
+
+    let minLab = DynamicColor(hex: 0x008B40).toLabComponents()
+    XCTAssert(minLab.L == 50.493, "L component should be equal to 57.574 (not \(minLab.L))")
+    XCTAssert(minLab.a == -49.333, "a component should be equal to -49.333 (not \(minLab.a))")
+    XCTAssert(minLab.b == 31.056, "b component should be equal to 31.056 (not \(minLab.b))")
+  }
+}

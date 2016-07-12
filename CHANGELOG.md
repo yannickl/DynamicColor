@@ -5,6 +5,8 @@
 - [ADD] CIE XYZ Color Space
 - Initialization with XYZ components
 - `toXYZComponents()` method
+- [ADD] CIE L*a*b* Color Space
+- `toLabComponents()` method
 - [REFACTORING] `toHSLAComponents` to `toHSLComponents`
 
 ## [Version 3.0.0](https://github.com/yannickl/DynamicColor/releases/tag/3.0.0)
