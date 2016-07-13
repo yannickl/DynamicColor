@@ -27,6 +27,33 @@
 import XCTest
 
 class DynamicColorLabTests: XCTTestCaseTemplate {
+  func testInitWithLabComponents() {
+    let whiteColor = DynamicColor(L: 100, a: 0, b: 0).toRGBAComponents()
+    XCTAssert(whiteColor.r == 1, "Red component should be equal to 1 (not \(whiteColor.r))")
+    XCTAssert(whiteColor.g == 1, "Green component should be equal to 1 (not \(whiteColor.g))")
+    XCTAssert(whiteColor.b == 1, "Blue component should be equal to 1 (not \(whiteColor.b))")
+
+    let blackColor = DynamicColor(L: 0, a: 0, b: 0).toRGBAComponents()
+    XCTAssert(blackColor.r == 0, "Red component should be equal to 0 (not \(blackColor.r))")
+    XCTAssert(blackColor.g == 0, "Green component should be equal to 0 (not \(blackColor.g))")
+    XCTAssert(blackColor.b == 0, "Blue component should be equal to 0 (not \(blackColor.b))")
+
+    let redColor = DynamicColor(L: 53.23, a: 80.10, b: 67.22).toRGBAComponents()
+    XCTAssert(redColor.r == 1, "Red component should be equal to 1 (not \(redColor.r))")
+    XCTAssert(redColor.g == 0, "Green component should be equal to 0 (not \(redColor.g))")
+    XCTAssert(redColor.b == 0, "Blue component should be equal to 0 (not \(redColor.b))")
+
+    let yellowColor = DynamicColor(L: 97.138, a: -21.56, b: 94.487).toRGBAComponents()
+    XCTAssert(yellowColor.r == 1, "L component should be equal to 1 (not \(yellowColor.r))")
+    XCTAssert(yellowColor.g == 1, "a component should be equal to 1 (not \(yellowColor.g))")
+    XCTAssert(yellowColor.b == 0, "b component should be equal to 0 (not \(yellowColor.b))")
+
+    let customColor = DynamicColor(L: 50.493, a: -49.333, b: 31.056).toRGBAComponents()
+    XCTAssert(customColor.r == 0, "Red component should be equal to 0 (not \(customColor.r))")
+    XCTAssert(customColor.g == 0.545, "Green component should be equal to 0.545 (not \(customColor.g))")
+    XCTAssert(customColor.b == 0.251, "Blue component should be equal to 0.251 (not \(customColor.b))")
+  }
+
   func testToLabComponents() {
     let whiteLab = DynamicColor.white().toLabComponents()
     XCTAssert(whiteLab.L == 100, "L component should be equal to 100 (not \(whiteLab.L))")

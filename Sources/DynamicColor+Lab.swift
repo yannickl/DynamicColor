@@ -33,6 +33,35 @@
 // MARK: CIE L*a*b* Color Space
 
 public extension DynamicColor {
+  /**
+   Initializes and returns a color object using CIE XYZ color space component values with an observer at 2° and a D65 illuminant.
+
+   Notes that values out of range are clipped.
+
+   - parameter L: The lightness, specified as a value from 0 to 100.0.
+   - parameter a: The red-green axis, specified as a value from -128.0 to 127.0.
+   - parameter b: The yellow-blue axis, specified as a value from -128.0 to 127.0.
+   */
+  public convenience init(L: CGFloat, a: CGFloat, b: CGFloat) {
+    let clippedL = clip(L, 0, 100)
+    let clippedA = clip(a, -128, 127)
+    let clippedB = clip(b, -128, 127)
+
+    let normalized = { (c: CGFloat) -> CGFloat in
+      pow(c, 3) > 0.008856 ? pow(c, 3) : (c - 16 / 116) / 7.787
+    }
+
+    let preY = (clippedL + 16) / 116
+    let preX = clippedA / 500 + preY
+    let preZ = preY - clippedB / 200
+
+    let X = 95.05 * normalized(preX)
+    let Y = 100 * normalized(preY)
+    let Z = 108.9 * normalized(preZ)
+
+    self.init(X: X, Y: Y, Z: Z)
+  }
+
   // MARK: - Getting the L*a*b* Components
 
   /**
@@ -40,7 +69,7 @@ public extension DynamicColor {
 
    Notes that L values are between 0 to 100.0, a values are between -128 to 127.0 and b values are between -128 to 127.0.
 
-   - returns: The XYZ components as a tuple (X, Y, Z).
+   - returns: The L*a*b* components as a tuple (L, a, b).
    */
   public final func toLabComponents() -> (L: CGFloat, a: CGFloat, b: CGFloat) {
     let normalized = { (c: CGFloat) -> CGFloat in
@@ -55,7 +84,7 @@ public extension DynamicColor {
     let L = CGFloat(Int((116 * normalizedY - 16) * 1000)) / 1000
     let a = CGFloat(Int((500 * (normalizedX - normalizedY)) * 1000)) / 1000
     let b = CGFloat(Int((200 * (normalizedY - normalizedZ)) * 1000)) / 1000
-print("(\(normalizedX), \(normalizedY), \(normalizedZ)) => (\(L), \(a), \(b)) => \((1/3)*pow((29.0/6.0), 2.0)))")
+
     return (L: L, a: a, b: b)
   }
 }

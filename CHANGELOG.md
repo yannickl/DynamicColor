@@ -6,6 +6,7 @@
 - Initialization with XYZ components
 - `toXYZComponents()` method
 - [ADD] CIE L*a*b* Color Space
+- Initialization with L*a*b* components
 - `toLabComponents()` method
 - [REFACTORING] `toHSLAComponents` to `toHSLComponents`
 

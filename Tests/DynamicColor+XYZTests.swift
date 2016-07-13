@@ -44,9 +44,9 @@ class DynamicColorXYZTests: XCTTestCaseTemplate {
     XCTAssert(blueColor.b == 1, "Blue component should be equal to 1 (not \(blueColor.b))")
 
     let customColor = DynamicColor(X: 37.177, Y: 46.108, Z: 10.189).toRGBAComponents()
-    XCTAssert(customColor.r == 0.698, "Red component should be equal to 0.69804 (not \(customColor.r))")
-    XCTAssert(customColor.g == 0.741, "Green component should be equal to 0.74118 (not \(customColor.g))")
-    XCTAssert(customColor.b == 0.203, "Blue component should be equal to 0.20392 (not \(customColor.b))")
+    XCTAssert(customColor.r == 0.698, "Red component should be equal to 0.698 (not \(customColor.r))")
+    XCTAssert(customColor.g == 0.741, "Green component should be equal to 0.741 (not \(customColor.g))")
+    XCTAssert(customColor.b == 0.204, "Blue component should be equal to 0.204 (not \(customColor.b))")
   }
 
   func testToHSLComponents() {

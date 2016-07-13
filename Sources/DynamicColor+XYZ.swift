@@ -50,12 +50,12 @@ public extension DynamicColor {
     let toRGB = { (c: CGFloat) -> CGFloat in
       let rgb = c > 0.0031308 ? 1.055 * pow(c, 1 / 2.4) - 0.055 : c * 12.92
 
-      return CGFloat(Int(rgb * 1000)) / 1000
+      return CGFloat(Int(round(rgb * 1000))) / 1000
     }
 
-    let red   = toRGB(clippedX *  3.2406 + clippedY * -1.5372 + clippedZ * -0.4986)
-    let green = toRGB(clippedX * -0.9689 + clippedY *  1.8758 + clippedZ *  0.0415)
-    let blue  = toRGB(clippedX *  0.0557 + clippedY * -0.2040 + clippedZ *  1.0570)
+    let red   = toRGB(clippedX * 3.2406 + clippedY * -1.5372 + clippedZ * -0.4986)
+    let green = toRGB(clippedX * -0.9689 + clippedY * 1.8758 + clippedZ * 0.0415)
+    let blue  = toRGB(clippedX * 0.0557 + clippedY * -0.2040 + clippedZ * 1.0570)
 
     self.init(red: red, green: green, blue: blue, alpha: 1)
   }
