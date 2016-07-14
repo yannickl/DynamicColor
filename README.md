@@ -12,7 +12,7 @@ DynamicColor provides powerful methods to manipulate colours in an easy way in S
 
 ## Usage
 
-#### Creation
+#### Creation (Hex String)
 
 Firstly, DynamicColor provides useful initializers to create colors using hex strings or values:
 
@@ -85,7 +85,8 @@ These adjust the hue value of the color in the same way like the others do. Agai
 ```swift
 let originalColor = DynamicColor(hexString: "#c0392b")
 
-let adjustHueColor = originalColor.adjustedHue(amount: 45 / 360)
+// Hue values are in degrees
+let adjustHueColor = originalColor.adjustedHue(amount: 45)
 
 let complementedColor = originalColor.complemented()
 ````
@@ -154,7 +155,7 @@ Install CocoaPods if not already available:
 $ [sudo] gem install cocoapods
 $ pod setup
 ```
-Go to the directory of your Xcode project, and Create and Edit your Podfile and add _DynamicColor_:
+Go to the directory of your Xcode project, and Create and Edit your *Podfile* and add _DynamicColor_:
 
 ``` bash
 $ cd /path/to/MyProject
