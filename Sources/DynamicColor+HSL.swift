@@ -36,7 +36,7 @@ extension DynamicColor {
   /**
    Initializes and returns a color object using the specified opacity and HSL component values.
 
-   - parameter hue: The hue component of the color object, specified as a value from 0.0 to 1.0 (0.0 for 0 degree and 1.0 for 360 degree).
+   - parameter hue: The hue component of the color object, specified as a value from 0.0 to 360.0 degree.
    - parameter saturation: The saturation component of the color object, specified as a value from 0.0 to 1.0.
    - parameter lightness: The lightness component of the color object, specified as a value from 0.0 to 1.0.
    */
@@ -50,15 +50,15 @@ extension DynamicColor {
   // MARK: - Getting the HSL Components
 
   /**
-   Returns the HSLA (hue, saturation, lightness) components.
+   Returns the HSL (hue, saturation, lightness) components.
 
-   Notes that the hue value is between 0.0 and 1.0 (0.0 for 0 degree and 1.0 for 360 degree).
+   Notes that the hue value is between 0.0 and 360.0 degree.
 
-   - returns: The HSLA components as a tuple (h, s, l).
+   - returns: The HSL components as a tuple (h, s, l).
    */
   public final func toHSLComponents() -> (h: CGFloat, s: CGFloat, l: CGFloat) {
     let hsl = HSL(color: self)
 
-    return (CGFloat(hsl.h), CGFloat(hsl.s), CGFloat(hsl.l))
+    return (CGFloat(Int(round(hsl.h * 360000)) / 1000), CGFloat(hsl.s), CGFloat(hsl.l))
   }
 }

@@ -34,10 +34,10 @@ class DynamicColorHSLTests: XCTTestCaseTemplate {
     let white2 = DynamicColor(hue: 1, saturation: 1, lightness: 1)
 
     let red   = DynamicColor(hue: 0, saturation: 1, lightness: 0.5)
-    let green = DynamicColor(hue: 120 / 360, saturation: 1, lightness: 0.5)
-    let blue  = DynamicColor(hue: 240 / 360, saturation: 1, lightness: 0.5)
+    let green = DynamicColor(hue: 120, saturation: 1, lightness: 0.5)
+    let blue  = DynamicColor(hue: 240, saturation: 1, lightness: 0.5)
 
-    let custom = DynamicColor(hue: 6 / 360, saturation: 0.781, lightness: 0.571)
+    let custom = DynamicColor(hue: 6, saturation: 0.781, lightness: 0.571)
 
     XCTAssert(black1.toHex() == 0, "Color should be black")
     XCTAssert(black2.toHex() == 0, "Color should be black")
@@ -52,10 +52,10 @@ class DynamicColorHSLTests: XCTTestCaseTemplate {
   }
 
   func testToHSLComponents() {
-    let customColor = DynamicColor(hue: 6 / 360, saturation: 0.781, lightness: 0.571)
+    let customColor = DynamicColor(hue: 6, saturation: 0.781, lightness: 0.571)
     let hsl         = customColor.toHSLComponents()
 
-    XCTAssert(round(hsl.h * 1000) == round(6.0 / 360 * 1000), "Color hue component should be equal to 6 / 360")
+    XCTAssert(hsl.h == 6, "Color hue component should be equal to 6° (not \(hsl.h))")
     XCTAssert(round(hsl.s * 1000) == round(0.781 * 1000), "Color saturation component should be equal to 0.781")
     XCTAssert(hsl.l == 0.571, "Color lightness component should be equal to 0.571")
   }

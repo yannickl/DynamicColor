@@ -30,7 +30,7 @@ public extension DynamicColor {
   /**
    Creates and returns a color object with the hue rotated along the color wheel by the given amount.
 
-   - parameter amount: A double representing the number of degrees as ratio (usually -1.0 for -360 degree and 1.0 for 360 degree).
+   - parameter amount: A double representing the number of degrees as ratio (usually between -360.0 degree and 360.0 degree).
    - returns: A DynamicColor object with the hue changed.
    */
   public final func adjustedHue(amount: Double) -> DynamicColor {
@@ -40,13 +40,13 @@ public extension DynamicColor {
   /**
    Creates and returns the complement of the color object.
 
-   This is identical to adjustedHue(0.5).
+   This is identical to adjustedHue(180).
 
    - returns: The complement DynamicColor.
    - seealso: adjustedHueColor:
    */
   public final func complemented() -> DynamicColor {
-    return adjustedHue(amount: 0.5)
+    return adjustedHue(amount: 180)
   }
 
   /**

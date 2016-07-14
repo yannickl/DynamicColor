@@ -9,6 +9,7 @@
 - Initialization with L*a*b* components
 - `toLabComponents()` method
 - [REFACTORING] `toHSLAComponents` to `toHSLComponents`
+- [REFACTORING] Hue range is now from 0° and 360° instead of 0.0 and 1.0
 
 ## [Version 3.0.0](https://github.com/yannickl/DynamicColor/releases/tag/3.0.0)
 *Released on 2016-06-14.*

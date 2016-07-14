@@ -23,7 +23,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
       ("Saturated", mainColor.saturated()),
       ("Desaturated", mainColor.desaturated()),
       ("Grayscaled", mainColor.grayscaled()),
-      ("Adjusted", mainColor.adjustedHue(amount: 45 / 360)),
+      ("Adjusted", mainColor.adjustedHue(amount: 45)),
       ("Complemented", mainColor.complemented()),
       ("Inverted", mainColor.inverted()),
       ("Mix Blue", mainColor.mixed(color: .blue())),

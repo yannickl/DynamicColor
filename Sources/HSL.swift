@@ -46,13 +46,13 @@ internal struct HSL {
   /**
   Initializes and creates a HSL color from the hue, saturation, lightness and alpha components.
 
-  - parameter h: The hue component of the color object, specified as a value between 0.0 and 1.0 (0.0 for 0 degree, 1.0 for 360 degree).
+  - parameter h: The hue component of the color object, specified as a value between 0.0 and 360.0 degree.
   - parameter s: The saturation component of the color object, specified as a value between 0.0 and 1.0.
   - parameter l: The lightness component of the color object, specified as a value between 0.0 and 1.0.
   - parameter a: The opacity component of the color object, specified as a value between 0.0 and 1.0.
   */
   init(hue: Double, saturation: Double, lightness: Double, alpha: Double = 1) {
-    h = hue
+    h = hue.truncatingRemainder(dividingBy: 360) / 360
     s = clip(saturation, 0, 1)
     l = clip(lightness, 0, 1)
     a = clip(alpha, 0, 1)
@@ -107,26 +107,18 @@ internal struct HSL {
   - returns: A DynamicColor object corresponding to the current HSV color.
   */
   func toDynamicColor() -> DynamicColor {
-    let m2: Double
-
-    if l <= 0.5 {
-      m2 = l * (s + 1)
-    }
-    else {
-      m2 = (l + s) - (l * s)
-    }
-
+    let m2 = l <= 0.5 ? l * (s + 1) : (l + s) - (l * s)
     let m1 = (l * 2) - m2
 
-    let r = hueToRGB(m1, m2: m2, h: h + 1 / 3)
-    let g = hueToRGB(m1, m2: m2, h: h)
-    let b = hueToRGB(m1, m2: m2, h: h - 1 / 3)
+    let r = hueToRGB(m1: m1, m2: m2, h: h + 1 / 3)
+    let g = hueToRGB(m1: m1, m2: m2, h: h)
+    let b = hueToRGB(m1: m1, m2: m2, h: h - 1 / 3)
 
     return DynamicColor(red: r, green: g, blue: b, alpha: CGFloat(a))
   }
 
   /// Hue to RGB helper function
-  private func hueToRGB(_ m1: Double, m2: Double, h: Double) -> CGFloat {
+  private func hueToRGB(m1: Double, m2: Double, h: Double) -> CGFloat {
     let hue = moda(h, m: 1)
 
     if hue * 6 < 1 {
@@ -147,11 +139,11 @@ internal struct HSL {
   /**
   Returns a color with the hue rotated along the color wheel by the given amount.
 
-  - parameter amount: A double representing the number of degrees as ratio (usually -1.0 for -360deg and 1.0 for 360deg).
+  - parameter amount: A double representing the number of degrees as ratio (usually between -360.0 degree and 360.0 degree).
   - returns: A HSL color with the hue changed.
   */
   func adjustedHue(amount: Double) -> HSL {
-    return HSL(hue: h + amount, saturation: s, lightness: l, alpha: a)
+    return HSL(hue: h * 360 + amount, saturation: s, lightness: l, alpha: a)
   }
 
   /**
@@ -161,7 +153,7 @@ internal struct HSL {
   - returns: A lighter HSL color.
   */
   func lighter(amount: Double) -> HSL {
-    return HSL(hue: h, saturation: s, lightness: l + amount, alpha: a)
+    return HSL(hue: h * 360, saturation: s, lightness: l + amount, alpha: a)
   }
 
   /**
@@ -181,7 +173,7 @@ internal struct HSL {
   - returns: A HSL color more saturated.
   */
   func saturated(amount: Double) -> HSL {
-    return HSL(hue: h, saturation: s + amount, lightness: l, alpha: a)
+    return HSL(hue: h * 360, saturation: s + amount, lightness: l, alpha: a)
   }
 
   /**
