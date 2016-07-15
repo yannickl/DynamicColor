@@ -173,17 +173,10 @@ public extension DynamicColor {
     let c1 = toRGBAComponents()
     let c2 = color.toRGBAComponents()
 
-    let w = 2 * normalizedWeight - 1
-
-    let a  = c1.a - c2.a
-    let wi = (w * a == -1) ? w : (w + a) / (1 + w * a)
-    let w2 = (wi + 1) / 2
-    let w1 = 1 - w2
-
-    let red   = w1 * c1.r + w2 * c2.r
-    let green = w1 * c1.g + w2 * c2.g
-    let blue  = w1 * c1.b + w2 * c2.b
-    let alpha = c1.a * normalizedWeight + c2.a * (1 - normalizedWeight)
+    let red   = c1.r + normalizedWeight * (c2.r - c1.r)
+    let green = c1.g + normalizedWeight * (c2.g - c1.g)
+    let blue  = c1.b + normalizedWeight * (c2.b - c1.b)
+    let alpha = c1.a + normalizedWeight * (c2.a - c1.a)
 
     return DynamicColor(red: red, green: green, blue: blue, alpha: alpha)
   }

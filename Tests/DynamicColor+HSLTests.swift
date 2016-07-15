@@ -56,7 +56,7 @@ class DynamicColorHSLTests: XCTTestCaseTemplate {
     let hsl         = customColor.toHSLComponents()
 
     XCTAssert(hsl.h == 6, "Color hue component should be equal to 6° (not \(hsl.h))")
-    XCTAssert(round(hsl.s * 1000) == round(0.781 * 1000), "Color saturation component should be equal to 0.781")
-    XCTAssert(hsl.l == 0.571, "Color lightness component should be equal to 0.571")
+    XCTAssert(hsl.s == 0.781, "Saturation component should be equal to 0.781 (not \(hsl.s))")
+    XCTAssert(hsl.l == 0.571, "Lightness component should be equal to 0.571 (not \(hsl.s))")
   }
 }

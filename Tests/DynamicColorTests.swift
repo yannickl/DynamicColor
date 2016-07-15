@@ -124,7 +124,7 @@ class DynamicColorTests: XCTTestCaseTemplate {
 
   func testComplementColor() {
     let complement  = DynamicColor(hex: 0xc0392b).complemented()
-    let adjustedHue = DynamicColor(hex: 0xc0392b).adjustedHue(amount: 180 / 360)
+    let adjustedHue = DynamicColor(hex: 0xc0392b).adjustedHue(amount: 180)
 
     XCTAssert(complement.isEqual(adjustedHue), "Colors should be the same")
   }
