@@ -26,4 +26,4 @@ ref.toLabComponents()
 
 /*: ### Gradients */
 //[#colorLiteral(red: 0.2193539292, green: 0.4209204912, blue: 0.1073316187, alpha: 1), #colorLiteral(red: 0.9446166754, green: 0.6509571671, blue: 0.1558967829, alpha: 1)].colors(amount: 3)
-[#colorLiteral(red: 0.2193539292, green: 0.4209204912, blue: 0.1073316187, alpha: 1), #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0.1991284192, green: 0.6028449535, blue: 0.9592232704, alpha: 1)].colorAt(percent: 0.8)
+[#colorLiteral(red: 0.2193539292, green: 0.4209204912, blue: 0.1073316187, alpha: 1), #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0.1991284192, green: 0.6028449535, blue: 0.9592232704, alpha: 1)].colorAt(scale: 0.8)

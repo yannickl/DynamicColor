@@ -193,7 +193,7 @@ public extension DynamicColor {
 
   /**
    Creates and returns a color object corresponding to the mix of the receiver and an amount of black color, which reduces lightness.
-   
+
    - parameter amount: Float between 0.0 and 1.0. The default amount is equal to 0.2.
    - returns: A darker DynamicColor.
    */

@@ -15,7 +15,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
 
   private lazy var colors: [(String, UIColor)] = {
     let mainColor = UIColor(hexString: "#c0392b")
-print("=>", [#colorLiteral(red: 0.2193539292, green: 0.4209204912, blue: 0.1073316187, alpha: 1), #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)].colorAt(percent: 0).toRGBAComponents())
+
     return [
       ("Original", mainColor),
       ("Lighter", mainColor.lighter()),

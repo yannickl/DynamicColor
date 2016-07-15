@@ -35,34 +35,41 @@ import Foundation
 public extension Array where Element: DynamicColor {
   /**
    Grab `amount` equi-distant colors from a color scale.
-  */
+   */
   /*public func colors(amount: UInt = 2) -> [DynamicColor] {
-    guard amount > 0 && self.count > 0 else {
-      return []
-    }
+   guard amount > 0 && self.count > 0 else {
+   return []
+   }
 
-    guard self.count > 1 else {
-      return (0 ..< amount).map { _ in self[0] }
-    }
+   guard self.count > 1 else {
+   return (0 ..< amount).map { _ in self[0] }
+   }
 
-    for i in 0 ..< amount {
-      p = _pos[i]
-      if t <= p
-      col = _colors[i]
-      break
-      if t >= p and i == _pos.length-1
-      col = _colors[i]
-      break
-      if t > p and t < _pos[i+1]
-      t = (t-p)/(_pos[i+1]-p)
-      col = chroma.interpolate _colors[i], _colors[i+1], t, _mode
-      break
-    }
+   for i in 0 ..< amount {
+   p = _pos[i]
+   if t <= p
+   col = _colors[i]
+   break
+   if t >= p and i == _pos.length-1
+   col = _colors[i]
+   break
+   if t > p and t < _pos[i+1]
+   t = (t-p)/(_pos[i+1]-p)
+   col = chroma.interpolate _colors[i], _colors[i+1], t, _mode
+   break
+   }
 
-    return self
-  }*/
+   return self
+   }*/
 
-  public func colorAt(percent: CGFloat) -> DynamicColor {
+  /**
+   Picks up and returns the color at the given scale by interpolating the colors.
+
+   For example, given this array `[red, green, blue]` and a scale of `0.25` you will get a kaki color.
+
+   - parameter scale: A float value between 0.0 and 1.0.
+   */
+  public func colorAt(scale: CGFloat) -> DynamicColor {
     guard self.count > 0 else {
       return .black()
     }
@@ -71,22 +78,26 @@ public extension Array where Element: DynamicColor {
       return first!
     }
 
-    let clippedPercent = clip(percent, 0, 1)
-    let positions      = (0 ..< count).map { CGFloat($0) / CGFloat(count - 1) }
+    let clippedScale = clip(scale, 0, 1)
+    let positions    = (0 ..< count).map { CGFloat($0) / CGFloat(count - 1) }
+
+    var color: DynamicColor = .black()
 
     for (index, position) in positions.enumerated() {
-      if clippedPercent <= position {
-        guard clippedPercent != 0 && clippedPercent != 1 else {
+      if clippedScale <= position {
+        guard clippedScale != 0 && clippedScale != 1 else {
           return self[index]
         }
 
         let previousPosition = positions[index - 1]
-        let weight           = (clippedPercent - previousPosition) / (position - previousPosition)
+        let weight           = (clippedScale - previousPosition) / (position - previousPosition)
 
-        return self[index - 1].mixed(color: self[index], weight: weight)
+        color = self[index - 1].mixed(color: self[index], weight: weight)
+
+        break
       }
     }
 
-    return .black()
+    return color
   }
 }

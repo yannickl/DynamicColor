@@ -48,6 +48,8 @@
 		CEAF678F1CA2D342008DC3A2 /* DynamicColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF678C1CA2D342008DC3A2 /* DynamicColor+RGBA.swift */; };
 		CEAF67901CA2D342008DC3A2 /* DynamicColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF678C1CA2D342008DC3A2 /* DynamicColor+RGBA.swift */; };
 		CEAF67911CA2D342008DC3A2 /* DynamicColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF678C1CA2D342008DC3A2 /* DynamicColor+RGBA.swift */; };
+		CEB2DF961D38EA1300DC0FDA /* DynamicColorArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2DF951D38EA1300DC0FDA /* DynamicColorArrayTests.swift */; };
+		CEB2DF971D38EA1300DC0FDA /* DynamicColorArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2DF951D38EA1300DC0FDA /* DynamicColorArrayTests.swift */; };
 		CECBCD861B2B6C5E0047E731 /* DynamicColor.h in Headers */ = {isa = PBXBuildFile; fileRef = CECBCD851B2B6C5E0047E731 /* DynamicColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CECBCD981B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; };
 		CECBCD991B2B6C5E0047E731 /* DynamicColor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -128,6 +130,7 @@
 		CE8B86541D2991F000C5A670 /* DynamicColor+XYZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+XYZ.swift"; sourceTree = "<group>"; };
 		CEAF67861CA2D22E008DC3A2 /* DynamicColor+Deriving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Deriving.swift"; sourceTree = "<group>"; };
 		CEAF678C1CA2D342008DC3A2 /* DynamicColor+RGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+RGBA.swift"; sourceTree = "<group>"; };
+		CEB2DF951D38EA1300DC0FDA /* DynamicColorArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicColorArrayTests.swift; path = ../../Tests/DynamicColorArrayTests.swift; sourceTree = "<group>"; };
 		CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DynamicColor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECBCD841B2B6C5E0047E731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CECBCD851B2B6C5E0047E731 /* DynamicColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicColor.h; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 				CE8B86441D29875E00C5A670 /* DynamicColor+RGBATests.swift */,
 				CE5D64741D33F81B005DEE4E /* DynamicColor+XYZTests.swift */,
 				CE5D64861D3525D3005DEE4E /* DynamicColorLabTests.swift */,
+				CEB2DF951D38EA1300DC0FDA /* DynamicColorArrayTests.swift */,
 			);
 			path = DynamicColorTests;
 			sourceTree = "<group>";
@@ -557,6 +561,7 @@
 				CEAF67901CA2D342008DC3A2 /* DynamicColor+RGBA.swift in Sources */,
 				CE8B86451D29875E00C5A670 /* DynamicColor+HSLTests.swift in Sources */,
 				CE5D648A1D3525D3005DEE4E /* DynamicColorLabTests.swift in Sources */,
+				CEB2DF961D38EA1300DC0FDA /* DynamicColorArrayTests.swift in Sources */,
 				CE5D64751D33F81B005DEE4E /* DynamicColor+XYZTests.swift in Sources */,
 				CE5D647E1D35074B005DEE4E /* Utils.swift in Sources */,
 			);
@@ -579,6 +584,7 @@
 				CEF85A2D1C84EA6800DD1A49 /* DynamicColor.swift in Sources */,
 				CE5D64761D341105005DEE4E /* DynamicColor+XYZTests.swift in Sources */,
 				CE5D648B1D3525D7005DEE4E /* DynamicColorLabTests.swift in Sources */,
+				CEB2DF971D38EA1300DC0FDA /* DynamicColorArrayTests.swift in Sources */,
 				CE5D64791D34119C005DEE4E /* DynamicColor+RGBATests.swift in Sources */,
 				CE5D647F1D350754005DEE4E /* Utils.swift in Sources */,
 			);
