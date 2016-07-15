@@ -34,33 +34,28 @@ import Foundation
 
 public extension Array where Element: DynamicColor {
   /**
-   Grab `amount` equi-distant colors from a color scale.
+   Grab an `amount` of equi-distant colors from a color scale.
+   
+   -parameters amount: An amount of colors to return. 2 by default.
    */
-  /*public func colors(amount: UInt = 2) -> [DynamicColor] {
-   guard amount > 0 && self.count > 0 else {
-   return []
-   }
+  public func colors(amount: UInt = 2) -> [DynamicColor] {
+    guard amount > 0 && self.count > 0 else {
+      return []
+    }
 
-   guard self.count > 1 else {
-   return (0 ..< amount).map { _ in self[0] }
-   }
+    guard self.count > 1 else {
+      return (0 ..< amount).map { _ in self[0] }
+    }
 
-   for i in 0 ..< amount {
-   p = _pos[i]
-   if t <= p
-   col = _colors[i]
-   break
-   if t >= p and i == _pos.length-1
-   col = _colors[i]
-   break
-   if t > p and t < _pos[i+1]
-   t = (t-p)/(_pos[i+1]-p)
-   col = chroma.interpolate _colors[i], _colors[i+1], t, _mode
-   break
-   }
+    let increment              = CGFloat(count) / CGFloat(amount)
+    var colors: [DynamicColor] = []
 
-   return self
-   }*/
+    for i in 0 ..< amount {
+      colors.append(colorAt(scale: CGFloat(i) * increment))
+    }
+
+    return colors
+  }
 
   /**
    Picks up and returns the color at the given scale by interpolating the colors.
@@ -93,11 +88,11 @@ public extension Array where Element: DynamicColor {
         let weight           = (clippedScale - previousPosition) / (position - previousPosition)
 
         color = self[index - 1].mixed(color: self[index], weight: weight)
-
+        
         break
       }
     }
-
+    
     return color
   }
 }
