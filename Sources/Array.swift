@@ -47,7 +47,7 @@ public extension Array where Element: DynamicColor {
       return (0 ..< amount).map { _ in self[0] }
     }
 
-    let increment              = CGFloat(count) / CGFloat(amount)
+    let increment              = 1 / CGFloat(amount - 1)
     var colors: [DynamicColor] = []
 
     for i in 0 ..< amount {

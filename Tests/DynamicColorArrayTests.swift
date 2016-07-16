@@ -27,6 +27,16 @@
 import XCTest
 
 class DynamicColorArrayTests: XCTTestCaseTemplate {
+  func testColors() {
+    let colors = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 1, alpha: 1)].colors(amount: 5)
+
+    XCTAssert(colors[0].isEqual(#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)), "Should be red")
+    XCTAssert(colors[1].isEqual(DynamicColor(red: 0.5, green: 0.5, blue: 0, alpha: 1)), "Should be kaki")
+    XCTAssert(colors[2].isEqual(#colorLiteral(red: 0, green: 1, blue: 0, alpha: 1)), "Should be green")
+    XCTAssert(colors[3].isEqual(DynamicColor(red: 0, green: 0.5, blue: 0.5, alpha: 1)), "Should be purple")
+    XCTAssert(colors[4].isEqual(#colorLiteral(red: 0, green: 0, blue: 1, alpha: 1)), "Should be blue")
+  }
+
   func testColorAt() {
     let emptyColors: [DynamicColor] = []
 
