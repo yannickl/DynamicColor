@@ -66,7 +66,7 @@ public extension Array where Element: DynamicColor {
    */
   public func colorAt(scale: CGFloat) -> DynamicColor {
     guard self.count > 0 else {
-      return .black()
+      return .black
     }
 
     guard self.count > 1 else {
@@ -76,7 +76,7 @@ public extension Array where Element: DynamicColor {
     let clippedScale = clip(scale, 0, 1)
     let positions    = (0 ..< count).map { CGFloat($0) / CGFloat(count - 1) }
 
-    var color: DynamicColor = .black()
+    var color: DynamicColor = .black
 
     for (index, position) in positions.enumerated() {
       if clippedScale <= position {

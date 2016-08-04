@@ -188,7 +188,7 @@ public extension DynamicColor {
    - returns: A lighter DynamicColor.
    */
   public final func tinted(amount: CGFloat = 0.2) -> DynamicColor {
-    return mixed(color: DynamicColor.white(), weight: amount)
+    return mixed(color: DynamicColor.white, weight: amount)
   }
 
   /**

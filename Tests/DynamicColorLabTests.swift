@@ -55,22 +55,22 @@ class DynamicColorLabTests: XCTTestCaseTemplate {
   }
 
   func testToLabComponents() {
-    let whiteLab = DynamicColor.white().toLabComponents()
+    let whiteLab = DynamicColor.white.toLabComponents()
     XCTAssert(whiteLab.L == 100, "L component should be equal to 100 (not \(whiteLab.L))")
     XCTAssert(whiteLab.a == 0, "a component should be equal to 0 (not \(whiteLab.a))")
     XCTAssert(whiteLab.b == 0, "b component should be equal to 0 (not \(whiteLab.b))")
 
-    let blackLab = DynamicColor.black().toLabComponents()
+    let blackLab = DynamicColor.black.toLabComponents()
     XCTAssert(blackLab.L == 0, "L component should be equal to 0 (not \(blackLab.L))")
     XCTAssert(blackLab.a == 0, "a component should be equal to 0 (not \(blackLab.a))")
     XCTAssert(blackLab.b == 0, "b component should be equal to 0 (not \(blackLab.b))")
 
-    let redLab = DynamicColor.red().toLabComponents()
+    let redLab = DynamicColor.red.toLabComponents()
     XCTAssert(redLab.L == 53.232, "L component should be equal to 53.232 (not \(redLab.L))")
     XCTAssert(redLab.a == 80.105, "a component should be equal to 80.105 (not \(redLab.a))")
     XCTAssert(redLab.b == 67.222, "b component should be equal to 67.222 (not \(redLab.b))")
 
-    let yellowLab = DynamicColor.yellow().toLabComponents()
+    let yellowLab = DynamicColor.yellow.toLabComponents()
     XCTAssert(yellowLab.L == 97.138, "L component should be equal to 97.138 (not \(yellowLab.L))")
     XCTAssert(yellowLab.a == -21.56, "a component should be equal to -21.56 (not \(yellowLab.a))")
     XCTAssert(yellowLab.b == 94.487, "b component should be equal to 94.487 (not \(yellowLab.b))")
