@@ -50,17 +50,17 @@ class DynamicColorXYZTests: XCTTestCaseTemplate {
   }
 
   func testToHSLComponents() {
-    let whiteXYZ = DynamicColor.white().toXYZComponents()
+    let whiteXYZ = DynamicColor.white.toXYZComponents()
     XCTAssert(whiteXYZ.X == 95.05, "X component should be equal to 95.05 (not \(whiteXYZ.X))")
     XCTAssert(whiteXYZ.Y == 100, "Y component should be equal to 100 (not \(whiteXYZ.Y))")
     XCTAssert(whiteXYZ.Z == 108.9, "Z component should be equal to 108.9 (not \(whiteXYZ.Z))")
 
-    let blackXYZ = DynamicColor.black().toXYZComponents()
+    let blackXYZ = DynamicColor.black.toXYZComponents()
     XCTAssert(blackXYZ.X == 0, "X component should be equal to 0 (not \(blackXYZ.X))")
     XCTAssert(blackXYZ.Y == 0, "Y component should be equal to 0 (not \(blackXYZ.Y))")
     XCTAssert(blackXYZ.Z == 0, "Z component should be equal to 0 (not \(blackXYZ.Z))")
 
-    let blueXYZ = DynamicColor.blue().toXYZComponents()
+    let blueXYZ = DynamicColor.blue.toXYZComponents()
     XCTAssert(blueXYZ.X == 18.05, "X component should be equal to 18.05 (not \(blueXYZ.X))")
     XCTAssert(blueXYZ.Y == 7.22, "Y component should be equal to 7.22 (not \(blueXYZ.Y))")
     XCTAssert(blueXYZ.Z == 95.05, "Z component should be equal to 95.05 (not \(blueXYZ.Z))")
