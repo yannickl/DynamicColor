@@ -169,14 +169,15 @@ public extension DynamicColor {
    */
   public final func mixed(color: DynamicColor, weight: CGFloat = 0.5) -> DynamicColor {
     let normalizedWeight = clip(weight, 0, 1)
+    let remains          = 1 - normalizedWeight
 
     let c1 = toRGBAComponents()
     let c2 = color.toRGBAComponents()
 
-    let red   = c1.r + normalizedWeight * (c2.r - c1.r)
-    let green = c1.g + normalizedWeight * (c2.g - c1.g)
-    let blue  = c1.b + normalizedWeight * (c2.b - c1.b)
-    let alpha = c1.a + normalizedWeight * (c2.a - c1.a)
+    let red   = remains * c1.r + normalizedWeight * c2.r
+    let green = remains * c1.g + normalizedWeight * c2.g
+    let blue  = remains * c1.b + normalizedWeight * c2.b
+    let alpha = remains * c1.a + normalizedWeight * c2.a
 
     return DynamicColor(red: red, green: green, blue: blue, alpha: alpha)
   }

@@ -62,12 +62,8 @@ public extension Array where Element: DynamicColor {
    - returns: A DynamicColor object corresponding to the correct color at the given scale.
    */
   public func colorAt(scale: CGFloat) -> DynamicColor {
-    guard self.count > 0 else {
-      return .black
-    }
-
     guard self.count > 1 else {
-      return first!
+      return first ?? .black
     }
 
     let clippedScale = clip(scale, 0, 1)

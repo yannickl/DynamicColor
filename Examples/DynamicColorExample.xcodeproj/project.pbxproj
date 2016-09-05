@@ -55,6 +55,8 @@
 		CECBCD981B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; };
 		CECBCD991B2B6C5E0047E731 /* DynamicColor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CECBCDA81B2B6EEB0047E731 /* DynamicColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBCDA71B2B6EEB0047E731 /* DynamicColorTests.swift */; };
+		CEEAB3CD1D7DFE950035C3DD /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB3CC1D7DFE940035C3DD /* ArrayTests.swift */; };
+		CEEAB3CE1D7DFEDF0035C3DD /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB3CC1D7DFE940035C3DD /* ArrayTests.swift */; };
 		CEEB28D21BE27340001A74E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28D11BE27340001A74E8 /* AppDelegate.swift */; };
 		CEEB28D71BE27340001A74E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28D51BE27340001A74E8 /* Main.storyboard */; };
 		CEEB28D91BE27340001A74E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28D81BE27340001A74E8 /* Assets.xcassets */; };
@@ -141,6 +143,7 @@
 		CECBCDA71B2B6EEB0047E731 /* DynamicColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicColorTests.swift; path = ../../Tests/DynamicColorTests.swift; sourceTree = "<group>"; };
 		CEE753CA1BF105E3001FF6ED /* OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE753CE1BF105E3001FF6ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEEAB3CC1D7DFE940035C3DD /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayTests.swift; path = ../../Tests/ArrayTests.swift; sourceTree = "<group>"; };
 		CEEB28CF1BE27340001A74E8 /* tvOSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvOSExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEB28D11BE27340001A74E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEEB28D61BE27340001A74E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 			children = (
 				CECBCD921B2B6C5E0047E731 /* Supporting Files */,
 				CE8B86471D29884400C5A670 /* XCTTestCaseTemplate.swift */,
+				CEEAB3CC1D7DFE940035C3DD /* ArrayTests.swift */,
 				CECBCDA71B2B6EEB0047E731 /* DynamicColorTests.swift */,
 				CE8B86431D29875E00C5A670 /* DynamicColor+HSLTests.swift */,
 				CE8B86441D29875E00C5A670 /* DynamicColor+RGBATests.swift */,
@@ -566,6 +570,7 @@
 				CE5D648A1D3525D3005DEE4E /* DynamicColorLabTests.swift in Sources */,
 				CEB2DF961D38EA1300DC0FDA /* DynamicColorArrayTests.swift in Sources */,
 				CE5D64751D33F81B005DEE4E /* DynamicColor+XYZTests.swift in Sources */,
+				CEEAB3CD1D7DFE950035C3DD /* ArrayTests.swift in Sources */,
 				CE5D647E1D35074B005DEE4E /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +594,7 @@
 				CE5D648B1D3525D7005DEE4E /* DynamicColorLabTests.swift in Sources */,
 				CEB2DF971D38EA1300DC0FDA /* DynamicColorArrayTests.swift in Sources */,
 				CE5D64791D34119C005DEE4E /* DynamicColor+RGBATests.swift in Sources */,
+				CEEAB3CE1D7DFEDF0035C3DD /* ArrayTests.swift in Sources */,
 				CE5D647F1D350754005DEE4E /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
