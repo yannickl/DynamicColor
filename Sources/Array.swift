@@ -36,7 +36,8 @@ public extension Array where Element: DynamicColor {
   /**
    Grab an `amount` of equi-distant colors from a color scale.
    
-   -parameters amount: An amount of colors to return. 2 by default.
+   - parameter amount: An amount of colors to return. 2 by default.
+   - returns: An array of DynamicColor objects with equi-distant space in the gradient.
    */
   public func colors(amount: UInt = 2) -> [DynamicColor] {
     guard amount > 0 && self.count > 0 else {
@@ -47,14 +48,9 @@ public extension Array where Element: DynamicColor {
       return (0 ..< amount).map { _ in self[0] }
     }
 
-    let increment              = 1 / CGFloat(amount - 1)
-    var colors: [DynamicColor] = []
+    let increment = 1 / CGFloat(amount - 1)
 
-    for i in 0 ..< amount {
-      colors.append(colorAt(scale: CGFloat(i) * increment))
-    }
-
-    return colors
+    return (0 ..< amount).map { colorAt(scale: CGFloat($0) * increment) }
   }
 
   /**
@@ -63,6 +59,7 @@ public extension Array where Element: DynamicColor {
    For example, given this array `[red, green, blue]` and a scale of `0.25` you will get a kaki color.
 
    - parameter scale: A float value between 0.0 and 1.0.
+   - returns: A DynamicColor object corresponding to the correct color at the given scale.
    */
   public func colorAt(scale: CGFloat) -> DynamicColor {
     guard self.count > 0 else {
@@ -79,18 +76,20 @@ public extension Array where Element: DynamicColor {
     var color: DynamicColor = .black
 
     for (index, position) in positions.enumerated() {
-      if clippedScale <= position {
-        guard clippedScale != 0 && clippedScale != 1 else {
-          return self[index]
-        }
-
-        let previousPosition = positions[index - 1]
-        let weight           = (clippedScale - previousPosition) / (position - previousPosition)
-
-        color = self[index - 1].mixed(color: self[index], weight: weight)
-        
-        break
+      guard clippedScale <= position else {
+        continue
       }
+
+      guard clippedScale != 0 && clippedScale != 1 else {
+        return self[index]
+      }
+
+      let previousPosition = positions[index - 1]
+      let weight           = (clippedScale - previousPosition) / (position - previousPosition)
+
+      color = self[index - 1].mixed(color: self[index], weight: weight)
+
+      break
     }
     
     return color
