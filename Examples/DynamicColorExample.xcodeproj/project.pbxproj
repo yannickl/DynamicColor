@@ -50,6 +50,7 @@
 		CEAF67911CA2D342008DC3A2 /* DynamicColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF678C1CA2D342008DC3A2 /* DynamicColor+RGBA.swift */; };
 		CEB2DF961D38EA1300DC0FDA /* DynamicColorArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2DF951D38EA1300DC0FDA /* DynamicColorArrayTests.swift */; };
 		CEB2DF971D38EA1300DC0FDA /* DynamicColorArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2DF951D38EA1300DC0FDA /* DynamicColorArrayTests.swift */; };
+		CEBE7E111D7DEBE700B27BAD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE7E101D7DEBE700B27BAD /* HeaderView.swift */; };
 		CECBCD861B2B6C5E0047E731 /* DynamicColor.h in Headers */ = {isa = PBXBuildFile; fileRef = CECBCD851B2B6C5E0047E731 /* DynamicColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CECBCD981B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; };
 		CECBCD991B2B6C5E0047E731 /* DynamicColor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -131,6 +132,7 @@
 		CEAF67861CA2D22E008DC3A2 /* DynamicColor+Deriving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Deriving.swift"; sourceTree = "<group>"; };
 		CEAF678C1CA2D342008DC3A2 /* DynamicColor+RGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+RGBA.swift"; sourceTree = "<group>"; };
 		CEB2DF951D38EA1300DC0FDA /* DynamicColorArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicColorArrayTests.swift; path = ../../Tests/DynamicColorArrayTests.swift; sourceTree = "<group>"; };
+		CEBE7E101D7DEBE700B27BAD /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DynamicColor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECBCD841B2B6C5E0047E731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CECBCD851B2B6C5E0047E731 /* DynamicColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicColor.h; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				CE5D64B21D381980005DEE4E /* Example.playground */,
 				CEFBDAE01B1CE38D000E6F30 /* AppDelegate.swift */,
 				CEFBDAE21B1CE38D000E6F30 /* ViewController.swift */,
+				CEBE7E101D7DEBE700B27BAD /* HeaderView.swift */,
 				CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */,
 				CEFBDAE41B1CE38D000E6F30 /* Main.storyboard */,
 				CEFBDAE71B1CE38D000E6F30 /* Images.xcassets */,
@@ -625,6 +628,7 @@
 				CE5D64AE1D381782005DEE4E /* Array.swift in Sources */,
 				CEFBDAE11B1CE38D000E6F30 /* AppDelegate.swift in Sources */,
 				CEF02EEE1D2984CD00D810B9 /* DynamicColor+HSL.swift in Sources */,
+				CEBE7E111D7DEBE700B27BAD /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
