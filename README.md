@@ -1,8 +1,21 @@
-![DynamicColor](http://yannickloriot.com/resources/dynamiccolor-header.png)
+<p align="center">
+  <img src="http://yannickloriot.com/resources/dynamiccolor-header.png">
+</p>
 
-[![License](https://cocoapod-badges.herokuapp.com/l/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Supported Plateforms](https://cocoapod-badges.herokuapp.com/p/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Version](https://cocoapod-badges.herokuapp.com/v/DynamicColor/badge.svg)](http://cocoadocs.org/docsets/DynamicColor/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/yannickl/DynamicColor.svg?branch=master)](https://travis-ci.org/yannickl/DynamicColor) [![codecov.io](http://codecov.io/github/yannickl/DynamicColor/coverage.svg?branch=master)](http://codecov.io/github/yannickl/DynamicColor?branch=master)
+<p align="center">
+  <a href="https://cocoapod-badges.herokuapp.com/l/DynamicColor/badge.svg"><img alt="License" src="https://cocoapod-badges.herokuapp.com/l/DynamicColor/badge.svg"/></a>
+  <a href="http://cocoadocs.org/docsets/DynamicColor/"><img alt="Supported Plateforms" src="https://cocoapod-badges.herokuapp.com/p/DynamicColor/badge.svg"/></a>
+  <a href="http://cocoadocs.org/docsets/DynamicColor/"><img alt="Version" src="https://cocoapod-badges.herokuapp.com/v/DynamicColor/badge.svg"/></a>
+  <a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
+  <a href="https://travis-ci.org/yannickl/DynamicColor"><img alt="Build status" src="https://travis-ci.org/yannickl/DynamicColor.svg?branch=master"/></a>
+  <a href="http://codecov.io/github/yannickl/DynamicColor"><img alt="Code coverage status" src="http://codecov.io/github/yannickl/DynamicColor/coverage.svg?branch=master"/></a>
+</p>
 
-DynamicColor provides powerful methods to manipulate colours in an easy way in Swift (iOS/macOS/WatchOS/tvOS).
+**DynamicColor** provides powerful methods to manipulate colours in an easy way in Swift (iOS/macOS/WatchOS/tvOS).
+
+<p align="center">
+    <a href="#usage">Usage</a> • <a href="#installation">Installation</a> • <a href="#license">Contact</a> • <a href="#license">License</a>
+</p>
 
 <p align="center">
   <img src="http://yannickloriot.com/resources/dynamiccolor-sample-screenshot.png" alt="example screenshot" width="300" />
@@ -226,7 +239,7 @@ Yannick Loriot
  - [contact@yannickloriot.com](mailto:contact@yannickloriot.com)
 
 
-## License (MIT)
+## License
 
 Copyright (c) 2015-present - Yannick Loriot
 
