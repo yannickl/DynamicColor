@@ -11,19 +11,20 @@
   <a href="http://codecov.io/github/yannickl/DynamicColor"><img alt="Code coverage status" src="http://codecov.io/github/yannickl/DynamicColor/coverage.svg?branch=master"/></a>
 </p>
 
-**DynamicColor** provides powerful methods to manipulate colours in an easy way in Swift (iOS/macOS/WatchOS/tvOS).
+**DynamicColor** provides powerful methods to manipulate colours in an easy way in Swift.
+
+<p align="center">
+  <img src="http://yannickloriot.com/resources/dynamiccolor-sample-screenshot.png" alt="example screenshot" width="300" />
+  <img src="http://yannickloriot.com/resources/dynamicgradient-sample-screenshot.png" alt="example screenshot" width="300" />
+</p>
 
 <p align="center">
     <a href="#usage">Usage</a> • <a href="#installation">Installation</a> • <a href="#contact">Contact</a> • <a href="#license-mit">License</a>
 </p>
 
-<p align="center">
-  <img src="http://yannickloriot.com/resources/dynamiccolor-sample-screenshot.png" alt="example screenshot" width="300" />
-</p>
-
-*This branch is Swift 3 compatible, use the [v2 version](https://github.com/yannickl/DynamicColor/tree/2.4.0) for Swift 2.*
-
 ## Usage
+
+*This branch is Swift 3 compatible, use the [v2 version](https://github.com/yannickl/DynamicColor/tree/2.4.0) for Swift 2.x.*
 
 #### Creation (Hex String)
 
@@ -96,7 +97,7 @@ These adjust the hue value of the color in the same way like the others do. Agai
 </p>
 
 ```swift
-let originalColor = DynamicColor(hexString: "#c0392b")
+let originalColor = DynamicColor(hex: 0xc0392b)
 
 // Hue values are in degrees
 let adjustHueColor = originalColor.adjustedHue(amount: 45)
@@ -149,14 +150,66 @@ This can mix a given color with the receiver. It takes the average of each of th
 ```swift
 let originalColor = DynamicColor(hexString: "#c0392b")
 
-let mixedColor = originalColor.mixed(color: .blueColor())
+let mixedColor = originalColor.mixed(withColor: .blue)
 // equivalent to
-// mixedColor = originalColor.mixed(color: .blueColor(), weight: 0.5)
+// mixedColor = originalColor.mixed(withColor: .blue, weight: 0.5)
+// or
+// mixedColor = originalColor.mixed(withColor: .blue, weight: 0.5, inColorSpace: .rgb)
+```
+
+#### Gradients
+
+**DynamicColor** provides an useful object to work with gradients: **DynamicGradient**. It'll allow you to pick color from gradients, or to build to build a palette using different color spaces (.e.g.: *RGB*, *HSL*, *HSB*, *Cie L\*a\*b\**).
+
+Let's define our reference colors and the gradient object:
+```swift
+let blue   = UIColor(hex: 0x3498db)
+let red    = UIColor(hex: 0xe74c3c)
+let yellow = UIColor(hex: 0xf1c40f)
+
+let gradient = DynamicGradient(colors: [blue, red, yellow])
+// equivalent to
+// let gradient = [blue, red, yellow].gradient
+```
+
+##### RGB
+
+Let's build the RGB palette (the default color space) with 8 colors:
+
+<p align="center">
+<img src="http://yannickloriot.com/resources/dynamicgradient-rgb" alt="RGB gradient"/>
+</p>
+```swift
+let rgbPalette = gradient.colorPalette(amount: 8)
+```
+
+##### HSL
+
+Now if you want to change the gradient color space to have a different effect, just write the following lines:
+
+<p align="center">
+<img src="http://yannickloriot.com/resources/dynamicgradient-hsl" alt="HSL gradient"/>
+</p>
+
+```swift
+let hslPalette = gradient.colorPalette(amount: 8, inColorSpace: .hsl)
+```
+
+##### Cie L\*a\*b\*
+
+Or if you prefer to work directly with array of colors, you can:
+
+<p align="center">
+<img src="http://yannickloriot.com/resources/dynamicgradient-lab" alt="Cie L*a*b* gradient"/>
+</p>
+
+```swift
+let labPalette = [blue, red, yellow].gradient.colorPalette(amount: 8, inColorSpace: .lab)
 ```
 
 #### And many more...
 
-`DynamicColor` also provides many another useful methods to manipulate the colors like hex strings, color components, etc. To go further, take a look at the example project.
+`DynamicColor` also provides many another useful methods to manipulate the colors like hex strings, color components, color spaces, etc. To go further, take a look at the example project.
 
 ## Installation
 
