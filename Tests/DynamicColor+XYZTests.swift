@@ -66,8 +66,8 @@ class DynamicColorXYZTests: XCTTestCaseTemplate {
     XCTAssert(blueXYZ.Z == 95.05, "Z component should be equal to 95.05 (not \(blueXYZ.Z))")
 
     let customXYZ = DynamicColor(red: 0.69804, green: 0.74118, blue: 0.20392, alpha: 1).toXYZComponents()
-    XCTAssert(customXYZ.X == 37.177, "X component should be equal to 37.177 (not \(customXYZ.X))")
-    XCTAssert(customXYZ.Y == 46.108, "Y component should be equal to 46.108 (not \(customXYZ.Y))")
+    XCTAssert(customXYZ.X == 37.178, "X component should be equal to 37.178 (not \(customXYZ.X))")
+    XCTAssert(customXYZ.Y == 46.109, "Y component should be equal to 46.109 (not \(customXYZ.Y))")
     XCTAssert(customXYZ.Z == 10.189, "Z component should be equal to 10.189 (not \(customXYZ.Z))")
   }
 }

@@ -66,23 +66,23 @@ class DynamicColorLabTests: XCTTestCaseTemplate {
     XCTAssert(blackLab.b == 0, "b component should be equal to 0 (not \(blackLab.b))")
 
     let redLab = DynamicColor.red.toLabComponents()
-    XCTAssert(redLab.L == 53.232, "L component should be equal to 53.232 (not \(redLab.L))")
+    XCTAssert(redLab.L == 53.233, "L component should be equal to 53.233 (not \(redLab.L))")
     XCTAssert(redLab.a == 80.105, "a component should be equal to 80.105 (not \(redLab.a))")
-    XCTAssert(redLab.b == 67.222, "b component should be equal to 67.222 (not \(redLab.b))")
+    XCTAssert(redLab.b == 67.223, "b component should be equal to 67.223 (not \(redLab.b))")
 
     let yellowLab = DynamicColor.yellow.toLabComponents()
     XCTAssert(yellowLab.L == 97.138, "L component should be equal to 97.138 (not \(yellowLab.L))")
-    XCTAssert(yellowLab.a == -21.56, "a component should be equal to -21.56 (not \(yellowLab.a))")
-    XCTAssert(yellowLab.b == 94.487, "b component should be equal to 94.487 (not \(yellowLab.b))")
+    XCTAssert(yellowLab.a == -21.561, "a component should be equal to -21.561 (not \(yellowLab.a))")
+    XCTAssert(yellowLab.b == 94.488, "b component should be equal to 94.488 (not \(yellowLab.b))")
 
     let maxLab = DynamicColor(hex: 0xFF4500).toLabComponents()
-    XCTAssert(maxLab.L == 57.574, "L component should be equal to 57.574 (not \(maxLab.L))")
+    XCTAssert(maxLab.L == 57.575, "L component should be equal to 57.575 (not \(maxLab.L))")
     XCTAssert(maxLab.a == 67.792, "a component should be equal to 67.792 (not \(maxLab.a))")
-    XCTAssert(maxLab.b == 68.976, "b component should be equal to 68.976 (not \(maxLab.b))")
+    XCTAssert(maxLab.b == 68.977, "b component should be equal to 68.977 (not \(maxLab.b))")
 
     let minLab = DynamicColor(hex: 0x008B40).toLabComponents()
-    XCTAssert(minLab.L == 50.493, "L component should be equal to 57.574 (not \(minLab.L))")
-    XCTAssert(minLab.a == -49.333, "a component should be equal to -49.333 (not \(minLab.a))")
-    XCTAssert(minLab.b == 31.056, "b component should be equal to 31.056 (not \(minLab.b))")
+    XCTAssert(minLab.L == 50.494, "L component should be equal to 50.494 (not \(minLab.L))")
+    XCTAssert(minLab.a == -49.334, "a component should be equal to -49.334 (not \(minLab.a))")
+    XCTAssert(minLab.b == 31.053, "b component should be equal to 31.053 (not \(minLab.b))")
   }
 }

@@ -82,10 +82,10 @@ public extension DynamicColor {
     let normalizedY = normalized(xyz.Y / 100)
     let normalizedZ = normalized(xyz.Z / 108.9)
 
-    let L = CGFloat(Int((116 * normalizedY - 16) * 1000)) / 1000
-    let a = CGFloat(Int((500 * (normalizedX - normalizedY)) * 1000)) / 1000
-    let b = CGFloat(Int((200 * (normalizedY - normalizedZ)) * 1000)) / 1000
-
+    let L = roundDecimal(116 * normalizedY - 16, precision: 1000)
+    let a = roundDecimal(500 * (normalizedX - normalizedY), precision: 1000)
+    let b = roundDecimal(200 * (normalizedY - normalizedZ), precision: 1000)
+    
     return (L: L, a: a, b: b)
   }
 }

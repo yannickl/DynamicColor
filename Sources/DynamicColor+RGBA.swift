@@ -33,6 +33,20 @@
 // MARK: RGBA Color Space
 
 public extension DynamicColor {
+  /**
+   Initializes and returns a color object using the specified opacity and RGB component values.
+
+   Notes that values out of range are clipped.
+
+   - Parameter r: The red component of the color object, specified as a value from 0.0 to 255.0.
+   - Parameter g: The green component of the color object, specified as a value from 0.0 to 255.0.
+   - Parameter b: The blue component of the color object, specified as a value from 0.0 to 255.0.
+   - Parameter a: The opacity value of the color object, specified as a value from 0.0 to 255.0. The default value is 255.
+   */
+  public convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 255) {
+    self.init(red: clip(r, 0, 255) / 255, green: clip(g, 0, 255) / 255, blue: clip(b, 0, 255) / 255, alpha: clip(a, 0, 255) / 255)
+  }
+
   // MARK: - Getting the RGBA Components
 
   /**
@@ -57,11 +71,10 @@ public extension DynamicColor {
       else if isEqual(DynamicColor.white) {
         return (1, 1, 1, 1)
       }
-      else {
-        getRed(&r, green: &g, blue: &b, alpha: &a)
 
-        return (r, g, b, a)
-      }
+      getRed(&r, green: &g, blue: &b, alpha: &a)
+
+      return (r, g, b, a)
     #endif
   }
 
@@ -70,28 +83,28 @@ public extension DynamicColor {
    The red component as CGFloat between 0.0 to 1.0.
    */
   public final var redComponent: CGFloat {
-    return toRGBAComponents().r
+  return toRGBAComponents().r
   }
 
   /**
    The green component as CGFloat between 0.0 to 1.0.
    */
   public final var greenComponent: CGFloat {
-    return toRGBAComponents().g
+  return toRGBAComponents().g
   }
 
   /**
    The blue component as CGFloat between 0.0 to 1.0.
    */
   public final var blueComponent: CGFloat {
-    return toRGBAComponents().b
+  return toRGBAComponents().b
   }
 
   /**
    The alpha component as CGFloat between 0.0 to 1.0.
    */
   public final var alphaComponent: CGFloat {
-    return toRGBAComponents().a
+  return toRGBAComponents().a
   }
   #endif
 

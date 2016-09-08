@@ -48,19 +48,18 @@ extension DynamicColor {
     #if os(iOS) || os(tvOS) || os(watchOS)
       getHue(&h, saturation: &s, brightness: &b, alpha: nil)
 
-      return (h: h, s: s, b: b)
+      return (h: roundDecimal(h), s: roundDecimal(s), b: roundDecimal(b))
     #elseif os(OSX)
       if isEqual(DynamicColor.black) {
         return (0, 0, 0)
       }
       else if isEqual(DynamicColor.white) {
-        return (1, 1, 1)
+        return (0, 0, 1)
       }
-      else {
-        getHue(&h, saturation: &s, brightness: &b, alpha: nil)
 
-        return (h, s, b)
-      }
+      getHue(&h, saturation: &s, brightness: &b, alpha: nil)
+
+      return (h: roundDecimal(h), s: roundDecimal(s), b: roundDecimal(b))
     #endif
   }
 
@@ -69,21 +68,21 @@ extension DynamicColor {
    The hue component as CGFloat between 0.0 to 1.0.
    */
   public final var hueComponent: CGFloat {
-    return toHSBComponents().h
+  return toHSBComponents().h
   }
 
   /**
    The saturation component as CGFloat between 0.0 to 1.0.
    */
   public final var saturationComponent: CGFloat {
-    return toHSBComponents().s
+  return toHSBComponents().s
   }
 
   /**
    The brightness component as CGFloat between 0.0 to 1.0.
    */
   public final var brightnessComponent: CGFloat {
-    return toHSBComponents().b
+  return toHSBComponents().b
   }
   #endif
 }

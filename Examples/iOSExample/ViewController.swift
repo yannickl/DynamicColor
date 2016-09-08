@@ -14,10 +14,6 @@ class ViewController: UIViewController, UICollectionViewDataSource {
   @IBOutlet weak var colorCollectionView: UICollectionView!
 
   private lazy var colors: [(String, UIColor)] = {
-    return [UIColor(hex: 0x3498db), UIColor(hex: 0xe74c3c)].gradient.colorPalette(amount: 12, inColorSpace: .hsb).map { ($0.toHexString(), $0) }
-  }()
-
-    /*{
     let mainColor = UIColor(hexString: "#c0392b")
 
     return [
@@ -36,7 +32,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
       ("Tinted", mainColor.tinted()),
       ("Shaded", mainColor.shaded())
     ]
-  }()*/
+  }()
 
   private lazy var gradients: [(String, UIColor)] = {
     return [UIColor(hex: 0x3498db), UIColor(hex: 0xe74c3c)].gradient.colorPalette(amount: 12).map { ($0.toHexString(), $0) }
