@@ -14,7 +14,7 @@
 **DynamicColor** provides powerful methods to manipulate colours in an easy way in Swift (iOS/macOS/WatchOS/tvOS).
 
 <p align="center">
-    <a href="#usage">Usage</a> • <a href="#installation">Installation</a> • <a href="#license">Contact</a> • <a href="#license">License</a>
+    <a href="#usage">Usage</a> • <a href="#installation">Installation</a> • <a href="#contact">Contact</a> • <a href="#license-mit">License</a>
 </p>
 
 <p align="center">
@@ -239,7 +239,7 @@ Yannick Loriot
  - [contact@yannickloriot.com](mailto:contact@yannickloriot.com)
 
 
-## License
+## License (MIT)
 
 Copyright (c) 2015-present - Yannick Loriot
 
