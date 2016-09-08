@@ -59,7 +59,7 @@ public extension Array where Element: DynamicColor {
    For example, given this array `[red, green, blue]` and a scale of `0.25` you will get a kaki color.
 
    - parameter scale: A float value between 0.0 and 1.0.
-   - returns: A DynamicColor object corresponding to the correct color at the given scale.
+   - returns: A DynamicColor object corresponding to the color at the given scale.
    */
   public func colorAt(scale: CGFloat) -> DynamicColor {
     guard self.count > 1 else {
@@ -72,9 +72,7 @@ public extension Array where Element: DynamicColor {
     var color: DynamicColor = .black
 
     for (index, position) in positions.enumerated() {
-      guard clippedScale <= position else {
-        continue
-      }
+      guard clippedScale <= position else { continue }
 
       guard clippedScale != 0 && clippedScale != 1 else {
         return self[index]
@@ -83,7 +81,7 @@ public extension Array where Element: DynamicColor {
       let previousPosition = positions[index - 1]
       let weight           = (clippedScale - previousPosition) / (position - previousPosition)
 
-      color = self[index - 1].mixed(color: self[index], weight: weight)
+      color = self[index - 1].mixed(withColor: self[index], weight: weight)
 
       break
     }

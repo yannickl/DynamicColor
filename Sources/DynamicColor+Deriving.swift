@@ -24,16 +24,22 @@
  *
  */
 
+#if os(iOS) || os(tvOS) || os(watchOS)
+  import UIKit
+#elseif os(OSX)
+  import AppKit
+#endif
+
 // MARK: Deriving Colors
 
 public extension DynamicColor {
   /**
    Creates and returns a color object with the hue rotated along the color wheel by the given amount.
 
-   - parameter amount: A double representing the number of degrees as ratio (usually between -360.0 degree and 360.0 degree).
+   - parameter amount: A float representing the number of degrees as ratio (usually between -360.0 degree and 360.0 degree).
    - returns: A DynamicColor object with the hue changed.
    */
-  public final func adjustedHue(amount: Double) -> DynamicColor {
+  public final func adjustedHue(amount: CGFloat) -> DynamicColor {
     return HSL(color: self).adjustedHue(amount: amount).toDynamicColor()
   }
 
@@ -52,10 +58,10 @@ public extension DynamicColor {
   /**
    Creates and returns a color object with the lightness increased by the given amount.
 
-   - parameter amount: Double between 0.0 and 1.0. Default value is 0.2.
+   - parameter amount: CGFloat between 0.0 and 1.0. Default value is 0.2.
    - returns: A lighter DynamicColor.
    */
-  public final func lighter(amount: Double = 0.2) -> DynamicColor {
+  public final func lighter(amount: CGFloat = 0.2) -> DynamicColor {
     return HSL(color: self).lighter(amount: amount).toDynamicColor()
   }
 
@@ -65,28 +71,28 @@ public extension DynamicColor {
    - parameter amount: Float between 0.0 and 1.0. Default value is 0.2.
    - returns: A darker DynamicColor.
    */
-  public final func darkened(amount: Double = 0.2) -> DynamicColor {
+  public final func darkened(amount: CGFloat = 0.2) -> DynamicColor {
     return HSL(color: self).darkened(amount: amount).toDynamicColor()
   }
 
   /**
    Creates and returns a color object with the saturation increased by the given amount.
 
-   - parameter amount: Double between 0.0 and 1.0. Default value is 0.2.
+   - parameter amount: CGFloat between 0.0 and 1.0. Default value is 0.2.
 
    - returns: A DynamicColor more saturated.
    */
-  public final func saturated(amount: Double = 0.2) -> DynamicColor {
+  public final func saturated(amount: CGFloat = 0.2) -> DynamicColor {
     return HSL(color: self).saturated(amount: amount).toDynamicColor()
   }
 
   /**
    Creates and returns a color object with the saturation decreased by the given amount.
 
-   - parameter amount: Double between 0.0 and 1.0. Default value is 0.2.
+   - parameter amount: CGFloat between 0.0 and 1.0. Default value is 0.2.
    - returns: A DynamicColor less saturated.
    */
-  public final func desaturated(amount: Double = 0.2) -> DynamicColor {
+  public final func desaturated(amount: CGFloat = 0.2) -> DynamicColor {
     return HSL(color: self).desaturated(amount: amount).toDynamicColor()
   }
 

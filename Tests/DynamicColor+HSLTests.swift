@@ -44,11 +44,10 @@ class DynamicColorHSLTests: XCTTestCaseTemplate {
     XCTAssert(white1.toHex() == 0xffffff, "Color should be white")
     XCTAssert(white2.toHex() == 0xffffff, "Color should be white")
 
-    XCTAssert(red.isEqualToHexString(DynamicColor.red.toHexString()), "Color should be red")
-    XCTAssert(green.isEqualToHexString(DynamicColor.green.toHexString()), "Color should be green")
-    XCTAssert(blue.isEqualToHexString(DynamicColor.blue.toHexString()), "Color should be blue")
-
-    XCTAssert(custom.isEqualToHexString("#e74d3c"), "Color should be equal to #e74d3c")
+    XCTAssert(red.isEqual(toHexString: DynamicColor.red.toHexString()), "Color should be red")
+    XCTAssert(green.isEqual(toHexString: DynamicColor.green.toHexString()), "Color should be green")
+    XCTAssert(blue.isEqual(toHexString: DynamicColor.blue.toHexString()), "Color should be blue")
+    XCTAssert(custom.isEqual(toHexString: "#e74d3c"), "Color should be equal to #e74d3c")
   }
 
   func testToHSLComponents() {

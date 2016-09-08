@@ -84,12 +84,12 @@ class DynamicColorTests: XCTTestCaseTemplate {
     let black  = DynamicColor.black
     let custom = DynamicColor(hex: 0x769a2b)
 
-    XCTAssert(red.isEqualToHexString("#ff0000"), "Color string should be equal to #ff0000")
-    XCTAssert(blue.isEqualToHexString("#0000ff"), "Color string should be equal to #0000ff")
-    XCTAssert(green.isEqualToHexString("#00ff00"), "Color string should be equal to #00ff00")
-    XCTAssert(yellow.isEqualToHexString("#ffff00"), "Color string should be equal to #ffff00")
-    XCTAssert(black.isEqualToHexString("#000000"), "Color string should be equal to #000000")
-    XCTAssert(custom.isEqualToHexString("#769a2b"), "Color string should be equal to #769a2b")
+    XCTAssert(red.isEqual(toHexString: "#ff0000"), "Color string should be equal to #ff0000")
+    XCTAssert(blue.isEqual(toHexString: "#0000ff"), "Color string should be equal to #0000ff")
+    XCTAssert(green.isEqual(toHexString: "#00ff00"), "Color string should be equal to #00ff00")
+    XCTAssert(yellow.isEqual(toHexString: "#ffff00"), "Color string should be equal to #ffff00")
+    XCTAssert(black.isEqual(toHexString: "#000000"), "Color string should be equal to #000000")
+    XCTAssert(custom.isEqual(toHexString: "#769a2b"), "Color string should be equal to #769a2b")
   }
 
   func testIsEqualToHex() {
@@ -100,12 +100,12 @@ class DynamicColorTests: XCTTestCaseTemplate {
     let black  = DynamicColor.black
     let custom = DynamicColor(hex: 0x769a2b)
 
-    XCTAssert(red.isEqualToHex(0xff0000), "Color string should be equal to 0xff0000")
-    XCTAssert(blue.isEqualToHex(0x0000ff), "Color string should be equal to 0x0000ff")
-    XCTAssert(green.isEqualToHex(0x00ff00), "Color string should be equal to 0x00ff00")
-    XCTAssert(yellow.isEqualToHex(0xffff00), "Color string should be equal to 0xffff00")
-    XCTAssert(black.isEqualToHex(0x000000), "Color string should be equal to 0x000000")
-    XCTAssert(custom.isEqualToHex(0x769a2b), "Color string should be equal to 0x769a2b")
+    XCTAssert(red.isEqual(toHex: 0xff0000), "Color string should be equal to 0xff0000")
+    XCTAssert(blue.isEqual(toHex: 0x0000ff), "Color string should be equal to 0x0000ff")
+    XCTAssert(green.isEqual(toHex: 0x00ff00), "Color string should be equal to 0x00ff00")
+    XCTAssert(yellow.isEqual(toHex: 0xffff00), "Color string should be equal to 0xffff00")
+    XCTAssert(black.isEqual(toHex: 0x000000), "Color string should be equal to 0x000000")
+    XCTAssert(custom.isEqual(toHex: 0x769a2b), "Color string should be equal to 0x769a2b")
   }
 
   func testAdjustHueColor() {
@@ -115,11 +115,11 @@ class DynamicColorTests: XCTTestCaseTemplate {
     let same1   = DynamicColor(hex: 0xc0392b).adjustedHue(amount: 0)
     let same2   = DynamicColor(hex: 0xc0392b).adjustedHue(amount: 360)
 
-    XCTAssert(custom1.isEqualToHexString("#886a11"), "Should be equal to #886a11 (not \(custom1.toHexString()))")
-    XCTAssert(custom2.isEqualToHexString("#67c02b"), "Should be equal to #67c02b (not \(custom2.toHexString()))")
-    XCTAssert(custom3.isEqualToHexString("#c02bb2"), "Should be equal to #c02bb2 (not \(custom3.toHexString()))")
-    XCTAssert(same1.isEqualToHexString("#c0392b"), "Should be equal to #c0392b (not \(same1.toHexString()))")
-    XCTAssert(same2.isEqualToHexString("#c0392b"), "Should be equal to #c0392b (not \(same2.toHexString()))")
+    XCTAssert(custom1.isEqual(toHexString: "#886a11"), "Should be equal to #886a11 (not \(custom1.toHexString()))")
+    XCTAssert(custom2.isEqual(toHexString: "#67c02b"), "Should be equal to #67c02b (not \(custom2.toHexString()))")
+    XCTAssert(custom3.isEqual(toHexString: "#c02bb2"), "Should be equal to #c02bb2 (not \(custom3.toHexString()))")
+    XCTAssert(same1.isEqual(toHexString: "#c0392b"), "Should be equal to #c0392b (not \(same1.toHexString()))")
+    XCTAssert(same2.isEqual(toHexString: "#c0392b"), "Should be equal to #c0392b (not \(same2.toHexString()))")
   }
 
   func testComplementColor() {
@@ -138,12 +138,12 @@ class DynamicColorTests: XCTTestCaseTemplate {
     let black  = DynamicColor(red: 0, green: 0, blue: 0, alpha: 1).lighter()
     let gray   = black.lighter()
 
-    XCTAssert(red.isEqualToHex(0xff6666), "Should be equal to #ff6666 (not \(red.toHexString()))")
-    XCTAssert(green.isEqualToHex(0x66ff66), "Should be equal to #66ff66 (not \(green.toHexString()))")
-    XCTAssert(blue.isEqualToHex(0x6666ff), "Should be equal to #6666ff (not \(blue.toHexString()))")
-    XCTAssert(violet.isEqualToHex(0xff66ff), "Should be equal to #ff66ff (not \(violet.toHexString()))")
-    XCTAssert(white.isEqualToHex(0xffffff), "Should be equal to #ffffff (not \(white.toHexString()))")
-    XCTAssert(black.isEqualToHex(0x333333), "Should be equal to #333333 (not \(black.toHexString()))")
+    XCTAssert(red.isEqual(toHex: 0xff6666), "Should be equal to #ff6666 (not \(red.toHexString()))")
+    XCTAssert(green.isEqual(toHex: 0x66ff66), "Should be equal to #66ff66 (not \(green.toHexString()))")
+    XCTAssert(blue.isEqual(toHex: 0x6666ff), "Should be equal to #6666ff (not \(blue.toHexString()))")
+    XCTAssert(violet.isEqual(toHex: 0xff66ff), "Should be equal to #ff66ff (not \(violet.toHexString()))")
+    XCTAssert(white.isEqual(toHex: 0xffffff), "Should be equal to #ffffff (not \(white.toHexString()))")
+    XCTAssert(black.isEqual(toHex: 0x333333), "Should be equal to #333333 (not \(black.toHexString()))")
     XCTAssert(gray.isEqual(DynamicColor(hex: 0x666666)), "Should be equal to #666666 (not \(gray.toHexString()))")
   }
 
@@ -152,9 +152,9 @@ class DynamicColorTests: XCTTestCaseTemplate {
     let same           = DynamicColor(hex: 0xc0392b).lighter(amount: 0)
     let maxi           = DynamicColor(hex: 0xc0392b).lighter(amount: 1)
 
-    XCTAssert(whiteFromBlack.isEqualToHexString("#ffffff"), "Color should be equals (not \(whiteFromBlack.toHexString()))")
-    XCTAssert(same.isEqualToHexString("#c0392b"), "Color string should be equal to #c0392b (not \(same.toHexString()))")
-    XCTAssert(maxi.isEqualToHexString("#ffffff"), "Color string should be equal to #ffffff (not \(maxi.toHexString()))")
+    XCTAssert(whiteFromBlack.isEqual(toHexString: "#ffffff"), "Color should be equals (not \(whiteFromBlack.toHexString()))")
+    XCTAssert(same.isEqual(toHexString: "#c0392b"), "Color string should be equal to #c0392b (not \(same.toHexString()))")
+    XCTAssert(maxi.isEqual(toHexString: "#ffffff"), "Color string should be equal to #ffffff (not \(maxi.toHexString()))")
   }
 
   func testDarkerColor() {
@@ -163,10 +163,10 @@ class DynamicColorTests: XCTTestCaseTemplate {
     let gray  = white.darkened()
     let black = DynamicColor.black.darkened()
 
-    XCTAssert(red.isEqualToHexString("#990000"), "Color string should be equal to #990000 (not \(red.toHexString()))")
-    XCTAssert(white.isEqualToHexString("#cccccc"), "Color string should be equal to #cccccc (not \(white.toHexString()))")
-    XCTAssert(gray.isEqualToHexString("#999999"), "Color string should be equal to #999999 (not \(gray.toHexString()))")
-    XCTAssert(black.isEqualToHexString("#000000"), "Color string should be equal to #000000 (not \(black.toHexString()))")
+    XCTAssert(red.isEqual(toHexString: "#990000"), "Color string should be equal to #990000 (not \(red.toHexString()))")
+    XCTAssert(white.isEqual(toHexString: "#cccccc"), "Color string should be equal to #cccccc (not \(white.toHexString()))")
+    XCTAssert(gray.isEqual(toHexString: "#999999"), "Color string should be equal to #999999 (not \(gray.toHexString()))")
+    XCTAssert(black.isEqual(toHexString: "#000000"), "Color string should be equal to #000000 (not \(black.toHexString()))")
   }
 
   func testDarkenColor() {
@@ -174,9 +174,9 @@ class DynamicColorTests: XCTTestCaseTemplate {
     let same           = DynamicColor(hex: 0xc0392b).darkened(amount: 0)
     let maxi           = DynamicColor(hex: 0xc0392b).darkened(amount: 1)
 
-    XCTAssert(blackFromWhite.isEqualToHexString("#000000"), "Colors should be the same (not \(blackFromWhite.toHexString()))")
-    XCTAssert(same.isEqualToHexString("#c0392b"), "Color string should be equal to #c0392b (not \(same.toHexString()))")
-    XCTAssert(maxi.isEqualToHexString("#000000"), "Color string should be equal to #000000 (not \(maxi.toHexString()))")
+    XCTAssert(blackFromWhite.isEqual(toHexString: "#000000"), "Colors should be the same (not \(blackFromWhite.toHexString()))")
+    XCTAssert(same.isEqual(toHexString: "#c0392b"), "Color string should be equal to #c0392b (not \(same.toHexString()))")
+    XCTAssert(maxi.isEqual(toHexString: "#000000"), "Color string should be equal to #000000 (not \(maxi.toHexString()))")
   }
 
   func testSaturatedColor() {
@@ -186,18 +186,18 @@ class DynamicColorTests: XCTTestCaseTemplate {
     let custom  = DynamicColor(hex: 0xc0392b).saturated()
 
 
-    XCTAssert(primary.isEqualToHexString("#ff0000"), "Color string should be equal to #ff0000 (not \(primary.toHexString()))")
-    XCTAssert(white.isEqualToHexString("#ffffff"), "Color string should be equal to #ffffff (not \(white.toHexString()))")
-    XCTAssert(black.isEqualToHexString("#000000"), "Color string should be equal to #000000 (not \(black.toHexString()))")
-    XCTAssert(custom.isEqualToHexString("#d72513"), "Color string should be equal to #d72513 (not \(custom.toHexString()))")
+    XCTAssert(primary.isEqual(toHexString: "#ff0000"), "Color string should be equal to #ff0000 (not \(primary.toHexString()))")
+    XCTAssert(white.isEqual(toHexString: "#ffffff"), "Color string should be equal to #ffffff (not \(white.toHexString()))")
+    XCTAssert(black.isEqual(toHexString: "#000000"), "Color string should be equal to #000000 (not \(black.toHexString()))")
+    XCTAssert(custom.isEqual(toHexString: "#d72513"), "Color string should be equal to #d72513 (not \(custom.toHexString()))")
   }
 
   func testSaturateColor() {
     let same = DynamicColor(hex: 0xc0392b).saturated(amount: 0)
     let maxi = DynamicColor(hex: 0xc0392b).saturated(amount: 1)
 
-    XCTAssert(same.isEqualToHexString("#c0392b"), "Color string should be equal to #c0392b (not \(same.toHexString()))")
-    XCTAssert(maxi.isEqualToHexString("#eb1600"), "Color string should be equal to #eb1600 (not \(maxi.toHexString()))")
+    XCTAssert(same.isEqual(toHexString: "#c0392b"), "Color string should be equal to #c0392b (not \(same.toHexString()))")
+    XCTAssert(maxi.isEqual(toHexString: "#eb1600"), "Color string should be equal to #eb1600 (not \(maxi.toHexString()))")
   }
 
   func testDesaturatedColor() {
@@ -206,18 +206,18 @@ class DynamicColorTests: XCTTestCaseTemplate {
     let black   = DynamicColor.black.desaturated()
     let custom  = DynamicColor(hex: 0xc0392b).desaturated()
 
-    XCTAssert(primary.isEqualToHexString("#e51919"), "Color string should be equal to #e51919 (not \(primary.toHexString()))")
-    XCTAssert(white.isEqualToHexString("#ffffff"), "Color string should be equal to #ffffff (not \(white.toHexString()))")
-    XCTAssert(black.isEqualToHexString("#000000"), "Color string should be equal to #000000 (not \(black.toHexString()))")
-    XCTAssert(custom.isEqualToHexString("#a84c42"), "Color string should be equal to #a84c42 (not \(custom.toHexString()))")
+    XCTAssert(primary.isEqual(toHexString: "#e51919"), "Color string should be equal to #e51919 (not \(primary.toHexString()))")
+    XCTAssert(white.isEqual(toHexString: "#ffffff"), "Color string should be equal to #ffffff (not \(white.toHexString()))")
+    XCTAssert(black.isEqual(toHexString: "#000000"), "Color string should be equal to #000000 (not \(black.toHexString()))")
+    XCTAssert(custom.isEqual(toHexString: "#a84c42"), "Color string should be equal to #a84c42 (not \(custom.toHexString()))")
   }
 
   func testDesaturateColor() {
     let same = DynamicColor(hex: 0xc0392b).desaturated(amount: 0)
     let maxi = DynamicColor(hex: 0xc0392b).desaturated(amount: 1)
 
-    XCTAssert(same.isEqualToHexString("#c0392b"), "Color string should be equal to #c0392b (not \(same.toHexString()))")
-    XCTAssert(maxi.isEqualToHexString("#757575"), "Color string should be equal to #757575 (not \(maxi.toHexString()))")
+    XCTAssert(same.isEqual(toHexString: "#c0392b"), "Color string should be equal to #c0392b (not \(same.toHexString()))")
+    XCTAssert(maxi.isEqual(toHexString: "#757575"), "Color string should be equal to #757575 (not \(maxi.toHexString()))")
   }
 
   func testGrayscaleColor() {
@@ -231,8 +231,8 @@ class DynamicColorTests: XCTTestCaseTemplate {
     let inverted = DynamicColor(hex: 0xff0000).inverted()
     let original = inverted.inverted()
 
-    XCTAssert(inverted.isEqualToHexString("#00ffff"), "Color string should be equal to #00ffff")
-    XCTAssert(original.isEqualToHexString("#ff0000"), "Color string should be equal to #ff0000")
+    XCTAssert(inverted.isEqual(toHexString: "#00ffff"), "Color string should be equal to #00ffff")
+    XCTAssert(original.isEqual(toHexString: "#ff0000"), "Color string should be equal to #ff0000")
   }
 
   func testIsLightColor() {
@@ -253,52 +253,52 @@ class DynamicColorTests: XCTTestCaseTemplate {
     let red  = DynamicColor.red
     let blue = DynamicColor.blue
 
-    var midMix = red.mixed(color: blue)
+    var midMix = red.mixed(withColor: blue)
 
-    XCTAssert(midMix.isEqualToHexString("#7f007f"), "Color string should be equal to #7f007f")
+    XCTAssert(midMix.isEqual(toHexString: "#7f007f"), "Color string should be equal to #7f007f")
 
-    midMix = blue.mixed(color: red)
+    midMix = blue.mixed(withColor: red)
 
-    XCTAssert(midMix.isEqualToHexString("#7f007f"), "Color string should be equal to #7f007f")
+    XCTAssert(midMix.isEqual(toHexString: "#7f007f"), "Color string should be equal to #7f007f")
 
-    let noMix         = red.mixed(color: blue, weight: 0)
-    let noMixOverflow = red.mixed(color: blue, weight: -20)
+    let noMix         = red.mixed(withColor: blue, weight: 0)
+    let noMixOverflow = red.mixed(withColor: blue, weight: -20)
 
-    XCTAssert(noMix.isEqualToHexString("#ff0000"), "Color string should be equal to #ff0000")
+    XCTAssert(noMix.isEqual(toHexString: "#ff0000"), "Color string should be equal to #ff0000")
     XCTAssert(noMix.isEqual(noMixOverflow), "Colors should be the same")
 
-    let fullMix         = red.mixed(color: blue, weight: 1)
-    let fullMixOverflow = red.mixed(color: blue, weight: 24)
+    let fullMix         = red.mixed(withColor: blue, weight: 1)
+    let fullMixOverflow = red.mixed(withColor: blue, weight: 24)
 
-    XCTAssert(fullMix.isEqualToHexString("#0000ff"), "Color string should be equal to #0000ff")
+    XCTAssert(fullMix.isEqual(toHexString: "#0000ff"), "Color string should be equal to #0000ff")
     XCTAssert(fullMix.isEqual(fullMixOverflow), "Colors should be the same")
   }
 
   func testTintColor() {
     let tint = DynamicColor(hex: 0xc0392b).tinted()
 
-    XCTAssert(tint.isEqualToHexString("#cc6055"), "Color string should be equal to #cc6055")
+    XCTAssert(tint.isEqual(toHexString: "#cc6055"), "Color string should be equal to #cc6055")
 
     let white = DynamicColor(hex: 0xc0392b).tinted(amount: 1)
 
-    XCTAssert(white.isEqualToHexString("#ffffff"), "Color string should be equal to #ffffff")
+    XCTAssert(white.isEqual(toHexString: "#ffffff"), "Color string should be equal to #ffffff")
 
     let alwaysWhite = DynamicColor.white.tinted()
 
-    XCTAssert(alwaysWhite.isEqualToHexString("#ffffff"), "Color string should be equal to #ffffff")
+    XCTAssert(alwaysWhite.isEqual(toHexString: "#ffffff"), "Color string should be equal to #ffffff")
   }
 
   func testShadeColor() {
     let shade = DynamicColor(hex: 0xc0392b).shaded()
 
-    XCTAssert(shade.isEqualToHexString("#992d22"), "Color string should be equal to #992d22")
+    XCTAssert(shade.isEqual(toHexString: "#992d22"), "Color string should be equal to #992d22")
 
     let black = DynamicColor(hex: 0xc0392b).shaded(amount: 1)
 
-    XCTAssert(black.isEqualToHexString("#000000"), "Color string should be equal to #000000")
+    XCTAssert(black.isEqual(toHexString: "#000000"), "Color string should be equal to #000000")
     
     let alwaysBlack = DynamicColor.black.shaded()
     
-    XCTAssert(alwaysBlack.isEqualToHexString("#000000"), "Color string should be equal to #000000")
+    XCTAssert(alwaysBlack.isEqual(toHexString: "#000000"), "Color string should be equal to #000000")
   }
 }

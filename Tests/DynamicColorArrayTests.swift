@@ -40,7 +40,7 @@ class DynamicColorArrayTests: XCTTestCaseTemplate {
   func testColorAt() {
     let emptyColors: [DynamicColor] = []
 
-    XCTAssert(emptyColors.colorAt(scale: 0.25).isEqualToHex(0x00000), "Should be black")
+    XCTAssert(emptyColors.colorAt(scale: 0.25).isEqual(toHex: 0x00000), "Should be black")
 
     let oneColor = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)]
 

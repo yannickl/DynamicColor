@@ -26,6 +26,12 @@
 
 import Foundation
 
+#if os(iOS) || os(tvOS) || os(watchOS)
+  import UIKit
+#elseif os(OSX)
+  import AppKit
+#endif
+
 /**
  Clips the values in an interval.
 
@@ -47,6 +53,6 @@ internal func clip<T: Comparable>(_ v: T, _ minimum: T, _ maximum: T) -> T {
  - parameter x: The value to compute.
  - parameter m: The modulo.
  */
-internal func moda(_ x: Double, m: Double) -> Double {
+internal func moda(_ x: CGFloat, m: CGFloat) -> CGFloat {
   return (x.truncatingRemainder(dividingBy: m) + m).truncatingRemainder(dividingBy: m)
 }

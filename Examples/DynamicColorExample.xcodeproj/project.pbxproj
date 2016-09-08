@@ -271,9 +271,9 @@
 				CEF85A231C84EA5B00DD1A49 /* DynamicColor.swift */,
 				CEAF67861CA2D22E008DC3A2 /* DynamicColor+Deriving.swift */,
 				CEF02EEC1D2984CC00D810B9 /* DynamicColor+HSL.swift */,
+				CE5D64801D35230E005DEE4E /* DynamicColor+Lab.swift */,
 				CEAF678C1CA2D342008DC3A2 /* DynamicColor+RGBA.swift */,
 				CE8B86541D2991F000C5A670 /* DynamicColor+XYZ.swift */,
-				CE5D64801D35230E005DEE4E /* DynamicColor+Lab.swift */,
 				CEF85A241C84EA5B00DD1A49 /* HSL.swift */,
 				CE5D647A1D35074B005DEE4E /* Utils.swift */,
 			);

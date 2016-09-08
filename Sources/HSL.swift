@@ -33,13 +33,13 @@
 /// Hue-saturation-lightness structure to make the color manipulation easier.
 internal struct HSL {
   /// Hue value between 0.0 and 1.0 (0.0 = 0 degree, 1.0 = 360 degree).
-  var h: Double = 0
+  var h: CGFloat = 0
   /// Saturation value between 0.0 and 1.0.
-  var s: Double = 0
+  var s: CGFloat = 0
   /// Lightness value between 0.0 and 1.0.
-  var l: Double = 0
+  var l: CGFloat = 0
   /// Alpha value between 0.0 and 1.0.
-  var a: Double = 1
+  var a: CGFloat = 1
 
   // MARK: - Initializing HSL Colors
 
@@ -51,7 +51,7 @@ internal struct HSL {
   - parameter l: The lightness component of the color object, specified as a value between 0.0 and 1.0.
   - parameter a: The opacity component of the color object, specified as a value between 0.0 and 1.0.
   */
-  init(hue: Double, saturation: Double, lightness: Double, alpha: Double = 1) {
+  init(hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat = 1) {
     h = hue.truncatingRemainder(dividingBy: 360) / 360
     s = clip(saturation, 0, 1)
     l = clip(lightness, 0, 1)
@@ -64,8 +64,7 @@ internal struct HSL {
   - parameter color: A DynamicColor object.
   */
   init(color: DynamicColor) {
-    let rgbaFloat = color.toRGBAComponents()
-    let rgba      = (r: Double(rgbaFloat.r), g: Double(rgbaFloat.g), b: Double(rgbaFloat.b), a: Double(rgbaFloat.a))
+    let rgba = color.toRGBAComponents()
 
     let maximum   = max(rgba.r, max(rgba.g, rgba.b))
     let mininimum = min(rgba.r, min(rgba.g, rgba.b))
@@ -118,17 +117,17 @@ internal struct HSL {
   }
 
   /// Hue to RGB helper function
-  private func hueToRGB(m1: Double, m2: Double, h: Double) -> CGFloat {
+  private func hueToRGB(m1: CGFloat, m2: CGFloat, h: CGFloat) -> CGFloat {
     let hue = moda(h, m: 1)
 
     if hue * 6 < 1 {
-      return CGFloat(m1 + (m2 - m1) * hue * 6)
+      return m1 + (m2 - m1) * hue * 6
     }
     else if hue * 2 < 1 {
       return CGFloat(m2)
     }
     else if hue * 3 < 1.9999 {
-      return CGFloat(m1 + (m2 - m1) * (2 / 3 - hue) * 6)
+      return m1 + (m2 - m1) * (2 / 3 - hue) * 6
     }
 
     return CGFloat(m1)
@@ -139,50 +138,50 @@ internal struct HSL {
   /**
   Returns a color with the hue rotated along the color wheel by the given amount.
 
-  - parameter amount: A double representing the number of degrees as ratio (usually between -360.0 degree and 360.0 degree).
+  - parameter amount: A float representing the number of degrees as ratio (usually between -360.0 degree and 360.0 degree).
   - returns: A HSL color with the hue changed.
   */
-  func adjustedHue(amount: Double) -> HSL {
+  func adjustedHue(amount: CGFloat) -> HSL {
     return HSL(hue: h * 360 + amount, saturation: s, lightness: l, alpha: a)
   }
 
   /**
   Returns a color with the lightness increased by the given amount.
 
-  - parameter amount: Double between 0.0 and 1.0.
+  - parameter amount: CGFloat between 0.0 and 1.0.
   - returns: A lighter HSL color.
   */
-  func lighter(amount: Double) -> HSL {
+  func lighter(amount: CGFloat) -> HSL {
     return HSL(hue: h * 360, saturation: s, lightness: l + amount, alpha: a)
   }
 
   /**
   Returns a color with the lightness decreased by the given amount.
 
-  - parameter amount: Double between 0.0 and 1.0.
+  - parameter amount: CGFloat between 0.0 and 1.0.
   - returns: A darker HSL color.
   */
-  func darkened(amount: Double) -> HSL {
+  func darkened(amount: CGFloat) -> HSL {
     return lighter(amount: amount * -1)
   }
 
   /**
   Returns a color with the saturation increased by the given amount.
 
-  - parameter amount: Double between 0.0 and 1.0.
+  - parameter amount: CGFloat between 0.0 and 1.0.
   - returns: A HSL color more saturated.
   */
-  func saturated(amount: Double) -> HSL {
+  func saturated(amount: CGFloat) -> HSL {
     return HSL(hue: h * 360, saturation: s + amount, lightness: l, alpha: a)
   }
 
   /**
   Returns a color with the saturation decreased by the given amount.
 
-  - parameter amount: Double between 0.0 and 1.0.
+  - parameter amount: CGFloat between 0.0 and 1.0.
   - returns: A HSL color less saturated.
   */
-  func desaturated(amount: Double) -> HSL {
+  func desaturated(amount: CGFloat) -> HSL {
     return saturated(amount: amount * -1)
   }
 }

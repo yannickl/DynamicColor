@@ -33,6 +33,7 @@
 - Removing the `lightenColor`, use `lighter` instead
 - Removing the `saturateColor`, use `saturated` instead
 - Removing the `desaturateColor`, use `desaturated` instead
+- Use `CGFloat` instead of `Double` everywhere
 
 ## [Version 2.4.0](https://github.com/yannickl/DynamicColor/releases/tag/2.4.0)
 *Released on 2016-02-29.*
