@@ -1,6 +1,7 @@
 # Change log
 
-## Version 3.1.0
+## [Version 3.1.0](https://github.com/yannickl/DynamicColor/releases/tag/3.1.0)
+*Released on 2016-09-08.*
 
 - [ADD] CIE XYZ Color Space
 - Initialization with XYZ components
