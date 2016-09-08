@@ -26,31 +26,29 @@
 
 import XCTest
 
-class ArrayTests: XCTTestCaseTemplate {
-  func testColors() {
-    let colors: [DynamicColor] = []
-
-    XCTAssertEqual(colors.colors(amount: 0).count, 0)
-    XCTAssertEqual(colors.colors(amount: 99).count, 0)
-    XCTAssertEqual([.red, .green, .blue].colors(amount: 0).count, 0)
-    XCTAssertEqual([.red].colors(amount: 10).count, 10)
-    XCTAssertEqual([.red].colors(amount: 10), (0 ..< 10).map({ _ in return .red }))
+class DynamicGradientTests: XCTTestCaseTemplate {
+  func testColorPalette() {
+    XCTAssertEqual(DynamicGradient(colors: []).colorPalette(amount: 0).count, 0)
+    XCTAssertEqual(DynamicGradient(colors: []).colorPalette(amount: 99).count, 0)
+    XCTAssertEqual(DynamicGradient(colors: [.red, .green, .blue]).colorPalette(amount: 0).count, 0)
+    XCTAssertEqual(DynamicGradient(colors: [.red]).colorPalette(amount: 10).count, 10)
+    XCTAssertEqual(DynamicGradient(colors: [.red]).colorPalette(amount: 10), (0 ..< 10).map({ _ in return .red }))
   }
 
-  func testColorAtScale() {
-    let yellow = [.red, .yellow, .green].colorAt(scale: 0.5)
+  func testPickColorAtScale() {
+    let yellow = [.red, .yellow, .green].gradient.pickColorAt(scale: 0.5)
 
     XCTAssert(yellow.toHex() == 0xffff00, "Color should be yellow (not \(yellow.toHexString()))")
 
-    let red = [.red, .yellow, .green].colorAt(scale: 0)
+    let red = [.red, .yellow, .green].gradient.pickColorAt(scale: 0)
 
     XCTAssert(red.toHex() == 0xff0000, "Color should be red (not \(red.toHexString()))")
 
-    let green = [.red, .yellow, .green].colorAt(scale: 1)
+    let green = [.red, .yellow, .green].gradient.pickColorAt(scale: 1)
 
     XCTAssert(green.toHex() == 0x00ff00, "Color should be green (not \(green.toHexString()))")
 
-    let darkYellow = [.red, .green].colorAt(scale: 0.5)
+    let darkYellow = [.red, .green].gradient.pickColorAt(scale: 0.5)
 
     XCTAssert(darkYellow.toHex() == 0x7f7f00, "Color should be a dark yellow (not \(darkYellow.toHexString()))")
   }

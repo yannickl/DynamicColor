@@ -32,60 +32,14 @@
 
 import Foundation
 
+/**
+ Convenient extension for color array to work as a DynamicGradient.
+ */
 public extension Array where Element: DynamicColor {
   /**
-   Grab an `amount` of equi-distant colors from a color scale.
-   
-   - parameter amount: An amount of colors to return. 2 by default.
-   - returns: An array of DynamicColor objects with equi-distant space in the gradient.
+   Gradient representation of the array.
    */
-  public func colors(amount: UInt = 2) -> [DynamicColor] {
-    guard amount > 0 && self.count > 0 else {
-      return []
-    }
-
-    guard self.count > 1 else {
-      return (0 ..< amount).map { _ in self[0] }
-    }
-
-    let increment = 1 / CGFloat(amount - 1)
-
-    return (0 ..< amount).map { colorAt(scale: CGFloat($0) * increment) }
-  }
-
-  /**
-   Picks up and returns the color at the given scale by interpolating the colors.
-
-   For example, given this array `[red, green, blue]` and a scale of `0.25` you will get a kaki color.
-
-   - parameter scale: A float value between 0.0 and 1.0.
-   - returns: A DynamicColor object corresponding to the color at the given scale.
-   */
-  public func colorAt(scale: CGFloat) -> DynamicColor {
-    guard self.count > 1 else {
-      return first ?? .black
-    }
-
-    let clippedScale = clip(scale, 0, 1)
-    let positions    = (0 ..< count).map { CGFloat($0) / CGFloat(count - 1) }
-
-    var color: DynamicColor = .black
-
-    for (index, position) in positions.enumerated() {
-      guard clippedScale <= position else { continue }
-
-      guard clippedScale != 0 && clippedScale != 1 else {
-        return self[index]
-      }
-
-      let previousPosition = positions[index - 1]
-      let weight           = (clippedScale - previousPosition) / (position - previousPosition)
-
-      color = self[index - 1].mixed(withColor: self[index], weight: weight)
-
-      break
-    }
-    
-    return color
+  public var gradient: DynamicGradient {
+    return DynamicGradient(colors: self)
   }
 }

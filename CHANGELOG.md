@@ -10,7 +10,10 @@
 - `toLabComponents()` method
 - [REFACTORING] `toHSLAComponents` to `toHSLComponents`
 - [REFACTORING] Hue range is now from 0° and 360° instead of 0.0 and 1.0
-- [ADD] `colorAt` from array of color
+- [ADD] `DynamicGradient` object
+- [ADD] `colorPalette` method to a gradient
+- [ADD] `pickColorAt` method to a gradient
+- [ADD] `gradient` property to array of colors
 
 ## [Version 3.0.0](https://github.com/yannickl/DynamicColor/releases/tag/3.0.0)
 *Released on 2016-06-14.*
@@ -29,6 +32,8 @@
 - `tinted` instead of `tintColor`
 - `shaded` instead of `shadeColor`
 - `mixed` instead of `mixWithColor`
+- `isEqual:toHex` instead of `isEqualToHex`
+- `isEqual:toHexString` instead of `isEqualToHexString`
 - Removing the `darkenColor`, use `darkened` instead
 - Removing the `lightenColor`, use `lighter` instead
 - Removing the `saturateColor`, use `saturated` instead

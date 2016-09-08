@@ -27,8 +27,14 @@
 import XCTest
 
 class DynamicColorArrayTests: XCTTestCaseTemplate {
+  func testGradientProperty() {
+    let colors: [DynamicColor] = []
+
+    XCTAssertNotNil(colors.gradient)
+  }
+  
   func testColors() {
-    let colors = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 1, alpha: 1)].colors(amount: 5)
+    let colors = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 1, alpha: 1)].gradient.colorPalette(amount: 5)
 
     XCTAssert(colors[0].isEqual(#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)), "Should be red")
     XCTAssert(colors[1].isEqual(DynamicColor(red: 0.5, green: 0.5, blue: 0, alpha: 1)), "Should be kaki")
@@ -38,32 +44,32 @@ class DynamicColorArrayTests: XCTTestCaseTemplate {
   }
 
   func testColorAt() {
-    let emptyColors: [DynamicColor] = []
+    let emptyColors = Array<DynamicColor>().gradient
 
-    XCTAssert(emptyColors.colorAt(scale: 0.25).isEqual(toHex: 0x00000), "Should be black")
+    XCTAssert(emptyColors.pickColorAt(scale: 0.25).isEqual(toHex: 0x00000), "Should be black")
 
-    let oneColor = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)]
+    let oneColor = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)].gradient
 
-    XCTAssert(oneColor.colorAt(scale: 0.75).isEqual(#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)), "Should be red")
+    XCTAssert(oneColor.pickColorAt(scale: 0.75).isEqual(#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)), "Should be red")
 
-    let primaryColors = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 1, alpha: 1)]
+    let primaryColors = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 1, alpha: 1)].gradient
 
-    let red = primaryColors.colorAt(scale: 0)
+    let red = primaryColors.pickColorAt(scale: 0)
     XCTAssert(red.isEqual(#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)), "Should be red")
 
-    let clippedRed = primaryColors.colorAt(scale: -7.9)
+    let clippedRed = primaryColors.pickColorAt(scale: -7.9)
     XCTAssert(clippedRed.isEqual(#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)), "Should be red")
 
-    let blue = primaryColors.colorAt(scale: 1)
+    let blue = primaryColors.pickColorAt(scale: 1)
     XCTAssert(blue.isEqual(#colorLiteral(red: 0, green: 0, blue: 1, alpha: 1)), "Should be blue")
 
-    let clippedBlue = primaryColors.colorAt(scale: 34)
+    let clippedBlue = primaryColors.pickColorAt(scale: 34)
     XCTAssert(clippedBlue.isEqual(#colorLiteral(red: 0, green: 0, blue: 1, alpha: 1)), "Should be blue")
 
-    let kaki = primaryColors.colorAt(scale: 0.25)
+    let kaki = primaryColors.pickColorAt(scale: 0.25)
     XCTAssert(kaki.toRGBAComponents() == (r: 0.5, g: 0.5, b: 0, a: 1), "Should be kaki (not \(kaki))")
 
-    let green = primaryColors.colorAt(scale: 0.65)
+    let green = primaryColors.pickColorAt(scale: 0.65)
     XCTAssert(green.toRGBAComponents().r == 0, "Should be green (not \(green.toRGBAComponents()))")
     XCTAssert(green.toRGBAComponents().g == 0.7, "Should be green (not \(green.toRGBAComponents()))")
     XCTAssert(round(green.toRGBAComponents().b * 10) == 3, "Should be green (not \(green.toRGBAComponents().b))")
