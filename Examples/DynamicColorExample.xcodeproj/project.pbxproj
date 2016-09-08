@@ -24,6 +24,11 @@
 		CE4E1F0D1D819C2E00D2AC35 /* DynamicColor+Mixing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1F0A1D819C2E00D2AC35 /* DynamicColor+Mixing.swift */; };
 		CE4E1F0E1D819C2E00D2AC35 /* DynamicColor+Mixing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1F0A1D819C2E00D2AC35 /* DynamicColor+Mixing.swift */; };
 		CE4E1F0F1D819C2E00D2AC35 /* DynamicColor+Mixing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1F0A1D819C2E00D2AC35 /* DynamicColor+Mixing.swift */; };
+		CE4E1F111D81A6D900D2AC35 /* DynamicColor+HSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1F101D81A6D900D2AC35 /* DynamicColor+HSB.swift */; };
+		CE4E1F121D81A6D900D2AC35 /* DynamicColor+HSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1F101D81A6D900D2AC35 /* DynamicColor+HSB.swift */; };
+		CE4E1F131D81A6D900D2AC35 /* DynamicColor+HSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1F101D81A6D900D2AC35 /* DynamicColor+HSB.swift */; };
+		CE4E1F141D81A6D900D2AC35 /* DynamicColor+HSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1F101D81A6D900D2AC35 /* DynamicColor+HSB.swift */; };
+		CE4E1F151D81A6D900D2AC35 /* DynamicColor+HSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1F101D81A6D900D2AC35 /* DynamicColor+HSB.swift */; };
 		CE5D64751D33F81B005DEE4E /* DynamicColor+XYZTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D64741D33F81B005DEE4E /* DynamicColor+XYZTests.swift */; };
 		CE5D64761D341105005DEE4E /* DynamicColor+XYZTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D64741D33F81B005DEE4E /* DynamicColor+XYZTests.swift */; };
 		CE5D64771D341198005DEE4E /* DynamicColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECBCDA71B2B6EEB0047E731 /* DynamicColorTests.swift */; };
@@ -139,6 +144,7 @@
 		CE4E1F011D8194F700D2AC35 /* DynamicGradientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamicGradientTests.swift; path = ../../Tests/DynamicGradientTests.swift; sourceTree = "<group>"; };
 		CE4E1F041D819AEC00D2AC35 /* DynamicColorSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColorSpace.swift; sourceTree = "<group>"; };
 		CE4E1F0A1D819C2E00D2AC35 /* DynamicColor+Mixing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Mixing.swift"; sourceTree = "<group>"; };
+		CE4E1F101D81A6D900D2AC35 /* DynamicColor+HSB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+HSB.swift"; sourceTree = "<group>"; };
 		CE5D64741D33F81B005DEE4E /* DynamicColor+XYZTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DynamicColor+XYZTests.swift"; path = "../../Tests/DynamicColor+XYZTests.swift"; sourceTree = "<group>"; };
 		CE5D647A1D35074B005DEE4E /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		CE5D64801D35230E005DEE4E /* DynamicColor+Lab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Lab.swift"; sourceTree = "<group>"; };
@@ -288,6 +294,7 @@
 				CE5D64AC1D381782005DEE4E /* Array.swift */,
 				CEF85A231C84EA5B00DD1A49 /* DynamicColor.swift */,
 				CEAF67861CA2D22E008DC3A2 /* DynamicColor+Deriving.swift */,
+				CE4E1F101D81A6D900D2AC35 /* DynamicColor+HSB.swift */,
 				CEF02EEC1D2984CC00D810B9 /* DynamicColor+HSL.swift */,
 				CE5D64801D35230E005DEE4E /* DynamicColor+Lab.swift */,
 				CE4E1F0A1D819C2E00D2AC35 /* DynamicColor+Mixing.swift */,
@@ -561,6 +568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5D64AD1D381782005DEE4E /* Array.swift in Sources */,
+				CE4E1F111D81A6D900D2AC35 /* DynamicColor+HSB.swift in Sources */,
 				CE4E1F0B1D819C2E00D2AC35 /* DynamicColor+Mixing.swift in Sources */,
 				CEF85A251C84EA5B00DD1A49 /* DynamicColor.swift in Sources */,
 				CEAF678D1CA2D342008DC3A2 /* DynamicColor+RGBA.swift in Sources */,
@@ -581,6 +589,7 @@
 			files = (
 				CE8B86481D29884400C5A670 /* XCTTestCaseTemplate.swift in Sources */,
 				CE8B86581D2991F000C5A670 /* DynamicColor+XYZ.swift in Sources */,
+				CE4E1F141D81A6D900D2AC35 /* DynamicColor+HSB.swift in Sources */,
 				CE5D64841D35230E005DEE4E /* DynamicColor+Lab.swift in Sources */,
 				CECBCDA81B2B6EEB0047E731 /* DynamicColorTests.swift in Sources */,
 				CE8B86461D29875E00C5A670 /* DynamicColor+RGBATests.swift in Sources */,
@@ -608,6 +617,7 @@
 			files = (
 				CEAF678B1CA2D22E008DC3A2 /* DynamicColor+Deriving.swift in Sources */,
 				CE8B86591D2991F000C5A670 /* DynamicColor+XYZ.swift in Sources */,
+				CE4E1F151D81A6D900D2AC35 /* DynamicColor+HSB.swift in Sources */,
 				CE5D64851D352317005DEE4E /* DynamicColor+Lab.swift in Sources */,
 				CEF02EF11D2984CD00D810B9 /* DynamicColor+HSL.swift in Sources */,
 				CE5D64781D34119A005DEE4E /* DynamicColor+HSLTests.swift in Sources */,
@@ -646,6 +656,7 @@
 				CE5D64AF1D381782005DEE4E /* Array.swift in Sources */,
 				CEEB28D21BE27340001A74E8 /* AppDelegate.swift in Sources */,
 				CE4E1EFE1D818AB100D2AC35 /* DynamicGradient.swift in Sources */,
+				CE4E1F131D81A6D900D2AC35 /* DynamicColor+HSB.swift in Sources */,
 				CE4E1F0D1D819C2E00D2AC35 /* DynamicColor+Mixing.swift in Sources */,
 				CEF02EEF1D2984CD00D810B9 /* DynamicColor+HSL.swift in Sources */,
 			);
@@ -664,6 +675,7 @@
 				CE5D647C1D35074B005DEE4E /* Utils.swift in Sources */,
 				CE4E1EFD1D818AB100D2AC35 /* DynamicGradient.swift in Sources */,
 				CEAF67881CA2D22E008DC3A2 /* DynamicColor+Deriving.swift in Sources */,
+				CE4E1F121D81A6D900D2AC35 /* DynamicColor+HSB.swift in Sources */,
 				CE4E1F0C1D819C2E00D2AC35 /* DynamicColor+Mixing.swift in Sources */,
 				CE8B86561D2991F000C5A670 /* DynamicColor+XYZ.swift in Sources */,
 				CE4E1F061D819AEC00D2AC35 /* DynamicColorSpace.swift in Sources */,

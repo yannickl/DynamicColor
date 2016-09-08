@@ -8,6 +8,7 @@
 - [ADD] CIE L*a*b* Color Space
 - Initialization with L*a*b* components
 - `toLabComponents()` method
+- `toHSBComponents()` method
 - [REFACTORING] `toHSLAComponents` to `toHSLComponents`
 - [REFACTORING] Hue range is now from 0° and 360° instead of 0.0 and 1.0
 - [ADD] `DynamicGradient` object

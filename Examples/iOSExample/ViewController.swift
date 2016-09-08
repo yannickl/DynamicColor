@@ -14,7 +14,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
   @IBOutlet weak var colorCollectionView: UICollectionView!
 
   private lazy var colors: [(String, UIColor)] = {
-    return [UIColor(hex: 0x3498db), UIColor(hex: 0xe74c3c)].gradient.colorPalette(amount: 12, inColorSpace: .hsl).map { ($0.toHexString(), $0) }
+    return [UIColor(hex: 0x3498db), UIColor(hex: 0xe74c3c)].gradient.colorPalette(amount: 12, inColorSpace: .hsb).map { ($0.toHexString(), $0) }
   }()
 
     /*{
