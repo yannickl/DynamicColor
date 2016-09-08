@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TVExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tvOSExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,43 +19,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bj5-xS-EP9">
-                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
-                                <animations/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AyA-lk-P3p">
                                     <size key="itemSize" width="300" height="300"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="80"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCell" id="NCK-GK-ePA" customClass="ColorCellView" customModule="TVExample" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCell" id="NCK-GK-ePA" customClass="ColorCellView" customModule="tvOSExample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="80" width="300" height="300"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1e-Fq-yWb">
-                                                    <rect key="frame" x="14" y="223" width="278" height="69"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMk-Xu-8G9" customClass="ColorCellView" customModule="TVExample" customModuleProvider="target">
-                                                    <rect key="frame" x="50" y="8" width="200" height="200"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMk-Xu-8G9" customClass="ColorCellView" customModule="tvOSExample" customModuleProvider="target">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="tMk-Xu-8G9" secondAttribute="height" multiplier="1:1" id="Ah1-l4-QLK"/>
                                                         <constraint firstAttribute="width" constant="200" id="xXx-0V-BL5"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <animations/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="C1e-Fq-yWb" secondAttribute="bottom" constant="8" id="1QJ-RE-Rcs"/>
                                             <constraint firstItem="tMk-Xu-8G9" firstAttribute="top" secondItem="NCK-GK-ePA" secondAttribute="top" constant="8" id="5Ka-6y-IrA"/>
@@ -69,14 +61,33 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderView" id="OTt-fP-FOc" customClass="HeaderView" customModule="tvOSExample" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="1920" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAZ-AB-ZBZ">
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aAZ-AB-ZBZ" firstAttribute="leading" secondItem="OTt-fP-FOc" secondAttribute="leading" constant="8" id="6RA-9V-UPp"/>
+                                        <constraint firstAttribute="trailing" secondItem="aAZ-AB-ZBZ" secondAttribute="trailing" constant="8" id="f4f-3z-E5I"/>
+                                        <constraint firstItem="aAZ-AB-ZBZ" firstAttribute="top" secondItem="OTt-fP-FOc" secondAttribute="top" constant="8" id="iCo-2r-s4J"/>
+                                        <constraint firstAttribute="bottom" secondItem="aAZ-AB-ZBZ" secondAttribute="bottom" constant="8" id="otM-Ht-es2"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="titleLabel" destination="aAZ-AB-ZBZ" id="K4z-Nq-R8v"/>
+                                    </connections>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="iUG-qB-dZ1"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="nec-cq-VIs"/>
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Bj5-xS-EP9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WJF-pU-NVl"/>
                             <constraint firstAttribute="trailing" secondItem="Bj5-xS-EP9" secondAttribute="trailing" id="n3Y-m3-I54"/>
@@ -93,4 +104,9 @@
             <point key="canvasLocation" x="305" y="263"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <nil key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation" orientation="landscapeRight"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>

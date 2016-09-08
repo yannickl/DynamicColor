@@ -13,7 +13,7 @@ class InterfaceController: WKInterfaceController {
   @IBOutlet var tableView: WKInterfaceTable!
 
   private lazy var colors: [(String, UIColor)] = {
-    let mainColor = UIColor(hexString: "#c0392b")
+    let mainColor = DynamicColor(hexString: "#c0392b")
 
     return [
       ("Original", mainColor),
@@ -25,15 +25,15 @@ class InterfaceController: WKInterfaceController {
       ("Adjusted", mainColor.adjustedHue(amount: 45)),
       ("Complemented", mainColor.complemented()),
       ("Inverted", mainColor.inverted()),
-      ("Mix Blue", mainColor.mixed(color: .blue())),
-      ("Mix Green", mainColor.mixed(color: .green())),
-      ("Mix Yellow", mainColor.mixed(color: .yellow())),
+      ("Mix Blue", mainColor.mixed(withColor: .blue)),
+      ("Mix Green", mainColor.mixed(withColor: .green)),
+      ("Mix Yellow", mainColor.mixed(withColor: .yellow)),
       ("Tinted", mainColor.tinted()),
       ("Shaded", mainColor.shaded())
     ]
   }()
-  
-  override func awake(withContext context: AnyObject?) {
+
+  override func awake(withContext context: Any?) {
     super.awake(withContext: context)
 
     // Configure interface objects here.

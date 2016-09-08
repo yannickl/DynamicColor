@@ -9,7 +9,7 @@
 import UIKit
 
 final class ColorCellView: UICollectionViewCell {
-  @IBOutlet weak var colorView: UIView!
+  @IBOutlet weak var colorView: UIView?
   @IBOutlet weak var titleLabel: UILabel!
 
   override func layoutSubviews() {
@@ -18,6 +18,8 @@ final class ColorCellView: UICollectionViewCell {
     // iOS 10 bug: the content view layout is not called when the view is loaded
     contentView.layoutSubviews()
 
-    colorView.layer.cornerRadius = colorView.bounds.width / 2
+    if let cv = colorView {
+      cv.layer.cornerRadius = cv.bounds.width / 2
+    }
   }
 }

@@ -74,6 +74,7 @@
 		CEAF67911CA2D342008DC3A2 /* DynamicColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF678C1CA2D342008DC3A2 /* DynamicColor+RGBA.swift */; };
 		CEB2DF961D38EA1300DC0FDA /* DynamicColorArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2DF951D38EA1300DC0FDA /* DynamicColorArrayTests.swift */; };
 		CEB2DF971D38EA1300DC0FDA /* DynamicColorArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB2DF951D38EA1300DC0FDA /* DynamicColorArrayTests.swift */; };
+		CEBD6FEE1D81CD9D00D75349 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE7E101D7DEBE700B27BAD /* HeaderView.swift */; };
 		CEBE7E111D7DEBE700B27BAD /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE7E101D7DEBE700B27BAD /* HeaderView.swift */; };
 		CECBCD861B2B6C5E0047E731 /* DynamicColor.h in Headers */ = {isa = PBXBuildFile; fileRef = CECBCD851B2B6C5E0047E731 /* DynamicColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CECBCD981B2B6C5E0047E731 /* DynamicColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECBCD811B2B6C5E0047E731 /* DynamicColor.framework */; };
@@ -655,6 +656,7 @@
 				CEAF678F1CA2D342008DC3A2 /* DynamicColor+RGBA.swift in Sources */,
 				CE5D64831D35230E005DEE4E /* DynamicColor+Lab.swift in Sources */,
 				CEEB28E01BE27401001A74E8 /* ColorCellView.swift in Sources */,
+				CEBD6FEE1D81CD9D00D75349 /* HeaderView.swift in Sources */,
 				CE4E1F071D819AEC00D2AC35 /* DynamicColorSpace.swift in Sources */,
 				CE5D647D1D35074B005DEE4E /* Utils.swift in Sources */,
 				CEAF67891CA2D22E008DC3A2 /* DynamicColor+Deriving.swift in Sources */,
