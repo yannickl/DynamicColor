@@ -27,13 +27,15 @@
 import Foundation
 
 /**
- Convenient extension for color array to work as a DynamicGradient.
+ Defines the supported color spaces.
  */
-public extension Array where Element: DynamicColor {
-  /**
-   Gradient representation of the array.
-   */
-  public var gradient: DynamicGradient {
-    return DynamicGradient(colors: self)
-  }
+public enum DynamicColorSpace {
+  /// The RGB color space
+  case rgb
+  /// The HSL color space
+  case hsl
+  /// The HSB color space
+  case hsb
+  /// The Cie L*a*b* color space
+  case lab
 }

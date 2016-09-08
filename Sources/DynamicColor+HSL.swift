@@ -39,9 +39,10 @@ extension DynamicColor {
    - parameter hue: The hue component of the color object, specified as a value from 0.0 to 360.0 degree.
    - parameter saturation: The saturation component of the color object, specified as a value from 0.0 to 1.0.
    - parameter lightness: The lightness component of the color object, specified as a value from 0.0 to 1.0.
+   - parameter alpha: The opacity value of the color object, specified as a value from 0.0 to 1.0. Default to 1.0.
    */
-  public convenience init(hue: CGFloat, saturation: CGFloat, lightness: CGFloat) {
-    let color      = HSL(hue: hue, saturation: saturation, lightness: lightness, alpha: 1).toDynamicColor()
+  public convenience init(hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat = 1) {
+    let color      = HSL(hue: hue, saturation: saturation, lightness: lightness, alpha: alpha).toDynamicColor()
     let components = color.toRGBAComponents()
 
     self.init(red: components.r, green: components.g, blue: components.b, alpha: components.a)

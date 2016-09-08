@@ -41,8 +41,9 @@ public extension DynamicColor {
    - parameter L: The lightness, specified as a value from 0 to 100.0.
    - parameter a: The red-green axis, specified as a value from -128.0 to 127.0.
    - parameter b: The yellow-blue axis, specified as a value from -128.0 to 127.0.
+   - parameter alpha: The opacity value of the color object, specified as a value from 0.0 to 1.0. Default to 1.0.
    */
-  public convenience init(L: CGFloat, a: CGFloat, b: CGFloat) {
+  public convenience init(L: CGFloat, a: CGFloat, b: CGFloat, alpha: CGFloat = 1) {
     let clippedL = clip(L, 0, 100)
     let clippedA = clip(a, -128, 127)
     let clippedB = clip(b, -128, 127)
@@ -59,7 +60,7 @@ public extension DynamicColor {
     let Y = 100 * normalized(preY)
     let Z = 108.9 * normalized(preZ)
 
-    self.init(X: X, Y: Y, Z: Z)
+    self.init(X: X, Y: Y, Z: Z, alpha: alpha)
   }
 
   // MARK: - Getting the L*a*b* Components

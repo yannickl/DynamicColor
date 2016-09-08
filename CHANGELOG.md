@@ -14,6 +14,8 @@
 - [ADD] `colorPalette` method to a gradient
 - [ADD] `pickColorAt` method to a gradient
 - [ADD] `gradient` property to array of colors
+- [ADD] `DynamicColorSpace` enum
+- [REFACTORING] `mixed` colors using different color spaces
 
 ## [Version 3.0.0](https://github.com/yannickl/DynamicColor/releases/tag/3.0.0)
 *Released on 2016-06-14.*

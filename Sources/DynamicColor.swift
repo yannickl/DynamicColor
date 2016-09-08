@@ -152,52 +152,7 @@ public extension DynamicColor {
   func isLight() -> Bool {
     let components = toRGBAComponents()
     let brightness = ((components.r * 299) + (components.g * 587) + (components.b * 114)) / 1000
-
+    
     return brightness >= 0.5
-  }
-
-  // MARK: - Mixing Colors
-
-  /**
-   Mixes the given color object with the receiver.
-
-   Specifically, takes the average of each of the RGB components, optionally weighted by the given percentage. The opacity of the colors object is also considered when weighting the components.
-
-   - parameter color: A color object to mix with the receiver.
-   - parameter weight: The weight specifies the amount of the given color object (between 0 and 1). The default value is 0.5, which means that half the given color and half the receiver color object should be used. 0.25 means that a quarter of the given color object and three quarters of the receiver color object should be used.
-   - returns: A color object corresponding to the two colors object mixed together.
-   */
-  public final func mixed(withColor color: DynamicColor, weight: CGFloat = 0.5) -> DynamicColor {
-    let normalizedWeight = clip(weight, 0, 1)
-
-    let c1 = toRGBAComponents()
-    let c2 = color.toRGBAComponents()
-
-    let red   = c1.r + normalizedWeight * (c2.r - c1.r)
-    let green = c1.g + normalizedWeight * (c2.g - c1.g)
-    let blue  = c1.b + normalizedWeight * (c2.b - c1.b)
-    let alpha = c1.a + normalizedWeight * (c2.a - c1.a)
-
-    return DynamicColor(red: red, green: green, blue: blue, alpha: alpha)
-  }
-
-  /**
-   Creates and returns a color object corresponding to the mix of the receiver and an amount of white color, which increases lightness.
-
-   - parameter amount: Float between 0.0 and 1.0. The default amount is equal to 0.2.
-   - returns: A lighter DynamicColor.
-   */
-  public final func tinted(amount: CGFloat = 0.2) -> DynamicColor {
-    return mixed(withColor: .white, weight: amount)
-  }
-
-  /**
-   Creates and returns a color object corresponding to the mix of the receiver and an amount of black color, which reduces lightness.
-
-   - parameter amount: Float between 0.0 and 1.0. The default amount is equal to 0.2.
-   - returns: A darker DynamicColor.
-   */
-  public final func shaded(amount: CGFloat = 0.2) -> DynamicColor {
-    return mixed(withColor: DynamicColor(red:0, green:0, blue: 0, alpha:1), weight: amount)
   }
 }

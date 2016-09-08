@@ -41,8 +41,9 @@ public extension DynamicColor {
    - parameter X: The mix of cone response curves, specified as a value from 0 to 95.05.
    - parameter Y: The luminance, specified as a value from 0 to 100.0.
    - parameter Z: The quasi-equal to blue stimulation, specified as a value from 0 to 108.9.
+   - parameter alpha: The opacity value of the color object, specified as a value from 0.0 to 1.0. Default to 1.0.
    */
-  public convenience init(X: CGFloat, Y: CGFloat, Z: CGFloat) {
+  public convenience init(X: CGFloat, Y: CGFloat, Z: CGFloat, alpha: CGFloat = 1) {
     let clippedX = clip(X, 0, 95.05) / 100
     let clippedY = clip(Y, 0, 100) / 100
     let clippedZ = clip(Z, 0, 108.9) / 100
@@ -57,7 +58,7 @@ public extension DynamicColor {
     let green = toRGB(clippedX * -0.9689 + clippedY * 1.8758 + clippedZ * 0.0415)
     let blue  = toRGB(clippedX * 0.0557 + clippedY * -0.2040 + clippedZ * 1.0570)
 
-    self.init(red: red, green: green, blue: blue, alpha: 1)
+    self.init(red: red, green: green, blue: blue, alpha: alpha)
   }
 
   // MARK: - Getting the XYZ Components

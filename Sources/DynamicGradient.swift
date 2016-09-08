@@ -49,9 +49,10 @@ final public class DynamicGradient {
    Returns the color palette of `amount` elements by grabbing equidistant colors.
 
    - Parameter amount: An amount of colors to return. 2 by default.
+   - Parameter colorspace: The color space used to mix the colors. By default it uses the RBG color space.
    - Returns: An array of DynamicColor objects with equi-distant space in the gradient.
    */
-  public func colorPalette(amount: UInt = 2) -> [DynamicColor] {
+  public func colorPalette(amount: UInt = 2, inColorSpace colorspace: DynamicColorSpace = .rgb) -> [DynamicColor] {
     guard amount > 0 && colors.count > 0 else {
       return []
     }
@@ -62,7 +63,7 @@ final public class DynamicGradient {
 
     let increment = 1 / CGFloat(amount - 1)
 
-    return (0 ..< amount).map { pickColorAt(scale: CGFloat($0) * increment) }
+    return (0 ..< amount).map { pickColorAt(scale: CGFloat($0) * increment, inColorSpace: colorspace) }
   }
 
   /**
@@ -71,9 +72,10 @@ final public class DynamicGradient {
    For example, given this color array `[red, green, blue]` and a scale of `0.25` you will get a kaki color.
 
    - Parameter scale: A float value between 0.0 and 1.0.
+   - Parameter colorspace: The color space used to mix the colors. By default it uses the RBG color space.
    - Returns: A DynamicColor object corresponding to the color at the given scale.
    */
-  public func pickColorAt(scale: CGFloat) -> DynamicColor {
+  public func pickColorAt(scale: CGFloat, inColorSpace colorspace: DynamicColorSpace = .rgb) -> DynamicColor {
     guard colors.count > 1 else {
       return colors.first ?? .black
     }
@@ -93,7 +95,7 @@ final public class DynamicGradient {
       let previousPosition = positions[index - 1]
       let weight           = (clippedScale - previousPosition) / (position - previousPosition)
 
-      color = colors[index - 1].mixed(withColor: colors[index], weight: weight)
+      color = colors[index - 1].mixed(withColor: colors[index], weight: weight, inColorSpace: colorspace)
       
       break
     }
