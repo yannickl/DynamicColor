@@ -57,7 +57,7 @@ class DynamicColorTests: XCTTestCaseTemplate {
     XCTAssert(green.toHexString() == "#00ff00", "Color string should be equal to #00ff00")
     XCTAssert(yellow.toHexString() == "#ffff00", "Color string should be equal to #ffff00")
     XCTAssert(black.toHexString() == "#000000", "Color string should be equal to #000000")
-    XCTAssert(custom.toHexString() == "#769a2b", "Color string should be equal to #769a2b")
+    XCTAssert(custom.toHexString() == "#769a2b", "Color string should be equal to #769a2b (not \(custom.toHexString()))")
   }
 
   func testToHex() {
@@ -115,9 +115,9 @@ class DynamicColorTests: XCTTestCaseTemplate {
     let same1   = DynamicColor(hex: 0xc0392b).adjustedHue(amount: 0)
     let same2   = DynamicColor(hex: 0xc0392b).adjustedHue(amount: 360)
 
-    XCTAssert(custom1.isEqual(toHexString: "#886a11"), "Should be equal to #886a11 (not \(custom1.toHexString()))")
+    XCTAssert(custom1.isEqual(toHexString: "#876a11"), "Should be equal to #876a11 (not \(custom1.toHexString()))")
     XCTAssert(custom2.isEqual(toHexString: "#67c02b"), "Should be equal to #67c02b (not \(custom2.toHexString()))")
-    XCTAssert(custom3.isEqual(toHexString: "#c02bb2"), "Should be equal to #c02bb2 (not \(custom3.toHexString()))")
+    XCTAssert(custom3.isEqual(toHexString: "#c02bb1"), "Should be equal to #c02bb1 (not \(custom3.toHexString()))")
     XCTAssert(same1.isEqual(toHexString: "#c0392b"), "Should be equal to #c0392b (not \(same1.toHexString()))")
     XCTAssert(same2.isEqual(toHexString: "#c0392b"), "Should be equal to #c0392b (not \(same2.toHexString()))")
   }
@@ -209,7 +209,7 @@ class DynamicColorTests: XCTTestCaseTemplate {
     XCTAssert(primary.isEqual(toHexString: "#e51919"), "Color string should be equal to #e51919 (not \(primary.toHexString()))")
     XCTAssert(white.isEqual(toHexString: "#ffffff"), "Color string should be equal to #ffffff (not \(white.toHexString()))")
     XCTAssert(black.isEqual(toHexString: "#000000"), "Color string should be equal to #000000 (not \(black.toHexString()))")
-    XCTAssert(custom.isEqual(toHexString: "#a84c42"), "Color string should be equal to #a84c42 (not \(custom.toHexString()))")
+    XCTAssert(custom.isEqual(toHexString: "#a84b42"), "Color string should be equal to #a84b42 (not \(custom.toHexString()))")
   }
 
   func testDesaturateColor() {
@@ -249,17 +249,22 @@ class DynamicColorTests: XCTTestCaseTemplate {
     XCTAssertFalse(d3.isLight(), "Blue should be dark")
   }
 
-  func testMixColors() {
-    let red  = DynamicColor.red
-    let blue = DynamicColor.blue
+  func testMixRGBColors() {
+    let red   = DynamicColor.red
+    let blue  = DynamicColor.blue
+    let green = DynamicColor.green
 
     var midMix = red.mixed(withColor: blue)
 
-    XCTAssert(midMix.isEqual(toHexString: "#7f007f"), "Color string should be equal to #7f007f")
+    XCTAssert(midMix.isEqual(toHexString: "#7f007f"), "Color string should be equal to #7f007f (not \(midMix.toHexString()))")
 
     midMix = blue.mixed(withColor: red)
 
     XCTAssert(midMix.isEqual(toHexString: "#7f007f"), "Color string should be equal to #7f007f")
+
+    let sameMix = green.mixed(withColor: green)
+
+    XCTAssert(sameMix.isEqual(toHexString: "#00ff00"), "Color string should be equal to #00ff00")
 
     let noMix         = red.mixed(withColor: blue, weight: 0)
     let noMixOverflow = red.mixed(withColor: blue, weight: -20)
@@ -269,6 +274,96 @@ class DynamicColorTests: XCTTestCaseTemplate {
 
     let fullMix         = red.mixed(withColor: blue, weight: 1)
     let fullMixOverflow = red.mixed(withColor: blue, weight: 24)
+
+    XCTAssert(fullMix.isEqual(toHexString: "#0000ff"), "Color string should be equal to #0000ff")
+    XCTAssert(fullMix.isEqual(fullMixOverflow), "Colors should be the same")
+  }
+
+  func testMixLabColors() {
+    let red   = DynamicColor.red
+    let blue  = DynamicColor.blue
+    let green = DynamicColor.green
+
+    var midMix = red.mixed(withColor: blue, inColorSpace: .lab)
+
+    XCTAssert(midMix.isEqual(toHexString: "#c93a88"), "Color string should be equal to #c93a88")
+
+    midMix = blue.mixed(withColor: red, inColorSpace: .lab)
+
+    XCTAssert(midMix.isEqual(toHexString: "#c93a88"), "Color string should be equal to #c93a88 (not \(midMix.toHexString()))")
+
+    let sameMix = green.mixed(withColor: green, inColorSpace: .lab)
+
+    XCTAssert(sameMix.isEqual(toHexString: "#00ff00"), "Color string should be equal to #00ff00")
+
+    let noMix         = red.mixed(withColor: blue, weight: 0, inColorSpace: .lab)
+    let noMixOverflow = red.mixed(withColor: blue, weight: -20, inColorSpace: .lab)
+
+    XCTAssert(noMix.isEqual(toHexString: "#ff0000"), "Color string should be equal to #ff0000")
+    XCTAssert(noMix.isEqual(noMixOverflow), "Colors should be the same")
+
+    let fullMix         = red.mixed(withColor: blue, weight: 1, inColorSpace: .lab)
+    let fullMixOverflow = red.mixed(withColor: blue, weight: 24, inColorSpace: .lab)
+
+    XCTAssert(fullMix.isEqual(toHexString: "#0000ff"), "Color string should be equal to #0000ff")
+    XCTAssert(fullMix.isEqual(fullMixOverflow), "Colors should be the same")
+  }
+
+  func testMixHSLColors() {
+    let red   = DynamicColor.red
+    let blue  = DynamicColor.blue
+    let green = DynamicColor.green
+
+    var midMix = red.mixed(withColor: blue, inColorSpace: .hsl)
+
+    XCTAssert(midMix.isEqual(toHexString: "#ff00ff"), "Color string should be equal to #ff00ff (not \(midMix.toHexString()))")
+
+    midMix = blue.mixed(withColor: red, inColorSpace: .hsl)
+
+    XCTAssert(midMix.isEqual(toHexString: "#ff00ff"), "Color string should be equal to #ff00ff")
+
+    let sameMix = green.mixed(withColor: green, inColorSpace: .hsl)
+
+    XCTAssert(sameMix.isEqual(toHexString: "#00ff00"), "Color string should be equal to #00ff00")
+
+    let noMix         = red.mixed(withColor: blue, weight: 0, inColorSpace: .hsl)
+    let noMixOverflow = red.mixed(withColor: blue, weight: -20, inColorSpace: .hsl)
+
+    XCTAssert(noMix.isEqual(toHexString: "#ff0000"), "Color string should be equal to #ff0000")
+    XCTAssert(noMix.isEqual(noMixOverflow), "Colors should be the same")
+
+    let fullMix         = red.mixed(withColor: blue, weight: 1, inColorSpace: .hsl)
+    let fullMixOverflow = red.mixed(withColor: blue, weight: 24, inColorSpace: .hsl)
+
+    XCTAssert(fullMix.isEqual(toHexString: "#0000ff"), "Color string should be equal to #0000ff")
+    XCTAssert(fullMix.isEqual(fullMixOverflow), "Colors should be the same")
+  }
+
+  func testMixHSBColors() {
+    let red   = DynamicColor.red
+    let blue  = DynamicColor.blue
+    let green = DynamicColor.green
+
+    var midMix = red.mixed(withColor: blue, inColorSpace: .hsb)
+
+    XCTAssert(midMix.isEqual(toHexString: "#ff00ff") || midMix.isEqual(toHexString: "#00ff00"), "Color string should be equal to #ff00ff or #00ff00 (not \(midMix.toHexString()))")
+
+    midMix = blue.mixed(withColor: red, inColorSpace: .hsb)
+
+    XCTAssert(midMix.isEqual(toHexString: "#ff00ff") || midMix.isEqual(toHexString: "#00ff00"), "Color string should be equal to #ff00ff or #00ff00")
+
+    let sameMix = green.mixed(withColor: green, inColorSpace: .hsb)
+
+    XCTAssert(sameMix.isEqual(toHexString: "#00ff00"), "Color string should be equal to #00ff00")
+
+    let noMix         = red.mixed(withColor: blue, weight: 0, inColorSpace: .hsb)
+    let noMixOverflow = red.mixed(withColor: blue, weight: -20, inColorSpace: .hsb)
+
+    XCTAssert(noMix.isEqual(toHexString: "#ff0000"), "Color string should be equal to #ff0000")
+    XCTAssert(noMix.isEqual(noMixOverflow), "Colors should be the same")
+
+    let fullMix         = red.mixed(withColor: blue, weight: 1, inColorSpace: .hsb)
+    let fullMixOverflow = red.mixed(withColor: blue, weight: 24, inColorSpace: .hsb)
 
     XCTAssert(fullMix.isEqual(toHexString: "#0000ff"), "Color string should be equal to #0000ff")
     XCTAssert(fullMix.isEqual(fullMixOverflow), "Colors should be the same")

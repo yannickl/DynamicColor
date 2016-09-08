@@ -133,8 +133,7 @@ public extension DynamicColor {
     else if target < source && source - target > 180 {
       return target + 360 - source
     }
-    else {
-      return target - source
-    }
+
+    return target - source
   }
 }

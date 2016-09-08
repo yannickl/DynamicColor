@@ -108,12 +108,12 @@ public extension DynamicColor {
    - returns: A UInt32 that represents the hexa-decimal color.
    */
   public final func toHex() -> UInt32 {
-    func roundToInt32(_ x: CGFloat) -> UInt32 {
-      return UInt32(round(100000 * x) / 100000)
+    func roundToHex(_ x: CGFloat) -> UInt32 {
+      return UInt32(round(1000 * x) / 1000 * 255)
     }
 
     let rgba       = toRGBAComponents()
-    let colorToInt = roundToInt32(rgba.r * 255) << 16 | roundToInt32(rgba.g * 255) << 8 | roundToInt32(rgba.b * 255)
+    let colorToInt = roundToHex(rgba.r) << 16 | roundToHex(rgba.g) << 8 | roundToHex(rgba.b)
 
     return colorToInt
   }

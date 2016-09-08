@@ -65,21 +65,21 @@ class DynamicColorHSBTests: XCTTestCaseTemplate {
   }
 
   func testSaturationComponent() {
-    let redSaturation = DynamicColor.red.hueComponent
+    let redSaturation = DynamicColor.red.saturationComponent
 
     XCTAssert(redSaturation == 1 || redSaturation == 0, "Color saturation component should be equal to 1 or 0 (not \(redSaturation))")
 
-    let blackSaturation = DynamicColor(r: 0, g: 0, b: 0).hueComponent
+    let blackSaturation = DynamicColor(r: 0, g: 0, b: 0).saturationComponent
 
     XCTAssert(blackSaturation == 0, "Color saturation component should be equal to 0 (not \(blackSaturation))")
   }
 
   func testBrightnessComponent() {
-    let redBrightness = DynamicColor.red.hueComponent
+    let redBrightness = DynamicColor.red.brightnessComponent
 
     XCTAssert(redBrightness == 1 || redBrightness == 0, "Color brightness component should be equal to 1 or 0 (not \(redBrightness))")
 
-    let blackBrightness = DynamicColor(r: 0, g: 0, b: 0).hueComponent
+    let blackBrightness = DynamicColor(r: 0, g: 0, b: 0).brightnessComponent
 
     XCTAssert(blackBrightness == 0, "Color brightness component should be equal to 0 (not \(blackBrightness))")
   }

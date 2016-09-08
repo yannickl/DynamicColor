@@ -51,7 +51,7 @@ public extension DynamicColor {
     let toRGB = { (c: CGFloat) -> CGFloat in
       let rgb = c > 0.0031308 ? 1.055 * pow(c, 1 / 2.4) - 0.055 : c * 12.92
 
-      return roundDecimal(rgb, precision: 1000)
+      return abs(roundDecimal(rgb, precision: 1000))
     }
 
     let red   = toRGB(clippedX * 3.2406 + clippedY * -1.5372 + clippedZ * -0.4986)
