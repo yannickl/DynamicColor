@@ -1,10 +1,9 @@
 <p align="center">
-  <img src="http://yannickloriot.com/resources/dynamiccolor-header.png">
+  <img src="http://yannickloriot.com/resources/dynamiccolor-header.png" alt="DynamicColor">
 </p>
 
 <p align="center">
-  <a href="https://cocoapod-badges.herokuapp.com/l/DynamicColor/badge.svg"><img alt="License" src="https://cocoapod-badges.herokuapp.com/l/DynamicColor/badge.svg"/></a>
-  <a href="http://cocoadocs.org/docsets/DynamicColor/"><img alt="Supported Plateforms" src="https://cocoapod-badges.herokuapp.com/p/DynamicColor/badge.svg"/></a>
+  <a href="http://cocoadocs.org/docsets/DynamicColor/"><img alt="Supported Platforms" src="https://cocoapod-badges.herokuapp.com/p/DynamicColor/badge.svg"/></a>
   <a href="http://cocoadocs.org/docsets/DynamicColor/"><img alt="Version" src="https://cocoapod-badges.herokuapp.com/v/DynamicColor/badge.svg"/></a>
   <a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
   <a href="https://travis-ci.org/yannickl/DynamicColor"><img alt="Build status" src="https://travis-ci.org/yannickl/DynamicColor.svg?branch=master"/></a>
@@ -24,7 +23,7 @@
 
 ## Usage
 
-*This branch is Swift 3 compatible, use the [v2 version](https://github.com/yannickl/DynamicColor/tree/2.4.0) for Swift 2.x.*
+*N.B.: This branch is Swift 3 compatible, use the [v2 version](https://github.com/yannickl/DynamicColor/tree/2.4.0) for Swift 2.x.*
 
 #### Creation (Hex String)
 
@@ -279,7 +278,7 @@ let package = Package(
 )
 ```
 
-Note that the [Swift Package Manager](https://swift.org/package-manager) is still in early design and development, for more infomation checkout its [GitHub Page](https://github.com/apple/swift-package-manager)
+Note that the [Swift Package Manager](https://swift.org/package-manager) is still in early design and development, for more information checkout its [GitHub Page](https://github.com/apple/swift-package-manager).
 
 #### Manually
 
