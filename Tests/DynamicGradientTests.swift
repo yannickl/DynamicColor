@@ -26,7 +26,7 @@
 
 import XCTest
 
-class DynamicGradientTests: XCTTestCaseTemplate {
+class DynamicGradientTests: XCTestCase {
   func testColorPalette() {
     XCTAssertEqual(DynamicGradient(colors: []).colorPalette(amount: 0).count, 0)
     XCTAssertEqual(DynamicGradient(colors: []).colorPalette(amount: 99).count, 0)

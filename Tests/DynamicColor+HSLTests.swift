@@ -26,7 +26,7 @@
 
 import XCTest
 
-class DynamicColorHSLTests: XCTTestCaseTemplate {
+class DynamicColorHSLTests: XCTestCase {
   func testInitWithHSLComponents() {
     let black1 = DynamicColor(hue: 0, saturation: 0, lightness: 0)
     let black2 = DynamicColor(hue: 1, saturation: 1, lightness: 0)

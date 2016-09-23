@@ -26,7 +26,7 @@
 
 import XCTest
 
-class DynamicColorLabTests: XCTTestCaseTemplate {
+class DynamicColorLabTests: XCTestCase {
   func testInitWithLabComponents() {
     let whiteColor = DynamicColor(L: 100, a: 0, b: 0).toRGBAComponents()
     XCTAssert(whiteColor.r == 1, "Red component should be equal to 1 (not \(whiteColor.r))")

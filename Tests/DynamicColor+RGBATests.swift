@@ -26,7 +26,7 @@
 
 import XCTest
 
-class DynamicColorRGBATests: XCTTestCaseTemplate {
+class DynamicColorRGBATests: XCTestCase {
   func testInit() {
     let customInitColor = DynamicColor(r: 58.65, g: 117.3, b: 81.6)
     let customColor     = DynamicColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)

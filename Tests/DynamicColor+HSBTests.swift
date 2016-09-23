@@ -26,7 +26,7 @@
 
 import XCTest
 
-class DynamicColorHSBTests: XCTTestCaseTemplate {
+class DynamicColorHSBTests: XCTestCase {
   func testToHSBComponents() {
     let customColor = DynamicColor(hue: 0.1, saturation: 0.3, brightness: 0.5, alpha: 1)
     let hsb         = customColor.toHSBComponents()
