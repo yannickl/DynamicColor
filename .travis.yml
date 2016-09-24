@@ -7,6 +7,8 @@ script:
   - cd $(xcodebuild -project DynamicColorExample.xcodeproj -showBuildSettings | grep 'TEMP_ROOT = [/]' | grep -Eo '/(.*?)$')
   - cd CodeCoverage
   - xcrun llvm-cov report -instr-profile Coverage.profdata Products/Release-iphonesimulator/iOSTests.xctest/iOSTests
+  - xcrun llvm-cov show -instr-profile Coverage.profdata Products/Release-iphonesimulator/iOSTests.xctest/iOSTests > "manual.coverage.txt"
+  - cat "manual.coverage.txt"
   - cd $TRAVIS_BUILD_DIR/Examples
   - bash <(curl -s https://codecov.io/bash) -cF ios -J '^DynamicColor$'
   - xcodebuild -project DynamicColorExample.xcodeproj -scheme OSXTests -sdk macosx -configuration Release -enableCodeCoverage YES test
