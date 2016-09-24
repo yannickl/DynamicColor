@@ -4,12 +4,16 @@ script:
   - cd Examples
   - xcodebuild -version
   - xcodebuild -project DynamicColorExample.xcodeproj -scheme iOSTests -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
-  - cd $(xcodebuild -project DynamicColorExample.xcodeproj -showBuildSettings | grep 'TEMP_ROOT = [/]' | grep -Eo '/(.*?)$')
-  - cd CodeCoverage
-  - xcrun llvm-cov report -instr-profile Coverage.profdata Products/Release-iphonesimulator/iOSTests.xctest/iOSTests
-  - xcrun llvm-cov show -instr-profile Coverage.profdata Products/Release-iphonesimulator/iOSTests.xctest/iOSTests > "manual.coverage.txt"
-  - cat "manual.coverage.txt"
-  - cd $TRAVIS_BUILD_DIR/Examples
-  - bash <(curl -s https://codecov.io/bash) -cF ios -J '^DynamicColor$'
+  # - cd $(xcodebuild -project DynamicColorExample.xcodeproj -showBuildSettings | grep 'TEMP_ROOT = [/]' | grep -Eo '/(.*?)$')
+  - xcodebuild -showBuildSettings 2>/dev/null | grep -i "^\s*PRODUCT_NAME" | sed -e 's/.*= \(.*\)/\1/'
+  # - cd CodeCoverage
+  # - xcrun llvm-cov report -instr-profile Coverage.profdata Products/Release-iphonesimulator/iOSTests.xctest/iOSTests
+  # - xcrun llvm-cov show -instr-profile Coverage.profdata Products/Release-iphonesimulator/iOSTests.xctest/iOSTests > "manual.coverage.txt"
+  # - cat "manual.coverage.txt"
+
+  - cd $TRAVIS_BUILD_DIR
+  - bash <(curl -s https://codecov.io/bash) -dcF ios 
+
+  # -J '^DynamicColor$'
   - xcodebuild -project DynamicColorExample.xcodeproj -scheme OSXTests -sdk macosx -configuration Release -enableCodeCoverage YES test
-  - bash <(curl -s https://codecov.io/bash) -cF osx -J '^DynamicColor$'
+  - bash <(curl -s https://codecov.io/bash) -dcF osx
