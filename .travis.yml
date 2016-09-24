@@ -4,6 +4,6 @@ script:
   - cd Examples
   - xcodebuild -version
   - xcodebuild -project DynamicColorExample.xcodeproj -scheme iOSTests -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
-  - bash <(curl -s https://codecov.io/bash) -dcF ios -J '^DynamicColor$'
+  - bash <(curl -s https://codecov.io/bash) -dcF ios
   - xcodebuild -project DynamicColorExample.xcodeproj -scheme OSXTests -sdk macosx -configuration Release -enableCodeCoverage YES test
-  - bash <(curl -s https://codecov.io/bash) -dcF osx -J '^DynamicColor$'
+  - bash <(curl -s https://codecov.io/bash) -dcF osx
