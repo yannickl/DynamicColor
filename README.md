@@ -18,12 +18,16 @@
 </p>
 
 <p align="center">
-    <a href="#usage">Usage</a> • <a href="#installation">Installation</a> • <a href="#contact">Contact</a> • <a href="#license-mit">License</a>
+    <a href="#requirements">Requirements</a> • <a href="#usage">Usage</a> • <a href="#installation">Installation</a> • <a href="#contact">Contact</a> • <a href="#license-mit">License</a>
 </p>
 
-## Usage
+## Requirements
 
-*N.B.: This branch is Swift 3 compatible, use the [v2 version](https://github.com/yannickl/DynamicColor/tree/2.4.0) for Swift 2.x.*
+- iOS 8.0+ / Mac OS X 10.9+ / tvOS 9.0+ / watchOS 2.0+
+- Xcode 8.0+
+- Swift 3.0+
+
+## Usage
 
 #### Creation (Hex String)
 
