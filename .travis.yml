@@ -4,10 +4,6 @@ script:
   - cd Examples
   - xcodebuild -version
   - xcodebuild -project DynamicColorExample.xcodeproj -scheme iOSTests -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
-  - cd $(xcodebuild -project DynamicColorExample.xcodeproj -showBuildSettings | grep 'TEMP_ROOT = [/]' | grep -Eo '/(.*?)$')
-  - cd CodeCoverage
-  - xcrun llvm-cov report -instr-profile Coverage.profdata Products/Release-iphonesimulator/iOSTests.xctest/iOSTests
-  - cd $TRAVIS_BUILD_DIR/Examples
-  - bash <(curl -s https://codecov.io/bash) -cF ios -J '^DynamicColor$'
+  - bash <(curl -s https://codecov.io/bash) -cF ios
   - xcodebuild -project DynamicColorExample.xcodeproj -scheme OSXTests -sdk macosx -configuration Release -enableCodeCoverage YES test
-  - bash <(curl -s https://codecov.io/bash) -cF osx -J '^DynamicColor$'
+  - bash <(curl -s https://codecov.io/bash) -cF osx
