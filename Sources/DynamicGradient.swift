@@ -52,7 +52,7 @@ final public class DynamicGradient {
    - Parameter colorspace: The color space used to mix the colors. By default it uses the RBG color space.
    - Returns: An array of DynamicColor objects with equi-distant space in the gradient.
    */
-  public func colorPalette(amount: UInt = 2, inColorSpace colorspace: DynamicColorSpace = .rgb) -> [DynamicColor] {
+  public func colorPalette(_ amount: UInt = 2, inColorSpace colorspace: DynamicColorSpace = .rgb) -> [DynamicColor] {
     guard amount > 0 && colors.count > 0 else {
       return []
     }
@@ -63,7 +63,7 @@ final public class DynamicGradient {
 
     let increment = 1 / CGFloat(amount - 1)
 
-    return (0 ..< amount).map { pickColorAt(scale: CGFloat($0) * increment, inColorSpace: colorspace) }
+    return (0 ..< amount).map { pickColorAt(CGFloat($0) * increment, inColorSpace: colorspace) }
   }
 
   /**
@@ -75,7 +75,7 @@ final public class DynamicGradient {
    - Parameter colorspace: The color space used to mix the colors. By default it uses the RBG color space.
    - Returns: A DynamicColor object corresponding to the color at the given scale.
    */
-  public func pickColorAt(scale: CGFloat, inColorSpace colorspace: DynamicColorSpace = .rgb) -> DynamicColor {
+  public func pickColorAt(_ scale: CGFloat, inColorSpace colorspace: DynamicColorSpace = .rgb) -> DynamicColor {
     guard colors.count > 1 else {
       return colors.first ?? .black
     }

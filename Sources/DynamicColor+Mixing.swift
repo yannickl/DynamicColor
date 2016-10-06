@@ -66,7 +66,7 @@ public extension DynamicColor {
    - Parameter amount: Float between 0.0 and 1.0. The default amount is equal to 0.2.
    - Returns: A lighter DynamicColor.
    */
-  public final func tinted(amount: CGFloat = 0.2) -> DynamicColor {
+  public final func tinted(_ amount: CGFloat = 0.2) -> DynamicColor {
     return mixed(withColor: .white, weight: amount)
   }
 
@@ -76,7 +76,7 @@ public extension DynamicColor {
    - Parameter amount: Float between 0.0 and 1.0. The default amount is equal to 0.2.
    - Returns: A darker DynamicColor.
    */
-  public final func shaded(amount: CGFloat = 0.2) -> DynamicColor {
+  public final func shaded(_ amount: CGFloat = 0.2) -> DynamicColor {
     return mixed(withColor: DynamicColor(red:0, green:0, blue: 0, alpha:1), weight: amount)
   }
 
@@ -97,7 +97,7 @@ public extension DynamicColor {
     let c1 = toHSLComponents()
     let c2 = color.toHSLComponents()
 
-    let h = c1.h + weight * mixedHue(source: c1.h, target: c2.h)
+    let h = c1.h + weight * mixedHue(c1.h, target: c2.h)
     let s = c1.s + weight * (c2.s - c1.s)
     let l = c1.l + weight * (c2.l - c1.l)
 
@@ -108,7 +108,7 @@ public extension DynamicColor {
     let c1 = toHSBComponents()
     let c2 = color.toHSBComponents()
 
-    let h = c1.h + weight * mixedHue(source: c1.h, target: c2.h)
+    let h = c1.h + weight * mixedHue(c1.h, target: c2.h)
     let s = c1.s + weight * (c2.s - c1.s)
     let b = c1.b + weight * (c2.b - c1.b)
 
@@ -126,7 +126,7 @@ public extension DynamicColor {
     return DynamicColor(red: red, green: green, blue: blue, alpha: alphaComponent)
   }
 
-  func mixedHue(source: CGFloat, target: CGFloat) -> CGFloat {
+  func mixedHue(_ source: CGFloat, target: CGFloat) -> CGFloat {
     if target > source && target - source > 180 {
       return target - source + 360
     }
