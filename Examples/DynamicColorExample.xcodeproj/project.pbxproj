@@ -52,14 +52,6 @@
 		CEA4D1441D95643E00B12DAB /* DynamicGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E1EFB1D818AB100D2AC35 /* DynamicGradient.swift */; };
 		CEA4D1451D95643E00B12DAB /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF85A241C84EA5B00DD1A49 /* HSL.swift */; };
 		CEA4D1461D95643E00B12DAB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D647A1D35074B005DEE4E /* Utils.swift */; };
-		CEA4D1501D95646800B12DAB /* DynamicColor+HSBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D1481D95646800B12DAB /* DynamicColor+HSBTests.swift */; };
-		CEA4D1511D95646800B12DAB /* DynamicColor+HSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D1491D95646800B12DAB /* DynamicColor+HSLTests.swift */; };
-		CEA4D1521D95646800B12DAB /* DynamicColor+RGBATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D14A1D95646800B12DAB /* DynamicColor+RGBATests.swift */; };
-		CEA4D1531D95646800B12DAB /* DynamicColor+XYZTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D14B1D95646800B12DAB /* DynamicColor+XYZTests.swift */; };
-		CEA4D1541D95646800B12DAB /* DynamicColorArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D14C1D95646800B12DAB /* DynamicColorArrayTests.swift */; };
-		CEA4D1551D95646800B12DAB /* DynamicColorLabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D14D1D95646800B12DAB /* DynamicColorLabTests.swift */; };
-		CEA4D1561D95646800B12DAB /* DynamicColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D14E1D95646800B12DAB /* DynamicColorTests.swift */; };
-		CEA4D1571D95646800B12DAB /* DynamicGradientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D14F1D95646800B12DAB /* DynamicGradientTests.swift */; };
 		CEA4D1581D95647000B12DAB /* DynamicColor+HSBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D1481D95646800B12DAB /* DynamicColor+HSBTests.swift */; };
 		CEA4D1591D95647000B12DAB /* DynamicColor+HSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D1491D95646800B12DAB /* DynamicColor+HSLTests.swift */; };
 		CEA4D15A1D95647000B12DAB /* DynamicColor+RGBATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4D14A1D95646800B12DAB /* DynamicColor+RGBATests.swift */; };
@@ -466,7 +458,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Yannick LORIOT";
 				TargetAttributes = {
 					CEA4D1311D95642900B12DAB = {
@@ -595,24 +587,16 @@
 				CE5D64AD1D381782005DEE4E /* Array.swift in Sources */,
 				CE4E1F111D81A6D900D2AC35 /* DynamicColor+HSB.swift in Sources */,
 				CE4E1F0B1D819C2E00D2AC35 /* DynamicColor+Mixing.swift in Sources */,
-				CEA4D1511D95646800B12DAB /* DynamicColor+HSLTests.swift in Sources */,
 				CEF85A251C84EA5B00DD1A49 /* DynamicColor.swift in Sources */,
-				CEA4D1521D95646800B12DAB /* DynamicColor+RGBATests.swift in Sources */,
 				CEAF678D1CA2D342008DC3A2 /* DynamicColor+RGBA.swift in Sources */,
-				CEA4D1541D95646800B12DAB /* DynamicColorArrayTests.swift in Sources */,
 				CE4E1EFC1D818AB100D2AC35 /* DynamicGradient.swift in Sources */,
 				CEF02EED1D2984CD00D810B9 /* DynamicColor+HSL.swift in Sources */,
 				CE4E1F051D819AEC00D2AC35 /* DynamicColorSpace.swift in Sources */,
 				CE5D647B1D35074B005DEE4E /* Utils.swift in Sources */,
 				CE8B86551D2991F000C5A670 /* DynamicColor+XYZ.swift in Sources */,
 				CEAF67871CA2D22E008DC3A2 /* DynamicColor+Deriving.swift in Sources */,
-				CEA4D1531D95646800B12DAB /* DynamicColor+XYZTests.swift in Sources */,
-				CEA4D1501D95646800B12DAB /* DynamicColor+HSBTests.swift in Sources */,
 				CEF85A261C84EA5B00DD1A49 /* HSL.swift in Sources */,
-				CEA4D1561D95646800B12DAB /* DynamicColorTests.swift in Sources */,
-				CEA4D1571D95646800B12DAB /* DynamicGradientTests.swift in Sources */,
 				CE5D64811D35230E005DEE4E /* DynamicColor+Lab.swift in Sources */,
-				CEA4D1551D95646800B12DAB /* DynamicColorLabTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +747,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BITCODE_GENERATION_MODE = bitcode;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -789,6 +774,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BITCODE_GENERATION_MODE = bitcode;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -891,8 +877,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -939,8 +927,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1003,6 +993,7 @@
 				CEA4D1391D95642900B12DAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CECBCD9E1B2B6C5E0047E731 /* Build configuration list for PBXNativeTarget "DynamicColor" */ = {
 			isa = XCConfigurationList;

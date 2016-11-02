@@ -15,9 +15,6 @@ final class ColorCellView: UICollectionViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
 
-    // iOS 10 bug: the content view layout is not called when the view is loaded
-    contentView.layoutSubviews()
-
     if let cv = colorView {
       cv.layer.cornerRadius = cv.bounds.width / 2
     }
