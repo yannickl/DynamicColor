@@ -53,9 +53,9 @@ class DynamicColorHSLTests: XCTestCase {
   func testToHSLComponents() {
     let customColor = DynamicColor(hue: 6, saturation: 0.781, lightness: 0.571)
     let hsl         = customColor.toHSLComponents()
-
-    XCTAssert(hsl.h == 6, "Color hue component should be equal to 6° (not \(hsl.h))")
-    XCTAssert(hsl.s == 0.781, "Saturation component should be equal to 0.781 (not \(hsl.s))")
-    XCTAssert(hsl.l == 0.571, "Lightness component should be equal to 0.571 (not \(hsl.s))")
+    
+    XCTAssertEqualWithAccuracy(hsl.h, 6, accuracy: TestsAcceptedAccuracy, "Color hue component should be equal to 6° (not \(hsl.h))")
+    XCTAssertEqualWithAccuracy(hsl.s, 0.781, accuracy: TestsAcceptedAccuracy, "Saturation component should be equal to 0.781 (not \(hsl.s))")
+    XCTAssertEqualWithAccuracy(hsl.l, 0.571, accuracy: TestsAcceptedAccuracy, "Lightness component should be equal to 0.571 (not \(hsl.l))")
   }
 }
