@@ -396,4 +396,18 @@ class DynamicColorTests: XCTestCase {
     
     XCTAssert(alwaysBlack.isEqual(toHexString: "#000000"), "Color string should be equal to #000000")
   }
+    
+  func testLuminance()  {
+    let blackLuminance = DynamicColor.black.luminance()
+    XCTAssertEqual(blackLuminance, 0, "Luminance for black color should be 0")
+        
+    let whiteLuminance = DynamicColor.white.luminance()
+    XCTAssertEqual(whiteLuminance, 1, "Luminance for white color should be 1")
+   
+    XCTAssertEqualWithAccuracy(DynamicColor(hexString: "#F18F2E").luminance(), 0.38542950354028, accuracy: 0.000001)
+        
+    XCTAssertEqualWithAccuracy(DynamicColor(hexString: "#FFFF00").luminance(), 0.9278, accuracy: 0.000001)
+        
+    XCTAssertEqualWithAccuracy(DynamicColor(hexString: "#ffb0ef").luminance(), 0.58542663140357, accuracy: 0.000001)
+  }
 }
