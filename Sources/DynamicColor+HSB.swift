@@ -48,7 +48,7 @@ extension DynamicColor {
     #if os(iOS) || os(tvOS) || os(watchOS)
       getHue(&h, saturation: &s, brightness: &b, alpha: nil)
 
-      return (h: roundDecimal(h), s: roundDecimal(s), b: roundDecimal(b))
+      return (h: h, s: s, b: b)
     #elseif os(OSX)
       if isEqual(DynamicColor.black) {
         return (0, 0, 0)
@@ -59,7 +59,7 @@ extension DynamicColor {
 
       getHue(&h, saturation: &s, brightness: &b, alpha: nil)
 
-      return (h: roundDecimal(h), s: roundDecimal(s), b: roundDecimal(b))
+      return (h: h, s: s, b: b)
     #endif
   }
 

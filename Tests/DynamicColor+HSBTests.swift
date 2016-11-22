@@ -26,27 +26,31 @@
 
 import XCTest
 
+let TestsAcceptedAccuracy = CGFloat(0.000001)
+
 class DynamicColorHSBTests: XCTestCase {
   func testToHSBComponents() {
     let customColor = DynamicColor(hue: 0.1, saturation: 0.3, brightness: 0.5, alpha: 1)
     let hsb         = customColor.toHSBComponents()
 
-    XCTAssert(hsb.h == 0.1, "Color hue component should be equal to 0.1 (not \(hsb.h))")
-    XCTAssert(hsb.s == 0.3, "Saturation component should be equal to 0.3 (not \(hsb.s))")
-    XCTAssert(hsb.b == 0.5, "Brightness component should be equal to 0.5 (not \(hsb.b))")
+    
+    XCTAssertEqualWithAccuracy(hsb.h, 0.1, accuracy: TestsAcceptedAccuracy, "Color hue component should be equal to 0.1 (not \(hsb.h))")
+    XCTAssertEqualWithAccuracy(hsb.s, 0.3, accuracy: TestsAcceptedAccuracy, "Saturation component should be equal to 0.3 (not \(hsb.s))")
+    XCTAssertEqualWithAccuracy(hsb.b, 0.5, accuracy: TestsAcceptedAccuracy, "Brightness component should be equal to 0.3 (not \(hsb.b))")
 
     let blackHSB = DynamicColor.black.toHSBComponents()
-
-    XCTAssert(blackHSB.h == 0, "Color hue component should be equal to 0 (not \(blackHSB.h))")
-    XCTAssert(blackHSB.s == 0, "Saturation component should be equal to 0 (not \(blackHSB.s))")
-    XCTAssert(blackHSB.b == 0, "Brightness component should be equal to 0 (not \(blackHSB.b))")
+    
+    XCTAssertEqualWithAccuracy(blackHSB.h, 0, accuracy: TestsAcceptedAccuracy, "Color hue component should be equal to 0 (not \(blackHSB.h))")
+    XCTAssertEqualWithAccuracy(blackHSB.s, 0, accuracy: TestsAcceptedAccuracy, "Saturation component should be equal to 0 (not \(blackHSB.s))")
+    XCTAssertEqualWithAccuracy(blackHSB.b, 0, accuracy: TestsAcceptedAccuracy, "Brightness component should be equal to 0 (not \(blackHSB.b))")
 
     let whiteHSB = DynamicColor.white.toHSBComponents()
+    
+    XCTAssertEqualWithAccuracy(whiteHSB.h, 0, accuracy: TestsAcceptedAccuracy, "Color hue component should be equal to O (not \(whiteHSB.h))")
+    XCTAssertEqualWithAccuracy(whiteHSB.s, 0, accuracy: TestsAcceptedAccuracy, "Saturation component should be equal to 0 (not \(blackHSB.s))")
+    XCTAssertEqualWithAccuracy(whiteHSB.b, 1, accuracy: TestsAcceptedAccuracy, "Brightness component should be equal to 1 (not \(whiteHSB.b))")
 
-    XCTAssert(whiteHSB.h == 0, "Color hue component should be equal to 0 (not \(whiteHSB.h))")
-    XCTAssert(whiteHSB.s == 0, "Saturation component should be equal to 0 (not \(whiteHSB.s))")
-    XCTAssert(whiteHSB.b == 1, "Brightness component should be equal to 1 (not \(whiteHSB.b))")
-
+  
     let redHSB = DynamicColor.red.toHSBComponents()
 
     XCTAssert(redHSB.h == 1 || redHSB.h == 0, "Color hue component should be equal to 1 or 0 (not \(redHSB.h))")
