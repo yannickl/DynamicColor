@@ -157,21 +157,24 @@ public extension DynamicColor {
   }
     
   /**
-     Returns a float value representing the luminance of the current color. We use the formula described by W3C in WCAG 2.0. You can read more here: https://www.w3.org/TR/WCAG20/#relativeluminancedef
-     
-     - returns: A CGFloat representing the luminance of the current color (from 0 to 1.0)
+   A float value representing the luminance of the current color. May vary from 0 to 1.0.
+   
+   We use the formula described by W3C in WCAG 2.0. You can read more here: https://www.w3.org/TR/WCAG20/#relativeluminancedef
   */
-  func luminance() -> CGFloat {
-    let components = toRGBAComponents()
-    let componentsArray =   [components.r, components.g, components.b].map { (val) -> CGFloat in
-      if val <= 0.03928 {
-        return val/12.92
-      } else {
-         return pow((val+0.055)/1.055, 2.4)
+  var luminance: CGFloat {
+    get {
+      let components = toRGBAComponents()
+      let componentsArray =   [components.r, components.g, components.b].map { (val) -> CGFloat in
+        if val <= 0.03928 {
+          return val/12.92
+        } else {
+          return pow((val+0.055)/1.055, 2.4)
+        }
       }
+      return (0.2126 * componentsArray[0]) + (0.7152 * componentsArray[1]) + (0.0722 * componentsArray[2])
     }
-    return (0.2126 * componentsArray[0]) + (0.7152 * componentsArray[1]) + (0.0722 * componentsArray[2])
   }
+
     
   /**
      Returns a float value representing the contrast ratio between 2 colors. 
@@ -182,8 +185,8 @@ public extension DynamicColor {
      - returns: A CGFloat representing contrast value
      */
   func contrastRatio(with otherColor:DynamicColor ) -> CGFloat {
-    let selfLuminance = self.luminance()
-    let otherLuminance = otherColor.luminance()
+    let selfLuminance = self.luminance
+    let otherLuminance = otherColor.luminance
     let l1 = max(selfLuminance, otherLuminance)
     let l2 = min(selfLuminance, otherLuminance)
         
