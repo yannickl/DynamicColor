@@ -171,5 +171,23 @@ public extension DynamicColor {
       }
     }
     return (0.2126 * componentsArray[0]) + (0.7152 * componentsArray[1]) + (0.0722 * componentsArray[2])
-    }
+  }
+    
+  /**
+     Returns a float value representing the contrast ratio between 2 colors. 
+     
+     We use the formula described by W3C in WCAG 2.0. You can read more here: https://www.w3.org/TR/WCAG20-TECHS/G18.html
+     NB: the contrast ratio is a relative value. So the contrast between Color1 and Color2 is exactly the same between Color2 and Color1.
+     
+     - returns: A CGFloat representing contrast value
+     */
+  func contrastRatio(with otherColor:DynamicColor ) -> CGFloat {
+    let selfLuminance = self.luminance()
+    let otherLuminance = otherColor.luminance()
+    let l1 = max(selfLuminance, otherLuminance)
+    let l2 = min(selfLuminance, otherLuminance)
+        
+    return (l1+0.05)/(l2+0.05)
+       
+  }
 }
