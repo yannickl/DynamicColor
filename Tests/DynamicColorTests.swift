@@ -410,4 +410,25 @@ class DynamicColorTests: XCTestCase {
         
     XCTAssertEqualWithAccuracy(DynamicColor(hexString: "#ffb0ef").luminance(), 0.58542663140357, accuracy: 0.000001)
   }
+    
+  func testContrastRatio()  {
+
+    XCTAssertEqual(DynamicColor.black.contrastRatio(with: DynamicColor.white), 21, "Contrast between black and white should be 21")
+    XCTAssertEqual(DynamicColor.white.contrastRatio(with: DynamicColor.black), 21, "Contrast between white and black should be 21")
+        
+    let color1 = DynamicColor(hexString: "F18F2E")
+    let color2 = DynamicColor(hexString: "FFFF00")
+    let color3 = DynamicColor(hexString: "ffb0ef")
+        
+        
+    XCTAssertEqualWithAccuracy(color1.contrastRatio(with: color2), 2.2455988, accuracy: TestsAcceptedAccuracy)
+    XCTAssertEqualWithAccuracy(color2.contrastRatio(with: color1), 2.2455988, accuracy: TestsAcceptedAccuracy)
+        
+    XCTAssertEqualWithAccuracy(color3.contrastRatio(with: color2), 1.5388086, accuracy: TestsAcceptedAccuracy)
+    XCTAssertEqualWithAccuracy(color2.contrastRatio(with: color3), 1.5388086, accuracy: TestsAcceptedAccuracy)
+        
+    XCTAssertEqualWithAccuracy(color3.contrastRatio(with: color1), 1.4593100, accuracy: TestsAcceptedAccuracy)
+    XCTAssertEqualWithAccuracy(color1.contrastRatio(with: color3), 1.4593100, accuracy: TestsAcceptedAccuracy)
+        
+  }
 }
