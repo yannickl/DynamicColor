@@ -155,4 +155,21 @@ public extension DynamicColor {
     
     return brightness >= 0.5
   }
+    
+  /**
+     Returns a float value representing the luminance of the current color. We use the formula described by W3C in WCAG 2.0. You can read more here: https://www.w3.org/TR/WCAG20/#relativeluminancedef
+     
+     - returns: A CGFloat representing the luminance of the current color (from 0 to 1.0)
+  */
+  func luminance() -> CGFloat {
+    let components = toRGBAComponents()
+    let componentsArray =   [components.r, components.g, components.b].map { (val) -> CGFloat in
+      if val <= 0.03928 {
+        return val/12.92
+      } else {
+         return pow((val+0.055)/1.055, 2.4)
+      }
+    }
+    return (0.2126 * componentsArray[0]) + (0.7152 * componentsArray[1]) + (0.0722 * componentsArray[2])
+    }
 }
