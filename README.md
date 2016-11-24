@@ -5,7 +5,8 @@
 <p align="center">
   <a href="http://cocoadocs.org/docsets/DynamicColor/"><img alt="Supported Platforms" src="https://cocoapod-badges.herokuapp.com/p/DynamicColor/badge.svg"/></a>
   <a href="http://cocoadocs.org/docsets/DynamicColor/"><img alt="Version" src="https://cocoapod-badges.herokuapp.com/v/DynamicColor/badge.svg"/></a>
-  <a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"/></a>
+  <a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-%E2%9C%93-brightgreen.svg?style=flat"/></a>
+  <a href="https://github.com/apple/swift-package-manager"><img alt="Swift Package Manager compatible" src="https://img.shields.io/badge/SPM-%E2%9C%93-brightgreen.svg?style=flat"/></a>
   <a href="https://travis-ci.org/yannickl/DynamicColor"><img alt="Build status" src="https://travis-ci.org/yannickl/DynamicColor.svg?branch=master"/></a>
   <a href="http://codecov.io/github/yannickl/DynamicColor"><img alt="Code coverage status" src="http://codecov.io/github/yannickl/DynamicColor/coverage.svg?branch=master"/></a>
 </p>
