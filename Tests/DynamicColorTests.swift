@@ -431,4 +431,32 @@ class DynamicColorTests: XCTestCase {
     XCTAssertEqualWithAccuracy(color1.contrastRatio(with: color3), 1.4593100, accuracy: TestsAcceptedAccuracy)
         
   }
+  
+  func testIsContrasting()  {
+    
+    XCTAssertFalse(DynamicColor.black.isContrasting(whith: DynamicColor.black), "A color cannot contrast with itself")
+
+    XCTAssertTrue(DynamicColor.black.isContrasting(whith: DynamicColor.white), "Black and white are always contrasting")
+    
+    XCTAssertTrue(DynamicColor.black.isContrasting(whith: DynamicColor.white, inContext: .Standard), "Black and white are always contrasting")
+    XCTAssertTrue(DynamicColor.black.isContrasting(whith: DynamicColor.white, inContext: .StandardLargeText), "Black and white are always contrasting")
+    XCTAssertTrue(DynamicColor.black.isContrasting(whith: DynamicColor.white, inContext: .Enhanced), "Black and white are always contrasting")
+    XCTAssertTrue(DynamicColor.black.isContrasting(whith: DynamicColor.white, inContext: .EnhancedLargeText), "Black and white are always contrasting")
+
+    // Contrast ratio between white and red = 4. So, we should only return true in StandardLargeText
+    XCTAssertFalse(DynamicColor.white.isContrasting(whith: DynamicColor.red), "White and red are only contrasting in StandardLargeText")
+    XCTAssertFalse(DynamicColor.white.isContrasting(whith: DynamicColor.red, inContext: .Standard), "White and red are only contrasting in StandardLargeText")
+    XCTAssertTrue(DynamicColor.white.isContrasting(whith: DynamicColor.red, inContext: .StandardLargeText), "White and red are only contrasting in StandardLargeText")
+    XCTAssertFalse(DynamicColor.white.isContrasting(whith: DynamicColor.red, inContext: .Enhanced), "White and red are only contrasting in StandardLargeText")
+    XCTAssertFalse(DynamicColor.white.isContrasting(whith: DynamicColor.red, inContext: .EnhancedLargeText), "White and red are only contrasting in StandardLargeText")
+    
+    
+    let pink =  DynamicColor(hexString: "FF00FF")
+    // Contrast ration between FF00FF and black = 6.7, . So, we should only return false in Enhanced
+    XCTAssertTrue(DynamicColor.black.isContrasting(whith: pink), "Black and pink are always contrasting except in Enhanced")
+    XCTAssertTrue(DynamicColor.black.isContrasting(whith: pink, inContext: .Standard), "Black and pink are always contrasting except in Enhanced")
+    XCTAssertTrue(DynamicColor.black.isContrasting(whith: pink, inContext: .StandardLargeText), "Black and pink are always contrasting except in Enhanced")
+    XCTAssertFalse(DynamicColor.black.isContrasting(whith: pink, inContext: .Enhanced), "Black and pink are always contrasting except in Enhanced")
+    XCTAssertTrue(DynamicColor.black.isContrasting(whith: pink, inContext: .EnhancedLargeText), "Black and pink are always contrasting except in Enhanced")
+  }
 }
