@@ -191,6 +191,65 @@ public extension DynamicColor {
     let l2 = min(selfLuminance, otherLuminance)
         
     return (l1+0.05)/(l2+0.05)
-       
+  }
+  
+  /**
+   Used to describe the context of display of 2 colors.
+   Based on WCAG: https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast
+  */
+  enum ContrastDisplayContext {
+    /**
+      A standard text in a normal context
+     */
+    case Standard
+    /** 
+     A large text in a normal context.
+     You can look here for the definition of "large text":
+      https://www.w3.org/TR/2008/REC-WCAG20-20081211/#larger-scaledef
+     */
+    case StandardLargeText
+    /**
+     A standard text in an enhanced context.
+     Enhanced means that you want to be accessible (and AAA compliant in WCAG)
+     */
+    case Enhanced
+    /**
+     A large text in an enhanced context.
+     Enhanced means that you want to be accessible (and AAA compliant in WCAG)
+     You can look here for the definition of "large text":
+     https://www.w3.org/TR/2008/REC-WCAG20-20081211/#larger-scaledef
+     */
+    case EnhancedLargeText
+    
+    var minimumContrastRatio: CGFloat {
+      switch self {
+      case .Standard:
+        return 4.5
+      case .StandardLargeText:
+        return 3
+      case .Enhanced:
+        return 7
+      case .EnhancedLargeText:
+        return 4.5
+      }
+    }
+  }
+  
+  /**
+   Indicates if two colors are contrasting, regarding W3C's WCAG 2.0 recommendations.
+   
+   You can read it here: https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast
+   
+   The acceptable contrast ratio depends on the context of display. Most of the time, the default context (.Standard) is enough.
+   
+   You can look at ContrastDisplayContext for more options.
+   
+   - parameter otherColor: The other color to compare with.
+   - parameter context: An optional context to determine the minimum acceptable contrast ratio. Default value is .Standard.
+   
+   - returns: true is the contrast ratio between 2 colors exceed the minimum acceptable ratio.
+   */
+  func isContrasting(whith otherColor:DynamicColor, inContext context:ContrastDisplayContext = .Standard ) -> Bool {
+    return self.contrastRatio(with: otherColor) > context.minimumContrastRatio
   }
 }
