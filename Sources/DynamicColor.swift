@@ -26,11 +26,7 @@
 
 #if os(iOS) || os(tvOS) || os(watchOS)
   import UIKit
-#elseif os(OSX)
-  import AppKit
-#endif
 
-#if os(iOS) || os(tvOS) || os(watchOS)
   /**
    Extension to manipulate colours easily.
 
@@ -38,6 +34,8 @@
    */
   public typealias DynamicColor = UIColor
 #elseif os(OSX)
+  import AppKit
+
   /**
    Extension to manipulate colours easily.
 
@@ -149,7 +147,7 @@ public extension DynamicColor {
 
    - returns: A boolean value to know whether the color is light. If true the color is light, dark otherwise.
    */
-  func isLight() -> Bool {
+  public func isLight() -> Bool {
     let components = toRGBAComponents()
     let brightness = ((components.r * 299) + (components.g * 587) + (components.b * 114)) / 1000
     
@@ -161,21 +159,18 @@ public extension DynamicColor {
    
    We use the formula described by W3C in WCAG 2.0. You can read more here: https://www.w3.org/TR/WCAG20/#relativeluminancedef
   */
-  var luminance: CGFloat {
-    get {
-      let components = toRGBAComponents()
-      let componentsArray =   [components.r, components.g, components.b].map { (val) -> CGFloat in
-        if val <= 0.03928 {
-          return val/12.92
-        } else {
-          return pow((val+0.055)/1.055, 2.4)
-        }
-      }
-      return (0.2126 * componentsArray[0]) + (0.7152 * componentsArray[1]) + (0.0722 * componentsArray[2])
+  public var luminance: CGFloat {
+    let components = toRGBAComponents()
+
+    let componentsArray = [components.r, components.g, components.b].map { (val) -> CGFloat in
+      guard val <= 0.03928 else { return pow((val + 0.055) / 1.055, 2.4) }
+
+      return val / 12.92
     }
+
+    return (0.2126 * componentsArray[0]) + (0.7152 * componentsArray[1]) + (0.0722 * componentsArray[2])
   }
 
-    
   /**
      Returns a float value representing the contrast ratio between 2 colors. 
      
@@ -184,55 +179,13 @@ public extension DynamicColor {
      
      - returns: A CGFloat representing contrast value
      */
-  func contrastRatio(with otherColor:DynamicColor ) -> CGFloat {
-    let selfLuminance = self.luminance
+  public func contrastRatio(with otherColor: DynamicColor) -> CGFloat {
     let otherLuminance = otherColor.luminance
-    let l1 = max(selfLuminance, otherLuminance)
-    let l2 = min(selfLuminance, otherLuminance)
+
+    let l1 = max(luminance, otherLuminance)
+    let l2 = min(luminance, otherLuminance)
         
-    return (l1+0.05)/(l2+0.05)
-  }
-  
-  /**
-   Used to describe the context of display of 2 colors.
-   Based on WCAG: https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast
-  */
-  enum ContrastDisplayContext {
-    /**
-      A standard text in a normal context
-     */
-    case Standard
-    /** 
-     A large text in a normal context.
-     You can look here for the definition of "large text":
-      https://www.w3.org/TR/2008/REC-WCAG20-20081211/#larger-scaledef
-     */
-    case StandardLargeText
-    /**
-     A standard text in an enhanced context.
-     Enhanced means that you want to be accessible (and AAA compliant in WCAG)
-     */
-    case Enhanced
-    /**
-     A large text in an enhanced context.
-     Enhanced means that you want to be accessible (and AAA compliant in WCAG)
-     You can look here for the definition of "large text":
-     https://www.w3.org/TR/2008/REC-WCAG20-20081211/#larger-scaledef
-     */
-    case EnhancedLargeText
-    
-    var minimumContrastRatio: CGFloat {
-      switch self {
-      case .Standard:
-        return 4.5
-      case .StandardLargeText:
-        return 3
-      case .Enhanced:
-        return 7
-      case .EnhancedLargeText:
-        return 4.5
-      }
-    }
+    return (l1 + 0.05) / (l2 + 0.05)
   }
   
   /**
@@ -249,7 +202,7 @@ public extension DynamicColor {
    
    - returns: true is the contrast ratio between 2 colors exceed the minimum acceptable ratio.
    */
-  func isContrasting(whith otherColor:DynamicColor, inContext context:ContrastDisplayContext = .Standard ) -> Bool {
+  public func isContrasting(with otherColor: DynamicColor, inContext context: ContrastDisplayContext = .standard) -> Bool {
     return self.contrastRatio(with: otherColor) > context.minimumContrastRatio
   }
 }

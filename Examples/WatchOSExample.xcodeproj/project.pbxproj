@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1BD0871DEA041200E11D77 /* ContrastDisplayContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BD0861DEA041200E11D77 /* ContrastDisplayContext.swift */; };
 		CEBD6FD41D81CC2D00D75349 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD6FC71D81CC2D00D75349 /* Array.swift */; };
 		CEBD6FD51D81CC2D00D75349 /* DynamicColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD6FC81D81CC2D00D75349 /* DynamicColor.swift */; };
 		CEBD6FD61D81CC2D00D75349 /* DynamicColor+Deriving.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD6FC91D81CC2D00D75349 /* DynamicColor+Deriving.swift */; };
@@ -91,6 +92,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE1BD0861DEA041200E11D77 /* ContrastDisplayContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContrastDisplayContext.swift; sourceTree = "<group>"; };
 		CEBD6FC71D81CC2D00D75349 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		CEBD6FC81D81CC2D00D75349 /* DynamicColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicColor.swift; sourceTree = "<group>"; };
 		CEBD6FC91D81CC2D00D75349 /* DynamicColor+Deriving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DynamicColor+Deriving.swift"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				CEBD6FC71D81CC2D00D75349 /* Array.swift */,
+				CE1BD0861DEA041200E11D77 /* ContrastDisplayContext.swift */,
 				CEBD6FC81D81CC2D00D75349 /* DynamicColor.swift */,
 				CEBD6FC91D81CC2D00D75349 /* DynamicColor+Deriving.swift */,
 				CEBD6FCA1D81CC2D00D75349 /* DynamicColor+HSB.swift */,
@@ -352,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1BD0871DEA041200E11D77 /* ContrastDisplayContext.swift in Sources */,
 				CEBD6FD61D81CC2D00D75349 /* DynamicColor+Deriving.swift in Sources */,
 				CEBD6FDF1D81CC2D00D75349 /* HSL.swift in Sources */,
 				CEBD6FD81D81CC2D00D75349 /* DynamicColor+HSL.swift in Sources */,
