@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource {
-  private let ColorCellIdentifier = "ColorCell"
+  private let colorCellIdentifier = "ColorCell"
 
   @IBOutlet weak var colorCollectionView: UICollectionView!
 
@@ -59,7 +59,8 @@ class ViewController: UIViewController, UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorCellIdentifier, for: indexPath) as! ColorCellView
+    // swiftlint:disable force_cast
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: colorCellIdentifier, for: indexPath) as! ColorCellView
 
     let (title, color) = collection(inSection: indexPath.section)[indexPath.row]
 
@@ -70,6 +71,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    // swiftlint:disable force_cast
     let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath) as! HeaderView
     supplementaryView.titleLabel.text = indexPath.section == 0 ? "Colors" : "Gradients"
     
