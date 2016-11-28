@@ -1,0 +1,4 @@
+line_length:
+  - 150 # warning
+excluded:
+  - Examples/
