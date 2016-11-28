@@ -1,3 +1,5 @@
+disabled_rules: 
+  - variable_name
 line_length:
   - 150 # warning
 excluded:
