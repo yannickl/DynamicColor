@@ -1,6 +1,8 @@
 language: objective-c
 osx_image: xcode8
 script:
+  - brew install swiftlint || brew upgrade swiftlint
+  - swiftlint lint --path Sources/
   - cd Examples
   - xcodebuild -version
   - xcodebuild -project DynamicColorExample.xcodeproj -scheme iOSTests -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
