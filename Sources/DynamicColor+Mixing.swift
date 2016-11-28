@@ -41,7 +41,9 @@ public extension DynamicColor {
    Notes that the opacity of the colors object is not mixed, the returned color has the same opacity as the receiver.
 
    - Parameter color: A color object to mix with the receiver.
-   - Parameter weight: The weight specifies the amount of the given color object (between 0 and 1). The default value is 0.5, which means that half the given color and half the receiver color object should be used. 0.25 means that a quarter of the given color object and three quarters of the receiver color object should be used.
+   - Parameter weight: The weight specifies the amount of the given color object (between 0 and 1). 
+       The default value is 0.5, which means that half the given color and half the receiver color object should be used. 
+       0.25 means that a quarter of the given color object and three quarters of the receiver color object should be used.
    - Parameter colorspace: The color space used to mix the colors. By default it uses the RBG color space.
    - Returns: A color object corresponding to the two colors object mixed together.
    */

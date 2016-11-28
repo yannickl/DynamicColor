@@ -58,7 +58,7 @@ public extension DynamicColor {
     let hexString = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     let scanner   = Scanner(string: hexString)
 
-    if (hexString.hasPrefix("#")) {
+    if hexString.hasPrefix("#") {
       scanner.scanLocation = 1
     }
 
