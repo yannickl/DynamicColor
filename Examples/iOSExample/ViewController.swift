@@ -35,7 +35,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
   }()
 
   private lazy var gradients: [(String, UIColor)] = {
-    return [UIColor(hex: 0x3498db), UIColor(hex: 0xe74c3c) , UIColor(hex: 0xf1c40f)].gradient.colorPalette(amount: 15).map { ($0.toHexString(), $0) }
+    return [UIColor(hex: 0x3498db), UIColor(hex: 0xe74c3c), UIColor(hex: 0xf1c40f)].gradient.colorPalette(amount: 15).map { ($0.toHexString(), $0) }
   }()
 
   override func viewDidLoad() {
@@ -74,8 +74,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     // swiftlint:disable force_cast
     let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderView", for: indexPath) as! HeaderView
     supplementaryView.titleLabel.text = indexPath.section == 0 ? "Colors" : "Gradients"
-    
+
     return supplementaryView
   }
 }
-
