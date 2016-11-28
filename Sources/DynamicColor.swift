@@ -66,8 +66,7 @@ public extension DynamicColor {
 
     if scanner.scanHexInt32(&color) {
       self.init(hex: color)
-    }
-    else {
+    } else {
       self.init(hex: 0x000000)
     }
   }
@@ -150,10 +149,10 @@ public extension DynamicColor {
   public func isLight() -> Bool {
     let components = toRGBAComponents()
     let brightness = ((components.r * 299) + (components.g * 587) + (components.b * 114)) / 1000
-    
+
     return brightness >= 0.5
   }
-    
+
   /**
    A float value representing the luminance of the current color. May vary from 0 to 1.0.
    
@@ -184,10 +183,10 @@ public extension DynamicColor {
 
     let l1 = max(luminance, otherLuminance)
     let l2 = min(luminance, otherLuminance)
-        
+
     return (l1 + 0.05) / (l2 + 0.05)
   }
-  
+
   /**
    Indicates if two colors are contrasting, regarding W3C's WCAG 2.0 recommendations.
    

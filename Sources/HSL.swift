@@ -78,18 +78,15 @@ internal struct HSL {
     if delta != 0 {
       if l < 0.5 {
         s = delta / (maximum + mininimum)
-      }
-      else {
+      } else {
         s = delta / (2 - maximum - mininimum)
       }
 
       if rgba.r == maximum {
         h = (rgba.g - rgba.b) / delta + (rgba.g < rgba.b ? 6 : 0)
-      }
-      else if rgba.g == maximum {
+      } else if rgba.g == maximum {
         h = (rgba.b - rgba.r) / delta + 2
-      }
-      else if rgba.b == maximum {
+      } else if rgba.b == maximum {
         h = (rgba.r - rgba.g) / delta + 4
       }
     }
@@ -122,11 +119,9 @@ internal struct HSL {
 
     if hue * 6 < 1 {
       return m1 + (m2 - m1) * hue * 6
-    }
-    else if hue * 2 < 1 {
+    } else if hue * 2 < 1 {
       return CGFloat(m2)
-    }
-    else if hue * 3 < 1.9999 {
+    } else if hue * 3 < 1.9999 {
       return m1 + (m2 - m1) * (2 / 3 - hue) * 6
     }
 

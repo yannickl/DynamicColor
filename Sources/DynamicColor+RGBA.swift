@@ -67,8 +67,7 @@ public extension DynamicColor {
     #elseif os(OSX)
       if isEqual(DynamicColor.black) {
         return (0, 0, 0, 0)
-      }
-      else if isEqual(DynamicColor.white) {
+      } else if isEqual(DynamicColor.white) {
         return (1, 1, 1, 1)
       }
 
@@ -121,5 +120,5 @@ public extension DynamicColor {
     let normalizedAlpha = clip(components.a + amount, 0, 1)
 
     return DynamicColor(red: components.r, green: components.g, blue: components.b, alpha: normalizedAlpha)
-  }  
+  }
 }

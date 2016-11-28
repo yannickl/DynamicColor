@@ -85,7 +85,7 @@ public extension DynamicColor {
     let L = roundDecimal(116 * normalizedY - 16, precision: 1000)
     let a = roundDecimal(500 * (normalizedX - normalizedY), precision: 1000)
     let b = roundDecimal(200 * (normalizedY - normalizedZ), precision: 1000)
-    
+
     return (L: L, a: a, b: b)
   }
 }

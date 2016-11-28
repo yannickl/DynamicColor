@@ -129,8 +129,7 @@ public extension DynamicColor {
   func mixedHue(source: CGFloat, target: CGFloat) -> CGFloat {
     if target > source && target - source > 180 {
       return target - source + 360
-    }
-    else if target < source && source - target > 180 {
+    } else if target < source && source - target > 180 {
       return target + 360 - source
     }
 
