@@ -66,7 +66,8 @@ public extension DynamicColor {
   // MARK: - Getting the L*a*b* Components
 
   /**
-   Returns the Lab (lightness, red-green axis, yellow-blue axis) components. It is based on the CIE XYZ color space with an observer at 2° and a D65 illuminant.
+   Returns the Lab (lightness, red-green axis, yellow-blue axis) components. 
+   It is based on the CIE XYZ color space with an observer at 2° and a D65 illuminant.
 
    Notes that L values are between 0 to 100.0, a values are between -128 to 127.0 and b values are between -128 to 127.0.
 
@@ -85,7 +86,7 @@ public extension DynamicColor {
     let L = roundDecimal(116 * normalizedY - 16, precision: 1000)
     let a = roundDecimal(500 * (normalizedX - normalizedY), precision: 1000)
     let b = roundDecimal(200 * (normalizedY - normalizedZ), precision: 1000)
-    
+
     return (L: L, a: a, b: b)
   }
 }

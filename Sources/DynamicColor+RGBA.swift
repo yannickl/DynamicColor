@@ -121,5 +121,5 @@ public extension DynamicColor {
     let normalizedAlpha = clip(components.a + amount, 0, 1)
 
     return DynamicColor(red: components.r, green: components.g, blue: components.b, alpha: normalizedAlpha)
-  }  
+  }
 }

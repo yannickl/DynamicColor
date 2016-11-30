@@ -96,10 +96,10 @@ final public class DynamicGradient {
       let weight           = (clippedScale - previousPosition) / (position - previousPosition)
 
       color = colors[index - 1].mixed(withColor: colors[index], weight: weight, inColorSpace: colorspace)
-      
+
       break
     }
-    
+
     return color
   }
 }
