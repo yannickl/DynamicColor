@@ -67,7 +67,8 @@ public extension DynamicColor {
     #elseif os(OSX)
       if isEqual(DynamicColor.black) {
         return (0, 0, 0, 0)
-      } else if isEqual(DynamicColor.white) {
+      }
+      else if isEqual(DynamicColor.white) {
         return (1, 1, 1, 1)
       }
 

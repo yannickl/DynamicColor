@@ -4,3 +4,5 @@ line_length:
   - 150 # warning
 excluded:
   - Examples/
+statement_position:
+   statement_mode: uncuddled_else
