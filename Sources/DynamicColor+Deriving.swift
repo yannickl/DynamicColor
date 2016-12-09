@@ -39,8 +39,8 @@ public extension DynamicColor {
    - parameter amount: A float representing the number of degrees as ratio (usually between -360.0 degree and 360.0 degree).
    - returns: A DynamicColor object with the hue changed.
    */
-  public final func adjustedHue(amount: CGFloat) -> DynamicColor {
-    return HSL(color: self).adjustedHue(amount: amount).toDynamicColor()
+  public final func adjustedHue(_ amount: CGFloat) -> DynamicColor {
+    return HSL(color: self).adjustedHue(amount).toDynamicColor()
   }
 
   /**
@@ -52,7 +52,7 @@ public extension DynamicColor {
    - seealso: adjustedHueColor:
    */
   public final func complemented() -> DynamicColor {
-    return adjustedHue(amount: 180)
+    return adjustedHue(180)
   }
 
   /**
@@ -61,8 +61,8 @@ public extension DynamicColor {
    - parameter amount: CGFloat between 0.0 and 1.0. Default value is 0.2.
    - returns: A lighter DynamicColor.
    */
-  public final func lighter(amount: CGFloat = 0.2) -> DynamicColor {
-    return HSL(color: self).lighter(amount: amount).toDynamicColor()
+  public final func lighter(_ amount: CGFloat = 0.2) -> DynamicColor {
+    return HSL(color: self).lighter(amount).toDynamicColor()
   }
 
   /**
@@ -71,8 +71,8 @@ public extension DynamicColor {
    - parameter amount: Float between 0.0 and 1.0. Default value is 0.2.
    - returns: A darker DynamicColor.
    */
-  public final func darkened(amount: CGFloat = 0.2) -> DynamicColor {
-    return HSL(color: self).darkened(amount: amount).toDynamicColor()
+  public final func darkened(_ amount: CGFloat = 0.2) -> DynamicColor {
+    return HSL(color: self).darkened(amount).toDynamicColor()
   }
 
   /**
@@ -82,8 +82,8 @@ public extension DynamicColor {
 
    - returns: A DynamicColor more saturated.
    */
-  public final func saturated(amount: CGFloat = 0.2) -> DynamicColor {
-    return HSL(color: self).saturated(amount: amount).toDynamicColor()
+  public final func saturated(_ amount: CGFloat = 0.2) -> DynamicColor {
+    return HSL(color: self).saturated(amount).toDynamicColor()
   }
 
   /**
@@ -92,8 +92,8 @@ public extension DynamicColor {
    - parameter amount: CGFloat between 0.0 and 1.0. Default value is 0.2.
    - returns: A DynamicColor less saturated.
    */
-  public final func desaturated(amount: CGFloat = 0.2) -> DynamicColor {
-    return HSL(color: self).desaturated(amount: amount).toDynamicColor()
+  public final func desaturated(_ amount: CGFloat = 0.2) -> DynamicColor {
+    return HSL(color: self).desaturated(amount).toDynamicColor()
   }
 
   /**
@@ -105,7 +105,7 @@ public extension DynamicColor {
    - seealso: desaturateColor:
    */
   public final func grayscaled() -> DynamicColor {
-    return desaturated(amount: 1)
+    return desaturated(1)
   }
 
   /**

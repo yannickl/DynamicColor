@@ -109,15 +109,15 @@ internal struct HSL {
     let m2 = l <= 0.5 ? l * (s + 1) : (l + s) - (l * s)
     let m1 = (l * 2) - m2
 
-    let r = hueToRGB(m1: m1, m2: m2, h: h + 1 / 3)
-    let g = hueToRGB(m1: m1, m2: m2, h: h)
-    let b = hueToRGB(m1: m1, m2: m2, h: h - 1 / 3)
+    let r = hueToRGB(m1, m2: m2, h: h + 1 / 3)
+    let g = hueToRGB(m1, m2: m2, h: h)
+    let b = hueToRGB(m1, m2: m2, h: h - 1 / 3)
 
     return DynamicColor(red: r, green: g, blue: b, alpha: CGFloat(a))
   }
 
   /// Hue to RGB helper function
-  private func hueToRGB(m1: CGFloat, m2: CGFloat, h: CGFloat) -> CGFloat {
+  fileprivate func hueToRGB(_ m1: CGFloat, m2: CGFloat, h: CGFloat) -> CGFloat {
     let hue = moda(h, m: 1)
 
     if hue * 6 < 1 {
@@ -141,7 +141,7 @@ internal struct HSL {
   - parameter amount: A float representing the number of degrees as ratio (usually between -360.0 degree and 360.0 degree).
   - returns: A HSL color with the hue changed.
   */
-  func adjustedHue(amount: CGFloat) -> HSL {
+  func adjustedHue(_ amount: CGFloat) -> HSL {
     return HSL(hue: h * 360 + amount, saturation: s, lightness: l, alpha: a)
   }
 
@@ -151,7 +151,7 @@ internal struct HSL {
   - parameter amount: CGFloat between 0.0 and 1.0.
   - returns: A lighter HSL color.
   */
-  func lighter(amount: CGFloat) -> HSL {
+  func lighter(_ amount: CGFloat) -> HSL {
     return HSL(hue: h * 360, saturation: s, lightness: l + amount, alpha: a)
   }
 
@@ -161,8 +161,8 @@ internal struct HSL {
   - parameter amount: CGFloat between 0.0 and 1.0.
   - returns: A darker HSL color.
   */
-  func darkened(amount: CGFloat) -> HSL {
-    return lighter(amount: amount * -1)
+  func darkened(_ amount: CGFloat) -> HSL {
+    return lighter(amount * -1)
   }
 
   /**
@@ -171,7 +171,7 @@ internal struct HSL {
   - parameter amount: CGFloat between 0.0 and 1.0.
   - returns: A HSL color more saturated.
   */
-  func saturated(amount: CGFloat) -> HSL {
+  func saturated(_ amount: CGFloat) -> HSL {
     return HSL(hue: h * 360, saturation: s + amount, lightness: l, alpha: a)
   }
 
@@ -181,7 +181,7 @@ internal struct HSL {
   - parameter amount: CGFloat between 0.0 and 1.0.
   - returns: A HSL color less saturated.
   */
-  func desaturated(amount: CGFloat) -> HSL {
-    return saturated(amount: amount * -1)
+  func desaturated(_ amount: CGFloat) -> HSL {
+    return saturated(amount * -1)
   }
 }

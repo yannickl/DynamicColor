@@ -116,7 +116,7 @@ public extension DynamicColor {
    - parameter amount: CGFloat between 0.0 and 1.0.
    - returns: A color object with its alpha channel modified.
    */
-  public final func adjustedAlpha(amount: CGFloat) -> DynamicColor {
+  public final func adjustedAlpha(_ amount: CGFloat) -> DynamicColor {
     let components      = toRGBAComponents()
     let normalizedAlpha = clip(components.a + amount, 0, 1)
 
