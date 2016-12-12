@@ -1,5 +1,12 @@
 # Change log
 
+## [Version 3.2.0](https://github.com/yannickl/DynamicColor/releases/tag/3.2.0)
+*Released on 2016-12-12.*
+
+- [ADD] `luminance` property
+- [ADD] `contrastRatio` method
+- [ADD] `isContrasting` method
+
 ## [Version 3.1.0](https://github.com/yannickl/DynamicColor/releases/tag/3.1.0)
 *Released on 2016-09-08.*
 
