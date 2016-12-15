@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 3.2.1](https://github.com/yannickl/DynamicColor/releases/tag/3.2.1)
+*Released on 2016-12-15.*
+
+- [FIX] `mixed` method with the alpha channel
+
 ## [Version 3.2.0](https://github.com/yannickl/DynamicColor/releases/tag/3.2.0)
 *Released on 2016-12-12.*
 
