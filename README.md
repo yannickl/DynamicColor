@@ -167,9 +167,9 @@ let mixedColor = originalColor.mixed(withColor: .blue)
 
 Let's define our reference colors and the gradient object:
 ```swift
-let blue   = UIColor(hex: 0x3498db)
-let red    = UIColor(hex: 0xe74c3c)
-let yellow = UIColor(hex: 0xf1c40f)
+let blue   = UIColor(hexString: "#3498db")
+let red    = UIColor(hexString: "#e74c3c")
+let yellow = UIColor(hexString: "#f1c40f")
 
 let gradient = DynamicGradient(colors: [blue, red, yellow])
 // equivalent to
