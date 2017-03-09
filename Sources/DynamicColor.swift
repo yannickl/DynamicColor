@@ -107,7 +107,7 @@ public extension DynamicColor {
    */
   public final func toHex() -> UInt32 {
     func roundToHex(_ x: CGFloat) -> UInt32 {
-      return UInt32(round(1000 * x) / 1000 * 255)
+		return UInt32(roundf(Float(x) * 255.0))
     }
 
     let rgba       = toRGBAComponents()
