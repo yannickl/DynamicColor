@@ -50,6 +50,6 @@ class DynamicGradientTests: XCTestCase {
 
     let darkYellow = [.red, .green].gradient.pickColorAt(scale: 0.5)
 
-    XCTAssert(darkYellow.toHex() == 0x7f7f00, "Color should be a dark yellow (not \(darkYellow.toHexString()))")
+    XCTAssert(darkYellow.toHex() == 0x808000, "Color should be a dark yellow (not \(darkYellow.toHexString()))")
   }
 }
