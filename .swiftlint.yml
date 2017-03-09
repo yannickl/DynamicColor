@@ -1,5 +1,6 @@
 disabled_rules: 
   - variable_name
+  - large_tuple
 line_length:
   - 150 # warning
 excluded:
