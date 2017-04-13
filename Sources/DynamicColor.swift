@@ -78,7 +78,7 @@ public extension DynamicColor {
    - parameter hex: A hexa-decimal UInt32 that represents a color.
    */
   public convenience init(hex: UInt32) {
-    let mask = 0x000000FF
+    let mask = 0xFF
 
     let r = Int(hex >> 16) & mask
     let g = Int(hex >> 8) & mask

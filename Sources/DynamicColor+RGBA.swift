@@ -55,10 +55,7 @@ public extension DynamicColor {
    - returns: The RGBA components as a tuple (r, g, b, a).
    */
   public final func toRGBAComponents() -> (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
-    var r: CGFloat = 0
-    var g: CGFloat = 0
-    var b: CGFloat = 0
-    var a: CGFloat = 0
+    var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
 
     #if os(iOS) || os(tvOS) || os(watchOS)
       getRed(&r, green: &g, blue: &b, alpha: &a)
@@ -83,28 +80,28 @@ public extension DynamicColor {
    The red component as CGFloat between 0.0 to 1.0.
    */
   public final var redComponent: CGFloat {
-  return toRGBAComponents().r
+    return toRGBAComponents().r
   }
 
   /**
    The green component as CGFloat between 0.0 to 1.0.
    */
   public final var greenComponent: CGFloat {
-  return toRGBAComponents().g
+    return toRGBAComponents().g
   }
 
   /**
    The blue component as CGFloat between 0.0 to 1.0.
    */
   public final var blueComponent: CGFloat {
-  return toRGBAComponents().b
+    return toRGBAComponents().b
   }
 
   /**
    The alpha component as CGFloat between 0.0 to 1.0.
    */
   public final var alphaComponent: CGFloat {
-  return toRGBAComponents().a
+    return toRGBAComponents().a
   }
   #endif
 
