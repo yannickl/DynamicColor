@@ -34,7 +34,7 @@ class DynamicColorTests: XCTestCase {
     XCTAssert(redStandard.isEqual(redHex), "Color should be equals")
 
     let customStandard = DynamicColor(red: 171 / 255, green: 63 / 255, blue: 74 / 255, alpha: 1)
-    let customHex      = DynamicColor(hexString: "ab3F4a")
+    let customHex      = DynamicColor(hexString: "aB3F4a")
 
     XCTAssert(customStandard.isEqual(customHex), "Color should be equals")
 
@@ -42,6 +42,11 @@ class DynamicColorTests: XCTestCase {
     let wrongHex      = DynamicColor(hexString: "#T5RD2Z")
 
     XCTAssert(wrongStandard.isEqual(wrongHex), "Color should be equals")
+
+    let redAlphaStandard = DynamicColor(red: 1, green: 0, blue: 0, alpha: 0.8)
+    let redAlphaHex      = DynamicColor(hexString: "#FF0000CC")
+
+    XCTAssert(redAlphaStandard.isEqual(redAlphaHex), "Color should be equals")
   }
 
   func testToHexString() {

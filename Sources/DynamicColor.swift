@@ -65,7 +65,7 @@ public extension DynamicColor {
     var color: UInt32 = 0
 
     if scanner.scanHexInt32(&color) {
-      self.init(hex: color)
+      self.init(hex: color, withAlphaChannel: hexString.characters.count > 7)
     }
     else {
       self.init(hex: 0x000000)
@@ -77,18 +77,20 @@ public extension DynamicColor {
 
    - parameter hex: A hexa-decimal UInt32 that represents a color.
    */
-  public convenience init(hex: UInt32) {
+  public convenience init(hex: UInt32, withAlphaChannel: Bool = false) {
     let mask = 0xFF
 
-    let r = Int(hex >> 16) & mask
-    let g = Int(hex >> 8) & mask
-    let b = Int(hex) & mask
+    let r = Int(hex >> (withAlphaChannel ? 24 : 16)) & mask
+    let g = Int(hex >> (withAlphaChannel ? 16 : 8)) & mask
+    let b = Int(hex >> (withAlphaChannel ? 8 : 0)) & mask
+    let a = withAlphaChannel ? Int(hex) & mask : 255
 
     let red   = CGFloat(r) / 255
     let green = CGFloat(g) / 255
     let blue  = CGFloat(b) / 255
+    let alpha = CGFloat(a) / 255
 
-    self.init(red:red, green:green, blue:blue, alpha:1)
+    self.init(red: red, green: green, blue: blue, alpha: alpha)
   }
 
   /**
