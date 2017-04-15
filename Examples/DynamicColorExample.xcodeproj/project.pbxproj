@@ -1519,6 +1519,7 @@
 				CE86888E1E2C163400207CAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE8688AC1E2C1AB300207CAC /* Build configuration list for PBXNativeTarget "DynamicColorTvOs" */ = {
 			isa = XCConfigurationList;
@@ -1527,6 +1528,7 @@
 				CE8688AE1E2C1AB300207CAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE8688C81E2C1B3000207CAC /* Build configuration list for PBXNativeTarget "DynamicColorWatchOs" */ = {
 			isa = XCConfigurationList;
@@ -1535,6 +1537,7 @@
 				CE8688CA1E2C1B3000207CAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEA4D1371D95642900B12DAB /* Build configuration list for PBXNativeTarget "iOSTests" */ = {
 			isa = XCConfigurationList;

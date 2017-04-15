@@ -1,5 +1,9 @@
 # Change log
 
+## [Version 3.3]()
+
+- [ADD] Support alpha channel with the hex strings (e.g. #FF0934CC)
+
 ## [Version 3.2.1](https://github.com/yannickl/DynamicColor/releases/tag/3.2.1)
 *Released on 2016-12-15.*
 
