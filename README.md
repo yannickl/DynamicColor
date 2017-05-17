@@ -183,6 +183,7 @@ Let's build the RGB palette (the default color space) with 8 colors:
 <p align="center">
 <img src="http://yannickloriot.com/resources/dynamicgradient-rgb" alt="RGB gradient"/>
 </p>
+
 ```swift
 let rgbPalette = gradient.colorPalette(amount: 8)
 ```
