@@ -65,7 +65,7 @@ public extension DynamicColor {
     var color: UInt32 = 0
 
     if scanner.scanHexInt32(&color) {
-      self.init(hex: color)
+      self.init(hex: color, useAlpha: hexString.characters.count > 7)
     }
     else {
       self.init(hex: 0x000000)
@@ -76,19 +76,22 @@ public extension DynamicColor {
    Creates a color from an hex integer (e.g. 0x3498db).
 
    - parameter hex: A hexa-decimal UInt32 that represents a color.
+   - parameter alphaChannel: If true the given hex-decimal UInt32 includes the alpha channel (e.g. 0xFF0000FF).
    */
-  public convenience init(hex: UInt32) {
-    let mask = 0x000000FF
+  public convenience init(hex: UInt32, useAlpha alphaChannel: Bool = false) {
+    let mask = 0xFF
 
-    let r = Int(hex >> 16) & mask
-    let g = Int(hex >> 8) & mask
-    let b = Int(hex) & mask
+    let r = Int(hex >> (alphaChannel ? 24 : 16)) & mask
+    let g = Int(hex >> (alphaChannel ? 16 : 8)) & mask
+    let b = Int(hex >> (alphaChannel ? 8 : 0)) & mask
+    let a = alphaChannel ? Int(hex) & mask : 255
 
     let red   = CGFloat(r) / 255
     let green = CGFloat(g) / 255
     let blue  = CGFloat(b) / 255
+    let alpha = CGFloat(a) / 255
 
-    self.init(red:red, green:green, blue:blue, alpha:1)
+    self.init(red: red, green: green, blue: blue, alpha: alpha)
   }
 
   /**
@@ -107,7 +110,7 @@ public extension DynamicColor {
    */
   public final func toHex() -> UInt32 {
     func roundToHex(_ x: CGFloat) -> UInt32 {
-      return UInt32(round(1000 * x) / 1000 * 255)
+      return UInt32(roundf(Float(x) * 255.0))
     }
 
     let rgba       = toRGBAComponents()

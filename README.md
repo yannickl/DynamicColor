@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-    <a href="#requirements">Requirements</a> • <a href="#usage">Usage</a> • <a href="#installation">Installation</a> • <a href="#contact">Contact</a> • <a href="#license-mit">License</a>
+    <a href="#requirements">Requirements</a> • <a href="#usage">Usage</a> • <a href="#installation">Installation</a> • <a href="#contribution">Contribution</a> • <a href="#contact">Contact</a> • <a href="#license-mit">License</a>
 </p>
 
 ## Requirements
@@ -167,9 +167,9 @@ let mixedColor = originalColor.mixed(withColor: .blue)
 
 Let's define our reference colors and the gradient object:
 ```swift
-let blue   = UIColor(hex: 0x3498db)
-let red    = UIColor(hex: 0xe74c3c)
-let yellow = UIColor(hex: 0xf1c40f)
+let blue   = UIColor(hexString: "#3498db")
+let red    = UIColor(hexString: "#e74c3c")
+let yellow = UIColor(hexString: "#f1c40f")
 
 let gradient = DynamicGradient(colors: [blue, red, yellow])
 // equivalent to
@@ -183,6 +183,7 @@ Let's build the RGB palette (the default color space) with 8 colors:
 <p align="center">
 <img src="http://yannickloriot.com/resources/dynamicgradient-rgb" alt="RGB gradient"/>
 </p>
+
 ```swift
 let rgbPalette = gradient.colorPalette(amount: 8)
 ```
@@ -235,7 +236,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
-pod 'DynamicColor', '~> 3.2.1'
+pod 'DynamicColor', '~> 3.3'
 ```
 
 Install into your project:
@@ -266,7 +267,7 @@ $ brew install carthage
 To integrate `DynamicColor` into your Xcode project using Carthage, specify it in your `Cartfile` file:
 
 ```ogdl
-github "yannickl/DynamicColor" >= 3.2.1
+github "yannickl/DynamicColor" >= 3.3
 ```
 
 #### Swift Package Manager
@@ -278,7 +279,7 @@ let package = Package(
     name: "YOUR_PROJECT_NAME",
     targets: [],
     dependencies: [
-        .Package(url: "https://github.com/yannickl/DynamicColor.git", versions: "3.2.1" ..< Version.max)
+        .Package(url: "https://github.com/yannickl/DynamicColor.git", versions: "3.3" ..< Version.max)
     ]
 )
 ```
@@ -288,6 +289,10 @@ Note that the [Swift Package Manager](https://swift.org/package-manager) is stil
 #### Manually
 
 [Download](https://github.com/YannickL/DynamicColor/archive/master.zip) the project and copy the `DynamicColor` folder into your project to use it in.
+
+## Contribution
+
+Contributions are welcomed and encouraged *♡*.
 
 ## Contact
 

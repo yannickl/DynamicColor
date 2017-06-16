@@ -69,11 +69,11 @@ class DynamicColorRGBATests: XCTestCase {
   }
 
   func testAlphaComponent() {
-    let customColor = DynamicColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
+    let customColor = DynamicColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 0.8)
 
     let alphaComponent = customColor.alphaComponent
 
-    XCTAssert(alphaComponent == 1, "Color alpha component should be equal to 1")
+    XCTAssert(alphaComponent == 0.8, "Color alpha component should be equal to 0.8")
   }
 
   func testAdjustedAlphaColor() {
