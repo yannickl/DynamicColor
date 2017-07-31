@@ -52,4 +52,53 @@ class DynamicGradientTests: XCTestCase {
 
     XCTAssert(darkYellow.toHex() == 0x808000, "Color should be a dark yellow (not \(darkYellow.toHexString()))")
   }
+    
+    #if os(iOS) || os(tvOS) || os(watchOS)
+    
+    func testLinearImage() {
+        let rainbow = [.red, .green, .blue, .red].gradient
+        
+        let linearRainbowImage = rainbow.linearImage(withSize: CGSize(width:100, height:100), startPoint: CGPoint.zero, endPoint: CGPoint(x: 1.0, y: 1.0), inColorSpace:.hsl)
+        
+        XCTAssertNotNil(linearRainbowImage, "Rainbow should produce an linear image")
+        
+        let linearData = UIImagePNGRepresentation(linearRainbowImage!)
+        XCTAssertNotNil(linearData, "Linear image should produce PNG datas")
+        //try? linearData?.write(to: URL(fileURLWithPath: "/tmp/linearRainbowImage.png"))
+        
+        let bundle = Bundle(for: type(of: self))
+        guard let refLinearUrl = bundle.url(forResource: "linearRainbowImage.png", withExtension: "ref"),
+            let refLinearData = try? Data(contentsOf: refLinearUrl) else {
+                XCTFail("Ref linear image should exists")
+                return
+        }
+        
+        XCTAssert(linearData! == refLinearData, "Linear image should be similar to reference")
+    }
+    
+    
+    func testAngularImage() {
+        let rainbow = [.red, .green, .blue, .red].gradient
+        
+        let angularRainbowImage = rainbow.angularImage(withSize: CGSize(width:100, height:100), radius: 50, startAngle: 0, endAngle: 0, clockwise: true, inColorSpace:.hsl)
+
+        XCTAssertNotNil(angularRainbowImage, "Rainbow should produce an angular image")
+        
+        let angularData = UIImagePNGRepresentation(angularRainbowImage!)
+        XCTAssertNotNil(angularData, "Angular image should produce PNG datas")
+        //try? angularData?.write(to: URL(fileURLWithPath: "/tmp/angularRainbowImage.png"))
+        
+        let bundle = Bundle(for: type(of: self))
+        guard let refAngularUrl = bundle.url(forResource: "angularRainbowImage.png", withExtension: "ref"),
+            let refAngularData = try? Data(contentsOf: refAngularUrl) else {
+                XCTFail("Ref angular image should exists")
+                return
+        }
+        
+        XCTAssert(angularData! == refAngularData, "Angular image should be similar to reference")
+    }
+    
+    
+    
+    #endif
 }

@@ -118,6 +118,9 @@ final public class DynamicGradient {
         return true
     }
     
+    
+    #if os(iOS) || os(tvOS) || os(watchOS)
+    
     /**
      Create a image using this gradient as a linear gradient.
      
@@ -250,4 +253,6 @@ final public class DynamicGradient {
         
         return image
     }
+    
+    #endif
 }
