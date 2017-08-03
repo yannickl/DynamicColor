@@ -131,7 +131,7 @@ final public class DynamicGradient {
      - Parameter colorspace: The color space used to mix the colors. By default it uses the RBG color space.
      - returns: the created UIImage containing the gradient
      */
-    func linearImage(withSize size:CGSize, startPoint:CGPoint, endPoint:CGPoint, numberOfSteps nbSteps:Int = 0, inColorSpace colorspace: DynamicColorSpace = .rgb) -> UIImage? {
+    public func linearImage(withSize size:CGSize, startPoint:CGPoint, endPoint:CGPoint, numberOfSteps nbSteps:Int = 0, inColorSpace colorspace: DynamicColorSpace = .rgb) -> UIImage? {
         
         let finalNbSteps:Int
         if nbSteps == 0 {
@@ -193,7 +193,7 @@ final public class DynamicGradient {
      - Parameter colorspace: The color space used to mix the colors. By default it uses the RBG color space.
      - returns: the created UIImage containing the gradient
      */
-    func angularImage(withSize size:CGSize, radius:CGFloat, startAngle:CGFloat, endAngle:CGFloat, clockwise:Bool, numberOfSteps nbSteps:Int = 360, inColorSpace colorspace: DynamicColorSpace = .rgb) -> UIImage? {
+    public func angularImage(withSize size:CGSize, radius:CGFloat, startAngle:CGFloat, endAngle:CGFloat, clockwise:Bool, numberOfSteps nbSteps:Int = 360, inColorSpace colorspace: DynamicColorSpace = .rgb) -> UIImage? {
         
         guard nbSteps > 1 else {
             return nil
