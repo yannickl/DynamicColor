@@ -48,14 +48,14 @@ public extension DynamicColor {
   // MARK: - Manipulating Hexa-decimal Values and Strings
 
   /**
-   Creates a color from an hex string (e.g. "#3498db").
+   Creates a color from an hex string (e.g. "#3498db"). The RGBA string are also supported (e.g. "#3498dbff").
 
    If the given hex string is invalid the initialiser will create a black color.
 
    - parameter hexString: A hexa-decimal color string representation.
    */
   public convenience init(hexString: String) {
-    let hexString = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    let hexString = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
     let scanner   = Scanner(string: hexString)
 
     if hexString.hasPrefix("#") {
@@ -65,7 +65,7 @@ public extension DynamicColor {
     var color: UInt32 = 0
 
     if scanner.scanHexInt32(&color) {
-      self.init(hex: color, useAlpha: hexString.characters.count > 7)
+      self.init(hex: color, useAlpha: hexString.count > 7)
     }
     else {
       self.init(hex: 0x000000)
@@ -110,7 +110,9 @@ public extension DynamicColor {
    */
   public final func toHex() -> UInt32 {
     func roundToHex(_ x: CGFloat) -> UInt32 {
-      return UInt32(roundf(Float(x) * 255.0))
+      let rounded: CGFloat = round(1000 * x)
+
+      return UInt32(rounded / 1000 * 255)
     }
 
     let rgba       = toRGBAComponents()
@@ -160,7 +162,7 @@ public extension DynamicColor {
   /**
    A float value representing the luminance of the current color. May vary from 0 to 1.0.
    
-   We use the formula described by W3C in WCAG 2.0. You can read more here: https://www.w3.org/TR/WCAG20/#relativeluminancedef
+   We use the formula described by W3C in WCAG 2.0. You can read more here: https://www.w3.org/TR/WCAG20/#relativeluminancedef.
   */
   public var luminance: CGFloat {
     let components = toRGBAComponents()
@@ -180,7 +182,7 @@ public extension DynamicColor {
      We use the formula described by W3C in WCAG 2.0. You can read more here: https://www.w3.org/TR/WCAG20-TECHS/G18.html
      NB: the contrast ratio is a relative value. So the contrast between Color1 and Color2 is exactly the same between Color2 and Color1.
      
-     - returns: A CGFloat representing contrast value
+     - returns: A CGFloat representing contrast value.
      */
   public func contrastRatio(with otherColor: DynamicColor) -> CGFloat {
     let otherLuminance = otherColor.luminance

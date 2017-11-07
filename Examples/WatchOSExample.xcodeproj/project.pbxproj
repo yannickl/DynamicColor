@@ -34,6 +34,7 @@
 		CEBD6FEB1D81CC4F00D75349 /* DynamicGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD6FD11D81CC2D00D75349 /* DynamicGradient.swift */; };
 		CEBD6FEC1D81CC4F00D75349 /* HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD6FD21D81CC2D00D75349 /* HSL.swift */; };
 		CEBD6FED1D81CC4F00D75349 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD6FD31D81CC2D00D75349 /* Utils.swift */; };
+		CED193631FB25437008DECCA /* ContrastDisplayContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1BD0861DEA041200E11D77 /* ContrastDisplayContext.swift */; };
 		CEEB28F11BE29DCF001A74E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28F01BE29DCF001A74E8 /* AppDelegate.swift */; };
 		CEEB28F31BE29DCF001A74E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB28F21BE29DCF001A74E8 /* ViewController.swift */; };
 		CEEB28F61BE29DCF001A74E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEB28F41BE29DCF001A74E8 /* Main.storyboard */; };
@@ -284,19 +285,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Yannick LORIOT";
 				TargetAttributes = {
 					CEEB28EC1BE29DCF001A74E8 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0910;
 					};
 					CEEB28FE1BE29DCF001A74E8 = {
 						CreatedOnToolsVersion = 7.1;
 					};
 					CEEB290D1BE29DD0001A74E8 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0910;
 					};
 				};
 			};
@@ -389,6 +390,7 @@
 				CEBD6FE81D81CC4F00D75349 /* DynamicColor+RGBA.swift in Sources */,
 				CEBD6FEB1D81CC4F00D75349 /* DynamicGradient.swift in Sources */,
 				CEBD6FE11D81CC4F00D75349 /* Array.swift in Sources */,
+				CED193631FB25437008DECCA /* ContrastDisplayContext.swift in Sources */,
 				CEEB29161BE29DD0001A74E8 /* ExtensionDelegate.swift in Sources */,
 				CEBD6FE61D81CC4F00D75349 /* DynamicColor+Lab.swift in Sources */,
 				CEBD6FE21D81CC4F00D75349 /* DynamicColor.swift in Sources */,
@@ -448,14 +450,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -495,14 +503,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -537,7 +551,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -553,7 +567,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -599,7 +613,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.WatchOSExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -612,7 +626,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yannickloriot.WatchOSExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

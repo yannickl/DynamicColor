@@ -1,6 +1,13 @@
 # Change log
 
-## [Version 3.3]()
+## [Version 4](https://github.com/yannickl/DynamicColor/releases/tag/4)
+*Released on 2017-11-07.*
+
+- Minor improvements (compilation performance, documentation)
+- Swift 4/Xcode 9 support
+
+## [Version 3.3](https://github.com/yannickl/DynamicColor/releases/tag/3.3)
+*Released on 2017-04-15.*
 
 - [ADD] Support alpha channel with the hex strings (e.g. #FF0934CC)
 
