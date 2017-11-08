@@ -100,7 +100,7 @@ public extension DynamicColor {
    - returns: A string similar to this pattern "#f4003b".
    */
   public final func toHexString() -> String {
-    return String(format:"#%06x", toHex())
+    return String(format: "#%06x", toHex())
   }
 
   /**

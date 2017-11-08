@@ -77,7 +77,7 @@ public extension DynamicColor {
    - Returns: A darker DynamicColor.
    */
   public final func shaded(amount: CGFloat = 0.2) -> DynamicColor {
-    return mixed(withColor: DynamicColor(red:0, green:0, blue: 0, alpha:1), weight: amount)
+    return mixed(withColor: DynamicColor(red: 0, green: 0, blue: 0, alpha: 1), weight: amount)
   }
 
   // MARK: - Convenient Internal Methods
