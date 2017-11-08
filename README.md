@@ -25,7 +25,7 @@
 ## Requirements
 
 - iOS 8.0+ / Mac OS X 10.9+ / tvOS 9.0+ / watchOS 2.0+
-- Xcode 9.0+
+- Xcode 9.1+
 - Swift 4.0+
 
 ## Usage
@@ -236,7 +236,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
-pod 'DynamicColor', '~> 4'
+pod 'DynamicColor', '~> 4.0.1'
 ```
 
 Install into your project:
@@ -267,7 +267,7 @@ $ brew install carthage
 To integrate `DynamicColor` into your Xcode project using Carthage, specify it in your `Cartfile` file:
 
 ```ogdl
-github "yannickl/DynamicColor" >= 4
+github "yannickl/DynamicColor" >= 4.0.1
 ```
 
 #### Swift Package Manager
@@ -279,7 +279,7 @@ let package = Package(
     name: "YOUR_PROJECT_NAME",
     targets: [],
     dependencies: [
-        .Package(url: "https://github.com/yannickl/DynamicColor.git", versions: "4" ..< Version.max)
+        .Package(url: "https://github.com/yannickl/DynamicColor.git", versions: "4.0.1" ..< Version.max)
     ]
 )
 ```
