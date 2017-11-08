@@ -38,12 +38,6 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     return [UIColor(hex: 0x3498db), UIColor(hex: 0xe74c3c), UIColor(hex: 0xf1c40f)].gradient.colorPalette(amount: 15).map { ($0.toHexString(), $0) }
   }()
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    colorCollectionView.reloadData()
-  }
-
   func collection(inSection section: Int) -> [(String, UIColor)] {
     return section == 0 ? colors : gradients
   }
