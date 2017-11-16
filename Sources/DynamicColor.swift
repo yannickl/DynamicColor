@@ -110,10 +110,7 @@ public extension DynamicColor {
    */
   public final func toHex() -> UInt32 {
     func roundToHex(_ x: CGFloat) -> UInt32 {
-      if x < 0 {
-        return UInt32(0)
-      }
-
+      guard x > 0 else { return 0 }
       let rounded: CGFloat = round(x * 255)
 
       return UInt32(rounded)
