@@ -14,5 +14,6 @@ Please keep the list sorted.
 
  * [Bas Broek](https://github.com/BasThomas)
  * [Julien Quéré](https://github.com/Onejjy)
- * [naoyashiga](https://github.com/naoyashiga)
+ * [Naoyashiga](https://github.com/naoyashiga)
+ * [Paulo Cesar](https://github.com/puelocesar)
  * [Tobias Due Munk](https://github.com/duemunk)

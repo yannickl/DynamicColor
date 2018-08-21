@@ -79,13 +79,13 @@ public extension DynamicColor {
    - parameter alphaChannel: If true the given hex-decimal UInt32 includes the alpha channel (e.g. 0xFF0000FF).
    */
   public convenience init(hex: UInt32, useAlpha alphaChannel: Bool = false) {
-    let mask      = 0xFF
+    let mask      = UInt32(0xFF)
     let cappedHex = !alphaChannel && hex > 0xffffff ? 0xffffff : hex
 
-    let r = Int(cappedHex >> (alphaChannel ? 24 : 16)) & mask
-    let g = Int(cappedHex >> (alphaChannel ? 16 : 8)) & mask
-    let b = Int(cappedHex >> (alphaChannel ? 8 : 0)) & mask
-    let a = alphaChannel ? Int(cappedHex) & mask : 255
+    let r = cappedHex >> (alphaChannel ? 24 : 16) & mask
+    let g = cappedHex >> (alphaChannel ? 16 : 8) & mask
+    let b = cappedHex >> (alphaChannel ? 8 : 0) & mask
+    let a = alphaChannel ? cappedHex & mask : 255
 
     let red   = CGFloat(r) / 255
     let green = CGFloat(g) / 255
@@ -111,6 +111,7 @@ public extension DynamicColor {
    */
   public final func toHex() -> UInt32 {
     func roundToHex(_ x: CGFloat) -> UInt32 {
+      guard x > 0 else { return 0 }
       let rounded: CGFloat = round(x * 255)
 
       return UInt32(rounded)
