@@ -81,6 +81,13 @@ class DynamicColorTests: XCTestCase {
     XCTAssert(custom.toHex() == 0x769a2b, "Color string should be equal to 0x769a2b")
   }
 
+  func testToHexWithAlpha() {
+    let custom = DynamicColor(hex: 0x769a2b80, useAlpha: true)
+
+    XCTAssert(custom.toHex() == 0x769a2b, "Color string should be equal to 0x769a2b")
+    XCTAssertEqual(custom.alphaComponent, 0.5, accuracy: 0.01, "Alpha component should be equal to 0.5 (not \(custom.alphaComponent))")
+  }
+
   func testHexPrecision() {
     let allHexes: CountableRange<UInt32> = 0 ..< 0xFFFFFF
     let impreciseConversions = allHexes.filter { hex in
@@ -88,6 +95,15 @@ class DynamicColorTests: XCTestCase {
     }
 
     XCTAssert(impreciseConversions.count == 0, "Imprecise hex convertions on \(impreciseConversions.count > 50 ? " more than 50 entries (\(impreciseConversions.count) entries exactly)" : ": \(impreciseConversions)")")
+  }
+
+  func testOverflowedColor() {
+    let positiveColor = DynamicColor(hex: 0xffffffff)
+    let alphaColor = DynamicColor(hex: 0xffffffff)
+
+    XCTAssert(positiveColor.toHex() == 0xffffff, "Color string should be equal to 0xffffff")
+    XCTAssert(alphaColor.toHex() == 0xffffff, "Color string should be equal to 0xffffff")
+    XCTAssertEqual(alphaColor.alphaComponent, 1, accuracy: 0.01, "Alpha component should be equal to 0.5 (not \(alphaColor.alphaComponent))")
   }
 
   func testIsEqualToHexString() {

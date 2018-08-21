@@ -79,12 +79,13 @@ public extension DynamicColor {
    - parameter alphaChannel: If true the given hex-decimal UInt32 includes the alpha channel (e.g. 0xFF0000FF).
    */
   public convenience init(hex: UInt32, useAlpha alphaChannel: Bool = false) {
-    let mask = 0xFF
+    let mask      = 0xFF
+    let cappedHex = !alphaChannel && hex > 0xffffff ? 0xffffff : hex
 
-    let r = Int(hex >> (alphaChannel ? 24 : 16)) & mask
-    let g = Int(hex >> (alphaChannel ? 16 : 8)) & mask
-    let b = Int(hex >> (alphaChannel ? 8 : 0)) & mask
-    let a = alphaChannel ? Int(hex) & mask : 255
+    let r = Int(cappedHex >> (alphaChannel ? 24 : 16)) & mask
+    let g = Int(cappedHex >> (alphaChannel ? 16 : 8)) & mask
+    let b = Int(cappedHex >> (alphaChannel ? 8 : 0)) & mask
+    let a = alphaChannel ? Int(cappedHex) & mask : 255
 
     let red   = CGFloat(r) / 255
     let green = CGFloat(g) / 255
