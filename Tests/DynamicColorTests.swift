@@ -47,6 +47,8 @@ class DynamicColorTests: XCTestCase {
     let redAlphaHex      = DynamicColor(hexString: "#FF0000CC")
 
     XCTAssert(redAlphaStandard.isEqual(redAlphaHex), "Color should be equals")
+
+    let overflowedColor = DynamicColor(hexString: "#FFFFFFFF")
   }
 
   func testToHexString() {
