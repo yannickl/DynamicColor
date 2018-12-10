@@ -12,9 +12,7 @@ final class ColorCellView: UICollectionViewCell {
   @IBOutlet weak var colorView: UIView?
   @IBOutlet weak var titleLabel: UILabel!
 
-  override func layoutSubviews() {
-    super.layoutSubviews()
-
+  func layoutColorView() {
     if let cv = colorView {
       cv.layer.cornerRadius = cv.bounds.width / 2
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource {
+class ViewController: UIViewController {
   private let colorCellIdentifier = "ColorCell"
 
   @IBOutlet weak var colorCollectionView: UICollectionView!
@@ -41,9 +41,9 @@ class ViewController: UIViewController, UICollectionViewDataSource {
   func collection(inSection section: Int) -> [(String, UIColor)] {
     return section == 0 ? colors : gradients
   }
+}
 
-  // MARK: - UICollectionView DataSource Methods
-
+extension ViewController: UICollectionViewDataSource {
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 2
   }
@@ -53,13 +53,9 @@ class ViewController: UIViewController, UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    // swiftlint:disable force_cast
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: colorCellIdentifier, for: indexPath) as! ColorCellView
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: colorCellIdentifier, for: indexPath)
 
-    let (title, color) = collection(inSection: indexPath.section)[indexPath.row]
-
-    cell.titleLabel?.text           = title
-    cell.colorView?.backgroundColor = color
+    self.collectionView(collectionView, willDisplay: cell, forItemAt: indexPath)
 
     return cell
   }
@@ -70,5 +66,19 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     supplementaryView.titleLabel.text = indexPath.section == 0 ? "Colors" : "Gradients"
 
     return supplementaryView
+  }
+}
+
+
+extension ViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    guard let cell = cell as? ColorCellView else { return }
+
+    let (title, color) = collection(inSection: indexPath.section)[indexPath.row]
+
+    cell.titleLabel?.text           = title
+    cell.colorView?.backgroundColor = color
+
+    cell.layoutColorView()
   }
 }
