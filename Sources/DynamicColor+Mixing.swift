@@ -45,7 +45,7 @@ public extension DynamicColor {
    - Parameter colorspace: The color space used to mix the colors. By default it uses the RBG color space.
    - Returns: A color object corresponding to the two colors object mixed together.
    */
-  public final func mixed(withColor color: DynamicColor, weight: CGFloat = 0.5, inColorSpace colorspace: DynamicColorSpace = .rgb) -> DynamicColor {
+  final func mixed(withColor color: DynamicColor, weight: CGFloat = 0.5, inColorSpace colorspace: DynamicColorSpace = .rgb) -> DynamicColor {
     let normalizedWeight = clip(weight, 0, 1)
 
     switch colorspace {
@@ -66,7 +66,7 @@ public extension DynamicColor {
    - Parameter amount: Float between 0.0 and 1.0. The default amount is equal to 0.2.
    - Returns: A lighter DynamicColor.
    */
-  public final func tinted(amount: CGFloat = 0.2) -> DynamicColor {
+  final func tinted(amount: CGFloat = 0.2) -> DynamicColor {
     return mixed(withColor: .white, weight: amount)
   }
 
@@ -76,7 +76,7 @@ public extension DynamicColor {
    - Parameter amount: Float between 0.0 and 1.0. The default amount is equal to 0.2.
    - Returns: A darker DynamicColor.
    */
-  public final func shaded(amount: CGFloat = 0.2) -> DynamicColor {
+  final func shaded(amount: CGFloat = 0.2) -> DynamicColor {
     return mixed(withColor: DynamicColor(red: 0, green: 0, blue: 0, alpha: 1), weight: amount)
   }
 

@@ -33,7 +33,7 @@ public extension Array where Element: DynamicColor {
   /**
    Gradient representation of the array.
    */
-  public var gradient: DynamicGradient {
+  var gradient: DynamicGradient {
     return DynamicGradient(colors: self)
   }
 }
