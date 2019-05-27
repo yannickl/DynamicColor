@@ -43,7 +43,7 @@ public extension DynamicColor {
    - Parameter b: The blue component of the color object, specified as a value from 0.0 to 255.0.
    - Parameter a: The opacity value of the color object, specified as a value from 0.0 to 255.0. The default value is 255.
    */
-  public convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 255) {
+  convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 255) {
     self.init(red: clip(r, 0, 255) / 255, green: clip(g, 0, 255) / 255, blue: clip(b, 0, 255) / 255, alpha: clip(a, 0, 255) / 255)
   }
 
@@ -54,7 +54,7 @@ public extension DynamicColor {
 
    - returns: The RGBA components as a tuple (r, g, b, a).
    */
-  public final func toRGBAComponents() -> (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
+  final func toRGBAComponents() -> (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
     var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
 
     #if os(iOS) || os(tvOS) || os(watchOS)
@@ -79,28 +79,28 @@ public extension DynamicColor {
   /**
    The red component as CGFloat between 0.0 to 1.0.
    */
-  public final var redComponent: CGFloat {
+  final var redComponent: CGFloat {
     return toRGBAComponents().r
   }
 
   /**
    The green component as CGFloat between 0.0 to 1.0.
    */
-  public final var greenComponent: CGFloat {
+  final var greenComponent: CGFloat {
     return toRGBAComponents().g
   }
 
   /**
    The blue component as CGFloat between 0.0 to 1.0.
    */
-  public final var blueComponent: CGFloat {
+  final var blueComponent: CGFloat {
     return toRGBAComponents().b
   }
 
   /**
    The alpha component as CGFloat between 0.0 to 1.0.
    */
-  public final var alphaComponent: CGFloat {
+  final var alphaComponent: CGFloat {
     return toRGBAComponents().a
   }
   #endif
@@ -113,7 +113,7 @@ public extension DynamicColor {
    - parameter amount: CGFloat between 0.0 and 1.0.
    - returns: A color object with its alpha channel modified.
    */
-  public final func adjustedAlpha(amount: CGFloat) -> DynamicColor {
+  final func adjustedAlpha(amount: CGFloat) -> DynamicColor {
     let components      = toRGBAComponents()
     let normalizedAlpha = clip(components.a + amount, 0, 1)
 

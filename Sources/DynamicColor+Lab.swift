@@ -43,7 +43,7 @@ public extension DynamicColor {
    - parameter b: The yellow-blue axis, specified as a value from -128.0 to 127.0.
    - parameter alpha: The opacity value of the color object, specified as a value from 0.0 to 1.0. Default to 1.0.
    */
-  public convenience init(L: CGFloat, a: CGFloat, b: CGFloat, alpha: CGFloat = 1) {
+  convenience init(L: CGFloat, a: CGFloat, b: CGFloat, alpha: CGFloat = 1) {
     let clippedL = clip(L, 0, 100)
     let clippedA = clip(a, -128, 127)
     let clippedB = clip(b, -128, 127)
@@ -73,7 +73,7 @@ public extension DynamicColor {
 
    - returns: The L*a*b* components as a tuple (L, a, b).
    */
-  public final func toLabComponents() -> (L: CGFloat, a: CGFloat, b: CGFloat) {
+  final func toLabComponents() -> (L: CGFloat, a: CGFloat, b: CGFloat) {
     let normalized = { (c: CGFloat) -> CGFloat in
       c > 0.008856 ? pow(c, 1.0 / 3) : 7.787 * c + 16.0 / 116
     }

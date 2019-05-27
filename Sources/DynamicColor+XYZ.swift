@@ -43,7 +43,7 @@ public extension DynamicColor {
    - parameter Z: The quasi-equal to blue stimulation, specified as a value from 0 to 108.9.
    - parameter alpha: The opacity value of the color object, specified as a value from 0.0 to 1.0. Default to 1.0.
    */
-  public convenience init(X: CGFloat, Y: CGFloat, Z: CGFloat, alpha: CGFloat = 1) {
+  convenience init(X: CGFloat, Y: CGFloat, Z: CGFloat, alpha: CGFloat = 1) {
     let clippedX = clip(X, 0, 95.05) / 100
     let clippedY = clip(Y, 0, 100) / 100
     let clippedZ = clip(Z, 0, 108.9) / 100
@@ -70,7 +70,7 @@ public extension DynamicColor {
 
    - returns: The XYZ components as a tuple (X, Y, Z).
    */
-  public final func toXYZComponents() -> (X: CGFloat, Y: CGFloat, Z: CGFloat) {
+  final func toXYZComponents() -> (X: CGFloat, Y: CGFloat, Z: CGFloat) {
     let toSRGB = { (c: CGFloat) -> CGFloat in
       c > 0.04045 ? pow((c + 0.055) / 1.055, 2.4) : c / 12.92
     }

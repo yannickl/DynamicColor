@@ -39,7 +39,7 @@ public extension DynamicColor {
    - parameter amount: A float representing the number of degrees as ratio (usually between -360.0 degree and 360.0 degree).
    - returns: A DynamicColor object with the hue changed.
    */
-  public final func adjustedHue(amount: CGFloat) -> DynamicColor {
+  final func adjustedHue(amount: CGFloat) -> DynamicColor {
     return HSL(color: self).adjustedHue(amount: amount).toDynamicColor()
   }
 
@@ -51,7 +51,7 @@ public extension DynamicColor {
    - returns: The complement DynamicColor.
    - seealso: adjustedHueColor:
    */
-  public final func complemented() -> DynamicColor {
+  final func complemented() -> DynamicColor {
     return adjustedHue(amount: 180)
   }
 
@@ -61,7 +61,7 @@ public extension DynamicColor {
    - parameter amount: CGFloat between 0.0 and 1.0. Default value is 0.2.
    - returns: A lighter DynamicColor.
    */
-  public final func lighter(amount: CGFloat = 0.2) -> DynamicColor {
+  final func lighter(amount: CGFloat = 0.2) -> DynamicColor {
     return HSL(color: self).lighter(amount: amount).toDynamicColor()
   }
 
@@ -71,7 +71,7 @@ public extension DynamicColor {
    - parameter amount: Float between 0.0 and 1.0. Default value is 0.2.
    - returns: A darker DynamicColor.
    */
-  public final func darkened(amount: CGFloat = 0.2) -> DynamicColor {
+  final func darkened(amount: CGFloat = 0.2) -> DynamicColor {
     return HSL(color: self).darkened(amount: amount).toDynamicColor()
   }
 
@@ -82,7 +82,7 @@ public extension DynamicColor {
 
    - returns: A DynamicColor more saturated.
    */
-  public final func saturated(amount: CGFloat = 0.2) -> DynamicColor {
+  final func saturated(amount: CGFloat = 0.2) -> DynamicColor {
     return HSL(color: self).saturated(amount: amount).toDynamicColor()
   }
 
@@ -92,7 +92,7 @@ public extension DynamicColor {
    - parameter amount: CGFloat between 0.0 and 1.0. Default value is 0.2.
    - returns: A DynamicColor less saturated.
    */
-  public final func desaturated(amount: CGFloat = 0.2) -> DynamicColor {
+  final func desaturated(amount: CGFloat = 0.2) -> DynamicColor {
     return HSL(color: self).desaturated(amount: amount).toDynamicColor()
   }
 
@@ -104,7 +104,7 @@ public extension DynamicColor {
    - returns: A grayscale DynamicColor.
    - seealso: desaturateColor:
    */
-  public final func grayscaled() -> DynamicColor {
+  final func grayscaled() -> DynamicColor {
     return desaturated(amount: 1)
   }
 
@@ -113,7 +113,7 @@ public extension DynamicColor {
 
    - returns: An inverse (negative) of the original color.
    */
-  public final func inverted() -> DynamicColor {
+  final func inverted() -> DynamicColor {
     let rgba = toRGBAComponents()
 
     let invertedRed   = 1 - rgba.r
