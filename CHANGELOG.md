@@ -1,5 +1,11 @@
 # Change log
 
+## [Version 4.1.0](https://github.com/yannickl/DynamicColor/releases/tag/4.1.0)
+*Released on 2019-05-27.*
+
+- Minor improvements (compilation performance, documentation)
+- Swift 5/Xcode 10 support
+
 ## [Version 4](https://github.com/yannickl/DynamicColor/releases/tag/4)
 *Released on 2017-11-07.*
 
