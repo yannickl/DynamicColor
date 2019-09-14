@@ -86,10 +86,10 @@ public extension DynamicColor {
     let c1 = toLabComponents()
     let c2 = color.toLabComponents()
 
-    let L     = c1.L + weight * (c2.L - c1.L)
-    let a     = c1.a + weight * (c2.a - c1.a)
-    let b     = c1.b + weight * (c2.b - c1.b)
-    let alpha = alphaComponent + weight * (color.alphaComponent - alphaComponent)
+    let L     = c1.L + (weight * (c2.L - c1.L))
+    let a     = c1.a + (weight * (c2.a - c1.a))
+    let b     = c1.b + (weight * (c2.b - c1.b))
+    let alpha = alphaComponent + (weight * (color.alphaComponent - alphaComponent))
 
     return DynamicColor(L: L, a: a, b: b, alpha: alpha)
   }
@@ -98,10 +98,10 @@ public extension DynamicColor {
     let c1 = toHSLComponents()
     let c2 = color.toHSLComponents()
 
-    let h     = c1.h + weight * mixedHue(source: c1.h, target: c2.h)
-    let s     = c1.s + weight * (c2.s - c1.s)
-    let l     = c1.l + weight * (c2.l - c1.l)
-    let alpha = alphaComponent + weight * (color.alphaComponent - alphaComponent)
+    let h     = c1.h + (weight * mixedHue(source: c1.h, target: c2.h))
+    let s     = c1.s + (weight * (c2.s - c1.s))
+    let l     = c1.l + (weight * (c2.l - c1.l))
+    let alpha = alphaComponent + (weight * (color.alphaComponent - alphaComponent))
 
     return DynamicColor(hue: h, saturation: s, lightness: l, alpha: alpha)
   }
@@ -110,10 +110,10 @@ public extension DynamicColor {
     let c1 = toHSBComponents()
     let c2 = color.toHSBComponents()
 
-    let h     = c1.h + weight * mixedHue(source: c1.h, target: c2.h)
-    let s     = c1.s + weight * (c2.s - c1.s)
-    let b     = c1.b + weight * (c2.b - c1.b)
-    let alpha = alphaComponent + weight * (color.alphaComponent - alphaComponent)
+    let h     = c1.h + (weight * mixedHue(source: c1.h, target: c2.h))
+    let s     = c1.s + (weight * (c2.s - c1.s))
+    let b     = c1.b + (weight * (c2.b - c1.b))
+    let alpha = alphaComponent + (weight * (color.alphaComponent - alphaComponent))
 
     return DynamicColor(hue: h, saturation: s, brightness: b, alpha: alpha)
   }
@@ -122,10 +122,10 @@ public extension DynamicColor {
     let c1 = toRGBAComponents()
     let c2 = color.toRGBAComponents()
 
-    let red   = c1.r + weight * (c2.r - c1.r)
-    let green = c1.g + weight * (c2.g - c1.g)
-    let blue  = c1.b + weight * (c2.b - c1.b)
-    let alpha = alphaComponent + weight * (color.alphaComponent - alphaComponent)
+    let red   = c1.r + (weight * (c2.r - c1.r))
+    let green = c1.g + (weight * (c2.g - c1.g))
+    let blue  = c1.b + (weight * (c2.b - c1.b))
+    let alpha = alphaComponent + (weight * (color.alphaComponent - alphaComponent))
 
     return DynamicColor(red: red, green: green, blue: blue, alpha: alpha)
   }

@@ -84,13 +84,13 @@ internal struct HSL {
       }
 
       if rgba.r == maximum {
-        h = (rgba.g - rgba.b) / delta + (rgba.g < rgba.b ? 6 : 0)
+        h = ((rgba.g - rgba.b) / delta) + (rgba.g < rgba.b ? 6 : 0)
       }
       else if rgba.g == maximum {
-        h = (rgba.b - rgba.r) / delta + 2
+        h = ((rgba.b - rgba.r) / delta) + 2
       }
       else if rgba.b == maximum {
-        h = (rgba.r - rgba.g) / delta + 4
+        h = ((rgba.r - rgba.g) / delta) + 4
       }
     }
 
@@ -109,9 +109,9 @@ internal struct HSL {
     let m2 = l <= 0.5 ? l * (s + 1) : (l + s) - (l * s)
     let m1 = (l * 2) - m2
 
-    let r = hueToRGB(m1: m1, m2: m2, h: h + 1 / 3)
+    let r = hueToRGB(m1: m1, m2: m2, h: h + (1 / 3))
     let g = hueToRGB(m1: m1, m2: m2, h: h)
-    let b = hueToRGB(m1: m1, m2: m2, h: h - 1 / 3)
+    let b = hueToRGB(m1: m1, m2: m2, h: h - (1 / 3))
 
     return DynamicColor(red: r, green: g, blue: b, alpha: CGFloat(a))
   }
@@ -121,13 +121,13 @@ internal struct HSL {
     let hue = moda(h, m: 1)
 
     if hue * 6 < 1 {
-      return m1 + (m2 - m1) * hue * 6
+      return m1 + ((m2 - m1) * hue * 6)
     }
     else if hue * 2 < 1 {
       return CGFloat(m2)
     }
     else if hue * 3 < 1.9999 {
-      return m1 + (m2 - m1) * (2 / 3 - hue) * 6
+      return m1 + ((m2 - m1) * (2 / 3 - hue) * 6)
     }
 
     return CGFloat(m1)
@@ -142,7 +142,7 @@ internal struct HSL {
   - returns: A HSL color with the hue changed.
   */
   func adjustedHue(amount: CGFloat) -> HSL {
-    return HSL(hue: h * 360 + amount, saturation: s, lightness: l, alpha: a)
+    return HSL(hue: (h * 360) + amount, saturation: s, lightness: l, alpha: a)
   }
 
   /**

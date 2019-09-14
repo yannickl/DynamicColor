@@ -54,9 +54,9 @@ public extension DynamicColor {
       return abs(roundDecimal(rgb, precision: 1000))
     }
 
-    let red   = toRGB(clippedX * 3.2406 + clippedY * -1.5372 + clippedZ * -0.4986)
-    let green = toRGB(clippedX * -0.9689 + clippedY * 1.8758 + clippedZ * 0.0415)
-    let blue  = toRGB(clippedX * 0.0557 + clippedY * -0.2040 + clippedZ * 1.0570)
+    let red   = toRGB((clippedX * 3.2406) + (clippedY * -1.5372) + (clippedZ * -0.4986))
+    let green = toRGB((clippedX * -0.9689) + (clippedY * 1.8758) + (clippedZ * 0.0415))
+    let blue  = toRGB((clippedX * 0.0557) + (clippedY * -0.2040) + (clippedZ * 1.0570))
 
     self.init(red: red, green: green, blue: blue, alpha: alpha)
   }
@@ -80,9 +80,9 @@ public extension DynamicColor {
     let green = toSRGB(rgba.g)
     let blue  = toSRGB(rgba.b)
 
-    let X = roundDecimal((red * 0.4124 + green * 0.3576 + blue * 0.1805) * 100, precision: 1000)
-    let Y = roundDecimal((red * 0.2126 + green * 0.7152 + blue * 0.0722) * 100, precision: 1000)
-    let Z = roundDecimal((red * 0.0193 + green * 0.1192 + blue * 0.9505) * 100, precision: 1000)
+    let X = roundDecimal(((red * 0.4124) + (green * 0.3576) + (blue * 0.1805)) * 100, precision: 1000)
+    let Y = roundDecimal(((red * 0.2126) + (green * 0.7152) + (blue * 0.0722)) * 100, precision: 1000)
+    let Z = roundDecimal(((red * 0.0193) + (green * 0.1192) + (blue * 0.9505)) * 100, precision: 1000)
 
     return (X: X, Y: Y, Z: Z)
   }
