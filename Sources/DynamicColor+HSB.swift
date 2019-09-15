@@ -64,25 +64,25 @@ extension DynamicColor {
   }
 
   #if os(iOS) || os(tvOS) || os(watchOS)
-  /**
-   The hue component as CGFloat between 0.0 to 1.0.
-   */
-  public final var hueComponent: CGFloat {
-  return toHSBComponents().h
-  }
+    /**
+     The hue component as CGFloat between 0.0 to 1.0.
+     */
+    public final var hueComponent: CGFloat {
+      return toHSBComponents().h
+    }
 
-  /**
-   The saturation component as CGFloat between 0.0 to 1.0.
-   */
-  public final var saturationComponent: CGFloat {
-  return toHSBComponents().s
-  }
+    /**
+     The saturation component as CGFloat between 0.0 to 1.0.
+     */
+    public final var saturationComponent: CGFloat {
+      return toHSBComponents().s
+    }
 
-  /**
-   The brightness component as CGFloat between 0.0 to 1.0.
-   */
-  public final var brightnessComponent: CGFloat {
-  return toHSBComponents().b
-  }
+    /**
+     The brightness component as CGFloat between 0.0 to 1.0.
+     */
+    public final var brightnessComponent: CGFloat {
+      return toHSBComponents().b
+    }
   #endif
 }

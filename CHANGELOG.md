@@ -3,13 +3,13 @@
 ## [Version 4.1.0](https://github.com/yannickl/DynamicColor/releases/tag/4.1.0)
 *Released on 2019-05-27.*
 
-- Minor improvements (compilation performance, documentation)
+- [FIX] Minor improvements (compilation performance, documentation)
 - Swift 5/Xcode 10 support
 
 ## [Version 4](https://github.com/yannickl/DynamicColor/releases/tag/4)
 *Released on 2017-11-07.*
 
-- Minor improvements (compilation performance, documentation)
+- [FIX] Minor improvements (compilation performance, documentation)
 - Swift 4/Xcode 9 support
 
 ## [Version 3.3](https://github.com/yannickl/DynamicColor/releases/tag/3.3)
@@ -33,12 +33,12 @@
 *Released on 2016-09-08.*
 
 - [ADD] CIE XYZ Color Space
-- Initialization with XYZ components
-- `toXYZComponents()` method
+- [ADD] Initialization with XYZ components
+- [ADD] `toXYZComponents()` method
 - [ADD] CIE L*a*b* Color Space
-- Initialization with L*a*b* components
-- `toLabComponents()` method
-- `toHSBComponents()` method
+- [ADD] Initialization with L*a*b* components
+- [ADD] `toLabComponents()` method
+- [ADD] `toHSBComponents()` method
 - [REFACTORING] `toHSLAComponents` to `toHSLComponents`
 - [REFACTORING] Hue range is now from 0° and 360° instead of 0.0 and 1.0
 - [ADD] `DynamicGradient` object

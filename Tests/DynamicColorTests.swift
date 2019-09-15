@@ -83,6 +83,38 @@ class DynamicColorTests: XCTestCase {
     XCTAssert(black.toHex() == 0x000000, "Color string should be equal to 0x000000")
     XCTAssert(custom.toHex() == 0x769a2b, "Color string should be equal to 0x769a2b")
   }
+  
+  func testToRGBA() {
+    let red             = DynamicColor.red
+    let blue            = DynamicColor.blue
+    let green           = DynamicColor.green
+    let yellow          = DynamicColor.yellow
+    let custom          = DynamicColor(hex: 0x769a2b)
+    let yellowWithAlpha = DynamicColor.yellow.adjustedAlpha(amount: -0.5)
+
+    XCTAssert(red.toRGBA() == 0xff0000ff, "Color string should be equal to 0xff0000ff")
+    XCTAssert(blue.toRGBA() == 0x0000ffff, "Color string should be equal to 0x0000ffff")
+    XCTAssert(green.toRGBA() == 0x00ff00ff, "Color string should be equal to 0x00ff00ff")
+    XCTAssert(yellow.toRGBA() == 0xffff00ff, "Color string should be equal to 0xffff00ff")
+    XCTAssert(custom.toRGBA() == 0x769a2bff, "Color string should be equal to 0x769a2bff")
+    XCTAssert(yellowWithAlpha.toRGBA() == 0xffff0080, "%d Color string should be equal to 0xffff0080")
+  }
+  
+  func testToAGBR() {
+    let red             = DynamicColor.red
+    let blue            = DynamicColor.blue
+    let green           = DynamicColor.green
+    let yellow          = DynamicColor.yellow
+    let custom          = DynamicColor(hex: 0x769a2b)
+    let yellowWithAlpha = DynamicColor.yellow.adjustedAlpha(amount: -0.5)
+    
+    XCTAssert(red.toAGBR() == 0xff0000ff, "Color string should be equal to 0xff0000ff")
+    XCTAssert(blue.toAGBR() == 0xffff0000, "Color string should be equal to 0xffff0000")
+    XCTAssert(green.toAGBR() == 0xff00ff00, "Color string should be equal to 0xff00ff00")
+    XCTAssert(yellow.toAGBR() == 0xff00ffff, "Color string should be equal to 0xff00ffff")
+    XCTAssert(custom.toAGBR() == 0xff2b9a76, "Color string should be equal to 0xff2b9a76")
+    XCTAssert(yellowWithAlpha.toAGBR() == 0x8000ffff, "%d Color string should be equal to 0x8000ffff")
+  }
 
   func testToHexWithAlpha() {
     let custom = DynamicColor(hex: 0x769a2b80, useAlpha: true)

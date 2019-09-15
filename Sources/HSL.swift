@@ -124,13 +124,13 @@ internal struct HSL {
       return m1 + ((m2 - m1) * hue * 6)
     }
     else if hue * 2 < 1 {
-      return CGFloat(m2)
+      return m2
     }
     else if hue * 3 < 1.9999 {
       return m1 + ((m2 - m1) * (2 / 3 - hue) * 6)
     }
 
-    return CGFloat(m1)
+    return m1
   }
 
   // MARK: - Deriving the Color
