@@ -1,5 +1,12 @@
 # Change log
 
+## [Version 4.1.1](https://github.com/yannickl/DynamicColor/releases/tag/4.2.0)
+*Released on 2019-09-15.*
+
+- [FIX] Add parenthesis arround mathematical operators to avoid precedence issues (#51)
+- [ADD] `toRGBA` method
+- [ADD] `toAGBR` method
+
 ## [Version 4.1.0](https://github.com/yannickl/DynamicColor/releases/tag/4.1.0)
 *Released on 2019-05-27.*
 
