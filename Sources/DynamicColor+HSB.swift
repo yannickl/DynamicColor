@@ -41,9 +41,9 @@ extension DynamicColor {
    - returns: The HSB components as a tuple (h, s, b).
    */
   public final func toHSBComponents() -> (h: CGFloat, s: CGFloat, b: CGFloat) {
-    var h: CGFloat = 0
-    var s: CGFloat = 0
-    var b: CGFloat = 0
+    var h: CGFloat = 0.0
+    var s: CGFloat = 0.0
+    var b: CGFloat = 0.0
 
     #if os(iOS) || os(tvOS) || os(watchOS)
       getHue(&h, saturation: &s, brightness: &b, alpha: nil)
@@ -51,10 +51,10 @@ extension DynamicColor {
       return (h: h, s: s, b: b)
     #elseif os(OSX)
       if isEqual(DynamicColor.black) {
-        return (0, 0, 0)
+        return (0.0, 0.0, 0.0)
       }
       else if isEqual(DynamicColor.white) {
-        return (0, 0, 1)
+        return (0.0, 0.0, 1.0)
       }
 
       getHue(&h, saturation: &s, brightness: &b, alpha: nil)

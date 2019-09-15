@@ -61,13 +61,13 @@ internal func moda(_ x: CGFloat, m: CGFloat) -> CGFloat {
  - Parameter x: The value to round.
  - Parameter m: The precision. Default to 10000.
  */
-internal func roundDecimal(_ x: CGFloat, precision: CGFloat = 10000) -> CGFloat {
+internal func roundDecimal(_ x: CGFloat, precision: CGFloat = 10000.0) -> CGFloat {
   return CGFloat(Int(round(x * precision))) / precision
 }
 
 internal func roundToHex(_ x: CGFloat) -> UInt32 {
   guard x > 0 else { return 0 }
-  let rounded: CGFloat = round(x * 255)
+  let rounded: CGFloat = round(x * 255.0)
   
   return UInt32(rounded)
 }

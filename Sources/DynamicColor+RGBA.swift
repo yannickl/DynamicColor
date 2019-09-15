@@ -115,7 +115,7 @@ public extension DynamicColor {
    */
   final func adjustedAlpha(amount: CGFloat) -> DynamicColor {
     let components      = toRGBAComponents()
-    let normalizedAlpha = clip(components.a + amount, 0, 1)
+    let normalizedAlpha = clip(components.a + amount, 0.0, 1.0)
 
     return DynamicColor(red: components.r, green: components.g, blue: components.b, alpha: normalizedAlpha)
   }

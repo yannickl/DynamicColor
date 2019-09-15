@@ -33,13 +33,13 @@
 /// Hue-saturation-lightness structure to make the color manipulation easier.
 internal struct HSL {
   /// Hue value between 0.0 and 1.0 (0.0 = 0 degree, 1.0 = 360 degree).
-  var h: CGFloat = 0
+  var h: CGFloat = 0.0
   /// Saturation value between 0.0 and 1.0.
-  var s: CGFloat = 0
+  var s: CGFloat = 0.0
   /// Lightness value between 0.0 and 1.0.
-  var l: CGFloat = 0
+  var l: CGFloat = 0.0
   /// Alpha value between 0.0 and 1.0.
-  var a: CGFloat = 1
+  var a: CGFloat = 1.0
 
   // MARK: - Initializing HSL Colors
 
@@ -51,11 +51,11 @@ internal struct HSL {
   - parameter l: The lightness component of the color object, specified as a value between 0.0 and 1.0.
   - parameter a: The opacity component of the color object, specified as a value between 0.0 and 1.0.
   */
-  init(hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat = 1) {
-    h = hue.truncatingRemainder(dividingBy: 360) / 360
-    s = clip(saturation, 0, 1)
-    l = clip(lightness, 0, 1)
-    a = clip(alpha, 0, 1)
+  init(hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat = 1.0) {
+    h = hue.truncatingRemainder(dividingBy: 360.0) / 360.0
+    s = clip(saturation, 0.0, 1.0)
+    l = clip(lightness, 0.0, 1.0)
+    a = clip(alpha, 0.0, 1.0)
   }
 
   /**
@@ -71,30 +71,30 @@ internal struct HSL {
 
     let delta = maximum - mininimum
 
-    h = 0
-    s = 0
-    l = (maximum + mininimum) / 2
+    h = 0.0
+    s = 0.0
+    l = (maximum + mininimum) / 2.0
 
-    if delta != 0 {
+    if delta != 0.0 {
       if l < 0.5 {
         s = delta / (maximum + mininimum)
       }
       else {
-        s = delta / (2 - maximum - mininimum)
+        s = delta / (2.0 - maximum - mininimum)
       }
 
       if rgba.r == maximum {
-        h = ((rgba.g - rgba.b) / delta) + (rgba.g < rgba.b ? 6 : 0)
+        h = ((rgba.g - rgba.b) / delta) + (rgba.g < rgba.b ? 6.0 : 0.0)
       }
       else if rgba.g == maximum {
-        h = ((rgba.b - rgba.r) / delta) + 2
+        h = ((rgba.b - rgba.r) / delta) + 2.0
       }
       else if rgba.b == maximum {
-        h = ((rgba.r - rgba.g) / delta) + 4
+        h = ((rgba.r - rgba.g) / delta) + 4.0
       }
     }
 
-    h /= 6
+    h /= 6.0
     a = rgba.a
   }
 
@@ -106,12 +106,12 @@ internal struct HSL {
   - returns: A DynamicColor object corresponding to the current HSV color.
   */
   func toDynamicColor() -> DynamicColor {
-    let m2 = l <= 0.5 ? l * (s + 1) : (l + s) - (l * s)
-    let m1 = (l * 2) - m2
+    let m2 = l <= 0.5 ? l * (s + 1.0) : (l + s) - (l * s)
+    let m1 = (l * 2.0) - m2
 
-    let r = hueToRGB(m1: m1, m2: m2, h: h + (1 / 3))
+    let r = hueToRGB(m1: m1, m2: m2, h: h + (1.0 / 3.0))
     let g = hueToRGB(m1: m1, m2: m2, h: h)
-    let b = hueToRGB(m1: m1, m2: m2, h: h - (1 / 3))
+    let b = hueToRGB(m1: m1, m2: m2, h: h - (1.0 / 3.0))
 
     return DynamicColor(red: r, green: g, blue: b, alpha: CGFloat(a))
   }
@@ -120,14 +120,14 @@ internal struct HSL {
   private func hueToRGB(m1: CGFloat, m2: CGFloat, h: CGFloat) -> CGFloat {
     let hue = moda(h, m: 1)
 
-    if hue * 6 < 1 {
-      return m1 + ((m2 - m1) * hue * 6)
+    if hue * 6 < 1.0 {
+      return m1 + ((m2 - m1) * hue * 6.0)
     }
-    else if hue * 2 < 1 {
+    else if hue * 2.0 < 1.0 {
       return m2
     }
-    else if hue * 3 < 1.9999 {
-      return m1 + ((m2 - m1) * (2 / 3 - hue) * 6)
+    else if hue * 3.0 < 1.9999 {
+      return m1 + ((m2 - m1) * ((2.0 / 3.0) - hue) * 6.0)
     }
 
     return m1
@@ -142,7 +142,7 @@ internal struct HSL {
   - returns: A HSL color with the hue changed.
   */
   func adjustedHue(amount: CGFloat) -> HSL {
-    return HSL(hue: (h * 360) + amount, saturation: s, lightness: l, alpha: a)
+    return HSL(hue: (h * 360.0) + amount, saturation: s, lightness: l, alpha: a)
   }
 
   /**
@@ -152,7 +152,7 @@ internal struct HSL {
   - returns: A lighter HSL color.
   */
   func lighter(amount: CGFloat) -> HSL {
-    return HSL(hue: h * 360, saturation: s, lightness: l + amount, alpha: a)
+    return HSL(hue: h * 360.0, saturation: s, lightness: l + amount, alpha: a)
   }
 
   /**
@@ -162,7 +162,7 @@ internal struct HSL {
   - returns: A darker HSL color.
   */
   func darkened(amount: CGFloat) -> HSL {
-    return lighter(amount: amount * -1)
+    return lighter(amount: amount * -1.0)
   }
 
   /**
@@ -172,7 +172,7 @@ internal struct HSL {
   - returns: A HSL color more saturated.
   */
   func saturated(amount: CGFloat) -> HSL {
-    return HSL(hue: h * 360, saturation: s + amount, lightness: l, alpha: a)
+    return HSL(hue: h * 360.0, saturation: s + amount, lightness: l, alpha: a)
   }
 
   /**
@@ -182,6 +182,6 @@ internal struct HSL {
   - returns: A HSL color less saturated.
   */
   func desaturated(amount: CGFloat) -> HSL {
-    return saturated(amount: amount * -1)
+    return saturated(amount: amount * -1.0)
   }
 }

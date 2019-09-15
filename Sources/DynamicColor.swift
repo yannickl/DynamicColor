@@ -87,10 +87,10 @@ public extension DynamicColor {
     let b = cappedHex >> (alphaChannel ? 8 : 0) & mask
     let a = alphaChannel ? cappedHex & mask : 255
 
-    let red   = CGFloat(r) / 255
-    let green = CGFloat(g) / 255
-    let blue  = CGFloat(b) / 255
-    let alpha = CGFloat(a) / 255
+    let red   = CGFloat(r) / 255.0
+    let green = CGFloat(g) / 255.0
+    let blue  = CGFloat(b) / 255.0
+    let alpha = CGFloat(a) / 255.0
 
     self.init(red: red, green: green, blue: blue, alpha: alpha)
   }
@@ -170,7 +170,7 @@ public extension DynamicColor {
    */
   func isLight() -> Bool {
     let components = toRGBAComponents()
-    let brightness = ((components.r * 299) + (components.g * 587) + (components.b * 114)) / 1000
+    let brightness = ((components.r * 299.0) + (components.g * 587.0) + (components.b * 114.0)) / 1000.0
 
     return brightness >= 0.5
   }

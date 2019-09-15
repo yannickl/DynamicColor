@@ -52,7 +52,7 @@ public extension DynamicColor {
    - seealso: adjustedHueColor:
    */
   final func complemented() -> DynamicColor {
-    return adjustedHue(amount: 180)
+    return adjustedHue(amount: 180.0)
   }
 
   /**
@@ -116,9 +116,9 @@ public extension DynamicColor {
   final func inverted() -> DynamicColor {
     let rgba = toRGBAComponents()
 
-    let invertedRed   = 1 - rgba.r
-    let invertedGreen = 1 - rgba.g
-    let invertedBlue  = 1 - rgba.b
+    let invertedRed   = 1.0 - rgba.r
+    let invertedGreen = 1.0 - rgba.g
+    let invertedBlue  = 1.0 - rgba.b
 
     return DynamicColor(red: invertedRed, green: invertedGreen, blue: invertedBlue, alpha: rgba.a)
   }

@@ -61,7 +61,7 @@ final public class DynamicGradient {
       return (0 ..< amount).map { _ in colors[0] }
     }
 
-    let increment = 1 / CGFloat(amount - 1)
+    let increment = 1.0 / CGFloat(amount - 1)
 
     return (0 ..< amount).map { pickColorAt(scale: CGFloat($0) * increment, inColorSpace: colorspace) }
   }
@@ -80,7 +80,7 @@ final public class DynamicGradient {
       return colors.first ?? .black
     }
 
-    let clippedScale = clip(scale, 0, 1)
+    let clippedScale = clip(scale, 0.0, 1.0)
     let positions    = (0 ..< colors.count).map { CGFloat($0) / CGFloat(colors.count - 1) }
 
     var color: DynamicColor = .black
@@ -88,7 +88,7 @@ final public class DynamicGradient {
     for (index, position) in positions.enumerated() {
       guard clippedScale <= position else { continue }
 
-      guard clippedScale != 0 && clippedScale != 1 else {
+      guard clippedScale != 0.0 && clippedScale != 1.0 else {
         return colors[index]
       }
 

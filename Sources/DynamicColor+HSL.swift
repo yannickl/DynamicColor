@@ -60,6 +60,6 @@ extension DynamicColor {
   public final func toHSLComponents() -> (h: CGFloat, s: CGFloat, l: CGFloat) {
     let hsl = HSL(color: self)
 
-    return (hsl.h * 360, hsl.s, hsl.l)
+    return (hsl.h * 360.0, hsl.s, hsl.l)
   }
 }

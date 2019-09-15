@@ -46,7 +46,7 @@ public extension DynamicColor {
    - Returns: A color object corresponding to the two colors object mixed together.
    */
   final func mixed(withColor color: DynamicColor, weight: CGFloat = 0.5, inColorSpace colorspace: DynamicColorSpace = .rgb) -> DynamicColor {
-    let normalizedWeight = clip(weight, 0, 1)
+    let normalizedWeight = clip(weight, 0.0, 1.0)
 
     switch colorspace {
     case .lab:
@@ -131,11 +131,11 @@ public extension DynamicColor {
   }
 
   func mixedHue(source: CGFloat, target: CGFloat) -> CGFloat {
-    if target > source && target - source > 180 {
-      return target - source + 360
+    if target > source && target - source > 180.0 {
+      return target - source + 360.0
     }
-    else if target < source && source - target > 180 {
-      return target + 360 - source
+    else if target < source && source - target > 180.0 {
+      return target + 360.0 - source
     }
 
     return target - source

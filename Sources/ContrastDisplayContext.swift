@@ -49,9 +49,9 @@ extension DynamicColor {
       case .standard:
         return 4.5
       case .standardLargeText:
-        return 3
+        return 3.0
       case .enhanced:
-        return 7
+        return 7.0
       case .enhancedLargeText:
         return 4.5
       }

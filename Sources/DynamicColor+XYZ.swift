@@ -44,14 +44,14 @@ public extension DynamicColor {
    - parameter alpha: The opacity value of the color object, specified as a value from 0.0 to 1.0. Default to 1.0.
    */
   convenience init(X: CGFloat, Y: CGFloat, Z: CGFloat, alpha: CGFloat = 1) {
-    let clippedX = clip(X, 0, 95.05) / 100
-    let clippedY = clip(Y, 0, 100) / 100
-    let clippedZ = clip(Z, 0, 108.9) / 100
+    let clippedX = clip(X, 0.0, 95.05) / 100.0
+    let clippedY = clip(Y, 0.0, 100) / 100.0
+    let clippedZ = clip(Z, 0.0, 108.9) / 100.0
 
     let toRGB = { (c: CGFloat) -> CGFloat in
-      let rgb = c > 0.0031308 ? 1.055 * pow(c, 1 / 2.4) - 0.055 : c * 12.92
+      let rgb = c > 0.0031308 ? 1.055 * pow(c, 1.0 / 2.4) - 0.055 : c * 12.92
 
-      return abs(roundDecimal(rgb, precision: 1000))
+      return abs(roundDecimal(rgb, precision: 1000.0))
     }
 
     let red   = toRGB((clippedX * 3.2406) + (clippedY * -1.5372) + (clippedZ * -0.4986))
@@ -80,9 +80,9 @@ public extension DynamicColor {
     let green = toSRGB(rgba.g)
     let blue  = toSRGB(rgba.b)
 
-    let X = roundDecimal(((red * 0.4124) + (green * 0.3576) + (blue * 0.1805)) * 100, precision: 1000)
-    let Y = roundDecimal(((red * 0.2126) + (green * 0.7152) + (blue * 0.0722)) * 100, precision: 1000)
-    let Z = roundDecimal(((red * 0.0193) + (green * 0.1192) + (blue * 0.9505)) * 100, precision: 1000)
+    let X = roundDecimal(((red * 0.4124) + (green * 0.3576) + (blue * 0.1805)) * 100.0, precision: 1000.0)
+    let Y = roundDecimal(((red * 0.2126) + (green * 0.7152) + (blue * 0.0722)) * 100.0, precision: 1000.0)
+    let Z = roundDecimal(((red * 0.0193) + (green * 0.1192) + (blue * 0.9505)) * 100.0, precision: 1000.0)
 
     return (X: X, Y: Y, Z: Z)
   }
