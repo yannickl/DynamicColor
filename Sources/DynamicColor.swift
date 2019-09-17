@@ -226,4 +226,15 @@ public extension DynamicColor {
   func isContrasting(with otherColor: DynamicColor, inContext context: ContrastDisplayContext = .standard) -> Bool {
     return self.contrastRatio(with: otherColor) > context.minimumContrastRatio
   }
+    
+  /**
+    Return a boolean value which indicates if the current color is opaque.
+     
+    This is a shortcut for "color.alphaComponent == 1.0"
+     
+     - returns: true if this color is opaque, false otherwise
+  */
+  public var isOpaque: Bool {
+    return self.alphaComponent == 1.0
+  }
 }
