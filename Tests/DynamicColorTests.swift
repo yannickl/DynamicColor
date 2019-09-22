@@ -25,6 +25,7 @@
  */
 
 import XCTest
+import DynamicColor
 
 class DynamicColorTests: XCTestCase {
   func testColorFromHexString() {
