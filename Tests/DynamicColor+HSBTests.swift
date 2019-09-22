@@ -25,7 +25,7 @@
  */
 
 import XCTest
-import DynamicColor
+@testable import DynamicColor
 
 let TestsAcceptedAccuracy = CGFloat(0.000001)
 

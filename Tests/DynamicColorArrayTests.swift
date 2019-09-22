@@ -25,7 +25,7 @@
  */
 
 import XCTest
-import DynamicColor
+@testable import DynamicColor
 
 class DynamicColorArrayTests: XCTestCase {
   func testGradientProperty() {

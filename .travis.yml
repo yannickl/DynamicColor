@@ -1,11 +1,11 @@
 language: objective-c
-osx_image: xcode10.2
+osx_image: xcode11
 script:
   - brew install swiftlint || brew upgrade swiftlint
   - swiftlint lint --path Sources/ --config ../.swiftlint.yml
-  - cd Examples
+  - swift package -c release generate-xcodeproj
   - xcodebuild -version
-  - xcodebuild -project DynamicColorExample.xcodeproj -scheme iOSTests -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
+  - xcodebuild -project DynamicColor.xcodeproj -scheme DynamicColor-Package -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 8" -configuration Release ONLY_ACTIVE_ARCH=YES -enableCodeCoverage YES test
   - bash <(curl -s https://codecov.io/bash) -cF ios
-  - xcodebuild -project DynamicColorExample.xcodeproj -scheme OSXTests -sdk macosx -configuration Release -enableCodeCoverage YES test
+  - xcodebuild -project DynamicColor.xcodeproj -scheme DynamicColor-Package -sdk macosx -configuration Release -enableCodeCoverage YES test
   - bash <(curl -s https://codecov.io/bash) -cF osx

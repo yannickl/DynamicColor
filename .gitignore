@@ -17,3 +17,6 @@ DerivedData
 *.hmap
 *.xccheckout
 *.txt
+.swiftpm/*
+.build/*
+DynamicColor.xcodeproj
