@@ -13,7 +13,9 @@ Please keep the list sorted.
 ### People and companies, who have contributed
 
  * [Bas Broek](https://github.com/BasThomas)
+ * [Dmitry Frishbuter](https://github.com/DmitryFrishbuter)
  * [Julien Quéré](https://github.com/Onejjy)
  * [Naoyashiga](https://github.com/naoyashiga)
  * [Paulo Cesar](https://github.com/puelocesar)
+ * [Tanin Rojanapiansatith](https://github.com/landtanin)
  * [Tobias Due Munk](https://github.com/duemunk)
