@@ -165,7 +165,7 @@ let mixedColor = originalColor.mixed(withColor: .blue)
 
 #### Gradients
 
-**DynamicColor** provides an useful object to work with gradients: **DynamicGradient**. It'll allow you to pick color from gradients, or to build to build a palette using different color spaces (.e.g.: *RGB*, *HSL*, *HSB*, *Cie L\*a\*b\**).
+**DynamicColor** provides an useful object to work with gradients: **DynamicGradient**. It'll allow you to pick color from gradients, or to build a palette using different color spaces (.e.g.: *RGB*, *HSL*, *HSB*, *Cie L\*a\*b\**).
 
 Let's define our reference colors and the gradient object:
 ```swift
