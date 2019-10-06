@@ -281,7 +281,7 @@ let package = Package(
     name: "YOUR_PROJECT_NAME",
     targets: [],
     dependencies: [
-        .Package(url: "https://github.com/yannickl/DynamicColor.git", versions: "4.2.0" ..< Version.max)
+        .package(url: "https://github.com/yannickl/DynamicColor.git", from: "4.2.1")    
     ]
 )
 ```
