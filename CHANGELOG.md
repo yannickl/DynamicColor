@@ -1,5 +1,10 @@
 # Change log
 
+## [Version 5.0.0](https://github.com/yannickl/DynamicColor/releases/tag/5.0.0)
+*Released on 2019-12-24.*
+
+- [ADD] Basic SwiftUI color support
+
 ## [Version 4.1.1](https://github.com/yannickl/DynamicColor/releases/tag/4.2.0)
 *Released on 2019-09-15.*
 

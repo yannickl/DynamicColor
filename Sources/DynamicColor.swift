@@ -55,16 +55,13 @@ public extension DynamicColor {
    - parameter hexString: A hexa-decimal color string representation.
    */
   convenience init(hexString: String) {
-    let hexString = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
-    let scanner   = Scanner(string: hexString)
+    let hexString                 = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
+    let scanner                   = Scanner(string: hexString)
+    scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
 
-    if hexString.hasPrefix("#") {
-      scanner.scanLocation = 1
-    }
+    var color: UInt64 = 0
 
-    var color: UInt32 = 0
-
-    if scanner.scanHexInt32(&color) {
+    if scanner.scanHexInt64(&color) {
       self.init(hex: color, useAlpha: hexString.count > 7)
     }
     else {
@@ -75,11 +72,11 @@ public extension DynamicColor {
   /**
    Creates a color from an hex integer (e.g. 0x3498db).
 
-   - parameter hex: A hexa-decimal UInt32 that represents a color.
-   - parameter alphaChannel: If true the given hex-decimal UInt32 includes the alpha channel (e.g. 0xFF0000FF).
+   - parameter hex: A hexa-decimal UInt64 that represents a color.
+   - parameter alphaChannel: If true the given hex-decimal UInt64 includes the alpha channel (e.g. 0xFF0000FF).
    */
-  convenience init(hex: UInt32, useAlpha alphaChannel: Bool = false) {
-    let mask      = UInt32(0xFF)
+  convenience init(hex: UInt64, useAlpha alphaChannel: Bool = false) {
+    let mask      = UInt64(0xFF)
     let cappedHex = !alphaChannel && hex > 0xffffff ? 0xffffff : hex
 
     let r = cappedHex >> (alphaChannel ? 24 : 16) & mask

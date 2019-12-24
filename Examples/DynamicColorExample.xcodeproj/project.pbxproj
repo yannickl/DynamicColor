@@ -112,6 +112,12 @@
 		CEFBDAE81B1CE38D000E6F30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFBDAE71B1CE38D000E6F30 /* Images.xcassets */; };
 		CEFBDAEB1B1CE38D000E6F30 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFBDAE91B1CE38D000E6F30 /* LaunchScreen.xib */; };
 		CEFBDB191B1DE220000E6F30 /* ColorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */; };
+		F401F80023B242B7008FB683 /* SwiftUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401F7FF23B242B7008FB683 /* SwiftUIColor.swift */; };
+		F401F80123B242B7008FB683 /* SwiftUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401F7FF23B242B7008FB683 /* SwiftUIColor.swift */; };
+		F401F80223B242B7008FB683 /* SwiftUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401F7FF23B242B7008FB683 /* SwiftUIColor.swift */; };
+		F401F80323B242B7008FB683 /* SwiftUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401F7FF23B242B7008FB683 /* SwiftUIColor.swift */; };
+		F401F80423B242B7008FB683 /* SwiftUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401F7FF23B242B7008FB683 /* SwiftUIColor.swift */; };
+		F401F80523B242B7008FB683 /* SwiftUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F401F7FF23B242B7008FB683 /* SwiftUIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +217,7 @@
 		CEFBDAE71B1CE38D000E6F30 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CEFBDAEA1B1CE38D000E6F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CEFBDB181B1DE220000E6F30 /* ColorCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCellView.swift; sourceTree = "<group>"; };
+		F401F7FF23B242B7008FB683 /* SwiftUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +380,7 @@
 				CE4E1EFB1D818AB100D2AC35 /* DynamicGradient.swift */,
 				CEF85A241C84EA5B00DD1A49 /* HSL.swift */,
 				CE5D647A1D35074B005DEE4E /* Utils.swift */,
+				F401F7FF23B242B7008FB683 /* SwiftUIColor.swift */,
 			);
 			name = Sources;
 			path = ../Sources;
@@ -726,6 +734,7 @@
 				CE86889A1E2C165D00207CAC /* DynamicColorSpace.swift in Sources */,
 				CE8688921E2C165D00207CAC /* DynamicColor.swift in Sources */,
 				CE86889C1E2C165D00207CAC /* HSL.swift in Sources */,
+				F401F80123B242B7008FB683 /* SwiftUIColor.swift in Sources */,
 				CE8688981E2C165D00207CAC /* DynamicColor+RGBA.swift in Sources */,
 				CE8688961E2C165D00207CAC /* DynamicColor+Lab.swift in Sources */,
 				CE8688901E2C165D00207CAC /* Array.swift in Sources */,
@@ -747,6 +756,7 @@
 				CE8688BA1E2C1AF700207CAC /* DynamicColorSpace.swift in Sources */,
 				CE8688B21E2C1AF700207CAC /* DynamicColor.swift in Sources */,
 				CE8688BC1E2C1AF700207CAC /* HSL.swift in Sources */,
+				F401F80223B242B7008FB683 /* SwiftUIColor.swift in Sources */,
 				CE8688B81E2C1AF700207CAC /* DynamicColor+RGBA.swift in Sources */,
 				CE8688B61E2C1AF700207CAC /* DynamicColor+Lab.swift in Sources */,
 				CE8688B01E2C1AF700207CAC /* Array.swift in Sources */,
@@ -768,6 +778,7 @@
 				CE8688D51E2C1B4800207CAC /* DynamicColorSpace.swift in Sources */,
 				CE8688CD1E2C1B4800207CAC /* DynamicColor.swift in Sources */,
 				CE8688D71E2C1B4800207CAC /* HSL.swift in Sources */,
+				F401F80323B242B7008FB683 /* SwiftUIColor.swift in Sources */,
 				CE8688D31E2C1B4800207CAC /* DynamicColor+RGBA.swift in Sources */,
 				CE8688D11E2C1B4800207CAC /* DynamicColor+Lab.swift in Sources */,
 				CE8688CB1E2C1B4800207CAC /* Array.swift in Sources */,
@@ -789,6 +800,7 @@
 				CE4E1F051D819AEC00D2AC35 /* DynamicColorSpace.swift in Sources */,
 				CE5D647B1D35074B005DEE4E /* Utils.swift in Sources */,
 				CE8B86551D2991F000C5A670 /* DynamicColor+XYZ.swift in Sources */,
+				F401F80023B242B7008FB683 /* SwiftUIColor.swift in Sources */,
 				CEAF67871CA2D22E008DC3A2 /* DynamicColor+Deriving.swift in Sources */,
 				CEF85A261C84EA5B00DD1A49 /* HSL.swift in Sources */,
 				CE1BD0811DEA01E500E11D77 /* ContrastDisplayContext.swift in Sources */,
@@ -807,6 +819,7 @@
 				CE5D64831D35230E005DEE4E /* DynamicColor+Lab.swift in Sources */,
 				CEEB28E01BE27401001A74E8 /* ColorCellView.swift in Sources */,
 				CEBD6FEE1D81CD9D00D75349 /* HeaderView.swift in Sources */,
+				F401F80523B242B7008FB683 /* SwiftUIColor.swift in Sources */,
 				CE4E1F071D819AEC00D2AC35 /* DynamicColorSpace.swift in Sources */,
 				CE5D647D1D35074B005DEE4E /* Utils.swift in Sources */,
 				CEAF67891CA2D22E008DC3A2 /* DynamicColor+Deriving.swift in Sources */,
@@ -832,6 +845,7 @@
 				CE5D64821D35230E005DEE4E /* DynamicColor+Lab.swift in Sources */,
 				CEFBDAE31B1CE38D000E6F30 /* ViewController.swift in Sources */,
 				CE5D647C1D35074B005DEE4E /* Utils.swift in Sources */,
+				F401F80423B242B7008FB683 /* SwiftUIColor.swift in Sources */,
 				CE4E1EFD1D818AB100D2AC35 /* DynamicGradient.swift in Sources */,
 				CEAF67881CA2D22E008DC3A2 /* DynamicColor+Deriving.swift in Sources */,
 				CE4E1F121D81A6D900D2AC35 /* DynamicColor+HSB.swift in Sources */,
