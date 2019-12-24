@@ -52,6 +52,14 @@ let color = DynamicColor(hex: 0x3498db)
 
 You can also retrieve the RGBA value and components very easily using multiple methods like `toHexString`, `toHex`, `toRGBA`, etc.
 
+##### SwiftUI
+
+From the v5, DynamicColor also support basic methods to create and manipulate colors with SwiftUI.
+
+```swift
+let color = Color(hex: 0x3498db)
+```
+
 #### Darken & Lighten
 
 These two create a new color by adjusting the lightness of the receiver. You have to use a value between 0 and 1.
@@ -238,7 +246,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 use_frameworks!
-pod 'DynamicColor', '~> 4.2.0'
+pod 'DynamicColor', '~> 5.0.0'
 ```
 
 Install into your project:
@@ -269,7 +277,7 @@ $ brew install carthage
 To integrate `DynamicColor` into your Xcode project using Carthage, specify it in your `Cartfile` file:
 
 ```ogdl
-github "yannickl/DynamicColor" >= 4.2.0
+github "yannickl/DynamicColor" >= 5.0.0
 ```
 
 #### Swift Package Manager
@@ -281,7 +289,7 @@ let package = Package(
     name: "YOUR_PROJECT_NAME",
     targets: [],
     dependencies: [
-        .package(url: "https://github.com/yannickl/DynamicColor.git", from: "4.2.1")    
+        .package(url: "https://github.com/yannickl/DynamicColor.git", from: "5.0.0")    
     ]
 )
 ```

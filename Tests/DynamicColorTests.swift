@@ -125,7 +125,7 @@ class DynamicColorTests: XCTestCase {
   }
 
   func testHexPrecision() {
-    let allHexes: CountableRange<UInt32> = 0 ..< 0xFFFFFF
+    let allHexes: CountableRange<UInt64> = 0 ..< 0xFFFFFF
     let impreciseConversions = allHexes.filter { hex in
       DynamicColor(hex: hex).toHex() != hex
     }
