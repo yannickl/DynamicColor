@@ -11,7 +11,7 @@
   <a href="http://codecov.io/github/yannickl/DynamicColor"><img alt="Code coverage status" src="http://codecov.io/github/yannickl/DynamicColor/coverage.svg?branch=master"/></a>
 </p>
 
-**DynamicColor** provides powerful methods to manipulate colors in an easy way in Swift.
+**DynamicColor** provides powerful methods to manipulate colors in an easy way in Swift and SwiftUI.
 
 <p align="center">
   <img src="http://yannickloriot.com/resources/dynamiccolor-sample-screenshot.png" alt="example screenshot" width="300" />
