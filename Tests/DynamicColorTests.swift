@@ -289,7 +289,6 @@ class DynamicColorTests: XCTestCase {
   func testGrayscaleColor() {
     let grayscale   = DynamicColor(hex: 0xc0392b).grayscaled()
     let desaturated = DynamicColor(hex: 0xc0392b).desaturated(amount: 1)
-
     XCTAssert(grayscale.isEqual(desaturated), "Colors should be the same")
   }
 

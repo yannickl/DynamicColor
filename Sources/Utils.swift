@@ -71,3 +71,19 @@ internal func roundToHex(_ x: CGFloat) -> UInt32 {
   
   return UInt32(rounded)
 }
+
+/**
+ Defines the mode (i.e color space) used for grayscaling.
+
+ [More info](https://en.wikipedia.org/wiki/Lightness#Lightness_and_human_perception)
+*/
+public enum GrayscalingMode {
+    /// XYZ luminance
+    case luminance
+    /// HSL lightness
+    case lightness
+    /// RGB average
+    case average
+    /// HSV value
+    case value
+}
