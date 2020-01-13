@@ -67,20 +67,20 @@ internal struct HSL {
     let rgba = color.toRGBAComponents()
 
     let maximum   = max(rgba.r, max(rgba.g, rgba.b))
-    let mininimum = min(rgba.r, min(rgba.g, rgba.b))
+    let minimum = min(rgba.r, min(rgba.g, rgba.b))
 
-    let delta = maximum - mininimum
+    let delta = maximum - minimum
 
     h = 0.0
     s = 0.0
-    l = (maximum + mininimum) / 2.0
+    l = (maximum + minimum) / 2.0
 
     if delta != 0.0 {
       if l < 0.5 {
-        s = delta / (maximum + mininimum)
+        s = delta / (maximum + minimum)
       }
       else {
-        s = delta / (2.0 - maximum - mininimum)
+        s = delta / (2.0 - maximum - minimum)
       }
 
       if rgba.r == maximum {
