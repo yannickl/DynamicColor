@@ -36,13 +36,19 @@ class DynamicColorRGBATests: XCTestCase {
   }
 
   func testToRGBAComponents() {
-    let customColor = DynamicColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
+    let rgbaColor = DynamicColor(red: 0.23, green: 0.46, blue: 0.32, alpha: 1)
+    let rgba1 = rgbaColor.toRGBAComponents()
+    XCTAssertEqual(rgba1.r, 0.23)
+    XCTAssertEqual(rgba1.g, 0.46)
+    XCTAssertEqual(rgba1.b, 0.32)
+    XCTAssertEqual(rgba1.a, 1.00)
 
-    let rgba = customColor.toRGBAComponents()
-    XCTAssert(rgba.r == 0.23, "Color red component should be equal to 0.23")
-    XCTAssert(rgba.g == 0.46, "Color green component should be equal to 0.46")
-    XCTAssert(rgba.b == 0.32, "Color blue component should be equal to 0.32")
-    XCTAssert(rgba.a == 1, "Color alpha component should be equal to 1")
+    let grayscaleColor = DynamicColor(white: 0.42, alpha: 1)
+    let rgba2 = grayscaleColor.toRGBAComponents()
+    XCTAssertEqual(rgba2.r, 0.42, accuracy: 0.001)
+    XCTAssertEqual(rgba2.g, 0.42, accuracy: 0.001)
+    XCTAssertEqual(rgba2.b, 0.42, accuracy: 0.001)
+    XCTAssertEqual(rgba2.a, 1.00, accuracy: 0.001)
   }
 
   func testRedComponent() {
