@@ -287,10 +287,26 @@ class DynamicColorTests: XCTestCase {
   }
 
   func testGrayscaleColor() {
-    let grayscale   = DynamicColor(hex: 0xc0392b).grayscaled()
-    let desaturated = DynamicColor(hex: 0xc0392b).desaturated(amount: 1)
+    let baseColor = DynamicColor(hex: 0xc0392b)
 
-    XCTAssert(grayscale.isEqual(desaturated), "Colors should be the same")
+    let grayscaleByLuminance = baseColor.grayscaled(mode: .luminance)
+    let expectedGrayscaleByLuminance = DynamicColor(white: 0.376, alpha: 1.0)
+    XCTAssertEqual(grayscaleByLuminance, expectedGrayscaleByLuminance, accuracy: 0.001, "Colors should be the same")
+
+    let grayscaleByLightness = baseColor.grayscaled(mode: .lightness)
+    let expectedGrayscaleByLightness = DynamicColor(white: 0.461, alpha: 1.0)
+    XCTAssertEqual(grayscaleByLightness, expectedGrayscaleByLightness, accuracy: 0.001, "Colors should be the same")
+
+    let grayscaleByAverage = baseColor.grayscaled(mode: .average)
+    let expectedGrayscaleByAverage = DynamicColor(white: 0.382, alpha: 1.0)
+    XCTAssertEqual(grayscaleByAverage, expectedGrayscaleByAverage, accuracy: 0.001, "Colors should be the same")
+
+    let grayscaleByValue = baseColor.grayscaled(mode: .value)
+    let expectedGrayscaleByValue = DynamicColor(white: 0.753, alpha: 1.0)
+    XCTAssertEqual(grayscaleByValue, expectedGrayscaleByValue, accuracy: 0.001, "Colors should be the same")
+
+    let grayscaleByDefault = baseColor.grayscaled()
+    XCTAssert(grayscaleByDefault.isEqual(grayscaleByLightness), "Colors should be the same")
   }
 
   func testInvertColor() {

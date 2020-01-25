@@ -99,7 +99,14 @@ let desaturatedColor = originalColor.desaturated()
 // equivalent to
 // desaturatedColor = originalColor.desaturated(amount: 0.2)
 
+// equivalent to
+// let grayscaledColor = originalColor.grayscaled(mode: .luminance)
 let grayscaledColor = originalColor.grayscaled()
+
+let grayscaledColorLuminance = originalColor.grayscaled(mode: .luminance)
+let grayscaledColorLightness = originalColor.grayscaled(mode: .lightness)
+let grayscaledColorAverage = originalColor.grayscaled(mode: .average)
+let grayscaledColorValue = originalColor.grayscaled(mode: .value)
 ```
 
 #### Adjust-hue & Complement
