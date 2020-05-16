@@ -3,6 +3,9 @@ import PackageDescription
 
 let package = Package(
   name: "DynamicColor",
+  platforms: [
+	.iOS("11.0")
+	],
   products: [
     .library(name: "DynamicColor", targets: ["DynamicColor"]),
   ],
