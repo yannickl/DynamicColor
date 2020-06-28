@@ -8,7 +8,7 @@
   <a href="https://github.com/Carthage/Carthage"><img alt="Carthage compatible" src="https://img.shields.io/badge/Carthage-%E2%9C%93-brightgreen.svg?style=flat"/></a>
   <a href="https://github.com/apple/swift-package-manager"><img alt="Swift Package Manager compatible" src="https://img.shields.io/badge/SPM-%E2%9C%93-brightgreen.svg?style=flat"/></a>
   <a href="https://travis-ci.org/yannickl/DynamicColor"><img alt="Build status" src="https://travis-ci.org/yannickl/DynamicColor.svg?branch=master"/></a>
-  <a href="http://codecov.io/github/yannickl/DynamicColor"><img alt="Code coverage status" src="http://codecov.io/github/yannickl/DynamicColor/coverage.svg?branch=master"/></a>
+  <a href="https://codecov.io/gh/yannickl/DynamicColor"><img src="https://codecov.io/gh/yannickl/DynamicColor/branch/master/graph/badge.svg" /></a>
 </p>
 
 **DynamicColor** provides powerful methods to manipulate colors in an easy way in Swift and SwiftUI.
@@ -24,7 +24,7 @@
 
 ## Requirements
 
-- iOS 8.0+ / Mac OS X 10.9+ / tvOS 9.0+ / watchOS 2.0+
+- iOS 11.0+ / Mac OS X 10.11+ / tvOS 11.0+ / watchOS 4.0+
 - Xcode 10.2+
 - Swift 5.0+
 
@@ -296,7 +296,7 @@ let package = Package(
     name: "YOUR_PROJECT_NAME",
     targets: [],
     dependencies: [
-        .package(url: "https://github.com/yannickl/DynamicColor.git", from: "5.0.0")    
+        .package(url: "https://github.com/yannickl/DynamicColor.git", from: "5.0.0")
     ]
 )
 ```

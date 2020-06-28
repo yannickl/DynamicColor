@@ -5,7 +5,7 @@ let package = Package(
   name: "DynamicColor",
   platforms: [
 	.iOS(SupportedPlatform.IOSVersion.v11)
-	],
+  ],
   products: [
     .library(name: "DynamicColor", targets: ["DynamicColor"]),
   ],
@@ -13,11 +13,13 @@ let package = Package(
     .target(
       name: "DynamicColor",
       dependencies: [],
-      path: "Sources"),
+      path: "Sources"
+    ),
     .testTarget(
       name: "DynamicColorTests",
       dependencies: ["DynamicColor"],
-      path: "Tests"),
+      path: "Tests"
+    ),
   ]
 )
 
