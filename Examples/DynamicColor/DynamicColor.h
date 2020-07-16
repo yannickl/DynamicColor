@@ -2,11 +2,11 @@
 //  DynamicColor.h
 //  DynamicColor
 //
-//  Created by Yannick LORIOT on 12/06/15.
-//  Copyright (c) 2015 Yannick LORIOT. All rights reserved.
+//  Created by Yannick Loriot on 16/07/2020.
+//  Copyright © 2020 Yannick LORIOT. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for DynamicColor.
 FOUNDATION_EXPORT double DynamicColorVersionNumber;

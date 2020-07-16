@@ -24,18 +24,23 @@
  *
  */
 
-import Foundation
+import SwiftUI
 
-/**
- Defines the supported color spaces.
- */
-public enum DynamicColorSpace {
-  /// The RGB color space
-  case rgb
-  /// The HSL color space
-  case hsl
-  /// The HSB color space
-  case hsb
-  /// The Cie L*a*b* color space
-  case lab
+#if os(iOS) || os(tvOS) || os(watchOS)
+  import UIKit
+#elseif os(OSX)
+  import AppKit
+#endif
+
+/// Convert a DynamicColor to a  SwiftUI color
+extension DynamicColor {
+  /**
+  Returns the Color from  an Dynamic Color.
+  
+  - returns: A Color (SwiftUI).
+  */
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  func toColor() -> Color {
+    return Color(self)
+  }
 }

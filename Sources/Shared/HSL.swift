@@ -24,6 +24,8 @@
  *
  */
 
+import SwiftUI
+
 #if os(iOS) || os(tvOS) || os(watchOS)
   import UIKit
 #elseif os(OSX)
@@ -106,14 +108,21 @@ internal struct HSL {
   - returns: A DynamicColor object corresponding to the current HSV color.
   */
   func toDynamicColor() -> DynamicColor {
+    let  (r, g, b, a) = rgbaComponents()
+
+    return DynamicColor(red: r, green: g, blue: b, alpha: a)
+  }
+
+  /// Returns the RGBA components  from the current HSV color.
+  func rgbaComponents() -> (CGFloat, CGFloat, CGFloat, CGFloat) {
     let m2 = l <= 0.5 ? l * (s + 1.0) : (l + s) - (l * s)
     let m1 = (l * 2.0) - m2
 
     let r = hueToRGB(m1: m1, m2: m2, h: h + (1.0 / 3.0))
     let g = hueToRGB(m1: m1, m2: m2, h: h)
     let b = hueToRGB(m1: m1, m2: m2, h: h - (1.0 / 3.0))
-
-    return DynamicColor(red: r, green: g, blue: b, alpha: CGFloat(a))
+    
+    return (r, g, b, CGFloat(a))
   }
 
   /// Hue to RGB helper function

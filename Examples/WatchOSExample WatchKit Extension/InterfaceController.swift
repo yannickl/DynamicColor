@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import DynamicColor
 
 class InterfaceController: WKInterfaceController {
   @IBOutlet var tableView: WKInterfaceTable!

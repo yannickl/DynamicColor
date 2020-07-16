@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DynamicColor
 
 class ViewController: UIViewController {
   private let colorCellIdentifier = "ColorCell"
