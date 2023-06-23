@@ -1,10 +1,10 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
   name: "DynamicColor",
   platforms: [
-	.iOS(SupportedPlatform.IOSVersion.v11)
+    .iOS(.v11), .visionOS(.v1)
   ],
   products: [
     .library(name: "DynamicColor", targets: ["DynamicColor"]),
