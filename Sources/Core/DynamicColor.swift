@@ -46,6 +46,35 @@
 
 public extension DynamicColor {
   // MARK: - Manipulating Hexa-decimal Values and Strings
+    
+    
+    /**
+     Creates a color from an hex string (e.g. "#3498db"). The RGBA string are also supported (e.g. "#ff3498db"). ff is alpha
+     
+     support (0x3498db)
+
+     If the given hex string is invalid the initialiser will create a black color.
+
+     - parameter hexString: A hexa-decimal color string representation.
+     */
+    convenience init(_ hexString: String, alphaInFront front: Bool = true) {
+        var hexString = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
+        if hexString.hasPrefix("0x"){
+          hexString = hexString.removingPrefixes(["0x"])
+        }
+        
+        if hexString.hasPrefix("#"){
+          hexString = hexString.removingPrefixes(["#"])
+        }
+        
+        if hexString.count > 7 && front {
+            let prefix = String(hexString.prefix(2))  // 获取最前面的两个字符
+            let middle = String(hexString.dropFirst(2))  // 获取中间的部分
+            hexString = middle + prefix  // 重新组合字符串
+        }
+        self.init(hexString: hexString)
+    }
+    
 
   /**
    Creates a color from an hex string (e.g. "#3498db"). The RGBA string are also supported (e.g. "#3498dbff").
@@ -55,10 +84,7 @@ public extension DynamicColor {
    - parameter hexString: A hexa-decimal color string representation.
    */
   convenience init(hexString: String) {
-    var hexString                 = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
-    if hexString.hasPrefix("0x"){
-      hexString = hexString.removingPrefixes(["0x"])
-    }
+    let hexString                 = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
     let scanner                   = Scanner(string: hexString)
     scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
 
