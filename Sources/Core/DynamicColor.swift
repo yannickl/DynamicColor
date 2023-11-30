@@ -55,7 +55,10 @@ public extension DynamicColor {
    - parameter hexString: A hexa-decimal color string representation.
    */
   convenience init(hexString: String) {
-    let hexString                 = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
+    var hexString                 = hexString.trimmingCharacters(in: .whitespacesAndNewlines)
+    if hexString.hasPrefix("0x"){
+      hexString = hexString.removingPrefixes(["0x"])
+    }
     let scanner                   = Scanner(string: hexString)
     scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
 
@@ -223,4 +226,13 @@ public extension DynamicColor {
   func isContrasting(with otherColor: DynamicColor, inContext context: ContrastDisplayContext = .standard) -> Bool {
     return self.contrastRatio(with: otherColor) > context.minimumContrastRatio
   }
+}
+
+extension String{
+    
+    public func removingPrefixes(_ prefixes: [String]) -> String {
+        let pattern = "^(\(prefixes.map{"\\Q"+$0+"\\E"}.joined(separator: "|")))\\s?"
+        guard let range = self.range(of: pattern, options: [.regularExpression, .caseInsensitive]) else { return self }
+        return String(self[range.upperBound...])
+    }
 }
